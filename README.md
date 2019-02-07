@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/stackroute/boeing-wave4-knowledgehub.svg?branch=master)](https://travis-ci.org/stackroute/boeing-wave4-knowledgehub)
+[![Build Status]([![Build Status](https://travis-ci.org/stackroute/ibm-wave3-ontrack.svg?branch=master)](https://travis-ci.org/stackroute/ibm-wave3-ontrack)
 
 [![Coverage Status](https://coveralls.io/repos/github/stackroute/boeing-wave4-knowledgehub/badge.svg?branch=master)](https://coveralls.io/github/stackroute/boeing-wave4-knowledgehub?branch=master)
 

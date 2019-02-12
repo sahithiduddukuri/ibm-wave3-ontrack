@@ -33,6 +33,14 @@ services:
       expose:
       - 8888
 
-
+  registrationservice:
+    image: registration-servcie:latest
+    build: registration-service/
+    restart: always
+    network_mode: host
+    ports:
+      - 8887:8887
+    expose:
+      - 8887
 
 

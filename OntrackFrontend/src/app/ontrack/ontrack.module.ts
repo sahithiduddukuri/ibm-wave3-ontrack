@@ -1,16 +1,16 @@
 import { HomeComponent } from './../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TrackMaterialModule } from './ontrack.material.module';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatLabel } from '@angular/material';
 import { CardComponent } from '../components/card/card.component';
+import { OntrackMaterialModule } from './ontrack.material.module';
 
 @NgModule({
   declarations: [HomeComponent, CardComponent],
   imports: [
     CommonModule,
-  TrackMaterialModule,
-  MatCardModule
+  MatCardModule,
+  OntrackMaterialModule
   ],
   exports: [HomeComponent, CardComponent]
 })

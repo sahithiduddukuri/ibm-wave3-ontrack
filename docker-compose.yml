@@ -43,4 +43,9 @@ services:
     expose:
       - 8887
 
+  mongodb:
+    image: mongo:3.4-jessie
+    container_name: "RegistrationDB"
+    ports:
+      - 27017:27017
 

@@ -1,10 +1,11 @@
-import { SearchComponent } from './../components/search/search.component';
-import { HomeComponent } from './../components/home/home.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule, MatIconModule, MatLabel } from '@angular/material';
-import { CardComponent } from '../components/card/card.component';
 import { OntrackMaterialModule } from './ontrack.material.module';
+import { HomeComponent } from './components/home/home.component';
+import { CardComponent } from './components/card/card.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [HomeComponent, CardComponent, SearchComponent],

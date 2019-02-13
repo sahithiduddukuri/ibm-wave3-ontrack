@@ -4,6 +4,11 @@ public class UserNameOrPasswordEmpty extends Exception {
 
     private String message;
 
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
     public UserNameOrPasswordEmpty()
     {}
 

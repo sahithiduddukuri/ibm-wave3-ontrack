@@ -1,6 +1,11 @@
 .container{
   display: flex;
+  position: relative;
 }
+.container1{
+  display: flex;
+}
+
 img {
   width: 300px;
    height: 300px;

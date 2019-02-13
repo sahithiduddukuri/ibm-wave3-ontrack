@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Registrations")
@@ -18,7 +19,7 @@ public class Registration
     private String password;
     private String emailId;
 
-    public Registration(String name, String userId, String password, String emailId) {
+    public Registration(String name, String userId, String password, String emailId, String gender) {
         this.name = name;
         this.userId = userId;
         this.password = password;

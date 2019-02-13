@@ -21,7 +21,7 @@ public class SeedDataApplicationListener implements ApplicationListener<ContextR
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
-        deliveryManagerRepository.save(new DeliveryManager("anagha","ranganath"));
+     deliveryManagerRepository.save(new DeliveryManager("anagha","ranganath"));
         deliveryManagerRepository.save(new DeliveryManager("krutika","ranganath"));
     }
 }

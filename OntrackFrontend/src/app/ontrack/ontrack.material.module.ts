@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material';
+import {MatIconModule, MatGridListModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -14,7 +14,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 
 
-
 @NgModule({
     declarations: [],
     imports: [
@@ -23,7 +22,9 @@ import {MatListModule} from '@angular/material/list';
       MatIconModule,
       MatToolbarModule,
       MatMenuModule, MatFormFieldModule,
-       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule
+       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule, 
+       MatGridListModule,
+       MatInputModule
       ] ,
       exports: [
         MatCardModule,
@@ -31,7 +32,9 @@ import {MatListModule} from '@angular/material/list';
         MatIconModule,
         MatToolbarModule,
         MatMenuModule, MatFormFieldModule,
-         MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule
+         MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
+          MatGridListModule,
+          MatInputModule
          ]
    })
   export class OntrackMaterialModule { }

@@ -1,33 +1,33 @@
 package com.stackroute.deliverymanager.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class DeliveryManager
 {
-    @Id
-    private String managerName;
-    private String password;
-
-    public String getManagerName() {
-        return managerName;
+    public String getManagerId() {
+        return managerId;
     }
+//
+//    public DeliveryManager(String managerId, String password) {
+//        this.managerId = managerId;
+//        this.password = password;
+//    }
 
-    public void setManagerName(String managerName) {
-        this.managerName = managerName;
+    public void setManagerId(String managerId) {
+        this.managerId = managerId;
     }
-
 
     public String getPassword() {
         return password;
@@ -36,10 +36,9 @@ public class DeliveryManager
     public void setPassword(String password) {
         this.password = password;
     }
-//
-//    public DeliveryManager(String userName, String password) {
-//        this.managerName = userName;
-//        this.password = password;
-//    }
+
+    @Id
+    private String managerId;
+    private String password;
 
 }

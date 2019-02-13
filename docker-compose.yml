@@ -1,5 +1,41 @@
 version: "2"
+
 services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysqldocker
+    volumes:
+      - '/opt/datasql:/var/lib/mysql'
+    network_mode: "host"
+    hostname: localhost
+
+
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysqldocker
+    volumes:
+      - '/opt/datasql:/var/lib/mysql'
+    network_mode: "host"
+    hostname: localhost
+
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    container_name: mongo
+    network_mode: host
+
 
   apigateway:
     image: zuul-service
@@ -33,6 +69,60 @@ services:
       expose:
       - 8888
 
+
+
+  deliverymanager:
+    build: delivery-manager/
+
+  login:
+    image: login-service:latest
+    build: login/
+
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+
+    ports:
+      - 8808:8808
+    expose:
+      - 8808
+
+
+
+    ports:
+      - 8088:8088
+    expose:
+      - 8088
+
+
+  registrationservice:
+    image: registration-servcie:latest
+    build: registration-service/
+    restart: always
+    network_mode: host
+    ports:
+      - 8887:8887
+    expose:
+      - 8887
+
+  mongodb:
+    image: mongo:3.4-jessie
+    container_name: "RegistrationDB"
+    ports:
+      - 27017:27017
+
+  productservice:
+    image: product-servcie:latest
+    build: ./productService
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+    ports:
+      - 8084:8084
+    expose:
+      - 8084
 
 
 

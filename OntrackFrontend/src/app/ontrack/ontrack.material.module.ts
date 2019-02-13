@@ -23,8 +23,7 @@ import {MatListModule} from '@angular/material/list';
       MatIconModule,
       MatToolbarModule,
       MatMenuModule, MatFormFieldModule,
-      MatInputModule,
-      MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
+       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
        MatInputModule
       ] ,
@@ -38,6 +37,6 @@ import {MatListModule} from '@angular/material/list';
         MatGridListModule,
         MatInputModule
 
-         ]
+      ]
    })
   export class OntrackMaterialModule { }

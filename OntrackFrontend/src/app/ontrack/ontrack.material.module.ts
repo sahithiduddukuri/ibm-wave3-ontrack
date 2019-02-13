@@ -12,6 +12,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 // import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { DailougeComponent } from '../components/dailouge/dailouge.component';
 
 
 
@@ -31,7 +32,7 @@ import {MatListModule} from '@angular/material/list';
         MatIconModule,
         MatToolbarModule,
         MatMenuModule, MatFormFieldModule,
-         MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule
+        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule
          ]
    })
   export class OntrackMaterialModule { }

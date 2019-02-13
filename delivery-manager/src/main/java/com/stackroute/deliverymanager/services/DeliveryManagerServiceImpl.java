@@ -15,24 +15,19 @@ public class DeliveryManagerServiceImpl implements DeliveryManagerService {
 
     @Autowired
     public DeliveryManagerServiceImpl(DeliveryManagerRepository deliveryManagerRepository) {
+        super();
         this.deliveryManagerRepository = deliveryManagerRepository;
     }
 
     @Override
-    public DeliveryManager saveManagers(DeliveryManager deliveryManager) throws UserNotFoundException{
-        if(deliveryManagerRepository.existsById(deliveryManager.getManagerName())){
-           throw new UserNotFoundException("DeliveryManager not found.");
-
-        }
-        else {
-            DeliveryManager savedDeliveryManager = deliveryManagerRepository.save(deliveryManager);
-
-            return savedDeliveryManager;
-        }
-    }
+    public DeliveryManager saveManager(DeliveryManager deliveryManager){return deliveryManagerRepository.save(deliveryManager);}
 
     @Override
-    public List<DeliveryManager> getAllManagers() {
-        return deliveryManagerRepository.findAll();
+    public List<DeliveryManager> getAllManagers(){return deliveryManagerRepository.findAll();}
+
+    @Override
+    public DeliveryManager findByManagerIdAndPassword(String managerId, String password) {
+        return deliveryManagerRepository.findByManagerIdAndPassword(managerId,password);
     }
+
 }

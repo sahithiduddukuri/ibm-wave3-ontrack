@@ -48,6 +48,7 @@ services:
       expose:
       - 8888
 
+<<<<<<< HEAD
   login:
     image: login-service:latest
     build: login/
@@ -61,4 +62,21 @@ services:
     expose:
       - 8088
 
+=======
+  registrationservice:
+    image: registration-servcie:latest
+    build: registration-service/
+    restart: always
+    network_mode: host
+    ports:
+      - 8887:8887
+    expose:
+      - 8887
+
+  mongodb:
+    image: mongo:3.4-jessie
+    container_name: "RegistrationDB"
+    ports:
+      - 27017:27017
+>>>>>>> e0f9b353002f493f94bd2224f31e5e699c2a5cb0
 

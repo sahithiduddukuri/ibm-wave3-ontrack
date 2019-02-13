@@ -31,6 +31,7 @@
         <module>config-server</module>
         <module>eventbrite-service</module>
         <module>registration-service</module>
+ <module>productService</module>
     </modules>
     <dependencies>
         <dependency>

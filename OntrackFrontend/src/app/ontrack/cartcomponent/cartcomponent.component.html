@@ -1,0 +1,9 @@
+<section class="cart-container"
+fxLayout
+fxLayout.sm="column"
+fxLayoutAlign="center"
+>
+    <app-card *ngFor="let cart of card" [cart]="cart" class="cart-card"
+    (cartAddEvent)='CartToAdd($event)'
+    ></app-card>
+</section>

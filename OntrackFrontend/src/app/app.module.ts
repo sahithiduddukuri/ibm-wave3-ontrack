@@ -9,19 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
 
-// import { RegcompComponent } from './ontrack/components/regcomp/regcomp.component';
-// import { ChildregcompComponent } from './ontrack/components/regcomp/childregcomp/childregcomp.component';
-
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-    // RegcompComponent,
-    // ChildregcompComponent
-
   ],
   imports: [
     BrowserModule,

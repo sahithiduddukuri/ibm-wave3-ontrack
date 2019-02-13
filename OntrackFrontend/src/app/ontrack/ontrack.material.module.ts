@@ -12,7 +12,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 // import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { DailougeComponent } from '../components/dailouge/dailouge.component';
+// import { DailougeComponent } from '../components/dailouge/dailouge.component';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { DailougeComponent } from '../components/dailouge/dailouge.component';
       MatIconModule,
       MatToolbarModule,
       MatMenuModule, MatFormFieldModule,
-       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule, 
+      MatInputModule,
+      MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
        MatInputModule
       ] ,
@@ -33,13 +34,10 @@ import { DailougeComponent } from '../components/dailouge/dailouge.component';
         MatIconModule,
         MatToolbarModule,
         MatMenuModule, MatFormFieldModule,
-<<<<<<< HEAD
-        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule
-=======
-         MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
-          MatGridListModule,
-          MatInputModule
->>>>>>> 287d03ec9dc1d328c335c6d13801301a9b5393f8
+        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
+        MatGridListModule,
+        MatInputModule
+
          ]
    })
   export class OntrackMaterialModule { }

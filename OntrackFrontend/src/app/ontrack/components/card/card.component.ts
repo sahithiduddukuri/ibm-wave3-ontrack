@@ -1,4 +1,4 @@
-import { DailougeComponent } from './../dailouge/dailouge.component';
+import { DailogComponent } from './../dailog/dailog.component';
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
@@ -11,13 +11,13 @@ export class CardComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-   const dialogRef = this.dialog.open(DailougeComponent, {
-    width: '600px',
-    height: '250px'
+   const dialogRef = this.dialog.open(DailogComponent, {
+    // width: '600px',
+    // height: '250px'
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   this.dialogResult = result;
-    // });
-}
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.dialogResult = result;
+    });
+  }
 }

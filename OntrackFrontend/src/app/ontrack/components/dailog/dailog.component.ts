@@ -1,13 +1,13 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
-  selector: 'app-dailouge',
-  templateUrl: './dailouge.component.html',
-  styleUrls: ['./dailouge.component.scss']
+  selector: 'app-dailog',
+  templateUrl: './dailog.component.html',
+  styleUrls: ['./dailog.component.scss']
 })
-export class DailougeComponent implements OnInit {
+export class DailogComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<DailougeComponent>,
+    public dialogRef: MatDialogRef<DailogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
     ) {}
     ngOnInit() {

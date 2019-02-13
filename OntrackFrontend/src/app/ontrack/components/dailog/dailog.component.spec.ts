@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DailougeComponent } from './dailouge.component';
+import { DailogComponent } from './dailog.component';
 
-describe('DailougeComponent', () => {
-  let component: DailougeComponent;
-  let fixture: ComponentFixture<DailougeComponent>;
+describe('DailogComponent', () => {
+  let component: DailogComponent;
+  let fixture: ComponentFixture<DailogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DailougeComponent ]
+      declarations: [ DailogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DailougeComponent);
+    fixture = TestBed.createComponent(DailogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -46,7 +46,6 @@ import { DailogComponent } from './components/dailog/dailog.component';
     entryComponents: [
       DailogComponent,
     ],
-  exports: [HomeComponent, CardComponent, SearchComponent, RegcompComponent, ChildregcompComponent]
-     // tslint:disable-next-line:semicolon
-     })
-    export class OntrackModule { }
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent ]
+})
+export class OntrackModule { }

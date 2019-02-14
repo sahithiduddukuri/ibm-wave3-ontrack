@@ -1,0 +1,14 @@
+ <form [formGroup]="service.form" class="normal-form">
+    <mat-grid-list cols="1" rowHeight="300px">
+      <mat-grid-title>
+        <div class="controles-container">
+          <input type="hidden" formControlName="$key">
+          <mat-form-field>
+            <input formControlName="name" matInput placeholder="name">
+          </mat-form-field>
+        </div>
+      </mat-grid-title>
+    </mat-grid-list>
+  </form>
+
+  

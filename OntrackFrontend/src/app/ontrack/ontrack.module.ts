@@ -14,20 +14,24 @@ import { OntrackMaterialModule } from './ontrack.material.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { RegcompComponent } from './components/regcomp/regcomp.component';
-import { ChildregcompComponent } from './components/regcomp/childregcomp/childregcomp.component';
 import { CardComponent } from './components/card/card.component';
+
+import { RegistrationcompComponent } from './components/registrationcomp/registrationcomp.component';
+import { ChildregComponent } from './components/registrationcomp/childreg/childreg.component';
 import { DailogComponent } from './components/dailog/dailog.component';
 
-
  @NgModule({
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegcompComponent, ChildregcompComponent, DailogComponent ],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, ChildregComponent, DailogComponent ],
+
 
   imports: [
   CommonModule,
   MatCardModule,
   OntrackMaterialModule,
-  BrowserAnimationsModule,
+  BrowserAnimationsModule
+
+
+
 
 
   ],
@@ -46,6 +50,9 @@ import { DailogComponent } from './components/dailog/dailog.component';
     entryComponents: [
       DailogComponent,
     ],
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent ]
+
+
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, ChildregComponent ]
+
 })
 export class OntrackModule { }

@@ -24,12 +24,22 @@ public class RegistrationServiceImpl implements RegistrationService
 
     @Override
     public Registration saveUser(Registration registration) throws UserAlreadyExistsException, UserNotFoundException {
-        Optional optional = registrationRepository.findById(registration.getUserId());
-        if((optional.isPresent()))
+//        Optional optional = registrationRepository.findById(registration.getUserId());
+//        if((optional.isPresent()))
+//        {
+//            throw new UserAlreadyExistsException();
+//        }
+//        return registrationRepository.insert(registration);
+        if(registrationRepository.existsById(registration.getId()))
+        {
+            throw new UserAlreadyExistsException("User alreasy exists");
+        }
+        Registration savedUser = registrationRepository.save(registration);
+        if(savedUser == null)
         {
             throw new UserAlreadyExistsException();
         }
-        return registrationRepository.insert(registration);
+        return savedUser;
     }
 
     @Override
@@ -39,7 +49,7 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public boolean deleteUser(String id) throws UserNotFoundException {
+    public boolean deleteUser(int id) throws UserNotFoundException {
         boolean status = false;
         Optional optional = registrationRepository.findById(id);
         if(optional.isPresent())
@@ -55,19 +65,28 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public Registration updateUser(String pass,String mail, String id) throws UserNotFoundException {
-        Optional optional = registrationRepository.findById(id);
-        if(optional.isPresent())
+    public Registration updateUser(Registration registration) throws UserNotFoundException {
+//        Optional optional = registrationRepository.findById(id);
+//        if(optional.isPresent())
+//        {
+//            registration=registrationRepository.findById(id).get();
+//            registration.setPassword(pass);
+//            registration.setEmailId(mail);
+//            registrationRepository.save(registration);
+//        }
+//        else
+//        {
+//            throw new UserNotFoundException();
+//        }
+//        return registration;
+        if(registrationRepository.existsById(registration.getId()))
         {
-            registration=registrationRepository.findById(id).get();
-            registration.setPassword(pass);
-            registration.setEmailId(mail);
-            registrationRepository.save(registration);
+            Registration updateUser=registrationRepository.save(registration);
+            return updateUser;
         }
         else
         {
-            throw new UserNotFoundException();
+            throw new UserNotFoundException("User is not exists");
         }
-        return registration;
     }
 }

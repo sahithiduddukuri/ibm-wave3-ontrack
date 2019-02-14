@@ -41,7 +41,7 @@ public class RegistrationController {
     }
 
     @DeleteMapping("registration/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") String id) throws UserNotFoundException
+    public ResponseEntity<?> deleteUser(@PathVariable("id") int id) throws UserNotFoundException
     {
         try
         {
@@ -63,7 +63,7 @@ public class RegistrationController {
     public ResponseEntity<?> updateUser(@RequestBody Registration registration,@PathVariable("id") String id) throws UserNotFoundException
     {
         try{
-            Registration updatedTrack = registrationService.updateUser(registration.getPassword(),registration.getEmailId(),id);
+            Registration updatedTrack = registrationService.updateUser(registration);
             responseEntity = new ResponseEntity(registration , HttpStatus.OK);
         } catch (UserNotFoundException e) {
 
@@ -85,8 +85,9 @@ public class RegistrationController {
         }
         catch (Exception ex)
         {
-            responseEntity = new ResponseEntity("Error !!! Try after sometime.", HttpStatus.INTERNAL_SERVER_ERROR);
+
         }
+//        responseEntity = new ResponseEntity(registrationService.getAllUser(),HttpStatus.OK);
         return responseEntity;
     }
 }

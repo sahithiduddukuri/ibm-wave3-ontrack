@@ -9,14 +9,16 @@
         <p>Price £199.99</p>
       </div>
       </mat-card-header>
-      
-   
+     
+    
      <mat-card-actions>
-       <button mat-raised-button (click)="AddToCart()">AddToCart</button>
+
+       <button mat-button (click)="AddToCart()" >AddToCart</button>
+   
+
+      
        <button mat-raised-button (click)="openDialog()">Details</button>
-       <div class="buy">
-       <button mat-raised-button (click)="buy" >Buy</button>
-       </div>
+       <button mat-button>Buy</button>
      </mat-card-actions>
    </mat-card>
   

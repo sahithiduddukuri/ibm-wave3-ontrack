@@ -1,6 +1,15 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+
 import { DailogComponent } from './../dailog/dailog.component';
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { OnTrackService } from '../../ontrack.service';
+
+
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -39,4 +48,3 @@ export class CardComponent implements OnInit {
 }
 
   }
-

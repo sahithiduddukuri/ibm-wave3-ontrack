@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 
 
 import { SearchComponent } from './components/search/search.component';
@@ -26,7 +27,8 @@ import { DailogComponent } from './components/dailog/dailog.component';
   CommonModule,
   MatCardModule,
   OntrackMaterialModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+
 
   ],
 

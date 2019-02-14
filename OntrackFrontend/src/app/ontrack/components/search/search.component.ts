@@ -1,6 +1,9 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { OntrackserviceService } from '../../ontrackservice.service';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Ontrack } from '../../ontrack';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-search',
@@ -8,17 +11,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @Output() searchEvent = new EventEmitter<any>();
+  value: string;
+  @Input()
+  ontrack: Ontrack;
 
-  constructor(private router: Router) { }
+  constructor(private searchService: SearchService, private http: HttpClient) {
+    console.log('name' , this.value);
+   }
+  onKey(event: any) {
+    this.value = event.target.value;
+    console.log(this.value);
+    this.searchService.searchfilter(this.value);
+  }
   ngOnInit() {
 
 }
-search(searchKey) {
-  if (location.pathname === '/' || location.pathname.search('/home') === 0) {
-    this.router.navigate(['home', {search : searchKey}]);
-  } else if (location.pathname.search('/home') === 0) {
-    this.router.navigate(['home', {search : searchKey}]);
-  }
-}
+
   }

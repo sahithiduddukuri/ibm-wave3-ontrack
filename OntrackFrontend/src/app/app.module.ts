@@ -1,3 +1,5 @@
+
+import { SearchService } from './ontrack/components/search/search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,19 +10,14 @@ import { OntrackModule } from './ontrack/ontrack.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-
-
-
-    // RegcompComponent,
-    // ChildregcompComponent
+    AppComponent
 
   ],
   imports: [
@@ -29,10 +26,10 @@ import { OntrackserviceService } from './ontrack/ontrackservice.service';
     OntrackModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [OntrackserviceService],
+  providers: [OntrackserviceService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

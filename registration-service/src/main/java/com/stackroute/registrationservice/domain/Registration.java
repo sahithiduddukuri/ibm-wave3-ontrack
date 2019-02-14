@@ -19,7 +19,7 @@ public class Registration
     private String password;
     private String emailId;
 
-    public Registration(String name, String userId, String password, String emailId, String gender) {
+    public Registration(String name, String userId, String password, String emailId,) {
         this.name = name;
         this.userId = userId;
         this.password = password;

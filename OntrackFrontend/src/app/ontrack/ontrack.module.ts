@@ -8,15 +8,16 @@ import { CommonModule } from '@angular/common';
 import { OntrackMaterialModule } from './ontrack.material.module';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/card/card.component';
+import { RegistrationcompComponent } from './components/registrationcomp/registrationcomp.component';
+import { ChildregComponent } from './components/registrationcomp/childreg/childreg.component';
 
  @NgModule({
-  declarations: [HomeComponent, CardComponent, SearchComponent, DailogComponent ],
+  declarations: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, ChildregComponent ],
   imports: [
   CommonModule,
   MatCardModule,
   OntrackMaterialModule,
-  BrowserAnimationsModule,
-
+  BrowserAnimationsModule
   ],
 
   providers: [{ provide: MatDialogModule, useValue: {} },
@@ -33,7 +34,7 @@ import { CardComponent } from './components/card/card.component';
        DailogComponent,
     ],
 
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent ]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, ChildregComponent ]
 
 })
 export class OntrackModule { }

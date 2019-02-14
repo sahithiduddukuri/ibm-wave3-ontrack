@@ -27,6 +27,7 @@ public class SeedDataApplicationListener implements ApplicationListener<ContextR
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event)
     {
+        feedRegistartionData.setId(Integer.parseInt(environment.getProperty("registration.1.id")));
         feedRegistartionData.setName(environment.getProperty("registration.1.name"));
         feedRegistartionData.setUserId(environment.getProperty("registration.1.userId"));
         feedRegistartionData.setPassword(environment.getProperty("registration.1.password"));
@@ -44,38 +45,38 @@ public class SeedDataApplicationListener implements ApplicationListener<ContextR
             ex1.printStackTrace();
         }
 
-        feedRegistartionData.setName(environment.getProperty("registration.2.name"));
-        feedRegistartionData.setUserId(environment.getProperty("registration.2.userId"));
-        feedRegistartionData.setPassword(environment.getProperty("registration.2.password"));
-        feedRegistartionData.setEmailId(environment.getProperty("registration.2.emailId"));
-        try
-        {
-            registrationService.saveUser(feedRegistartionData);
-        }
-        catch (UserAlreadyExistsException ex)
-        {
-            ex.printStackTrace();
-        }
-        catch (UserNotFoundException ex1)
-        {
-            ex1.printStackTrace();
-        }
-
-        feedRegistartionData.setName(environment.getProperty("registration.3.name"));
-        feedRegistartionData.setUserId(environment.getProperty("registration.3.userId"));
-        feedRegistartionData.setPassword(environment.getProperty("registration.3.password"));
-        feedRegistartionData.setEmailId(environment.getProperty("registration.3.emailId"));
-        try
-        {
-            registrationService.saveUser(feedRegistartionData);
-        }
-        catch (UserAlreadyExistsException ex)
-        {
-            ex.printStackTrace();
-        }
-        catch (UserNotFoundException ex1)
-        {
-            ex1.printStackTrace();
-        }
+//        feedRegistartionData.setName(environment.getProperty("registration.2.name"));
+//        feedRegistartionData.setUserId(environment.getProperty("registration.2.userId"));
+//        feedRegistartionData.setPassword(environment.getProperty("registration.2.password"));
+//        feedRegistartionData.setEmailId(environment.getProperty("registration.2.emailId"));
+//        try
+//        {
+//            registrationService.saveUser(feedRegistartionData);
+//        }
+//        catch (UserAlreadyExistsException ex)
+//        {
+//            ex.printStackTrace();
+//        }
+//        catch (UserNotFoundException ex1)
+//        {
+//            ex1.printStackTrace();
+//        }
+//
+//        feedRegistartionData.setName(environment.getProperty("registration.3.name"));
+//        feedRegistartionData.setUserId(environment.getProperty("registration.3.userId"));
+//        feedRegistartionData.setPassword(environment.getProperty("registration.3.password"));
+//        feedRegistartionData.setEmailId(environment.getProperty("registration.3.emailId"));
+//        try
+//        {
+//            registrationService.saveUser(feedRegistartionData);
+//        }
+//        catch (UserAlreadyExistsException ex)
+//        {
+//            ex.printStackTrace();
+//        }
+//        catch (UserNotFoundException ex1)
+//        {
+//            ex1.printStackTrace();
+//        }
     }
 }

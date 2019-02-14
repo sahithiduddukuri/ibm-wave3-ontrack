@@ -2,7 +2,7 @@ import { LogincompComponent } from './ontrack/components/logincomp/logincomp.com
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CardComponent } from './ontrack/components/card/card.component';
-import { HomeComponent } from './ontrack/components/home/home.component';
+import { RegistrationcompComponent } from './ontrack/components/registrationcomp/registrationcomp.component';
 
 
 const routes: Routes = [
@@ -10,10 +10,7 @@ const routes: Routes = [
     path: 'AddToCart', component: CardComponent
   },
   {
-    path: 'login' , component: LogincompComponent
-  },
-  {
-    path: '**' , component: HomeComponent
+    path: 'registration', component: RegistrationcompComponent
   }
 ];
 

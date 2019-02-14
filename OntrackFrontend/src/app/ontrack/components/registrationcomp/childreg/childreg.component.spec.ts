@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildregcompComponent } from './childregcomp.component';
+import { ChildregComponent } from './childreg.component';
 
-describe('ChildregcompComponent', () => {
-  let component: ChildregcompComponent;
-  let fixture: ComponentFixture<ChildregcompComponent>;
+describe('ChildregComponent', () => {
+  let component: ChildregComponent;
+  let fixture: ComponentFixture<ChildregComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChildregcompComponent ]
+      declarations: [ ChildregComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChildregcompComponent);
+    fixture = TestBed.createComponent(ChildregComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-import { LogincompComponent } from './components/logincomp/logincomp.component';
+import { HttpClient } from '@angular/common/http';
 
 
 import { SearchComponent } from './components/search/search.component';
@@ -14,21 +14,25 @@ import { OntrackMaterialModule } from './ontrack.material.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { RegcompComponent } from './components/regcomp/regcomp.component';
-import { ChildregcompComponent } from './components/regcomp/childregcomp/childregcomp.component';
 import { CardComponent } from './components/card/card.component';
+
+import { RegistrationcompComponent } from './components/registrationcomp/registrationcomp.component';
+import { ChildregComponent } from './components/registrationcomp/childreg/childreg.component';
 import { DailogComponent } from './components/dailog/dailog.component';
 
-
  @NgModule({
-  // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegcompComponent, ChildregcompComponent, DailogComponent, LogincompComponent ],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, ChildregComponent, DailogComponent ],
+
 
   imports: [
   CommonModule,
   MatCardModule,
   OntrackMaterialModule,
   BrowserAnimationsModule
+
+
+
+
 
   ],
 
@@ -46,6 +50,9 @@ import { DailogComponent } from './components/dailog/dailog.component';
     entryComponents: [
       DailogComponent,
     ],
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, LogincompComponent ]
+
+
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, ChildregComponent ]
+
 })
 export class OntrackModule { }

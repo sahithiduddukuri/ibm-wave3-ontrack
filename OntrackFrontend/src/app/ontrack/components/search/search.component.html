@@ -1,7 +1,7 @@
  
  <mat-form-field appearance="inline" >
       <div class="box">
-      <input matInput placeholder="Search for product, brand and more" (input)="search($event.target.value)" >
+      <input matInput placeholder="Search for product, brand and more" (input)="onKey($event)" >
      <mat-icon matSuffix>search</mat-icon> 
       <i class="material-icons">
         search

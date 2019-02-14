@@ -42,11 +42,6 @@ import {MatListModule} from '@angular/material/list';
           MatInputModule
 
          ]
-        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
-        MatGridListModule,
-        MatInputModule
-
-      ]
 
    })
   export class OntrackMaterialModule { }

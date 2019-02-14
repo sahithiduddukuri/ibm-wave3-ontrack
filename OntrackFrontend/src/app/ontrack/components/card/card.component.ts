@@ -1,14 +1,13 @@
 
 
-import { Component } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DailougeComponent } from 'src/app/components/dailouge/dailouge.component';
+
 
 import { DailogComponent } from './../dailog/dailog.component';
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../ontrack.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 
 
 @Component({
@@ -51,5 +50,3 @@ export class CardComponent implements OnInit {
 }
 
   }
-
-}

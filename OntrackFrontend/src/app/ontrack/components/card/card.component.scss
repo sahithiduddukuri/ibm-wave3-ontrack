@@ -6,20 +6,12 @@
   font-weight: 700;
  padding-top: 5%;
 }
-//   p{
-//       color: black;
-
-//   }
-
-
 .container {
   width: 100%;
   justify-content: flex-start;
   display: flex;
   flex-flow: row wrap;
-
 }
-
 .product, .product--blue, .product--orange, .product--red, .product--green, .product--yellow, .product--pink {
   box-shadow: 1px 5px 15px #CCC;
   width: 15em;
@@ -113,5 +105,3 @@
   color: rgba(43, 45, 66, 0.7);
   font-size: 1.5em;
 }
-
-

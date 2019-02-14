@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// import 'hammerjs';
-=======
-//import 'hammerjs';
->>>>>>> 26cd6d9b87f00ea4917739773564eeb835638d78
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

@@ -16,12 +16,6 @@ import { OntrackserviceService } from './ontrack/ontrackservice.service';
 @NgModule({
   declarations: [
     AppComponent,
-
-
-
-    // RegcompComponent,
-    // ChildregcompComponent
-
   ],
   imports: [
     BrowserModule,

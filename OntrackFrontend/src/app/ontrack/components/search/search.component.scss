@@ -1,5 +1,36 @@
-.search{
-    top: 30px;
-    left: 400px;
+mat-form-field{
+
+    width: 500px;
+    font-size: 15px;
+    padding: 0px;
+    padding-left: 400px;
+   padding-top: 6px;
+  color: white;
+  size: 12px;
+  
+}
+
+input{
+    color:black;
+    position: absolute;
+    height:30px;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  
+
+}
+.box{
+    padding-bottom: 0%;
+    background-color: white;
+    border-radius: 8px;
+}
+mat-icon{
     position: relative;
+    color: black;
+    float: right;
+
 }

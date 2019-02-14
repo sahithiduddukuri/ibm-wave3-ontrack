@@ -1,9 +1,14 @@
 
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+
 import { DailogComponent } from './../dailog/dailog.component';
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../ontrack.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+
 
 @Component({
   selector: 'app-card',
@@ -34,12 +39,12 @@ export class CardComponent implements OnInit {
 
   openDialog(): void {
    const dialogRef = this.dialog.open(DailogComponent, {
-    // width: '600px',
-    // height: '250px'
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.dialogResult = result;
     });
-  }
+
 }
+
+  }

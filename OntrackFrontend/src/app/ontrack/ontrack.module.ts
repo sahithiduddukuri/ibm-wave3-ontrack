@@ -1,3 +1,4 @@
+import { LogincompComponent } from './components/logincomp/logincomp.component';
 
 
 import { SearchComponent } from './components/search/search.component';
@@ -20,7 +21,8 @@ import { DailogComponent } from './components/dailog/dailog.component';
 
 
  @NgModule({
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegcompComponent, ChildregcompComponent, DailogComponent ],
+  // tslint:disable-next-line:max-line-length
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegcompComponent, ChildregcompComponent, DailogComponent, LogincompComponent ],
 
   imports: [
   CommonModule,
@@ -44,6 +46,6 @@ import { DailogComponent } from './components/dailog/dailog.component';
     entryComponents: [
       DailogComponent,
     ],
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent ]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, LogincompComponent ]
 })
 export class OntrackModule { }

@@ -1,6 +1,6 @@
 header{
 
-    background: blue;
+    //background: blue;
 
     background: #73C2FB;
 
@@ -10,6 +10,12 @@ header{
     position: fixed;
     width: 100%;
     height: 100px;
+}
+header img{
+    height: 100px;
+    width:180px;
+    float: left;
+    //padding-left:17px;
 }
 form{
     height: 400px;

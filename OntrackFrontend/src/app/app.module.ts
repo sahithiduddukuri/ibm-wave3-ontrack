@@ -19,9 +19,6 @@ import { OntrackserviceService } from './ontrack/ontrackservice.service';
   declarations: [
     AppComponent,
 
-    // RegcompComponent,
-    // ChildregcompComponent
-
   ],
   imports: [
     BrowserModule,

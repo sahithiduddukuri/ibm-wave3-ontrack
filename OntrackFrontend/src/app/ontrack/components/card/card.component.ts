@@ -1,6 +1,7 @@
-import { DailougeComponent } from './../dailouge/dailouge.component';
+
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { DailougeComponent } from 'src/app/components/dailouge/dailouge.component';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -15,9 +16,9 @@ export class CardComponent {
     width: '600px',
     height: '250px'
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   this.dialogResult = result;
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.dialogResult = result;
+    });
 }
 }

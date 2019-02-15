@@ -1,7 +1,9 @@
+import { LogincompComponent } from './ontrack/components/logincomp/logincomp.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CardComponent } from './ontrack/components/card/card.component';
 import { RegistrationcompComponent } from './ontrack/components/registrationcomp/registrationcomp.component';
+import { HomeComponent } from './ontrack/components/home/home.component';
 
 
 const routes: Routes = [
@@ -10,6 +12,9 @@ const routes: Routes = [
   },
   {
     path: 'registration', component: RegistrationcompComponent
+  },
+  {
+    path: 'onKey($event)', component: HomeComponent
   }
 ];
 

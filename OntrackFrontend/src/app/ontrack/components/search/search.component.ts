@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   onKey(event: any) {
     this.value = event.target.value;
     console.log(this.value);
-    this.searchService.searchfilter(this.value);
+    this.searchService.searchproduct(this.value);
   }
   ngOnInit() {
 

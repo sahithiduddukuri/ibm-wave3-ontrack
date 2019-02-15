@@ -10,10 +10,8 @@ export class SearchService {
     // @Input()
     // springEndPoint: String;
  constructor(private http: HttpClient ) {}
-    //     this.springEndPoint = 'http://localhost:8082/api/v1/';
-   searchfilter(searchText: string) {
-   // this.url = 'http:localhost:8082/api/v1/product/name?shoes=sports wear';
-    this.http.get('http://localhost:8082/api/v1/product/name?shoes=sports wear').subscribe(resp => {
+   searchproduct(searchText: string) {
+    this.http.get('http://localhost:8082/api/v1/product/name?shoes=formal wear').subscribe(resp => {
         console.log(resp);
     this.response = resp;
         });

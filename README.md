@@ -1,3 +1,4 @@
+
 [![Build Status](https://travis-ci.org/stackroute/ibm-wave3-ontrack.svg?branch=v1.0.0)](https://travis-ci.org/stackroute/ibm-wave3-ontrack)
 [![codecov](https://codecov.io/gh/stackroute/ibm-wave3-ontrack/branch/v1.0.0/graph/badge.svg)](https://codecov.io/gh/stackroute/ibm-wave3-ontrack)
 ![](https://img.shields.io/codecov/c/github/stackroute/ibm-wave3-ontrack.svg?style=flat)
@@ -13,6 +14,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ****Running the System****
-
 
 Run ```mvn clean compile package``` on all the services

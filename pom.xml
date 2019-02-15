@@ -36,6 +36,7 @@
         <module>login</module>
         <module>registration-service</module>
  <module>productService</module>
+        <module>recommend-service</module>
     </modules>
     <dependencies>
         <dependency>

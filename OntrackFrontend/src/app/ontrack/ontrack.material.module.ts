@@ -11,32 +11,26 @@ import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material';
-import { MatProgressSpinnerModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
     declarations: [],
     imports: [
     MatCardModule,
-    CommonModule,
       MatButtonModule,
-      FormsModule,
       MatIconModule,
-      MatTableModule,
-      MatProgressSpinnerModule,
       MatToolbarModule,
       MatMenuModule, MatFormFieldModule,
        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
-       MatInputModule
+       MatInputModule,
+       MatChipsModule
       ] ,
       exports: [
         MatCardModule,
         MatButtonModule,
         MatIconModule,
         MatToolbarModule,
-        MatMenuModule, MatFormFieldModule,
+        MatMenuModule, MatFormFieldModule, MatChipsModule,
 
       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
           MatGridListModule,

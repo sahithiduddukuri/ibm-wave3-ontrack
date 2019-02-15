@@ -2,7 +2,7 @@ version: "2"
 
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql:latest
     ports:
       - 3306:3306
     container_name: mysql
@@ -13,6 +13,12 @@ services:
 #      - '/opt/datasql:/var/lib/mysql'
     network_mode: host
 
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    container_name: mongo
+    network_mode: host
 
 
   apigateway:
@@ -47,17 +53,66 @@ services:
       expose:
       - 8888
 
+
+
+  deliverymanager:
+    build: delivery-manager/
+
   login:
     image: login-service:latest
     build: login/
+
     restart: always
     network_mode: host
     depends_on:
       - mysql
 
     ports:
+
       - 8090:8090
     expose:
       - 8090
+
+      -
+
+
+  registrationservice:
+    image: registration-servcie:latest
+    build: registration-service/
+    restart: always
+    network_mode: host
+    ports:
+      - 8805:8805
+    expose:
+      - 8805
+
+  mongodb:
+    image: mongo:3.4-jessie
+    container_name: "RegistrationDB"
+    ports:
+      - 27017:27017
+
+  productservice:
+    image: product-servcie:latest
+    build: ./productService
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+    ports:
+      - 8084:8084
+    expose:
+      - 8084
+
+  recommend-service:
+    image: recommend-service:latest
+    build: recommend-service/
+    restart: always
+    network_mode: host
+    ports:
+      - 8083:8083
+    expose:
+      - 8083
+
 
 

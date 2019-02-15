@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
+import { RouterEvent, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
   Login() {
-    console.log('gfdg');
-    this.route.navigate(['/login']);
+    this.route.navigate(['/' , 'login']);
   }
-
 }

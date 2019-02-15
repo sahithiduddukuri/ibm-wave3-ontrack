@@ -7,6 +7,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class OntrackserviceService {
 
   constructor() { }
+<<<<<<< HEAD
 
   form: FormGroup = new FormGroup(
     {
@@ -17,4 +18,6 @@ export class OntrackserviceService {
       emailId: new FormControl(''),
       gender: new FormControl('1')
     });
+=======
+>>>>>>> 6feda0e1ab8986eae2136541a3c66d4fe2b966cd
 }

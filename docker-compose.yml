@@ -107,8 +107,6 @@ services:
     build: recommend-service/
     restart: always
     network_mode: host
-    depends_on:
-      - neo4j
     ports:
       - 8083:8083
     expose:

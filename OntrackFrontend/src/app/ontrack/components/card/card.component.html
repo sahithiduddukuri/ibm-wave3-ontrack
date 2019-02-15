@@ -2,24 +2,22 @@
   <div class="container">
     <mat-card class='product--blue'>
       <mat-card-header>
+        
       <div class='product_inner'>
-        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' 
+        width='300'>
         <p>Nike Air (Women)</p>
         
         <p>Size 7</p>
         <p>Price £199.99</p>
       </div>
       </mat-card-header>
-     
-    
-     <mat-card-actions>
-
-       <button mat-button (click)="AddToCart()" >AddToCart</button>
-   
-
-      
+     <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
        <button mat-raised-button (click)="openDialog()">Details</button>
-       <button mat-button>Buy</button>
+       <mat-card-actions align="center">
+          <button mat-raised-button (click)="AddToCart()">AddToCart</button>
+      </mat-card-actions>
      </mat-card-actions>
    </mat-card>
   
@@ -32,9 +30,12 @@
         <p>Price £99.99</p>
       </div>
     </mat-card-header>
-    <mat-card-actions>
-        <button mat-button>Buy</button>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
         <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
     </mat-card-actions>
     </mat-card>
 
@@ -47,14 +48,17 @@
         <p>Price £299.99</p>
       </div>
     </mat-card-header>
-      <mat-card-actions>
-          <button mat-button>Buy</button>
+      <mat-card-actions align="center">
+          <button mat-raised-button (click)="buy()">Buy</button>
           <button mat-raised-button (click)="openDialog()">Details</button>
+          <mat-card-actions>
+              <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+          </mat-card-actions>
         </mat-card-actions>
       </mat-card>
 
     <mat-card class='product--red'>
-      <mat-card-header>
+      <mat-card-header align="center">
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
         <p>Nike Air (Women)</p>
@@ -62,9 +66,12 @@
         <p>Price £399.99</p>
       </div>
     </mat-card-header>
-    <mat-card-actions>
-        <button mat-button>Buy</button>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
         <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
       </mat-card-actions>
     </mat-card>
     
@@ -77,9 +84,12 @@
         <p>Price £299.99</p>
       </div>
     </mat-card-header>
-    <mat-card-actions>
-        <button mat-button>Buy</button>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
         <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
     </mat-card-actions>
     </mat-card>  
   
@@ -92,9 +102,14 @@
           <p>Price £299.99</p>
         </div>
       </mat-card-header>
-        <mat-card-actions>
-            <button mat-button>Buy</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="buy()">Buy</button>
             <button mat-raised-button (click)="openDialog()">Details</button>
+            <mat-card-actions align="center">
+                <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+            </mat-card-actions>
         </mat-card-actions>
         </mat-card>
-  </div>
+
+      </div>
+  

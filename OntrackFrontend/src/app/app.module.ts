@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrationcompComponent } from './ontrack/components/registrationcomp/registrationcomp.component';
+import { ChildregComponent } from './ontrack/components/registrationcomp/childreg/childreg.component';
+import { RegserviceService } from './ontrack/regservice.service';
 
 
 
@@ -18,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // RegistrationcompComponent,
+    // ChildregComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [OntrackserviceService, SearchService],
+  providers: [OntrackserviceService, SearchService, RegserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

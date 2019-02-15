@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
- padding-top: 5%;
+ //padding-top: 5%;
 }
 .container {
   width: 100%;
@@ -63,6 +63,7 @@
   margin: 1em 0 0 0;
   background: none;
   cursor: pointer;
+  //flex-flow: row wrap;
   // transition: background ease-in .25s;
 }
 .product_inner button:hover {

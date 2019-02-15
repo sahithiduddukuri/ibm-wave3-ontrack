@@ -9,6 +9,7 @@ import com.stackroute.Login.security.SecurityTokenGenerator;
 import com.stackroute.Login.services.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ import java.util.Map;
 @RequestMapping("api/")
 public class UserController {
     private UserService userService;
+    ResponseEntity responseEntity;
 
     @Autowired
     public UserController(UserService userService) {
@@ -63,20 +65,24 @@ public class UserController {
         }
     }
 
-
+    @ApiOperation(value = "return user into repository")
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
         return new ResponseEntity<List<User>>(userService.getAllUsers(),HttpStatus.OK);
     }
 
-
+    @ApiOperation(value = "Accept user into repository")
     @PostMapping("users")
-    public ResponseEntity<?> saveEvent(@RequestBody User user)  {
-       userService.saveUser(user);
-        return new ResponseEntity(user, HttpStatus.CREATED);
+    public ResponseEntity<?> saveEvent(@RequestBody User user)  throws UserNotFoundException {
+        try {
+            userService.saveUser(user);
+            responseEntity = new ResponseEntity<User>(user, HttpStatus.OK);
+        }catch (UserNotFoundException ex){
+            responseEntity =  new ResponseEntity<>(ex.getMessage(), HttpStatus.OK);
+        }
+        return responseEntity;
     }
-
 
 
 }

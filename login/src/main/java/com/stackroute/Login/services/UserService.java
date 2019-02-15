@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UserService{
-    public User saveUser(User user);
+    public User saveUser(User user) throws UserNotFoundException;
     public List<User> getAllUsers();
-    public User findByUserIdAndPassword(String userId,String password);
+    public User findByUserIdAndPassword(String userId,String password) throws UsernameAndPasswordMismatchException;
 }

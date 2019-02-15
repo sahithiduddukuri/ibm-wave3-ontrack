@@ -8,11 +8,10 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mysqldocker
-    volumes:
-      - '/opt/datasql:/var/lib/mysql'
-    network_mode: "host"
-    hostname: localhost
+      MYSQL_DATABASE: mysqldock
+#    volumes:
+#      - '/opt/datasql:/var/lib/mysql'
+    network_mode: host
 
 
 
@@ -57,8 +56,8 @@ services:
       - mysql
 
     ports:
-      - 8088:8088
+      - 8090:8090
     expose:
-      - 8088
+      - 8090
 
 

@@ -80,9 +80,9 @@ services:
     restart: always
     network_mode: host
     ports:
-      - 8887:8887
+      - 8805:8805
     expose:
-      - 8887
+      - 8805
 
   mongodb:
     image: mongo:3.4-jessie

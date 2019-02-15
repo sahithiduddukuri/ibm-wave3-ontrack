@@ -18,7 +18,7 @@ public class SwaggerConfig
     {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.stackroute.userregistrationservice"))
+                .apis(RequestHandlerSelectors.basePackage("com.stackroute.registrationservice"))
                 .paths(regex("/api/v1.*"))
                 .build();
     }

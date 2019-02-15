@@ -3,6 +3,7 @@ package com.stackroute.registrationservice.feedcomponent;
 import com.stackroute.registrationservice.domain.Registration;
 import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.registrationservice.exceptions.UserNotFoundException;
+import com.stackroute.registrationservice.repository.RegistrationRepository;
 import com.stackroute.registrationservice.service.RegistrationService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,34 +17,53 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @Primary
-public class SeedDataApplicationListener implements ApplicationListener<ContextRefreshedEvent>
-{
+public class SeedDataApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
+    private RegistrationRepository registrationRepository;
+
     @Autowired
-    Environment environment;
-    @Autowired
-    RegistrationService registrationService;
-    Registration feedRegistartionData = new Registration();
+    public SeedDataApplicationListener(RegistrationRepository registrationRepository) {
+        this.registrationRepository = registrationRepository;
+    }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent event)
-    {
-        feedRegistartionData.setId(Integer.parseInt(environment.getProperty("registration.1.id")));
-        feedRegistartionData.setName(environment.getProperty("registration.1.name"));
-        feedRegistartionData.setUserId(environment.getProperty("registration.1.userId"));
-        feedRegistartionData.setPassword(environment.getProperty("registration.1.password"));
-        feedRegistartionData.setEmailId(environment.getProperty("registration.1.emailId"));
-        try
-        {
-            registrationService.saveUser(feedRegistartionData);
-        }
-        catch (UserAlreadyExistsException ex)
-        {
-            ex.printStackTrace();
-        }
-        catch (UserNotFoundException ex1)
-        {
-            ex1.printStackTrace();
-        }
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+
+        registrationRepository.save(new Registration(100, "deb", "1234", "deb123", "deb@gmail.com"));
+
+    }
+}
+//    @Autowired
+//    Environment environment;
+//
+//    @Autowired
+//    RegistrationService registrationService;
+//    Registration feedRegistartionData = new Registration();
+//
+//    @Override
+//    public void onApplicationEvent(ContextRefreshedEvent event)
+//    {
+//        feedRegistartionData.setId(Integer.parseInt(environment.getProperty("registration.1.id")));
+//        feedRegistartionData.setName(environment.getProperty("registration.1.name"));
+//        feedRegistartionData.setUserId(environment.getProperty("registration.1.userId"));
+//        feedRegistartionData.setPassword(environment.getProperty("registration.1.password"));
+//        feedRegistartionData.setEmailId(environment.getProperty("registration.1.emailId"));
+//        try
+//        {
+//            registrationService.saveUser(feedRegistartionData);
+//        }
+//        catch (UserAlreadyExistsException ex)
+//        {
+//            ex.printStackTrace();
+//        }
+//        catch (UserNotFoundException ex1)
+//        {
+//            ex1.printStackTrace();
+//        }
+
+
+
+
+
 
 //        feedRegistartionData.setName(environment.getProperty("registration.2.name"));
 //        feedRegistartionData.setUserId(environment.getProperty("registration.2.userId"));
@@ -78,5 +98,5 @@ public class SeedDataApplicationListener implements ApplicationListener<ContextR
 //        {
 //            ex1.printStackTrace();
 //        }
-    }
-}
+
+

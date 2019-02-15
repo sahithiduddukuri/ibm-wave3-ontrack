@@ -10,14 +10,14 @@ import java.util.List;
 public class User {
 
     @Id
-    int id;
+    String id;
     String name;
     String phno;
     String emailId;
     String gender;
-   /* @Relationship(type="Purchases",direction=Relationship.OUTGOING)
+    @Relationship(type="Purchases",direction=Relationship.OUTGOING)
     private Product products;
-*/
+
     public User() {
     }
 

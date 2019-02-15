@@ -1,4 +1,4 @@
- 
+<!--  
  <mat-form-field appearance="inline" >
       <div class="box">
       <input matInput placeholder="Search for product, brand and more" (input)="onKey($event)" >
@@ -7,4 +7,15 @@
         search
         </i>
     </div>
-  </mat-form-field>
+  </mat-form-field> -->
+
+  <input
+    (keyup)="searchTerm$.next($event.target.value)">
+
+<ul *ngIf="results">
+  <li *ngFor="let result of results | slice:0:9">
+    <a href="{{ result.latest }}" target="_blank">
+      {{ result.name }}
+    </a>
+  </li>
+</ul>

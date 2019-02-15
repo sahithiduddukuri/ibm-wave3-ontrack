@@ -4,24 +4,22 @@ import { Router } from '@angular/router';
 
 import { Ontrack } from '../../ontrack';
 import { SearchService } from './search.service';
-
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
+  providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
-  value: string;
-  @Input()
-  ontrack: Ontrack;
+  results: Object;
+  searchTerm$ = new Subject<string>();
 
-  constructor(private searchService: SearchService, private http: HttpClient) {
-    console.log('name' , this.value);
-   }
-  onKey(event: any) {
-    this.value = event.target.value;
-    console.log(this.value);
-    this.searchService.searchproduct(this.value);
+  constructor(private searchService: SearchService) {
+    this.searchService.search(this.searchTerm$)
+      .subscribe(results => {
+        this.results = results.results;
+      });
   }
   ngOnInit() {
 

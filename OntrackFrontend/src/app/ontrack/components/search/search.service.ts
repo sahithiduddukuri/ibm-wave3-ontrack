@@ -1,20 +1,29 @@
 import { Injectable, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/http';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
 @Injectable({
     providedIn: 'root'
 })
 export class SearchService {
-    url: string;
-    response: any;
-    get: any;
-    // @Input()
-    // springEndPoint: String;
- constructor(private http: HttpClient ) {}
-   searchproduct(searchText: string) {
-    this.http.get('http://localhost:8082/api/v1/product/name?shoes=formal wear').subscribe(resp => {
-        console.log(resp);
-    this.response = resp;
-        });
-    return this.response;
-    }
+    baseUrl: String = 'https://api.cdnjs.com/libraries';
+  queryUrl: String = '?search=';
+  debounceTime: any;
+
+  constructor(private http: HttpClient) { }
+
+  search(terms: Observable<string>) {
+    return terms.debounceTime(400)
+      .distinctUntilChanged()
+      .switchMap(term => this.searchEntries(term));
+  }
+
+  searchEntries(term) {
+    return this.http
+        .get(`this.baseUrl` + this.queryUrl + term)
+        .map(res => res.json());
+  }
  }

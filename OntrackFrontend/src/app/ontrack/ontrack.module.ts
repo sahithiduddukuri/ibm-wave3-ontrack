@@ -19,7 +19,7 @@ import { CardComponent } from './components/card/card.component';
 import { RegistrationcompComponent } from './components/registrationcomp/registrationcomp.component';
 import { ChildregComponent } from './components/registrationcomp/childreg/childreg.component';
 import { DailogComponent } from './components/dailog/dailog.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
  @NgModule({
   declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, ChildregComponent, DailogComponent ],
 
@@ -28,12 +28,8 @@ import { DailogComponent } from './components/dailog/dailog.component';
   CommonModule,
   MatCardModule,
   OntrackMaterialModule,
-  BrowserAnimationsModule
-
-
-
-
-
+  BrowserAnimationsModule,
+  MatFormFieldModule
   ],
 
   providers: [{ provide: MatDialogModule, useValue: {} },

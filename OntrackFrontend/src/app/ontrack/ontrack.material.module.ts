@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
     declarations: [],
     imports: [
@@ -21,14 +22,15 @@ import {MatListModule} from '@angular/material/list';
       MatMenuModule, MatFormFieldModule,
        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
-       MatInputModule
+       MatInputModule,
+       MatChipsModule
       ] ,
       exports: [
         MatCardModule,
         MatButtonModule,
         MatIconModule,
         MatToolbarModule,
-        MatMenuModule, MatFormFieldModule,
+        MatMenuModule, MatFormFieldModule, MatChipsModule,
 
       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
           MatGridListModule,

@@ -45,9 +45,9 @@ services:
       expose:
       - 8888
 
-  deliverymanager:
-    image: deliverymanager:latest
-    build: delivery-manager/
+  deliverymanagerlogin:
+    image: deliverymanagerlogin:latest
+    build: delivery-manager-login/
     restart: always
     network_mode: host
     depends_on:

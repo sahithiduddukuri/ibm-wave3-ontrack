@@ -1,6 +1,18 @@
 version: "2"
 services:
 
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: LoginDatabase
+#    volumes:
+#      - '/opt/datasql:/var/lib/mysql'
+    network_mode: host
+
   apigateway:
     image: zuul-service
     build: zuul-gatewayservice/
@@ -32,6 +44,18 @@ services:
       - 8888:8888
       expose:
       - 8888
+
+  deliverymanager:
+    image: deliverymanager:latest
+    build: delivery-manager/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+    ports:
+      - 8808:8808
+    expose:
+      - 8808
 
 
 

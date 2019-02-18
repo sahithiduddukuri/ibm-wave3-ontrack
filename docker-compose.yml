@@ -1,8 +1,15 @@
 version: "2"
 
 services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - 15672:15672
+      - 5672:5672
+    network_mode: host
+
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
     ports:
       - 3306:3306
     container_name: mysql
@@ -54,26 +61,22 @@ services:
       - 8888
 
 
-
-  deliverymanager:
-    build: delivery-manager/
-
-  login:
-    image: login-service:latest
-    build: login/
-
+  userauthentication:
+    image: user-authentication-service:latest
+    build: user-authentication/
     restart: always
     network_mode: host
     depends_on:
       - mysql
-
+      - eurekaserver
+      - configserver
+      - apigateway
     ports:
-
       - 8090:8090
     expose:
       - 8090
 
-      -
+
 
 
   registrationservice:
@@ -85,16 +88,16 @@ services:
       - 8805:8805
     expose:
       - 8805
-
-  mongodb:
-    image: mongo:3.4-jessie
-    container_name: "RegistrationDB"
-    ports:
-      - 27017:27017
+#
+#  mongodb:
+#    image: mongo:3.4-jessie
+#    container_name: "RegistrationDB"
+#    ports:
+#      - 27017:27017
 
   productservice:
     image: product-servcie:latest
-    build: ./productService
+    build: productService/
     restart: always
     network_mode: host
     depends_on:
@@ -109,10 +112,9 @@ services:
     build: recommend-service/
     restart: always
     network_mode: host
+#    depends_on:
+#      - neo4j
     ports:
       - 8083:8083
     expose:
       - 8083
-
-
-

@@ -3,6 +3,7 @@ package com.stackroute.registrationservice.controller;
 import com.stackroute.registrationservice.domain.Registration;
 import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.registrationservice.exceptions.UserNotFoundException;
+import com.stackroute.registrationservice.service.RabbitMqProducer;
 import com.stackroute.registrationservice.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,9 @@ public class RegistrationController {
     private RegistrationService registrationService;
 
     @Autowired
+    RabbitMqProducer rabbitMqProducer;
+
+    @Autowired
     public RegistrationController(RegistrationService registrationService) {
         this.registrationService = registrationService;
     }
@@ -28,6 +32,7 @@ public class RegistrationController {
         {
            registrationService.saveUser(registration);
            responseEntity=new ResponseEntity(registration, HttpStatus.CREATED);
+            rabbitMqProducer.produce(registration);
         }
         catch (UserAlreadyExistsException ex1)
         {

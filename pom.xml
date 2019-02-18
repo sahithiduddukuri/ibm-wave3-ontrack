@@ -30,12 +30,11 @@
         <module>zuul-gatewayservice</module>
         <module>config-server</module>
         <module>eventbrite-service</module>
- 	 <module>delivery-manager</module>
-        <module>login</module>
+        <module>user-authentication</module>
         <module>registration-service</module>
         <module>productService</module>
         <module>recommend-service</module>
-
+ 
     </modules>
     <dependencies>
         <dependency>

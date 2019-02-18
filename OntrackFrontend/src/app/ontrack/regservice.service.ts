@@ -8,12 +8,11 @@ export class RegserviceService {
 
   constructor() { }
 
-  // form: FormGroup = new FormGroup({
-  //   $key: new FormControl(null),
-  //   name: new FormControl(''),
-  //   emailId: new FormControl(''),
-  //   userId: new FormControl(''),
-  //   password: new FormControl('')
-  // });
-
+  form: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    name: new FormControl('', Validators.required),
+    userId: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    emailId: new FormControl('', Validators.email)
+  });
 }

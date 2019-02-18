@@ -1,3 +1,5 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchService } from './ontrack/components/search/search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,12 +10,15 @@ import { OntrackModule } from './ontrack/ontrack.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
-import { AuthenticationService } from './ontrack/components/authentication.service';
-import { from } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -21,10 +26,11 @@ import { from } from 'rxjs';
     OntrackModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule,
+    FlexLayoutModule
   ],
-  providers: [OntrackserviceService, AuthenticationService],
+  providers: [OntrackserviceService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

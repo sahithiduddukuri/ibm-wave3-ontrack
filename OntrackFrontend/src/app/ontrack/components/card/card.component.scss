@@ -4,13 +4,37 @@
   box-sizing: border-box;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
- //padding-top: 5%;
+   padding-top: 3%;
 }
+// .box{
+//   color: #000;
+//   position: absolute;
+//   top: 50px;
+//   left: 600px;
+//   border-radius: 8px;
+//   width: 100%;
+//   z-index: 1;
+// }
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  left: 400px;
+  box-sizing: border-box;
+  color: #000;
+  position: absolute;
+  top: 30px;
+  border-radius: 8px;
+  z-index: 1;
+  position: fixed;
+}
+
 .container {
   width: 100%;
   justify-content: flex-start;
   display: flex;
   flex-flow: row wrap;
+  overflow: auto;
 }
 .product, .product--blue, .product--orange, .product--red, .product--green, .product--yellow, .product--pink {
   box-shadow: 1px 5px 15px #CCC;
@@ -19,7 +43,7 @@
   border-radius: 3px;
   padding: 2em;
   margin: 1em;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   flex: auto;
 }

@@ -1,26 +1,9 @@
-<<<<<<< HEAD
-/* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-div.conatiner{
-=======
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 div.container{
->>>>>>> 6feda0e1ab8986eae2136541a3c66d4fe2b966cd
     margin: 0px 40px;
 }
 
 .fill-remaining-space {
-<<<<<<< HEAD
-    flex: 1 1 auto;
-}
-
-form.normal-form {
-    margin: 10px;
-=======
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
@@ -49,5 +32,4 @@ mat-radio-group mat-radio-button{
 
 .button-row button{
     margin: 5px;
->>>>>>> 6feda0e1ab8986eae2136541a3c66d4fe2b966cd
 }

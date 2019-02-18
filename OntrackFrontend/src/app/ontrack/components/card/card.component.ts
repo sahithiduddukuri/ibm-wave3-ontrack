@@ -7,6 +7,7 @@ import { DailogComponent } from './../dailog/dailog.component';
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../ontrack.service';
+import { Search } from '../search/Search';
 
 
 
@@ -18,6 +19,8 @@ import { OnTrackService } from '../../ontrack.service';
 
 export class CardComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
+  products: Search[] = [];
+productName: String;
   @Input()
   // tslint:disable-next-line:whitespace
   cart: any ;
@@ -30,8 +33,6 @@ export class CardComponent implements OnInit {
   // }
 
   dialogResult: any;
-  ngOnInit() {
-  }
   AddToCart() {
     console.log('click event call');
     this.cartAddEvent.emit(this.cart);
@@ -47,4 +48,31 @@ export class CardComponent implements OnInit {
 
 }
 
+ngOnInit() {
+  this.products = [
+    {
+      'productId': '1.',
+      'productName': 'Nike'
+    },
+    {
+      'productId': '2.',
+      'productName': 'Nike'
+    },
+    {
+      'productId': '3.',
+      'productName': 'Brakley'
+    }
+  ];
+ }
+ search() {
+   if (this.productName !== '') {
+    this.products = this.products.filter(res => {
+      return res.productName.toLocaleLowerCase().match(this.productName.toLocaleLowerCase());
+    });
+   }
+   // tslint:disable-next-line:one-line
+   else if (this.productName === '') {
+     this.ngOnInit();
+   }
+ }
   }

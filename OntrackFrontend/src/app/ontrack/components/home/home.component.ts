@@ -16,4 +16,7 @@ export class HomeComponent implements OnInit {
   Login() {
     this.route.navigate(['/' , 'login']);
   }
+  Signup() {
+    this.route.navigate(['/' , 'Signup']);
+  }
 }

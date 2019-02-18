@@ -1,10 +1,23 @@
-       
-  <div class="container">
+
+
+<input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
+
+<table class="table">
+  <!-- <tr>
+    <th>productId</th>
+    <th>productName</th>
+  </tr> -->
+  <tr *ngFor='let o of products'>
+    <td>{{o.productId}}</td>
+    <td>{{o.productName}}</td>
+<div class="container">
     <mat-card class='product--blue'>
       <mat-card-header>
+        
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
         <p>Nike Air (Women)</p>
+        
         <p>Size 7</p>
         <p>Price £199.99</p>
       </div>
@@ -35,6 +48,7 @@
         </mat-card-actions>
     </mat-card-actions>
     </mat-card>
+
     <mat-card class='product--yellow'>
       <mat-card-header>
       <div class='product_inner'>
@@ -52,6 +66,7 @@
           </mat-card-actions>
         </mat-card-actions>
       </mat-card>
+
     <mat-card class='product--red'>
       <mat-card-header align="center">
       <div class='product_inner'>
@@ -69,6 +84,7 @@
         </mat-card-actions>
       </mat-card-actions>
     </mat-card>
+    
     <mat-card class='product--green'>
       <mat-card-header>
       <div class='product_inner'>
@@ -87,7 +103,7 @@
     </mat-card-actions>
     </mat-card>  
   
-    <mat-card class='product--pink'>
+    <!-- <mat-card class='product--pink'>
         <mat-card-header>
         <div class='product_inner'>
           <img src='../assets/img/3.jpg' width='300px'>
@@ -103,7 +119,11 @@
                 <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
             </mat-card-actions>
         </mat-card-actions>
-        </mat-card>
+        </mat-card> -->
 
       </div>
-  
+    </tr>
+  </table>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</body>

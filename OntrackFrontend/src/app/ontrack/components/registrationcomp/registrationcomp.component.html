@@ -1,15 +1,61 @@
-<!-- <p>
-  registrationcomp works!
-</p> -->
-<!-- <div class="container"> -->
-    <mat-chip-list>
-        <mat-chip class="chip" color="accent" selected><h1>New User Registration</h1></mat-chip>
-      </mat-chip-list>
-  <!-- <mat-toolbar>
-    <span class="fill-remaining-space"></span>
-    <span>New user registration</span>
-    <span class="fill-remaining-space"></span>
-  </mat-toolbar> -->
+<div class="box">
+  
+<h1>REGISTRATION FORM</h1>
 
-  <app-childreg></app-childreg>
-<!-- </div> -->
+<br>
+<form [formGroup]="user" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" class="id">
+    <mat-label>User login</mat-label>
+    <input matInput placeholder="Enter your email id" type="text"
+      formControlName="userId" required />
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-hint></mat-hint>
+  </mat-form-field>
+  </form>
+<br>
+<br>
+<form [formGroup]="user" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" class="id">
+    <mat-label>User login</mat-label>
+    <input matInput placeholder="Mobile No." type="text"
+      formControlName="Mobile" required />
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-hint></mat-hint>
+  </mat-form-field>
+  </form>
+<br>
+<br>
+<form [formGroup]="user" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" class="id">
+    <mat-label>User login</mat-label>
+    <input matInput placeholder="User Name" type="text"
+      formControlName="Name" required />
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-hint></mat-hint>
+  </mat-form-field>
+  </form>
+<br>
+<br>
+<form [formGroup]="user" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" class="id">
+    <mat-label>User login</mat-label>
+    <input matInput placeholder="password" type="text"
+      formControlName="password" required />
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-hint></mat-hint>
+  </mat-form-field>
+  </form>
+<br>
+<br>
+<form [formGroup]="user" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" class="id">
+    <mat-label>User login</mat-label>
+    <input matInput placeholder="Date of Birth" type="text"
+      formControlName="DOB" required />
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <mat-hint></mat-hint>
+  </mat-form-field>
+<br>
+<button mat-button color="primary" type="submit" [disabled]="!user.valid">Submit</button>
+</form>
+</div>

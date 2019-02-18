@@ -1,39 +1,37 @@
-header{
 
-<<<<<<< HEAD
-    background: blue;
-=======
->>>>>>> 6feda0e1ab8986eae2136541a3c66d4fe2b966cd
-
-    background: #73C2FB;
-
-    top: 0%;
-    left: 0%;
-    z-index: 1;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-}
-header img{
-    height: 100px;
-    width:180px;
-    float: left;
-<<<<<<< HEAD
-    padding-left:17px;
-=======
-    //padding-left:17px;
->>>>>>> 6feda0e1ab8986eae2136541a3c66d4fe2b966cd
-}
-form{
-    height: 400px;
-    position: relative;
-    top: 30px;
-    left: 200px;
-}
-
-mat-card-actions{
-float:right;
-padding-top:2%;
-padding-right: 2%;
-}
-
+.row{
+    display: flex;
+    }
+    .col3{
+        padding-left: 350px;
+        padding-top: 50px;
+        }
+    
+    
+    header{
+        background: #73C2FB;
+        top: 0%;
+        left: 0%;
+        z-index: 1;
+        position: fixed;
+        width: 100%;
+        height: 100px;
+    }
+    header img{
+        height: 100px;
+        width:180px;
+        //float: left;
+        //padding-left:17px;
+    }
+    form{
+        height: 400px;
+        position: relative;
+        top: 30px;
+        left: 200px;
+    }    
+    
+    
+    body{
+        padding-top:120px; 
+    }
+    

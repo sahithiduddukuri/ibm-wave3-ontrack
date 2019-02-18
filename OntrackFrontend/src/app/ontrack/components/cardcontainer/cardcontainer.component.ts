@@ -1,4 +1,4 @@
-import { SearchService } from './../search/search.service';
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardcontainerComponent implements OnInit {
   text: String;
-  constructor(private searchService: SearchService) { }
+  constructor() { }
 
   ngOnInit() {
     // this.searchService.searchfilter(this.text);

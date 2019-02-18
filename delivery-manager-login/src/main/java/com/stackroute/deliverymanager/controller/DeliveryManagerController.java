@@ -9,6 +9,7 @@ import com.stackroute.deliverymanager.security.SecurityTokenGenerator;
 import com.stackroute.deliverymanager.services.DeliveryManagerService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,8 +27,8 @@ import java.util.logging.Logger;
 @RequestMapping("api/")
 public class DeliveryManagerController {
 
-    @Autowired
     private DeliveryManagerService deliveryManagerService;
+    ResponseEntity responseEntity;
 
     @Autowired
     public DeliveryManagerController(DeliveryManagerService deliveryManagerService) {
@@ -86,9 +87,19 @@ public class DeliveryManagerController {
         return new ResponseEntity<List<DeliveryManager>>(deliveryManagerService.getAllManagers(),HttpStatus.OK);
     }
 
+    @ApiOperation(value="Accept delivery manager into repository")
     @PostMapping("deliveryManagers")
-    public ResponseEntity<?> saveEvent(@RequestBody DeliveryManager deliveryManager)
+    public ResponseEntity<?> saveEvent(@RequestBody DeliveryManager deliveryManager) throws UserNotFoundException
     {
-        return new ResponseEntity<>(deliveryManager, HttpStatus.CREATED);
+        try{
+            deliveryManagerService.saveManager(deliveryManager);
+            responseEntity = new ResponseEntity<DeliveryManager>(deliveryManager, HttpStatus.OK);
+        }
+        catch (UserNotFoundException ex)
+        {
+            responseEntity = new ResponseEntity<>(ex.getMessage(), HttpStatus.OK);
+        }
+
+        return responseEntity;
     }
 }

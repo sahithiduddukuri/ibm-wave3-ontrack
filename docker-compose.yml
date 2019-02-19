@@ -57,6 +57,17 @@ services:
     expose:
       - 8808
 
+  ontrack-delivery-front-end:
+    build: DM-login-angular-master/
+    image: ontrack
+    container_name: ontrack-delivery-front-end
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4201:4201
+    restart: always
+#    healthcheck:
+#    test: "exit 0"
 
 
 

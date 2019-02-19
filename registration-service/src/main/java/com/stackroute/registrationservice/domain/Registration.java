@@ -26,15 +26,21 @@ public class Registration
 
     @JsonProperty("password")
     private String password;
-    @JsonProperty("emailId")
-    private String emailId;
+    @JsonProperty("mobileNo")
+    private String mobileNo;
+    @JsonProperty("dateofBirth")
+    private String dateofBirth;
+    @JsonProperty("gender")
+    private String gender;
 
-    public Registration(int id,String name, String userId, String password, String emailId) {
+    public Registration(int id,String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
         this.id=id;
         this.name = name;
         this.userId = userId;
         this.password = password;
-        this.emailId = emailId;
+        this.mobileNo = mobileNo;
+        this.dateofBirth=dateofBirth;
+        this.gender=gender;
     }
 
     @Override
@@ -44,7 +50,9 @@ public class Registration
                 ", name='" + name + '\'' +
                 ", userId='" + userId + '\'' +
                 ", password='" + password + '\'' +
-                ", emailId='" + emailId + '\'' +
+                ", mobileNo='" + mobileNo + '\'' +
+                ", dateofBirth='" + dateofBirth + '\'' +
+                ", gender='" + gender +
                 '}';
     }
 }

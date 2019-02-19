@@ -19,7 +19,7 @@ public class RabbitMqProducer {
     private String routingkey;
 
     public void produce(Registration registration){
-        msg = new Msg(registration.getEmailId(),registration.getPassword());
+        msg = new Msg(registration.getUserId(),registration.getPassword());
         amqpTemplate.convertAndSend(exchange, routingkey, msg);
         System.out.println("Send msg = " + msg);
     }

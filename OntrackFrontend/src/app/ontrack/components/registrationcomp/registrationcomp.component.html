@@ -65,7 +65,7 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="UserId" [(ngModel)]="userid" name="userid" required>
+            <input matInput placeholder="name" [(ngModel)]="name" name="name" required>
             </mat-form-field>
           </td>
         </tr>
@@ -74,7 +74,7 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="User Name" [(ngModel)]="userid" name="username" required>
+            <input matInput placeholder="User Id" [(ngModel)]="userId" name="userId" required>
             </mat-form-field>
           </td>
         </tr>
@@ -98,14 +98,14 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="EmailId" [(ngModel)]="emailid" name="emailid" required>
+            <input matInput placeholder="mobileNo" [(ngModel)]="mobileNo" name="mobileNo" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="Date Of Birth" [(ngModel)]="dob" name="dob" required>
+            <input matInput placeholder="Date Of Birth" [(ngModel)]="dateofBirth" name="dob" required>
             </mat-form-field>
           </td>
         </tr>
@@ -127,5 +127,5 @@
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Register</button>
+    <button mat-raised-button (click)="register($event)" color="primary">Register</button>
   </mat-card-actions>  </mat-card>

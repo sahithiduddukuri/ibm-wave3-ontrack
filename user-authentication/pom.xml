@@ -8,10 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.stackroute</groupId>
+	<!--<groupId>com.stackroute</groupId>-->
 	<artifactId>user-authentication</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Login</name>
+	<!--<version>0.0.1-SNAPSHOT</version>-->
+	<name>user-authentication</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

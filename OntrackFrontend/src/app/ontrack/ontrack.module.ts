@@ -12,10 +12,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../../environments/environment';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 // import { MatDialogModule } from '@angular/material/dialog';
-import { MatCardModule, MatIconModule, MatLabel, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatCardModule, MatIconModule, MatLabel, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatRadioModule } from '@angular/material';
 import { OntrackMaterialModule } from './ontrack.material.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,7 +46,8 @@ import { LoginModule } from './components/login/login.module';
   FlexLayoutModule,
   ReactiveFormsModule,
   FormsModule,
-  LoginModule
+  LoginModule,
+  MatProgressSpinnerModule, MatRadioModule
 
   ],
 

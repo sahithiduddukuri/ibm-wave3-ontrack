@@ -118,3 +118,13 @@ services:
       - 8083:8083
     expose:
       - 8083
+
+  ontrackFrontend:
+    build: OntrackFrontend/
+    image: ontrack-front-end
+    container_name: ontrack-front-end
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4200:4200
+    restart: always

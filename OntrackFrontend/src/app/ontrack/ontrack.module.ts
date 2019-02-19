@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-import { HeaderComponent } from './components/header/header.component';
-=======
->>>>>>> f7fced8690afff4ac16c06340be90b30e89f9e05
 import { HttpClient } from '@angular/common/http';
 
 

@@ -1,37 +1,37 @@
-package com.stackroute.registrationservice.feedcomponent;
-
-import com.stackroute.registrationservice.domain.Registration;
-import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
-import com.stackroute.registrationservice.exceptions.UserNotFoundException;
-import com.stackroute.registrationservice.repository.RegistrationRepository;
-import com.stackroute.registrationservice.service.RegistrationService;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
-//import sun.tools.java.Environment;
-
-@Component
-@Data
-@Primary
-public class SeedDataApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
-    private RegistrationRepository registrationRepository;
-
-    @Autowired
-    public SeedDataApplicationListener(RegistrationRepository registrationRepository) {
-        this.registrationRepository = registrationRepository;
-    }
-
-    @Override
-    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-
-        registrationRepository.save(new Registration(111, "deb1", "1234", "deb123", "8900147919","15-09-1994","Male"));
-
-    }
-}
+//package com.stackroute.registrationservice.feedcomponent;
+//
+//import com.stackroute.registrationservice.domain.Registration;
+//import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
+//import com.stackroute.registrationservice.exceptions.UserNotFoundException;
+//import com.stackroute.registrationservice.repository.RegistrationRepository;
+//import com.stackroute.registrationservice.service.RegistrationService;
+//import lombok.Data;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.ApplicationListener;
+//import org.springframework.context.annotation.Primary;
+//import org.springframework.context.event.ContextRefreshedEvent;
+//import org.springframework.core.env.Environment;
+//import org.springframework.stereotype.Component;
+////import sun.tools.java.Environment;
+//
+//@Component
+//@Data
+//@Primary
+//public class SeedDataApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
+//    private RegistrationRepository registrationRepository;
+//
+//    @Autowired
+//    public SeedDataApplicationListener(RegistrationRepository registrationRepository) {
+//        this.registrationRepository = registrationRepository;
+//    }
+//
+//    @Override
+//    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+//
+//        registrationRepository.save(new Registration(111, "deb1", "1234", "deb123", "8900147919","15-09-1994","Male"));
+//
+//    }
+//}
 //    @Autowired
 //    Environment environment;
 //

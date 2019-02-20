@@ -9,9 +9,9 @@
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<!--<groupId>com.stackroute</groupId>-->
-	<artifactId>registration-service</artifactId>
+	<artifactId>user-registration-service</artifactId>
 	<!--<version>0.0.1-SNAPSHOT</version>-->
-	<name>registration-service</name>
+	<name>user-registration-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

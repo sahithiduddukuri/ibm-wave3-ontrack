@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //package com.stackroute.productService;
 //
 //import org.junit.Test;
@@ -16,7 +16,7 @@
 //
 //}
 //
-=======
+
 // package com.stackroute.productService;
 
 // import org.junit.Test;
@@ -34,4 +34,4 @@
 
 // }
 
->>>>>>> eb8b9d5405ecdbc3269c14e8faad34d3b4ceb560
+

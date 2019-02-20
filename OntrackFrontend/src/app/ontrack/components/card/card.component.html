@@ -1,7 +1,7 @@
 
-
+<div class = "row">
 <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
-
+</div>
 <table class="table">
   <!-- <tr>
     <th>productId</th>
@@ -10,7 +10,7 @@
   <tr *ngFor='let o of products'>
     <td>{{o.productId}}</td>
     <td>{{o.productName}}</td>
-<div class="container">
+<div class="row">
     <mat-card class='product--blue'>
       <mat-card-header>
         

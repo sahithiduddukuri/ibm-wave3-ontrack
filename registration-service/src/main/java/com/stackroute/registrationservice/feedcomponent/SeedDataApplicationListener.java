@@ -28,7 +28,7 @@ public class SeedDataApplicationListener implements ApplicationListener<ContextR
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
-        registrationRepository.save(new Registration(110, "deb", "1234", "deb123", "8900147919","15-09-1994","Male"));
+        registrationRepository.save(new Registration(111, "deb1", "1234", "deb123", "8900147919","15-09-1994","Male"));
 
     }
 }

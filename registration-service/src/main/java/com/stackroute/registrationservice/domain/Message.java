@@ -12,9 +12,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = Msg.class)
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = Message.class)
 
-public class Msg {
+public class Message {
 
     @JsonProperty("userId")
     private String userId;

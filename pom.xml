@@ -33,7 +33,7 @@
         <module>user-authentication</module>
         <module>registration-service</module>
         <module>productService</module>
-        <module>recommend-service</module>
+        <module>recommendation-service</module>
  
     </modules>
     <dependencies>

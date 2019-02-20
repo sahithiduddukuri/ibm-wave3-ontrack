@@ -1,4 +1,4 @@
-package com.stackroute.recommendservice.domain;
+package com.stackroute.recommendationservice.domain;
 
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;

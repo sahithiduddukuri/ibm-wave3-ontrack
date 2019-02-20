@@ -1,9 +1,9 @@
-package com.stackroute.recommendservice.service;
+package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendservice.domain.Product;
-import com.stackroute.recommendservice.domain.User;
-import com.stackroute.recommendservice.repository.ProductRepository;
-import com.stackroute.recommendservice.repository.UserRepository;
+import com.stackroute.recommendationservice.domain.Product;
+import com.stackroute.recommendationservice.domain.User;
+import com.stackroute.recommendationservice.repository.ProductRepository;
+import com.stackroute.recommendationservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

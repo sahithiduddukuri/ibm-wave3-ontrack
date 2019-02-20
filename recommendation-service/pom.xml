@@ -9,9 +9,9 @@
 	    <relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>recommend-service</artifactId>
+	<artifactId>recommendation-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>recommend-service</name>
+	<name>recommendation-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -43,6 +43,18 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<version>2.1.2.RELEASE</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+	    </dependency>
 
 
 		<dependency>

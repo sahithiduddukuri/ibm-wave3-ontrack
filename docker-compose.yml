@@ -107,9 +107,9 @@ services:
     expose:
       - 8084
 
-  recommend-service:
-    image: recommend-service:latest
-    build: recommend-service/
+  recommendation-service:
+    image: recommendation-service:latest
+    build: recommendation-service/
     restart: always
     network_mode: host
 #    depends_on:

@@ -1,4 +1,4 @@
-//package com.stackroute.recommendservice;
+//package com.stackroute.recommendationservice;
 //
 //import org.junit.Test;
 //import org.junit.runner.RunWith;

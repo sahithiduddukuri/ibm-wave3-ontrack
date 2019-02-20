@@ -1,49 +1,19 @@
-package com.stackroute.recommendservice.controller;
+package com.stackroute.recommendationservice.controller;
 
-import com.stackroute.recommendservice.domain.Product;
-import com.stackroute.recommendservice.domain.User;
-import com.stackroute.recommendservice.repository.UserRepository;
+import com.stackroute.recommendationservice.domain.Product;
+import com.stackroute.recommendationservice.domain.User;
 
-import com.stackroute.recommendservice.service.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.stackroute.recommendationservice.service.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
 public class ProductController {
-//    @Autowired
-//    private UserRepository userRepository;
-//
-//    public void purchaseOrder()
-//    {
-//        User user = new User();
-//        user.setName("geetha");
-//        user.setPhno("7995947734");
-//        user.setGender("F");
-//        user.setEmailId("geethasri678@gmail.com");
-//        List<Product> products = new ArrayList<>();
-//        products.add(new Product("Casual shoes","Nike","white","7","$199"));
-//        products.add(new Product("formal shoes","feetway","black","10","$199"));
-//        userRepository.save(user);
-//    }
-//
-//    @GetMapping("/getOrders")
-//    public List<User> getPurchaseOrder()
-//    {
-//        return (List<User>)userRepository.findAll();
-//    }
-//
-//    @GetMapping("/{name}")
-//    public User getInfo(@PathVariable String name)
-//    {
-//        return userRepository.findByName(name);
-//    }
 
     UserServiceImpl userServiceImpl;
 

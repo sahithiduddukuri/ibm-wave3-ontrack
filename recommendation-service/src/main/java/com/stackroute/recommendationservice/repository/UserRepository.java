@@ -1,10 +1,8 @@
-package com.stackroute.recommendservice.repository;
+package com.stackroute.recommendationservice.repository;
 
-import com.stackroute.recommendservice.domain.Product;
-import com.stackroute.recommendservice.domain.User;
+import com.stackroute.recommendationservice.domain.User;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 import java.util.List;

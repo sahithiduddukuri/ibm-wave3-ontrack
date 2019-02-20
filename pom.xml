@@ -31,7 +31,7 @@
         <module>config-server</module>
         <module>eventbrite-service</module>
         <module>user-authentication</module>
-        <module>registration-service</module>
+        <module>user-registration-service</module>
         <module>productService</module>
         <module>recommendation-service</module>
  

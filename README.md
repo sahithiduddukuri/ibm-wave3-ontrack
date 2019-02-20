@@ -1,6 +1,6 @@
 
-[![Build Status](https://travis-ci.org/stackroute/ibm-wave3-ontrack.svg?branch=v1.0.0)](https://travis-ci.org/stackroute/ibm-wave3-ontrack)
-[![codecov](https://codecov.io/gh/stackroute/ibm-wave3-ontrack/branch/v1.0.0/graph/badge.svg)](https://codecov.io/gh/stackroute/ibm-wave3-ontrack)
+[![Build Status](https://travis-ci.org/stackroute/ibm-wave3-ontrack.svg?branch=v1.0.2)](https://travis-ci.org/stackroute/ibm-wave3-ontrack)
+[![codecov](https://codecov.io/gh/stackroute/ibm-wave3-ontrack/branch/v1.0.2/graph/badge.svg)](https://codecov.io/gh/stackroute/ibm-wave3-ontrack)
 ![](https://img.shields.io/codecov/c/github/stackroute/ibm-wave3-ontrack.svg?style=flat)
 
 ![](https://img.shields.io/snyk/vulnerabilities/github/stackroute/ibm-wave3-ontrack.svg?style=popout)

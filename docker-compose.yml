@@ -79,9 +79,9 @@ services:
 
 
 
-  registrationservice:
-    image: registration-servcie:latest
-    build: registration-service/
+  userregistrationservice:
+    image: user-registration-servcie:latest
+    build: user-registration-service/
     restart: always
     network_mode: host
     ports:
@@ -115,9 +115,9 @@ services:
 #    depends_on:
 #      - neo4j
     ports:
-      - 8083:8083
+      - 8086:8086
     expose:
-      - 8083
+      - 8086
 
   ontrackFrontend:
     build: Ontrack-Frontend/

@@ -32,7 +32,7 @@
         <module>eventbrite-service</module>
         <module>user-authentication</module>
         <module>user-registration-service</module>
-        <module>productService</module>
+        <module>product-service</module>
         <module>recommendation-service</module>
  
     </modules>

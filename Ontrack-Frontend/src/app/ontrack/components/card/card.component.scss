@@ -36,7 +36,7 @@ input[type=text] {
   flex-flow: row wrap;
   overflow: auto;
 }
-.product, .product--blue, .product--orange, .product--red, .product--green, .product--yellow, .product--pink {
+.products, .products--blue, .products--orange, .products--red, .products--green, .products--yellow, .products--pink {
   box-shadow: 1px 5px 15px #CCC;
   width: 15em;
   height: auto;
@@ -47,25 +47,25 @@ input[type=text] {
   position: relative;
   flex: auto;
 }
-.product--blue {
+.products--blue {
   background: linear-gradient(-45deg, #92DCE5 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product--orange {
+.products--orange {
   background: linear-gradient(-45deg, #EF6F6C 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product--red {
+.products--red {
   background: linear-gradient(-45deg, #E84855 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product--green {
+.products--green {
   background: linear-gradient(-45deg, #70C1B3 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product--yellow {
+.products--yellow {
   background: linear-gradient(-45deg, #E8DB7D 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product--pink {
+.products--pink {
   background: linear-gradient(-45deg, #FF386D 50%, rgba(255, 255, 255, 0.5) 50%);
 }
-.product img, .product--blue img, .product--orange img, .product--red img, .product--green img, .product--yellow img, .product--pink img {
+.products img, .products--blue img, .products--orange img, .products--red img, .products--green img, .products--yellow img, .products--pink img {
   max-width: 100%;
   height: auto !important;
   text-align: center;

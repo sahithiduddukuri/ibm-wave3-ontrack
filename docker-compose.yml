@@ -97,15 +97,15 @@ services:
 
   productservice:
     image: product-servcie:latest
-    build: productService/
+    build: product-service/
     restart: always
     network_mode: host
     depends_on:
       - mongo
     ports:
-      - 8084:8084
+      - 8881:8881
     expose:
-      - 8084
+      - 8881
 
   recommendation-service:
     image: recommendation-service:latest

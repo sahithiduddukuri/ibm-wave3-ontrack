@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User findByUserIdAndPassword(String userId, String password) throws UsernameAndPasswordMismatchException {
+    public User findByUserIdAndPassword(String userId, String password) {
         return userRepository.findByUserIdAndPassword(userId,password);
 
     }

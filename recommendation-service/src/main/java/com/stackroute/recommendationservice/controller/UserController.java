@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
 import com.stackroute.recommendationservice.Domain.User;
-import com.stackroute.recommendationservice.service.UserServiceImpl;
+import com.stackroute.recommendationservice.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,23 +12,23 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class UserController {
 
-    UserServiceImpl userServiceImpl;
+    UserService userService;
 
-    public UserController(UserServiceImpl userServiceImpl) {
-        this.userServiceImpl = userServiceImpl;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
-        return new ResponseEntity<List<User>>(userServiceImpl.getAllUser(), HttpStatus.OK);
+        return new ResponseEntity<List<User>>(userService.getAllUser(), HttpStatus.OK);
     }
 
     @PostMapping("user")
     public ResponseEntity<?> createUser(@RequestBody User user)
     {
         ResponseEntity responseEntity;
-        userServiceImpl.createUser(user);
+        userService.createUser(user);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         return responseEntity;
     }

@@ -7,25 +7,12 @@ import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Size {
-
     @Id
-    int id;
+    private int id;
+    private String size;
 
-    String size;
-
-    public Size() {
-    }
-
-    public Size(String size) {
-        this.size = size;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
 }

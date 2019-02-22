@@ -14,7 +14,7 @@ import org.neo4j.ogm.annotation.Relationship;
 public class Product {
 
     @Id
-    int productId;
-    String productName;
+    private int productId;
+    private String productName;
 
 }

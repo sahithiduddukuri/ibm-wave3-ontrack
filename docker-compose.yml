@@ -77,12 +77,6 @@ services:
       - 8090
 
 
-
-
-
-  registrationservice:
-    image: registration-servcie:latest
-
   userregistrationservice:
     image: user-registration-servcie:latest
     build: user-registration-service/

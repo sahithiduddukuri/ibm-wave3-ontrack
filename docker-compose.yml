@@ -124,7 +124,7 @@ services:
       - 8086
 
   ontrackFrontend:
-    build: Ontrack-Frontend/
+    build: OntrackFrontend/
     image: ontrack-front-end
     container_name: ontrack-front-end
     network_mode: "host"

@@ -81,7 +81,7 @@ services:
 
   registrationservice:
     image: registration-servcie:latest
-    build: registration-service/
+    build: user-registration-service/
     restart: always
     network_mode: host
     ports:

@@ -71,22 +71,22 @@ public class ProductsControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andDo(MockMvcResultHandlers.print());
     }
-    @Test
-    public void deleteProduct() throws Exception {
-        when(productService.deleteProduct(products.getProductId())).thenReturn(true);
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/products/{id}", products.getProductId())
-                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andDo(MockMvcResultHandlers.print());
-    }
-    @Test
-    public void deleteProductFailure() throws Exception, ProductIdNotFoundException {
-        when(productService.deleteProduct(products.getProductId())).thenReturn(false);
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/products/{id}", products.getProductId())
-                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andDo(MockMvcResultHandlers.print());
-    }
+//    @Test
+//    public void deleteProduct() throws Exception {
+//        when(productService.deleteProduct(products.getProductId())).thenReturn(true);
+//        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/products/{id}", products.getProductId())
+//                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andDo(MockMvcResultHandlers.print());
+//    }
+//    @Test
+//    public void deleteProductFailure() throws Exception, ProductIdNotFoundException {
+//        when(productService.deleteProduct(products.getProductId())).thenReturn(false);
+//        mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/products/{id}", products.getProductId())
+//                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andDo(MockMvcResultHandlers.print());
+//    }
     @Test
     public void updateproduct() throws Exception {
         when(productService.updateProduct(any())).thenReturn(products);
@@ -97,15 +97,15 @@ public class ProductsControllerTest {
     }
 
 
-    @Test
-    public void getAllTracks() throws Exception {
-        when(productService.getAllProducts()).thenReturn(list);
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/products")
-                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andDo(MockMvcResultHandlers.print());
-
-    }
+//    @Test
+//    public void getAllTracks() throws Exception {
+//        when(productService.getAllProducts()).thenReturn(list);
+//        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/products")
+//                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(products)))
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andDo(MockMvcResultHandlers.print());
+//
+//    }
 
 
     private static String asJsonString(final Object obj)

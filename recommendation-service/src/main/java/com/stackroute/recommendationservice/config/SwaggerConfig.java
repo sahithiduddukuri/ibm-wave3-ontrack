@@ -16,11 +16,11 @@ public class SwaggerConfig {
     @Bean
     public Docket productapi(){
         return new Docket(DocumentationType.SWAGGER_2)
-             .select()
-                    .apis(RequestHandlerSelectors.basePackage("com.stackroute.recommendationservice"))
-                    .paths(regex("/api/v1.*"))
-                    .build();
-        }
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.stackroute.recommendationservice"))
+                .paths(regex("/api/v1.*"))
+                .build();
+    }
 
 
 

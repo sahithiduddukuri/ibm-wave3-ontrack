@@ -11,14 +11,16 @@ export class OnTrackService {
     constructor(private http: HttpClient) {
 
     }
-    AddToCart(cart: any) {
-        console.log('clcik event call');
-        console.log(cart);
+   Home() {
         this.url = 'http://localhost:3000/products';
-        this.http.get(this.url).subscribe(resp => {
-            console.log(resp);
-        this.response = resp;
-            });
-        return this.response;
+        return this.http.get(this.url);
+}
+openDailog() {
+    this.url = 'http://localhost:3000/products';
+    return this.http.get(this.url);
+}
+AddToCart() {
+    this.url = 'http://localhost:3000/products';
+    return this.http.get(this.url);
 }
 }

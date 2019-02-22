@@ -1,8 +1,12 @@
 <!-- <app-header></app-header>
   <app-card></app-card> -->
   <header>
-    <div class="row">
+    <div class="row1">
       <img src="./assets/img/1 (1).jpg">
+      <div class = "row">
+        <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
+      </div>
+     
        <div class="wrap">
           <mat-card-actions>
               <button mat-raised-button (click)="Login()">Login</button>

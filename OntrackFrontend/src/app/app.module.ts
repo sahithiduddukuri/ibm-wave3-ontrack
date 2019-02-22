@@ -1,3 +1,4 @@
+import { OnTrackService } from './ontrack/ontrack.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchService } from './ontrack/components/search/search.service';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -11,9 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
 
 
 @NgModule({
@@ -30,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FlexLayoutModule
   ],
-  providers: [OntrackserviceService, SearchService],
+  providers: [OntrackserviceService, SearchService, OnTrackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

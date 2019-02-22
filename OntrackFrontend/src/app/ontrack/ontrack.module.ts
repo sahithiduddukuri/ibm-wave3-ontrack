@@ -1,3 +1,4 @@
+import { CartComponent } from './components/cart/cart.component';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -35,7 +36,7 @@ import { LoginModule } from './components/login/login.module';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent ],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent],
 
 
   imports: [
@@ -68,7 +69,7 @@ import { LoginModule } from './components/login/login.module';
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent ]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent ]
 
 })
 export class OntrackModule { }

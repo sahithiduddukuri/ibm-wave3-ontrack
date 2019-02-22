@@ -1,0 +1,15 @@
+<div class="container">
+<h1 mat-dialog-title>Product Details</h1>
+  <div mat-dialog-content *ngFor='let s of products' > 
+        <p>{{s.Product_id}}</p> 
+        <p><img class="id" src="{{s.Image_URL}}"></p>
+        <p>{{s.Product_name}}</p>
+        <p>{{s.Price}}</p>
+        <p>{{s.Dimension}}</p>
+        <p>{{s.Description}}</p>
+        <p>{{s.Size}}</p>
+        <p>{{s.Brand}}</p>
+        <p>{{s.Colour}}</p>
+        <p>{{s.MRP}}</p>
+</div>
+</div>

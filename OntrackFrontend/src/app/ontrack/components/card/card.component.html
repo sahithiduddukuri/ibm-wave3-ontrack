@@ -1,37 +1,64 @@
 
-<div class = "row">
-<input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
-</div>
-<table class="table">
-  <!-- <tr>
-    <th>productId</th>
-    <th>productName</th>
-  </tr> -->
-  <tr *ngFor='let o of products'>
-    <td>{{o.productId}}</td>
-    <td>{{o.productName}}</td>
-<div class="row">
-    <mat-card class='products--blue'>
-      <mat-card-header>
-        
+<div class="container">
+<div class="row"  *ngFor='let o of products'>
+    <mat-card class='product--blue'>
+      <mat-card-header>  
       <div class='product_inner'>
-        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
-        <p>Nike Air (Women)</p>
-        
-        <p>Size 7</p>
-        <p>Price £199.99</p>
+        <div class='p1'>
+        <img src="{{o.Image_URL}}">
       </div>
+      <div class='p2'>
+        <p>{{o.Product_name}}</p>
+        <p>{{o.Price}}</p>
+        <p>{{o.MRP}}</p>
+        <p>{{o.Brand}}</p>
+      </div>
+     </div>
       </mat-card-header>
+      <div class='p3'>
      <mat-card-actions align="center">
         <button mat-raised-button (click)="buy()">Buy</button>
-       <button mat-raised-button (click)="openDialog()">Details</button>
+       <button mat-raised-button (click)="openDialog(o)">Details</button>
        <mat-card-actions align="center">
           <button mat-raised-button (click)="AddToCart()">AddToCart</button>
       </mat-card-actions>
      </mat-card-actions>
+    </div>
    </mat-card>
-  
-    <mat-card class='products--orange'>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <mat-card class='product--orange'>
       <mat-card-header>
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
@@ -49,7 +76,7 @@
     </mat-card-actions>
     </mat-card>
 
-    <mat-card class='products--yellow'>
+    <mat-card class='product--yellow'>
       <mat-card-header>
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
@@ -67,7 +94,7 @@
         </mat-card-actions>
       </mat-card>
 
-    <mat-card class='products--red'>
+    <mat-card class='product--red'>
       <mat-card-header align="center">
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
@@ -85,7 +112,7 @@
       </mat-card-actions>
     </mat-card>
     
-    <mat-card class='products--green'>
+    <mat-card class='product--green'>
       <mat-card-header>
       <div class='product_inner'>
         <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
@@ -102,28 +129,49 @@
         </mat-card-actions>
     </mat-card-actions>
     </mat-card>  
-  
-    <!-- <mat-card class='products--pink'>
-        <mat-card-header>
-        <div class='product_inner'>
-          <img src='../assets/img/3.jpg' width='300px'>
-          <p>BAKLEY Men Synthetic Running Shoes</p>
-          <p>Size 11</p>
-          <p>Price £299.99</p>
-        </div>
-      </mat-card-header>
-        <mat-card-actions align="center">
-            <button mat-raised-button (click)="buy()">Buy</button>
-            <button mat-raised-button (click)="openDialog()">Details</button>
-            <mat-card-actions align="center">
-                <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
-            </mat-card-actions>
-        </mat-card-actions>
-        </mat-card> -->
-
       </div>
-    </tr>
-  </table>
+    </tr> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+</head>
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var response = xhttp.responseText;
+            var products = response.products;
+            var output = '';
+            for(var i=0;i< products.length;i++){
+              output += '<li>'+products[i].Product_name+'</li>';
+            }
+            document.getElementById('products').innerHTML=output;
+          }
+      };
+      xhttp.open("GET", "db.json", true);
+      xhttp.send();
+        
+        
+        
+        </script>
+      
 </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+

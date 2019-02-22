@@ -4,6 +4,7 @@ import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 import com.stackroute.productservice.service.ProductService;
+import com.stackroute.productservice.service.RabbitMqProducer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -25,6 +26,8 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+    @Autowired
+    RabbitMqProducer rabbitMqProducer;
     @ApiOperation(value="return saveproduct")
     @ApiResponses(value={@ApiResponse(code=100,message=" hello")})
     @PostMapping("products")
@@ -34,7 +37,7 @@ public class ProductController {
             productService.saveProduct(products);
             responseEntity=new ResponseEntity<String>("Created Successfully", HttpStatus.CREATED);
 
-
+            rabbitMqProducer.produce(products);
             return responseEntity;
 
     }

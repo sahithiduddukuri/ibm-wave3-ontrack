@@ -2,13 +2,14 @@ import { Component, OnInit} from '@angular/core';
 import { Subject } from 'rxjs';
 import { Search } from './Search';
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  products: Search[] = [];
+  products: any = [];
   productName: String;
   constructor() { }
   ngOnInit() {
@@ -26,6 +27,7 @@ export class SearchComponent implements OnInit {
         'productName': 'Brakley'
       }
     ];
+
    }
    search() {
      this.products = this.products.filter(res => {

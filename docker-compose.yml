@@ -77,11 +77,9 @@ services:
       - 8090
 
 
-
-
-  registrationservice:
-    image: registration-servcie:latest
-    build: registration-service/
+  userregistrationservice:
+    image: user-registration-servcie:latest
+    build: user-registration-service/
     restart: always
     network_mode: host
     ports:
@@ -120,7 +118,7 @@ services:
       - 8086
 
   ontrackFrontend:
-    build: Ontrack-Frontend/
+    build: OntrackFrontend/
     image: ontrack-front-end
     container_name: ontrack-front-end
     network_mode: "host"

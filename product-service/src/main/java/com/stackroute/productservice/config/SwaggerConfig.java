@@ -22,7 +22,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.stackroute.productservice"))
-                .paths(regex("/api/v1/track.*"))
+                .paths(regex("/api/v1/product.*"))
                 .build()
                 .apiInfo(metaInfo());
     }
@@ -34,7 +34,7 @@ public class SwaggerConfig {
                 "Swagger Documentation For Muzix application",
                 "2.0",
                 "Terms of service",
-                new Contact("Muzix", "https://github.com/kranthichallagulla", "lakshmikranthi45@gmail.com"),
+                new Contact("Productservice", "https://github.com/kranthichallagulla", "lakshmikranthi45@gmail.com"),
                 "Apache version 2.0",
                 "https://www.apache.org/licensen.html");
 

@@ -1,27 +1,19 @@
 package com.stackroute.recommendationservice.Domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
 @NoArgsConstructor
+@Data
+@AllArgsConstructor
 public class Category {
 
     @Id
-    int id;
+    private int id;
+    private String productType;
 
-    String productType;
-
-    public Category(String productType) {
-        this.productType = productType;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
 }

@@ -6,7 +6,7 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 
 import java.util.List;
 
-public interface BrandRepository extends Neo4jRepository<Brand, String> {
+public interface BrandRepository extends Neo4jRepository<Brand, Integer> {
 
     @Query("match(n:Brand) return n")
     List<Brand> getAll();

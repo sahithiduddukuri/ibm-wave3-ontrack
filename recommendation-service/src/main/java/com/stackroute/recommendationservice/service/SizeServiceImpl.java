@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SizeServiceImpl {
+public class SizeServiceImpl implements SizeService{
 
     SizeRepository sizeRepository;
 

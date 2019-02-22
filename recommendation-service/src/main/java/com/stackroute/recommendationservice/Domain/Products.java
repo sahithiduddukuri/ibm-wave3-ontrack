@@ -15,8 +15,8 @@ public class Products {
     private String brand;
     private String colour;
 
-    Brand brands;
-    Product product;
-    Category category;
-    Size sizes;
+    private Brand brands;
+    private Product product;
+    private Category category;
+    private Size sizes;
 }

@@ -1,27 +1,21 @@
 package com.stackroute.recommendationservice.Domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
 @NoArgsConstructor
+@Data
+@AllArgsConstructor
 public class Brand {
 
     @Id
-    int id;
+    private int id;
 
-    String bradName;
+    private String bradName;
 
-    public Brand(String bradName) {
-        this.bradName = bradName;
-    }
 
-    public String getBradName() {
-        return bradName;
-    }
-
-    public void setBradName(String bradName) {
-        this.bradName = bradName;
-    }
 }

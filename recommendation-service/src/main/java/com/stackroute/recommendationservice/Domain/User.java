@@ -14,11 +14,11 @@ import org.neo4j.ogm.annotation.NodeEntity;
 @NoArgsConstructor
 public class User {
     @Id
-    int userId;
-    String userName;
-    String mobileNo;
-    String emailId;
-    String dob;
-    String gender;
+    private int userId;
+    private String userName;
+    private String mobileNo;
+    private String emailId;
+    private String dob;
+    private String gender;
 
 }

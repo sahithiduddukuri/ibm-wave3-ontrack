@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
 import com.stackroute.recommendationservice.Domain.Product;
-import com.stackroute.recommendationservice.service.ProductServiceImpl;
+import com.stackroute.recommendationservice.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,23 +12,23 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class ProductController {
 
-    ProductServiceImpl productServiceImpl;
+    ProductService productService;
 
-    public ProductController(ProductServiceImpl productServiceImpl) {
-        this.productServiceImpl = productServiceImpl;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping("product")
     public ResponseEntity<?> getAll()
     {
-        return new ResponseEntity<List<Product>>(productServiceImpl.getAll(), HttpStatus.OK);
+        return new ResponseEntity<List<Product>>(productService.getAll(), HttpStatus.OK);
     }
 
     @PostMapping("product")
     public ResponseEntity<?> create(@RequestBody Product product)
     {
         ResponseEntity responseEntity;
-        productServiceImpl.createNode(product);
+        productService.createNode(product);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         return responseEntity;
     }

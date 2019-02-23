@@ -1,5 +1,8 @@
 package com.stackroute.routing;
 
+import com.stackroute.routing.domain.Node;
+import com.stackroute.routing.domain.Vehicle;
+
 import java.util.ArrayList;
 
 public class GreedySolution {

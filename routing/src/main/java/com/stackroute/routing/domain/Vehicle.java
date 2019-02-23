@@ -1,4 +1,6 @@
-package com.stackroute.routing;
+package com.stackroute.routing.domain;
+
+import com.stackroute.routing.domain.Node;
 
 import java.util.ArrayList;
 

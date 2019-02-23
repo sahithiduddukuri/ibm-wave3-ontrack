@@ -1,5 +1,8 @@
-package com.stackroute.routing;
+package com.stackroute.routing.domain;
 
+import lombok.Data;
+
+@Data
 public class Node {
     //nodes belong to locations
     public int nodeId;
@@ -7,6 +10,7 @@ public class Node {
     public int demand; //node demand if new delivery arrives
     public boolean isRouted;
     private boolean isDepot; //true if it is depot
+   // public int orderLoc;
 
     //constructor for depot
     public Node(int depot_x,int depot_y) {
@@ -25,4 +29,6 @@ public class Node {
         this.isRouted = false;
         this.isDepot = false;
     }
+
+
 }

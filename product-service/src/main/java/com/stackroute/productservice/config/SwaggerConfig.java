@@ -31,7 +31,7 @@ public class SwaggerConfig {
         ApiInfo apiInfo;
         apiInfo = new ApiInfo(
                 "Spring Boot Swagger",
-                "Swagger Documentation For Muzix application",
+                "Swagger Documentation For E-commerce application",
                 "2.0",
                 "Terms of service",
                 new Contact("Productservice", "https://github.com/kranthichallagulla", "lakshmikranthi45@gmail.com"),

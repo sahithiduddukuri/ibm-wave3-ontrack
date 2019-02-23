@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public boolean deleteProduct(int id) throws ProductIdNotFoundException {
+    public boolean deleteProduct(String id) throws ProductIdNotFoundException {
             boolean status=false;
            if(productRepository.existsById(id)){
 

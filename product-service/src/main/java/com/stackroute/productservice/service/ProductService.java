@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductService {
     public Products saveProduct(Products products) throws ProductAlreadyExistsException;
     public Products updateProduct(Products products) throws ProductAlreadyUpdatedException;
-    public boolean deleteProduct(int id) throws ProductIdNotFoundException;
+    public boolean deleteProduct(String id) throws ProductIdNotFoundException;
     public List<Products> getAllProducts();
 
 }

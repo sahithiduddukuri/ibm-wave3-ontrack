@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Products {
     @Id
 
-    private int productId;
+    private String productId;
     private String productName;
     private String productType;
     private String imageURL;

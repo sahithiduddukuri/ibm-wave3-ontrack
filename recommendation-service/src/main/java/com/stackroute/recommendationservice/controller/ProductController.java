@@ -26,7 +26,7 @@ public class ProductController {
     @GetMapping("product")
     public ResponseEntity<?> getAll()
     {
-        rabbitMqConsumer.recievedMessage((Products) productService.getAll());
+        //rabbitMqConsumer.recievedMessage((Products) productService.getAll());
         return new ResponseEntity<List<Product>>(productService.getAll(), HttpStatus.OK);
     }
 

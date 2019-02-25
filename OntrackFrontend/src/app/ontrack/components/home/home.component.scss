@@ -9,7 +9,7 @@
   
 }
 header{
-    background: #73C2FB;
+    background: #2b2b2b;
     top: 0%;
     left: 0%;
     z-index: 1;
@@ -19,7 +19,7 @@ header{
 }
 header img{
     height: 100px;
-    width:180px;
+    width:200px;
 }
 form{
     height: 400px;
@@ -28,18 +28,21 @@ form{
     left: 200px;
 }
 body{
-    padding-top:120px; 
+    padding-top: 100px; 
+    width: 100%;
+    padding-left: 0%;
+    margin-left: 0%;
 }  
 input[type=text] {
     width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 10px 10px;
+    margin: 0px 0;
     left: 400px;
     box-sizing: border-box;
     color: #000;
     position: absolute;
     top: 30px;
-    border-radius: 8px;
+    // border-radius: 8px;
     z-index: 1;
     position: fixed;
   }
@@ -51,5 +54,9 @@ input[type=text] {
     flex-flow: row wrap;
     overflow: auto;   
   }  
+.landing-wallpaper {
+      height: 600px;
+      width: 100%;
+  }
     
     

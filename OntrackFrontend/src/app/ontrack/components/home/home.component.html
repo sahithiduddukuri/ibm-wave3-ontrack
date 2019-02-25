@@ -2,7 +2,7 @@
   <app-card></app-card> -->
   <header>
     <div class="row1">
-      <img src="./assets/img/1 (1).jpg">
+      <img src="./assets/img/logo.png">
       <div class = "row">
         <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
       </div>
@@ -10,12 +10,14 @@
        <div class="wrap">
           <mat-card-actions>
               <button mat-raised-button (click)="Login()">Login</button>
-              <button mat-raised-button (click)="Signup()">SignUp</button>
+              <!-- <button mat-raised-button (click)="Signup()">SignUp</button> -->
           </mat-card-actions>
       </div>
     </div>
   </header>
   <body>
+
+      <img class="landing-wallpaper" src="./assets/img/landing-wallpaper.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <app-card></app-card>
   </body>

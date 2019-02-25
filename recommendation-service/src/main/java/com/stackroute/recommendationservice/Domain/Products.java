@@ -13,7 +13,8 @@ import org.neo4j.ogm.annotation.Id;
 @NoArgsConstructor
 
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
-public class Products {
+public class
+Products {
     @Id
     @JsonProperty("productId")
     private String productId;

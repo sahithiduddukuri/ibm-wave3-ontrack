@@ -37,7 +37,7 @@ public class ProductServiceTest {
     @Test
     public void saveProductTest()
     {
-        when(productRepository.save((Product)any())).thenReturn(product);
+        when(productRepository.save((Product) any())).thenReturn(product);
         Product savedProduct = productService.createNode(product);
         Assert.assertEquals(product,savedProduct);
     }

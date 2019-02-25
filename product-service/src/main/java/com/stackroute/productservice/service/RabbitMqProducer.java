@@ -19,13 +19,12 @@ public class RabbitMqProducer {
     @Value("${jsa.rabbitmq.routingkey}")
     private String routingkey1;
 
-    ObjectMapper objectMapper=new ObjectMapper();
+
     public void produce(Products products) {
-        try {
-            amqpTemplate.convertAndSend(exchange, routingkey1,objectMapper.writeValueAsString(products));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+
+            amqpTemplate.convertAndSend(exchange, routingkey1, products);
+
+
         System.out.println("Send msg = " + products);
     }
 }

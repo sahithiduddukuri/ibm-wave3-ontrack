@@ -5,6 +5,7 @@
 .row1 h3 {
     color: #fff;
     padding-top:20px; 
+    font-family: 'Righteous', cursive;
 }
 .wrap
 {
@@ -64,6 +65,8 @@ input[type=text] {
 .landing-wallpaper {
       height: 600px;
       width: 100%;
+      background-size: auto;
+      background-repeat: no-repeat;
   }
 // .slogan {
 //     position: absolute;

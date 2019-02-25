@@ -25,13 +25,15 @@ public class Solution {
     Vehicle[] vehicles; //vehicle array
     double cost;
 
+
     //node array
     Node[] nodes;
+    Node[] tempNodes;
 
     public ArrayList<Double> pastSolutions; //array of greedy solutions
 
    //container array
-    Container[] containers;
+    ArrayList containers = new ArrayList();
 
     Solution(int noOfOrders, int noOfVehicles , int vehicleCap , int containerCap){
         this.noOfVehicles = noOfVehicles;
@@ -64,7 +66,7 @@ public class Solution {
     }
 
  //opening container and getting orders as nodes
-    public void getNodes() {
+    public  Node[] getNodes() {
 
         Node nodes[] = new Node[noOfOrders + 1];
         Node depot = new Node(depot_x,depot_y);
@@ -81,6 +83,9 @@ public class Solution {
                 System.out.println("node: "+nodes[i].getNodeId()+" ");
             }
         }
+
+        return nodes;
+
     }
 
 
@@ -90,23 +95,24 @@ public class Solution {
 //adding nodes(orders) to containers based on location
     public void containerFilling()  {
 
-        for (int j=0 ; j<noOfContainers ; j++ ) {
-            containers[j] = new Container(j+1, containerCapacity, nodes);
-        }
-
-
-        for( int i = 0 ; i<nodes.length ; i++) {
-            for (int j=0 ; j<nodes.length ; j++) {
+       getNodes();
+        for( int i = 0 ; i<containers.size() ; i++) {
+            for (int j=0 ; j<containerCapacity; j++) {
                 if (nodes[i].node_x == nodes[j].node_x ) {
                     if (nodes[i].node_y == nodes[j].node_y ) {
-                        for ( int k=1 ; k<=6 ; k++) {
+                        for ( int k=1 ; k<=nodes.length ; k++) {
                            //logic to add node into container......
-                            containers[k].setContainerCapacity(k);
-                            containers[k].setOrders();
+                            for(int l=1; l<=nodes.length; l++) {
+                                tempNodes[l] = nodes[l];
+                            }
+
+                            System.out.println();
+
                         }
                     }
                 }
             }
+            System.out.println("container change" );
         }
 
     }

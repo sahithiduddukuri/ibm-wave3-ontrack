@@ -13,6 +13,8 @@ public class RoutingApplication {
 		SpringApplication.run(RoutingApplication.class, args);
 		RoutingApplication routingApplication = new RoutingApplication();
 		routingApplication.solution.getNodes();
+		routingApplication.solution.containerFilling();
+
 	}
 }
 

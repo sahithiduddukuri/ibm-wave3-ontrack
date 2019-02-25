@@ -6,6 +6,7 @@ import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 import com.stackroute.productservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+
     public Products saveProduct(Products products) throws ProductAlreadyExistsException {
 
          if(productRepository.existsById(products.getProductId())){

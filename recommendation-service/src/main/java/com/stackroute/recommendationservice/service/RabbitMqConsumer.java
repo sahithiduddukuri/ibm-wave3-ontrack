@@ -19,7 +19,7 @@ public class RabbitMqConsumer {
     Brand brand;
     Product product =new Product();
     Products products;
-    @RabbitListener(queues="${jsa.rabbitmq.queue}", containerFactory="jsaFactory")
+    @RabbitListener(queues="${jsa.rabbitmq.queue1}", containerFactory="jsaFactory")
     public void recievedMessage(Products products) {
 
         product.setName(products.getProductName());

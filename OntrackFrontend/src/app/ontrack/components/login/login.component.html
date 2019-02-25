@@ -1,30 +1,26 @@
-
-
-<br>
-<form [formGroup]="user" (ngSubmit)="login()">
-  <mat-form-field appearance="outline" class="id">
+ <div class="container">
+  <div class="pics">
+  <form [formGroup]="user" (ngSubmit)="login()">
+   <mat-form-field appearance="outline" class="id">
     <mat-label>User login</mat-label>
     <input matInput placeholder="Enter your email id" type="text"
-      formControlName="userId" required />
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+     formControlName="userId" required />
     <mat-hint></mat-hint>
-  </mat-form-field>
-
-  <br>
-
-
-  <mat-form-field appearance="outline" class="password">
+   </mat-form-field>
+   <br>
+   <mat-form-field appearance="outline" class="password" style="color:white">
     <mat-label>Password</mat-label>
     <input matInput placeholder="Enter your password" type="password"
-      formControlName="password" required />
-      
-    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-    <mat-hint></mat-hint>
-   
-  </mat-form-field>
-    <br>
-    <button mat-button color="primary" type="submit" [disabled]="!user.valid">Login</button>
-
-</form>
+     formControlName="password" required />
+       <mat-hint></mat-hint>
+   </mat-form-field>
+   <div mat-card-action>
+   <button mat-raised-button class = "btn" color="primary" type="submit" [disabled]="!user.valid">Login</button>
+   <p>Have you registered yet or not?</p> 
+   <button (click) = "signup()" mat-raised-button class="btn1"  color="primary">Register</button>
+  </div>
+  </form>
+  </div>
+  </div>
 
 

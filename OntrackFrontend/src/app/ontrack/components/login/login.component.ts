@@ -18,6 +18,9 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) { } // using router
   // to reroute valid logged in user to some other page
 
+  signup() {
+    this.router.navigateByUrl('signup');
+  }
   login() {
     this.loginService.login(this.user.value)
     .subscribe(res => {

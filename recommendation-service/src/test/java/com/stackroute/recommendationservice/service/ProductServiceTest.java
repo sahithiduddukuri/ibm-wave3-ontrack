@@ -1,5 +1,5 @@
 package com.stackroute.recommendationservice.service;
-import com.stackroute.recommendationservice.Domain.Product;
+import com.stackroute.recommendationservice.Domain.Products;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,31 +15,31 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 public class ProductServiceTest {
-    Product product;
+    Products products;
 
     @Mock
     ProductRepository productRepository;
 
     @InjectMocks
     ProductServiceImpl productService;
-    List<Product> list = null;
+    List<Products> list = null;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        product = new Product();
-        product.setProductId("1");
-        product.setProductName("Shoe");
+        products = new Products();
+        products.setProductId("1");
+        products.setProductName("Shoe");
         list = new ArrayList<> ();
-        list.add(product);
+        list.add(products);
     }
 
     @Test
     public void saveProductTest()
     {
-        when(productRepository.save((Product)any())).thenReturn(product);
-        Product savedProduct = productService.createNode(product);
-        Assert.assertEquals(product,savedProduct);
+        when(productRepository.save((Products) any())).thenReturn(products);
+        Products savedProduct = productService.createNode(products);
+        Assert.assertEquals(products,savedProduct);
     }
 
 //    @Test

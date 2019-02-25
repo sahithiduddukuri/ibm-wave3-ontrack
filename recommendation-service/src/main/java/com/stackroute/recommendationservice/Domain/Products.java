@@ -5,19 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
 
 @Builder
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@NodeEntity
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
 public class
 Products {
     @Id
     @JsonProperty("productId")
-    private String productId;
+    private long productId;
     @JsonProperty("productName")
     private String productName;
     @JsonProperty("productType")

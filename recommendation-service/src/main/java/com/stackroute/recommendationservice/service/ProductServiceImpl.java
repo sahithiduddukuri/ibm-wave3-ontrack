@@ -24,8 +24,11 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public Product createNode(Product product) {
+        String name=product.getProductName();
         Product node = productRepository.save(product);
         return node;
     }
-}
+
+
+    }
 

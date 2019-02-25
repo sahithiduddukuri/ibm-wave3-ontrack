@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Property;
 
 @NodeEntity
 @Data
@@ -12,6 +13,8 @@ import org.neo4j.ogm.annotation.NodeEntity;
 @NoArgsConstructor
 public class Product {
     @Id
-    private String productId;
+    private long id;
     private String productName;
+
+
 }

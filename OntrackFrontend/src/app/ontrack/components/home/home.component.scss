@@ -2,6 +2,10 @@
 .row1{
     display: flex;
 }
+.row1 h3 {
+    color: #fff;
+    padding-top:20px; 
+}
 .wrap
 {
     padding-left: 100px;
@@ -26,6 +30,9 @@ form{
     position: relative;
     top: 30px;
     left: 200px;
+}
+.mat-raised-button {
+    margin-right: 20px; 
 }
 body{
     padding-top: 100px; 
@@ -58,5 +65,10 @@ input[type=text] {
       height: 600px;
       width: 100%;
   }
-    
+// .slogan {
+//     position: absolute;
+//     color: #fff;
+//     text-align: center;
+//     align-items: center;
+// }
     

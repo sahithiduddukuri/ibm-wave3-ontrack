@@ -42,12 +42,12 @@ public class ProductServiceTest {
         Assert.assertEquals(product,savedProduct);
     }
 
-    @Test
-    public void getProductTest() {
-        productRepository.save(product);
-        //when(productRepository.findAll()).thenReturn(list);
-        List<Product> productList = productService.getAll();
-        System.out.println(productList);
-        Assert.assertNotEquals(list, productList);
-    }
+//    @Test
+//    public void getProductTest() {
+//        productRepository.save(product);
+//        //when(productRepository.findAll()).thenReturn(list);
+//        List<Product> productList = productService.getAll();
+//        System.out.println(productList);
+//        Assert.assertNotEquals(list, productList);
+//    }
 }

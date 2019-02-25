@@ -6,11 +6,11 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends Neo4jRepository<ProductRepository , Integer> {
+public interface ProductRepository extends Neo4jRepository<ProductRepository , String> {
 
     @Query("match(n:Product) return n")
     List<Product> getAllProducts();
 
     @Query("create (product:Product)")
-    Product createProductNode(Product product);
+    Product save(Product product);
 }

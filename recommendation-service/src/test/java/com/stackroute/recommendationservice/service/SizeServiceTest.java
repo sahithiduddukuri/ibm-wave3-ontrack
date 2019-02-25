@@ -44,7 +44,7 @@ public class SizeServiceTest {
     }
 
     @Test
-    public void getTrackTest() {
+    public void getSizeTest() {
         sizeRepository.save(size);
         when(sizeRepository.findAll()).thenReturn(list);
         List<Size> userList = sizeService.getAllSizes();

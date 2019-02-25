@@ -43,7 +43,7 @@ public class BrandServiceTest {
     }
 
     @Test
-    public void getTrackTest() {
+    public void getBrandTest() {
         brandRepository.save(brand);
         when(brandRepository.findAll()).thenReturn(list);
         List<Brand> userList = brandService.getAll();

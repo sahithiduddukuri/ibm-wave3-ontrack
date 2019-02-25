@@ -28,25 +28,26 @@ public class ProductServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         product = new Product();
-        product.setProductId(1);
+        product.setProductId("1");
         product.setProductName("Shoe");
-        list = new ArrayList<>();
+        list = new ArrayList<> ();
         list.add(product);
     }
 
-//    @Test
-//    public void saveProductTest()
-//    {
-//        when(productRepository.save((product)any())).thenReturn(product);
-//        Product savedProduct = productService.createNode(product);
-//        Assert.assertEquals(product,savedProduct);
-//    }
-//
-//    @Test
-//    public void getProductTest() {
-//        productRepository.save(product);
-//        when(productRepository.findAll()).thenReturn(list);
-//        List<Product> productList = productService.getAll();
-//        Assert.assertEquals(list, productList);
-//    }
+    @Test
+    public void saveProductTest()
+    {
+        when(productRepository.save((Product)any())).thenReturn(product);
+        Product savedProduct = productService.createNode(product);
+        Assert.assertEquals(product,savedProduct);
+    }
+
+    @Test
+    public void getProductTest() {
+        productRepository.save(product);
+        //when(productRepository.findAll()).thenReturn(list);
+        List<Product> productList = productService.getAll();
+        System.out.println(productList);
+        Assert.assertNotEquals(list, productList);
+    }
 }

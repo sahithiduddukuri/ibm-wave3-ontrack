@@ -35,7 +35,7 @@ public class CategoryServiceTest {
     }
 
     @Test
-    public void saveUserTest()
+    public void saveCategoryTest()
     {
         when(categoryRepository.save((Category)any())).thenReturn(category);
         Category savedCategory = categoryService.createNode(category);
@@ -43,7 +43,7 @@ public class CategoryServiceTest {
     }
 
     @Test
-    public void getTrackTest() {
+    public void getCategoryTest() {
         categoryRepository.save(category);
         when(categoryRepository.findAll()).thenReturn(list);
         List<Category> userList = categoryService.getAllCategories();

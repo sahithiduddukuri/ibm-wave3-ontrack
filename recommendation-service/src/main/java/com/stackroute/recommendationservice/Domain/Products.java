@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.Domain;
 
 public class Products {
-    private int productId;
+    private String productId;
     private String productName;
     private String productType;
     private String imageURL;

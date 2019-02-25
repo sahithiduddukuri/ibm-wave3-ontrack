@@ -47,7 +47,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void getTrackTest() {
+    public void getUsersTest() {
         userRepository.save(user);
         when(userRepository.findAll()).thenReturn(list);
         List<User> userList = userService.getAllUser();

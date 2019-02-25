@@ -1,6 +1,6 @@
 package com.stackroute.productservice.service;
 
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.repository.ProductRepository;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.when;
 
 public class ProductsServiceTest {
-    Products products;
+    Product products;
 
     //Create a mock for UserRepository
     @Mock
@@ -28,14 +28,14 @@ public class ProductsServiceTest {
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
     ProductServiceImpl productService;
-    List<Products> list= null;
+    List<Product> list= null;
 
 
     @Before
     public void setUp(){
         //Initialising the mock object
         MockitoAnnotations.initMocks(this);
-        products =new Products();
+        products =new Product();
         products.setProductId(120);
         products.setProductName("Raymond shoe");
         products.setProductType("good");
@@ -58,8 +58,8 @@ public class ProductsServiceTest {
     @Test
     public void saveProductTestSuccess() throws ProductAlreadyExistsException {
 
-        when(productRepository.save((Products)any())).thenReturn(products);
-        Products savedProducts = productService.saveProduct(products);
+        when(productRepository.save((Product)any())).thenReturn(products);
+        Product savedProducts = productService.saveProduct(products);
         Assert.assertEquals(products, savedProducts);
 
         //verify here verifies that userRepository save method is only called once
@@ -68,8 +68,8 @@ public class ProductsServiceTest {
     }
     @Test(expected = ProductAlreadyExistsException.class)
     public void saveProductTestFailure() throws ProductAlreadyExistsException {
-        when(productRepository.save((Products)any())).thenReturn(null);
-        Products savedProducts = productService.saveProduct(products);
+        when(productRepository.save((Product)any())).thenReturn(null);
+        Product savedProducts = productService.saveProduct(products);
         System.out.println("savedtrack" + savedProducts);
         Assert.assertEquals(products, savedProducts);
 
@@ -84,8 +84,8 @@ public class ProductsServiceTest {
     @Test
     public void updateProductTest() throws ProductAlreadyUpdatedException
     {
-        when(productRepository.save((Products)any())).thenReturn(products);
-        Products updateProducts = null;
+        when(productRepository.save((Product)any())).thenReturn(products);
+        Product updateProducts = null;
         try {
             updateProducts = productService.saveProduct(products);
         } catch (ProductAlreadyExistsException e) {
@@ -102,7 +102,7 @@ public class ProductsServiceTest {
         productRepository.save(products);
         //stubbing the mock to return specific data
         when(productRepository.findAll()).thenReturn(list);
-        List<Products> tracklist = productService.getAllProducts();
+        List<Product> tracklist = productService.getAllProducts();
         Assert.assertEquals(list,tracklist);
     }
 

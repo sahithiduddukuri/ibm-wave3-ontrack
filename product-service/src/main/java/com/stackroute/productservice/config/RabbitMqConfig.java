@@ -23,7 +23,7 @@ public class RabbitMqConfig {
 
     @Bean
     Queue autoDeleteQueue1() {
-        return new Queue(queueName1, false);
+        return new Queue(queueName1, true);
     }
 
     @Bean

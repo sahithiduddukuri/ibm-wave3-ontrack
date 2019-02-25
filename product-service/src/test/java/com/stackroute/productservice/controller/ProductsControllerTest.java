@@ -1,7 +1,7 @@
 package com.stackroute.productservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 import com.stackroute.productservice.service.ProductService;
 import org.junit.Before;
@@ -31,20 +31,20 @@ import static org.mockito.Mockito.when;
 public class ProductsControllerTest {
     @Autowired
     private MockMvc mockMvc;
-    private Products products;
+    private Product products;
     @MockBean
     private ProductService productService;
     @InjectMocks
     private ProductController productController;
 
-    private List<Products> list =null;
+    private List<Product> list =null;
 
     @Before
     public void setUp(){
 
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
-        products = new Products();
+        products = new Product();
        products.setProductId(120);
        products.setProductName("Raymond shoe");
        products.setProductType("good");

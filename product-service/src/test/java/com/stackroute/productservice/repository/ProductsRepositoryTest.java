@@ -1,5 +1,5 @@
 package com.stackroute.productservice.repository;
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,12 +18,12 @@ public class ProductsRepositoryTest {
 
     @Autowired
     private ProductRepository productRepository;
-    private Products products;
+    private Product products;
 
     @Before
     public void setUp()
     {
-        products = new Products();
+        products = new Product();
         products.setProductId(120);
         products.setProductName("Raymond shoe");
         products.setProductType("good");
@@ -49,7 +49,7 @@ public class ProductsRepositoryTest {
     @Test
     public void testSaveProduct(){
         productRepository.save(products);
-        Products fetchProducts = productRepository.findById(products.getProductId()).get();
+        Product fetchProducts = productRepository.findById(products.getProductId()).get();
         Assert.assertEquals(120, fetchProducts.getProductId());
 
     }
@@ -58,22 +58,22 @@ public class ProductsRepositoryTest {
 
     @Test
     public void testSaveProductFailure(){
-        Products testUser = new Products(11100,"Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
+        Product testUser = new Product(11100,"Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
                 "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","White");
         productRepository.save(products);
-        Products fetchUser = productRepository.findById(products.getProductId()).get();
+        Product fetchUser = productRepository.findById(products.getProductId()).get();
         Assert.assertNotSame(testUser, products);
     }
 
     @Test
     public void testGetAllProducts(){
-        Products u = new Products();
-        Products u1 = new Products(22200,"Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
+        Product u = new Product();
+        Product u1 = new Product(22200,"Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
                 "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","White");
         productRepository.save(u);
         productRepository.save(u1);
 
-        List<Products> list = productRepository.findAll();
+        List<Product> list = productRepository.findAll();
         Assert.assertEquals("Bata Shoe for women",list.get(1).getProductName());
 
     }

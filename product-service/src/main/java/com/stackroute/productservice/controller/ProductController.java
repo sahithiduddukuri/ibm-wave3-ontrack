@@ -1,5 +1,5 @@
 package com.stackroute.productservice.controller;
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
@@ -31,19 +31,18 @@ public class ProductController {
     @ApiOperation(value="return saveproduct")
     @ApiResponses(value={@ApiResponse(code=100,message=" hello")})
     @PostMapping("products")
-    public ResponseEntity<?> saveProduct(@RequestBody Products products) throws ProductAlreadyExistsException {
+    public ResponseEntity<?> saveProduct(@RequestBody Product products) throws ProductAlreadyExistsException {
 
 
             productService.saveProduct(products);
             responseEntity=new ResponseEntity<String>("Created Successfully", HttpStatus.CREATED);
-
             rabbitMqProducer.produce(products);
             return responseEntity;
 
     }
     @ApiOperation(value="return updateproduct")
     @PutMapping("products")
-    public ResponseEntity<?> updateProduct(@RequestBody Products products) throws ProductAlreadyUpdatedException {
+    public ResponseEntity<?> updateProduct(@RequestBody Product products) throws ProductAlreadyUpdatedException {
 
 
             productService.updateProduct(products);
@@ -66,6 +65,6 @@ public class ProductController {
     }
     @GetMapping("product")
     public ResponseEntity<?> getAllProducts(){
-        return new ResponseEntity<List<Products>>(productService.getAllProducts(),HttpStatus.OK);
+        return new ResponseEntity<List<Product>>(productService.getAllProducts(),HttpStatus.OK);
     }
 }

@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.Products;
+import com.stackroute.recommendationservice.Domain.Product;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,13 +18,13 @@ public class ProductServiceImpl implements ProductService{
         this.productRepository = productRepository;
     }
 
-    public List<Products> getAll()
+    public List<Product> getAll()
     {
-        return (List<Products>) productRepository.getAllProducts();
+        return (List<Product>) productRepository.getAllProducts();
     }
 
-    public Products createNode(Products products) {
-        Products node = productRepository.save(products);
+    public Product createNode(Product product) {
+        Product node = productRepository.save(product);
         return node;
     }
 }

@@ -108,9 +108,9 @@ services:
     depends_on:
       - mongo
     ports:
-      - 8881:8881
+      - 8181:8181
     expose:
-      - 8881
+      - 8181
 
   recommendation-service:
     image: recommendation-service:latest
@@ -133,3 +133,18 @@ services:
     ports:
       - 4200:4200
     restart: always
+
+  products-search-service:
+    image: products-search-service:latest
+    build: products-search-service/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+
+    ports:
+      - 8998:8998
+    expose:
+      - 8998
+
+

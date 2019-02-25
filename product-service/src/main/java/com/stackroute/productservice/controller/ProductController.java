@@ -33,16 +33,16 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
-    @Autowired
-    JobLauncher jobLauncher;
-
-    @Autowired
-    Job job;
+//    @Autowired
+//    JobLauncher jobLauncher;
+//
+//    @Autowired
+//    Job job;
     @Autowired
     RabbitMqProducer rabbitMqProducer;
     @ApiOperation(value="return saveproduct")
     @ApiResponses(value={@ApiResponse(code=100,message=" hello")})
-    @PostMapping("products")
+    @PostMapping("product")
     public ResponseEntity<?> saveProduct(@RequestBody Products products) throws ProductAlreadyExistsException {
 
 
@@ -53,7 +53,7 @@ public class ProductController {
 
     }
     @ApiOperation(value="return updateproduct")
-    @PutMapping("products")
+    @PutMapping("product")
     public ResponseEntity<?> updateProduct(@RequestBody Products products) throws ProductAlreadyUpdatedException {
 
 
@@ -78,24 +78,25 @@ public class ProductController {
     @GetMapping("product")
     public ResponseEntity<?> getAllProducts(){
         return new ResponseEntity<List<Products>>(productService.getAllProducts(),HttpStatus.OK);
+
     }
-    @GetMapping
-    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
-
-    {
-
-        Map<String, JobParameter> maps = new HashMap<>();
-        maps.put("time", new JobParameter(System.currentTimeMillis()));
-        JobParameters parameters = new JobParameters(maps);
-        JobExecution jobExecution = jobLauncher.run(job, parameters);
-
-        System.out.println("JobExecution: " + jobExecution.getStatus());
-
-        System.out.println("Batch is Running...");
-        while (jobExecution.isRunning()) {
-            System.out.println("...");
-        }
-
-        return jobExecution.getStatus();
-    }
+//    @GetMapping
+//    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
+//
+//    {
+//
+//        Map<String, JobParameter> maps = new HashMap<>();
+//        maps.put("time", new JobParameter(System.currentTimeMillis()));
+//        JobParameters parameters = new JobParameters(maps);
+//        JobExecution jobExecution = jobLauncher.run(job, parameters);
+//
+//        System.out.println("JobExecution: " + jobExecution.getStatus());
+//
+//        System.out.println("Batch is Running...");
+//        while (jobExecution.isRunning()) {
+//            System.out.println("...");
+//        }
+//
+//        return jobExecution.getStatus();
+//    }
 }

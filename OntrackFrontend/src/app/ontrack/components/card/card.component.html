@@ -1,0 +1,177 @@
+
+<div class="container">
+<div class="row"  *ngFor='let o of products'>
+    <mat-card class='product--blue'>
+      <mat-card-header>  
+      <div class='product_inner'>
+        <div class='p1'>
+        <img src="{{o.Image_URL}}">
+      </div>
+      <div class='p2'>
+        <p>{{o.Product_name}}</p>
+        <p>{{o.Price}}</p>
+        <p>{{o.MRP}}</p>
+        <p>{{o.Brand}}</p>
+      </div>
+     </div>
+      </mat-card-header>
+      <div class='p3'>
+     <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
+       <button mat-raised-button (click)="openDialog(o)">Details</button>
+       <mat-card-actions align="center">
+          <button mat-raised-button (click)="AddToCart()">AddToCart</button>
+      </mat-card-actions>
+     </mat-card-actions>
+    </div>
+   </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <mat-card class='product--orange'>
+      <mat-card-header>
+      <div class='product_inner'>
+        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+        <p>Nike Air (Men)</p>
+        <p>Size 10</p>
+        <p>Price £99.99</p>
+      </div>
+    </mat-card-header>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
+        <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
+    </mat-card-actions>
+    </mat-card>
+
+    <mat-card class='product--yellow'>
+      <mat-card-header>
+      <div class='product_inner'>
+        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+        <p>Nike Air (Women)</p>
+        <p>Size 11</p>
+        <p>Price £299.99</p>
+      </div>
+    </mat-card-header>
+      <mat-card-actions align="center">
+          <button mat-raised-button (click)="buy()">Buy</button>
+          <button mat-raised-button (click)="openDialog()">Details</button>
+          <mat-card-actions>
+              <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+          </mat-card-actions>
+        </mat-card-actions>
+      </mat-card>
+
+    <mat-card class='product--red'>
+      <mat-card-header align="center">
+      <div class='product_inner'>
+        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+        <p>Nike Air (Women)</p>
+        <p>Size 8</p>
+        <p>Price £399.99</p>
+      </div>
+    </mat-card-header>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
+        <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
+      </mat-card-actions>
+    </mat-card>
+    
+    <mat-card class='product--green'>
+      <mat-card-header>
+      <div class='product_inner'>
+        <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+        <p>Nike Air (Men)</p>
+        <p>Size 11</p>
+        <p>Price £299.99</p>
+      </div>
+    </mat-card-header>
+    <mat-card-actions align="center">
+        <button mat-raised-button (click)="buy()">Buy</button>
+        <button mat-raised-button (click)="openDialog()">Details</button>
+        <mat-card-actions align="center">
+            <button mat-raised-button (click)="AddToCart()" >AddToCart</button>
+        </mat-card-actions>
+    </mat-card-actions>
+    </mat-card>  
+      </div>
+    </tr> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+</head>
+<body>
+    <script>
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var response = xhttp.responseText;
+            var products = response.products;
+            var output = '';
+            for(var i=0;i< products.length;i++){
+              output += '<li>'+products[i].Product_name+'</li>';
+            }
+            document.getElementById('products').innerHTML=output;
+          }
+      };
+      xhttp.open("GET", "db.json", true);
+      xhttp.send();
+        
+        
+        
+        </script>
+      
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+

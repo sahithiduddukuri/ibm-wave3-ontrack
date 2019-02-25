@@ -18,10 +18,15 @@ import org.neo4j.ogm.annotation.Relationship;
 public class Product {
 
     @Id
+<<<<<<< HEAD
     @JsonProperty("productId")
     int productId;
     @JsonProperty("productName")
     String productName;
+=======
+    private int productId;
+    private String productName;
+>>>>>>> 1fbdd5c34115e63bd147ca6077b7dbb1191f79a7
 
     @Override
     public String toString() {

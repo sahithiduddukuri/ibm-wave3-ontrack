@@ -1,0 +1,19 @@
+<div class="container" >
+  <h1 mat-dialog-title>Product Details</h1>
+  <!-- <div class="row" ng-repeat='o in products'>  <p>{{ o.Product_name }}</p> </div> -->
+  <p >Details: {{ data.o.Product_name }}</p>
+  <p>{{ data.o.Product_type }}</p>
+  <p>{{ data.o.MRP }}</p>
+  <p>{{ data.o.Price }}</p>
+  <p>{{ data.o.Dimension }}</p>
+  <p>{{ data.o.Weight }}</p>
+  <p>{{ data.o.Size }}</p>
+  <p>{{ data.o.Gender }}</p>
+  <p>{{ data.o.Description }}</p>
+  <p>{{ data.o.Brand }}</p>
+  <p>{{ data.o.Colour }}</p>
+  <div mat-dialog-actions>
+  <button mat-raised-button (click)="closeDailog()" md-dailog-close>Ok</button>
+  <button mat-raised-button (click)="buy()" md-dailog-close>Buy</button>
+</div> 
+  </div>

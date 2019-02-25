@@ -77,8 +77,6 @@ services:
       - 8090
 
 
-
-
   userregistrationservice:
     image: user-registration-servcie:latest
     build: user-registration-service/
@@ -120,7 +118,7 @@ services:
       - 8086
 
   ontrackFrontend:
-    build: Ontrack-Frontend/
+    build: OntrackFrontend/
     image: ontrack-front-end
     container_name: ontrack-front-end
     network_mode: "host"

@@ -9,12 +9,19 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.batch.core.*;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value="/api/v1")
@@ -26,6 +33,11 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+    @Autowired
+    JobLauncher jobLauncher;
+
+    @Autowired
+    Job job;
     @Autowired
     RabbitMqProducer rabbitMqProducer;
     @ApiOperation(value="return saveproduct")
@@ -54,7 +66,7 @@ public class ProductController {
     @ApiOperation(value="return deleteproduct")
     @DeleteMapping("product/{id}")
 
-    public ResponseEntity<?> deleteProduct(@PathVariable("id") int id) throws ProductIdNotFoundException
+    public ResponseEntity<?> deleteProduct(@PathVariable("id") String id) throws ProductIdNotFoundException
     {
 
             productService.deleteProduct(id);
@@ -66,5 +78,24 @@ public class ProductController {
     @GetMapping("product")
     public ResponseEntity<?> getAllProducts(){
         return new ResponseEntity<List<Product>>(productService.getAllProducts(),HttpStatus.OK);
+    }
+    @GetMapping
+    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException
+
+    {
+
+        Map<String, JobParameter> maps = new HashMap<>();
+        maps.put("time", new JobParameter(System.currentTimeMillis()));
+        JobParameters parameters = new JobParameters(maps);
+        JobExecution jobExecution = jobLauncher.run(job, parameters);
+
+        System.out.println("JobExecution: " + jobExecution.getStatus());
+
+        System.out.println("Batch is Running...");
+        while (jobExecution.isRunning()) {
+            System.out.println("...");
+        }
+
+        return jobExecution.getStatus();
     }
 }

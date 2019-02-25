@@ -6,11 +6,11 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 
 import java.util.List;
 
-public interface SizeRepository extends Neo4jRepository<Size, String> {
+public interface SizeRepository extends Neo4jRepository<Size, Integer> {
 
     @Query("match(n:Size) return n")
-    List<Size> getAllUser();
+    List<Size> getAllSizes();
 
     @Query("create (size:Size)")
-    Size createUser(Size size);
+    Size createSize(Size size);
 }

@@ -1,6 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
 import com.stackroute.recommendationservice.Domain.Brand;
+import com.stackroute.recommendationservice.service.BrandService;
 import com.stackroute.recommendationservice.service.BrandServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,23 +13,23 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class BrandController {
 
-    BrandServiceImpl brandServiceImpl;
+    BrandService brandService;
 
-    public BrandController(BrandServiceImpl brandServiceImpl) {
-        this.brandServiceImpl = brandServiceImpl;
+    public BrandController(BrandService brandService) {
+        this.brandService = brandService;
     }
 
     @GetMapping("brand")
     public ResponseEntity<?> getAll()
     {
-        return new ResponseEntity<List<Brand>>(brandServiceImpl.getAll(), HttpStatus.OK);
+        return new ResponseEntity<List<Brand>>(brandService.getAll(), HttpStatus.OK);
     }
 
     @PostMapping("brand")
     public ResponseEntity<?> create(@RequestBody Brand brand)
     {
         ResponseEntity responseEntity;
-        brandServiceImpl.createBrandNode(brand);
+        brandService.createBrandNode(brand);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         return responseEntity;
     }

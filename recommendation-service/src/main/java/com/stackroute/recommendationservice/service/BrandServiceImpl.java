@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BrandServiceImpl {
+public class BrandServiceImpl implements BrandService{
 
     BrandRepository brandRepository;
 
@@ -24,7 +24,7 @@ public class BrandServiceImpl {
     }
 
     public Brand createBrandNode(Brand brand) {
-        Brand node = brandRepository.createBrand(brand);
+        Brand node = brandRepository.save(brand);
         return node;
     }
 }

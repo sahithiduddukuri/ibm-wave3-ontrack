@@ -95,6 +95,8 @@ services:
     build: user-registration-service/
     restart: always
     network_mode: host
+    depends_on:
+      - eurekaserver
     ports:
       - 8805:8805
     expose:
@@ -114,6 +116,7 @@ services:
     depends_on:
       - mongo
       - rabbitmq
+      - eurekaserver
     ports:
       - 8181:8181
     expose:
@@ -127,6 +130,7 @@ services:
     depends_on:
       - neo4j
       - rabbitmq
+      - eurekaserver
     ports:
       - 8086:8086
     expose:
@@ -150,6 +154,7 @@ services:
     depends_on:
       - mongo
       - rabbitmq
+      - eurekaserver
 
     ports:
       - 8998:8998

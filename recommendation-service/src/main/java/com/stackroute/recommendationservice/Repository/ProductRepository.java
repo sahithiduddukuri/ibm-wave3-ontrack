@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProductRepository extends Neo4jRepository<Product , String> {
 
-    @Query("match(n:Product) return n")
+    @Query("match(n:Products) return n")
     List<Product> getAllProducts();
 
 //    @Query("create (product:Product)")

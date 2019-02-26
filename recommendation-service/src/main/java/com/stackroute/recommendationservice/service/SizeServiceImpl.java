@@ -25,9 +25,9 @@ public class SizeServiceImpl implements SizeService{
     }
 
     public Size createSizeNode(Size size) {
-        long id = size.getId();
+        long sizeId = size.getSizeId();
         String sizes = size.getSizes();
-        Size node = sizeRepository.createSize(id,sizes);
+        Size node = sizeRepository.createSize(sizeId,sizes);
         return node;
     }
 }

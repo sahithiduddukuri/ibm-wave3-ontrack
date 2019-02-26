@@ -24,9 +24,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     public Category createNode(Category category) {
-        long id = category.getId();
+        long categoryId = category.getCategoryId();
         String productType = category.getProductType();
-        Category node = categoryRepository.createCategoryNode(id,productType);
+        Category node = categoryRepository.createCategoryNode(categoryId,productType);
         return node;
     }
 }

@@ -29,7 +29,7 @@ public class SizeServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         size = new Size();
-        size.setId(1);
+        size.setSizeId(1);
         size.setSizes("8");
         list = new ArrayList<>();
         list.add(size);
@@ -38,7 +38,7 @@ public class SizeServiceTest {
     @Test
     public void saveSizeTest()
     {
-        when(sizeRepository.createSize(size.getId(),size.getSizes())).thenReturn(size);
+        when(sizeRepository.createSize(size.getSizeId(),size.getSizes())).thenReturn(size);
         Size savedSize = sizeService.createSizeNode(size);
         Assert.assertEquals(size,savedSize);
     }

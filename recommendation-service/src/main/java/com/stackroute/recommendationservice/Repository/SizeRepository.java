@@ -7,11 +7,11 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface SizeRepository extends Neo4jRepository<Size, Integer> {
+public interface SizeRepository extends Neo4jRepository<Size, Long> {
 
     @Query("match(n:Size) return n")
     List<Size> getAllSizes();
 
-    @Query("create (s:Size) SET s.id={id},s.sizes={sizes}")
-    Size createSize(@Param("id") long id, @Param("sizes") String sizes);
+    @Query("create (s:Size) SET s.sizeId={sizeId},s.sizes={sizes}")
+    Size createSize(@Param("sizeId") long sizeId, @Param("sizes") String sizes);
 }

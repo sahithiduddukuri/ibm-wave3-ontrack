@@ -13,15 +13,15 @@ export class OnTrackService {
 
     }
    Home() {
-        this.url = 'http://13.233.3.91:3000/products';
+        this.url = 'http://localhost:3000/products';
         return this.http.get(this.url);
 }
 openDailog() {
-    this.url = 'http://13.233.3.91:3000/products';
+    this.url = 'http://localhost:3000/products';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://13.233.3.91:3000/products';
+    this.url = 'http://localhost:3000/products';
     return this.http.get(this.url);
 }
 }

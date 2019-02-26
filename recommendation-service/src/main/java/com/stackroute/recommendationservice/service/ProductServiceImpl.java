@@ -20,13 +20,13 @@ public class ProductServiceImpl implements ProductService{
 
     public List<Product> getAll()
     {
-        return (List<Product>) productRepository.getAllProducts();
+        return (List<Product>) productRepository.findAll();
     }
 
     public Product createNode(Product product) {
         String productId = product.getProductId();
         String productName=product.getProductName();
-        Product node = productRepository.save(product);
+        Product node = productRepository.create(productId,productName);
         return node;
     }
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.repository.query.Param;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,17 +38,16 @@ public class ProductServiceTest {
     @Test
     public void saveProductTest()
     {
-        when(productRepository.save((Product) any())).thenReturn(product);
+        when(productRepository.create(product.getProductId(),product.getProductName())).thenReturn(product);
         Product savedProduct = productService.createNode(product);
         Assert.assertEquals(product,savedProduct);
     }
 
-//    @Test
-//    public void getProductTest() {
-//        productRepository.save(product);
-//        //when(productRepository.findAll()).thenReturn(list);
-//        List<Product> productList = productService.getAll();
-//        System.out.println(productList);
-//        Assert.assertNotEquals(list, productList);
-//    }
+    @Test
+    public void getProductTest() {
+        productRepository.save(product);
+        when(productRepository.findAll()).thenReturn(list);
+        List<Product> productList = productService.getAll();
+        Assert.assertEquals(list, productList);
+    }
 }

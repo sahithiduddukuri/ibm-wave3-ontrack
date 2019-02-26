@@ -15,6 +15,6 @@ public interface ProductRepository extends Neo4jRepository<Product , String> {
 //    @Query("create (product:Product)")
 //    Product save(Product product);
 
-    @Query("create (p:Product) SET p.productId={productId},p.productName={productName}")
-   Product save(@Param("productId") String productId, @Param("productName") String productName);
+    @Query("create (p:Products) SET p.productId={productId},p.productName={productName}")
+    Product create(@Param("productId") String productId, @Param("productName") String productName);
 }

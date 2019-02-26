@@ -17,8 +17,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Products {
 
         @Id
-
-
         @JsonProperty("productId")
         private String productId;
         @JsonProperty("productName")

@@ -24,7 +24,9 @@ public class BrandServiceImpl implements BrandService{
     }
 
     public Brand createBrandNode(Brand brand) {
-        Brand node = brandRepository.save(brand);
+        Long brandId = brand.getBrandId();
+        String brandName = brand.getBrandName();
+        Brand node = brandRepository.createBrand(brandId,brandName);
         return node;
     }
 }

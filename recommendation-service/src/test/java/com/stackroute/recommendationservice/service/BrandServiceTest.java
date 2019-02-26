@@ -28,7 +28,7 @@ public class BrandServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         brand = new Brand();
-        brand.setId(1);
+        brand.setBrandId(1);
         brand.setBrandName("Lavie");
         list = new ArrayList<>();
         list.add(brand);
@@ -37,7 +37,7 @@ public class BrandServiceTest {
     @Test
     public void saveBrandTest()
     {
-        when(brandRepository.save((Brand)any())).thenReturn(brand);
+        when(brandRepository.createBrand(brand.getBrandId(),brand.getBrandName())).thenReturn(brand);
         Brand savedBrand = brandService.createBrandNode(brand);
         Assert.assertEquals(brand,savedBrand);
     }

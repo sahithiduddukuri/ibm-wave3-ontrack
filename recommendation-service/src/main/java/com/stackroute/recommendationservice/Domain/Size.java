@@ -12,7 +12,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 @AllArgsConstructor
 public class Size {
     @Id
-    private int id;
-    private String size;
+    private long id;
+    private String sizes;
 
 }

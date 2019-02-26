@@ -13,8 +13,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 public class Brand {
 
     @Id
-    private long id;
-
+    private long brandId;
     private String brandName;
 
 

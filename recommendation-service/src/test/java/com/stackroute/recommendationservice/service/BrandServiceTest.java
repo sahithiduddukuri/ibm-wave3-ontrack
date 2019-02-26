@@ -29,7 +29,7 @@ public class BrandServiceTest {
         MockitoAnnotations.initMocks(this);
         brand = new Brand();
         brand.setId(1);
-        brand.setBradName("lavie");
+        brand.setBrandName("Lavie");
         list = new ArrayList<>();
         list.add(brand);
     }

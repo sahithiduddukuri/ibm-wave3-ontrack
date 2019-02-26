@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ProductRepository extends Neo4jRepository<Product , Long> {
+public interface ProductRepository extends Neo4jRepository<Product , String> {
 
     @Query("match(n:Product) return n")
     List<Product> getAllProducts();
@@ -15,6 +15,6 @@ public interface ProductRepository extends Neo4jRepository<Product , Long> {
 //    @Query("create (product:Product)")
 //    Product save(Product product);
 
-    @Query("create (p:Product) SET p.productName={productName}")
-   Product save(@Param("productName") String productName);
+    @Query("create (p:Product) SET p.productId={productId},p.productName={productName}")
+   Product save(@Param("productId") String productId, @Param("productName") String productName);
 }

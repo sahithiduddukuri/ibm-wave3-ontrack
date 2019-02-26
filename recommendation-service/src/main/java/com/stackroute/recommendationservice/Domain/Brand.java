@@ -15,7 +15,7 @@ public class Brand {
     @Id
     private long id;
 
-    private String name;
+    private String brandName;
 
 
 }

@@ -13,7 +13,7 @@ import org.neo4j.ogm.annotation.Property;
 @NoArgsConstructor
 public class Product {
     @Id
-    private long id;
+    private String productId;
     private String productName;
 
 

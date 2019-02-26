@@ -22,12 +22,13 @@ public class RabbitMqConsumer {
     @RabbitListener(queues="${jsa.rabbitmq.queue1}", containerFactory="jsaFactory")
     public void recievedMessage(Products products) {
 
-        product.setName(products.getProductName());
+        product.setProductName(products.getProductName());
+        product.setProductId(products.getProductId());
         System.out.println(product.toString());
         productRepository.save(product);
 
-        brand.setName(products.getBrand());
-        brandRepository.createBrand(brand);
+//        brand.setName(products.getBrand());
+//        brandRepository.createBrand(brand);
 
     }
 }

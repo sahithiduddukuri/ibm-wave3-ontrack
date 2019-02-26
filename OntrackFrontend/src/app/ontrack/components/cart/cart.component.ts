@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   service: any;
   products: Object;
+  o: any;
   constructor(private route: Router, private onTrack: OnTrackService) { }
 
   ngOnInit() {
     this.onTrack.AddToCart().subscribe(data => {
       console.log(data);
       this.products = data;
+      return this.products;
     });
   }
+
   // CartToAdd(cart) {
   //   console.log(cart);
   //   this.service.AddToCart(cart);

@@ -21,10 +21,11 @@ productName: String;
   @Output()
    cartAddEvent = new EventEmitter<any>();
   dialogResult: any;
-  AddToCart() {
-    console.log('click event call');
-    this.cartAddEvent.emit(this.cart);
+  AddToCart(o): void {
+    console.log(o, 'click event call');
+    this.cartAddEvent.emit(o);
    this.route.navigateByUrl('/AddToCart');
+   data: { o }
   }
 
   openDialog(o): void {
@@ -44,9 +45,6 @@ ngOnInit() {
           this.products = data;
         });
  }
-//  addToCart() {
-//    this.route.navigate(['/', 'AddToCart']);
-//  }
  search() {
    if (this.productName !== '') {
     this.products = this.products.filter(res => {

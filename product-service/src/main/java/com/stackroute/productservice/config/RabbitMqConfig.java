@@ -15,14 +15,24 @@ public class RabbitMqConfig {
     @Value("${jsa.rabbitmq.queue}")
     String queueName1;
 
+    @Value("${jsa.rabbitmq.queue}")
+    String queueName2;
+
     @Value("${jsa.rabbitmq.exchange}")
     String exchange;
 
     @Value("${jsa.rabbitmq.routingkey}")
     private String routingkey1;
 
+    @Value("${jsa.rabbitmq.routingkey}")
+    private String routingkey2;
+
     @Bean
     Queue autoDeleteQueue1() {
+        return new Queue(queueName1, true);
+    }
+    @Bean
+    Queue autoDeleteQueue2() {
         return new Queue(queueName1, true);
     }
 
@@ -32,8 +42,14 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    Binding binding(Queue autoDeleteQueue1, DirectExchange exchange) {
+   public Binding bindingrecommendation(Queue autoDeleteQueue1, DirectExchange exchange) {
         return BindingBuilder.bind(autoDeleteQueue1).to(exchange).with(routingkey1);
+    }
+
+    @Bean
+    public Binding bindingsearch(DirectExchange exchange,
+                             Queue autoDeleteQueue2) {
+        return BindingBuilder.bind(autoDeleteQueue2).to(exchange).with(routingkey2);
     }
 
     @Bean

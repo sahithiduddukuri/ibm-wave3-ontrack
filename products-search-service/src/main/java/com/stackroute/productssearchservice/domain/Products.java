@@ -1,24 +1,23 @@
-package com.stackroute.recommendationservice.Domain;
+package com.stackroute.productssearchservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Builder
-@Setter
+@Document(collection = "products")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@NodeEntity
+@Builder
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
-public class
-Products {
+public class Products {
     @Id
     @JsonProperty("productId")
-    private long productId;
+    private int productId;
     @JsonProperty("productName")
     private String productName;
     @JsonProperty("productType")
@@ -32,7 +31,7 @@ Products {
     @JsonProperty("dimension")
     private String dimension;
     @JsonProperty("weight")
-    private  String weight;
+    private String weight;
     @JsonProperty("size")
     private String size;
     @JsonProperty("gender")
@@ -44,16 +43,10 @@ Products {
     @JsonProperty("colour")
     private String colour;
 
-//    private Brand brands;
-//    private Products products;
-//    private Category category;
-//    private Size sizes;
-
-
     @Override
     public String toString() {
         return "Products{" +
-                "productId='" + productId + '\'' +
+                "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", productType='" + productType + '\'' +
                 ", imageURL='" + imageURL + '\'' +

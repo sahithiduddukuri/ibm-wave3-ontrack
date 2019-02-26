@@ -13,9 +13,9 @@ import org.neo4j.ogm.annotation.NodeEntity;
 public class Brand {
 
     @Id
-    private int id;
+    private long id;
 
-    private String bradName;
+    private String name;
 
 
 }

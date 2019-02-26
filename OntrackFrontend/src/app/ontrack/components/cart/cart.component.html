@@ -1,15 +1,18 @@
-<!-- <div class="container"> -->
-<h1 mat-dialog-title>Product Details</h1>
-  <!-- <div mat-dialog-content *ngFor='let s of products' >  -->
-        <p>{{o.Product_id}}</p> 
-        <p><img src="{{'o.Image_URL'}}"></p>
-        <p>{{o.Product_name}}</p>
-        <!-- <p>{{s.Price}}</p>
-        <p>{{s.Dimension}}</p>
-        <p>{{s.Description}}</p>
-        <p>{{s.Size}}</p>
-        <p>{{s.Brand}}</p>
-        <p>{{s.Colour}}</p>
-        <p>{{s.MRP}}</p> -->
-<!-- </div>
-</div> -->
+<div class="container">
+        
+        <div *ngIf="productDetails">
+       <h1 mat-dialog-title>Product Details</h1>
+              <p>{{products.Products_id}}</p>
+              <p><img class="id" src="{{this.products.Image_URL}}"></p>
+              <p>{{products.Product_name}}</p>
+              <p>{{products.Price}}</p>
+              <p>{{products.Size}}</p>
+              <p>{{products.Brand}}</p>
+              <p>{{products.Colour}}</p>
+              <p>{{products.MRP}}</p>
+              <mat-card-actions>
+                        <button mat-raised-button (click)="buy()">Buy</button>
+                       <button mat-raised-button (click)="remove()">Remove</button>
+                    </mat-card-actions>
+        </div>
+       </div>

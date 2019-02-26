@@ -1,6 +1,4 @@
-
 import { Component, OnInit, Input } from '@angular/core';
-
 @Component({
   selector: 'app-cardcontainer',
   templateUrl: './cardcontainer.component.html',
@@ -9,9 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardcontainerComponent implements OnInit {
   text: String;
   constructor() { }
-
   ngOnInit() {
     // this.searchService.searchfilter(this.text);
   }
-
 }

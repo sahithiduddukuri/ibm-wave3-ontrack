@@ -1,3 +1,4 @@
+import { CartComponent } from './../cart/cart.component';
 import { Router } from '@angular/router';
 import { Ontrack } from './../../ontrack';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
@@ -10,7 +11,6 @@ import { Search } from '../search/Search';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-
 export class CardComponent implements OnInit {
   constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router) { }
   products: any = [];
@@ -24,8 +24,9 @@ productName: String;
   AddToCart(o): void {
     console.log(o, 'click event call');
     this.cartAddEvent.emit(o);
+    this.onTrack.cart = o;
    this.route.navigateByUrl('/AddToCart');
-   data: { o }
+
   }
 
   openDialog(o): void {

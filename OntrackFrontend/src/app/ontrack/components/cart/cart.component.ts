@@ -10,19 +10,22 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   service: any;
   products: Object;
-  o: any;
+  productDetails = false;
   constructor(private route: Router, private onTrack: OnTrackService) { }
-
   ngOnInit() {
-    this.onTrack.AddToCart().subscribe(data => {
-      console.log(data);
-      this.products = data;
-      return this.products;
-    });
+  //   console.log('Is this getting executed ..!!!');
+   if (this.onTrack.cart !== undefined || this.onTrack.cart !== null) {
+     this.productDetails = true;
+     console.log(this.onTrack.cart);
+     console.log(this.onTrack.cart, 'get me the status of the product !!');
+     this.products = this.onTrack.cart;
+   } else {
+     this.productDetails = false;
+   }
   }
 
-  // CartToAdd(cart) {
-  //   console.log(cart);
-  //   this.service.AddToCart(cart);
-  // }
+  cartToCard($event) {
+    console.log($event);
+    this.products = $event;
+  }
 }

@@ -15,7 +15,6 @@ export class DailogComponent implements OnInit {
     ) {}
     ngOnInit() {
       this.onTrack.openDailog().subscribe(data => {
-        // console.log(data);
         this.products = data;
       });
     }

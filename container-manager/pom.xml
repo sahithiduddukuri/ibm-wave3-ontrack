@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.stackroute</groupId>
-  <artifactId>ContainerManager</artifactId>
+  <artifactId>Container-Manager</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>ContainerManager</name>

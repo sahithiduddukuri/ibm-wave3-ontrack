@@ -113,6 +113,7 @@ services:
     network_mode: host
     depends_on:
       - mongo
+      - rabbitmq
     ports:
       - 8181:8181
     expose:
@@ -125,6 +126,7 @@ services:
     network_mode: host
     depends_on:
       - neo4j
+      - rabbitmq
     ports:
       - 8086:8086
     expose:
@@ -147,6 +149,7 @@ services:
     network_mode: host
     depends_on:
       - mongo
+      - rabbitmq
 
     ports:
       - 8998:8998

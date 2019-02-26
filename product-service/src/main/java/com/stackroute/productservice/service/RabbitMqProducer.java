@@ -16,13 +16,18 @@ public class RabbitMqProducer {
     @Value("${jsa.rabbitmq.exchange}")
     private String exchange;
 
-    @Value("${jsa.rabbitmq.routingkey}")
+    @Value("${jsa.rabbitmq.routingkey1}")
     private String routingkey1;
+
+    @Value("${jsa.rabbitmq.routingkey2}")
+    private String routingkey2;
+
 
 
     public void produce(Products products) {
 
             amqpTemplate.convertAndSend(exchange, routingkey1, products);
+            amqpTemplate.convertAndSend(exchange, routingkey2, products);
 
 
         System.out.println("Send msg = " + products);

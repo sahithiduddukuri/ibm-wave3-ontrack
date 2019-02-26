@@ -17,7 +17,7 @@ public class RabbitMqConsumer {
     @Autowired
     BrandRepository brandRepository;
 
-    Brand brand;
+    Brand brand = new Brand();
     Product product =new Product();
     @RabbitListener(queues="${jsa.rabbitmq.queue1}", containerFactory="jsaFactory")
     public void recievedMessage(Products products) {

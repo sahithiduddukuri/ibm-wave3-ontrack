@@ -1,4 +1,4 @@
- <div class="container">
+ <div class="container" >
   <div class="pics">
   <form [formGroup]="user" (ngSubmit)="login()">
    <mat-form-field appearance="outline" class="id">
@@ -7,20 +7,21 @@
      formControlName="userId" required />
     <mat-hint></mat-hint>
    </mat-form-field>
-   <br>
    <mat-form-field appearance="outline" class="password" style="color:white">
     <mat-label>Password</mat-label>
     <input matInput placeholder="Enter your password" type="password"
      formControlName="password" required />
-       <mat-hint></mat-hint>
+   <mat-hint></mat-hint>
    </mat-form-field>
    <div mat-card-action>
-   <button mat-raised-button class = "btn" color="primary" type="submit" [disabled]="!user.valid">Login</button>
+   <button mat-raised-button class = "btn" color="primary" type="submit" [disabled]="!user.valid" (click) = "login()">Login</button>
    <p>Have you registered yet or not?</p> 
-   <button (click) = "signup()" mat-raised-button class="btn1"  color="primary">Register</button>
+   <button (click) = "signup()" mat-button class="btn1"  color="primary">Register</button>
   </div>
   </form>
   </div>
   </div>
+
+  
 
 

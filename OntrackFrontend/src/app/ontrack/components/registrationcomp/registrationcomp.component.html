@@ -1,4 +1,5 @@
-<mat-card class="example-card">
+<div class="container">
+<div class="example-card">
   <mat-card-header>
     <mat-card-title>Registration Form</mat-card-title>
   </mat-card-header>
@@ -8,7 +9,7 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="name" [(ngModel)]="name" name="name" required>
+            <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
             </mat-form-field>
           </td>
         </tr>
@@ -22,16 +23,16 @@
         <tr>
         <td><mat-form-field class="example-full-width">
           <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-          <i class="material-icons">
+          <!-- <i class="material-icons">
             visibility
-            </i>
+            </i> -->
         </mat-form-field></td>
         </tr>
        
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="mobileNo" [(ngModel)]="mobileNo" name="mobileNo" required>
+            <input matInput placeholder="MobileNo" [(ngModel)]="mobileNo" name="mobileNo" required>
             </mat-form-field>
           </td>
         </tr>
@@ -60,5 +61,6 @@
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="register($event)" color="primary">Register</button>
-  </mat-card-actions>  </mat-card>
+    <button mat-button (click)="register($event)">Register</button>
+  </mat-card-actions>  </div>
+</div>

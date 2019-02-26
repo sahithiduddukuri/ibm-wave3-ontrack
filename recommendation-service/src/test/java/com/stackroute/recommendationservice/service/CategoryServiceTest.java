@@ -37,7 +37,7 @@ public class CategoryServiceTest {
     @Test
     public void saveCategoryTest()
     {
-        when(categoryRepository.save((Category)any())).thenReturn(category);
+        when(categoryRepository.createCategoryNode(category.getId(),category.getProductType())).thenReturn(category);
         Category savedCategory = categoryService.createNode(category);
         Assert.assertEquals(category,savedCategory);
     }

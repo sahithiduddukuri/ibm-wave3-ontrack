@@ -13,7 +13,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 public class Category {
 
     @Id
-    private int id;
+    private long id;
     private String productType;
 
 }

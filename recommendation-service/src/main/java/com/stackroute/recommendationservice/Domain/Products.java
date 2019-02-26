@@ -18,7 +18,7 @@ public class
 Products {
     @Id
     @JsonProperty("productId")
-    private long productId;
+    private String productId;
     @JsonProperty("productName")
     private String productName;
     @JsonProperty("productType")

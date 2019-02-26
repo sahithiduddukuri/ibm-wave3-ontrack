@@ -15,7 +15,7 @@ export class RegistrationService {
 constructor(private http: HttpClient ) {}
 addregister(reg: Myregistration) {
   console.log(reg);
-  this.url = 'http://localhost:8805/api/v1/registration';
+  this.url = 'http://0.0.0.0:8805/api/v1/registration';
  return this.http.post(this.url, JSON.stringify(reg) , this.httpOptions);
  }
 }

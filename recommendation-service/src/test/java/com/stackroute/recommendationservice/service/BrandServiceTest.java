@@ -15,7 +15,7 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 public class BrandServiceTest {
-    Brand brand;
+    Brand brands;
 
     @Mock
     BrandRepository brandRepository;
@@ -27,24 +27,24 @@ public class BrandServiceTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        brand = new Brand();
-        brand.setBrandId(1);
-        brand.setBrandName("Lavie");
+        brands = new Brand();
+        brands.setBrandId("1");
+        brands.setBrand("Lavie");
         list = new ArrayList<>();
-        list.add(brand);
+        list.add(brands);
     }
 
     @Test
     public void saveBrandTest()
     {
-        when(brandRepository.createBrand(brand.getBrandId(),brand.getBrandName())).thenReturn(brand);
-        Brand savedBrand = brandService.createBrandNode(brand);
-        Assert.assertEquals(brand,savedBrand);
+        when(brandRepository.createBrand(brands.getBrandId(),brands.getBrand())).thenReturn(brands);
+        Brand savedBrand = brandService.createBrandNode(brands);
+        Assert.assertEquals(brands,savedBrand);
     }
 
     @Test
     public void getBrandTest() {
-        brandRepository.save(brand);
+        brandRepository.save(brands);
         when(brandRepository.findAll()).thenReturn(list);
         List<Brand> userList = brandService.getAll();
         Assert.assertEquals(list, userList);

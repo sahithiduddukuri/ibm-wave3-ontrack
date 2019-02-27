@@ -56,6 +56,8 @@ public class ProductServiceImpl implements ProductService {
         products.setDescription(products.getDescription());
         products.setBrand(products.getBrand());
         products.setColour(products.getColour());
+        products.setBrandId(products.getBrandId());
+        products.setProductTypeId(products.getProductTypeId());
         return productRepository.save(products);
 
 

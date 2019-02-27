@@ -14,8 +14,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 public class Category {
 
     @Id
-    @GeneratedValue
-    private long categoryId;
+    private String productTypeId;
     private String productType;
 
 }

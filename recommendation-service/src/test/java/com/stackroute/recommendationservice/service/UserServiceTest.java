@@ -29,7 +29,7 @@ public class UserServiceTest {
         MockitoAnnotations.initMocks(this);
         user = new User();
         user.setDob("28/08/1996");
-        user.setEmailId("abc@gmail.com");
+        user.setPassword("abc@gmail.com");
         user.setGender("Female");
         user.setMobileNo("7995947734");
         user.setUserId(1);

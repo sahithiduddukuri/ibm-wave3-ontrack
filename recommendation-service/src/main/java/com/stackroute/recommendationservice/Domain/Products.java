@@ -14,8 +14,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 @NoArgsConstructor
 @NodeEntity
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
-public class
-Products {
+public class Products {
     @Id
     @JsonProperty("productId")
     private String productId;
@@ -23,6 +22,8 @@ Products {
     private String productName;
     @JsonProperty("productType")
     private String productType;
+    @JsonProperty("productTypeId")
+    private String productTypeId;
     @JsonProperty("imageURL")
     private String imageURL;
     @JsonProperty("mrp")
@@ -43,12 +44,8 @@ Products {
     private String brand;
     @JsonProperty("colour")
     private String colour;
-
-//    private Brand brands;
-//    private Products products;
-//    private Category category;
-//    private Size sizes;
-
+    @JsonProperty("brandId")
+    private String brandId;
 
     @Override
     public String toString() {
@@ -56,6 +53,7 @@ Products {
                 "productId='" + productId + '\'' +
                 ", productName='" + productName + '\'' +
                 ", productType='" + productType + '\'' +
+                ", productTypeId='" + productTypeId + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 ", mrp='" + mrp + '\'' +
                 ", price='" + price + '\'' +
@@ -66,6 +64,7 @@ Products {
                 ", description='" + description + '\'' +
                 ", brand='" + brand + '\'' +
                 ", colour='" + colour + '\'' +
+                ", brandId='" + brandId + '\'' +
                 '}';
     }
 }

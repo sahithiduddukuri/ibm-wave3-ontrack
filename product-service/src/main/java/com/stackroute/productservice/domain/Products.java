@@ -23,6 +23,8 @@ public class Products {
         private String productName;
         @JsonProperty("productType")
         private String productType;
+        @JsonProperty("productTypeId")
+        private String productTypeId;
         @JsonProperty("imageURL")
         private String imageURL;
         @JsonProperty("mrp")
@@ -41,28 +43,32 @@ public class Products {
         private String description;
         @JsonProperty("brand")
         private String brand;
+        @JsonProperty("brandId")
+        private String brandId;
         @JsonProperty("colour")
         private String colour;
 
         @Override
         public String toString() {
-            return "Products{" +
-                    "productId=" + productId +
-                    ", productName='" + productName + '\'' +
-                    ", productType='" + productType + '\'' +
-                    ", imageURL='" + imageURL + '\'' +
-                    ", mrp='" + mrp + '\'' +
-                    ", price='" + price + '\'' +
-                    ", dimension='" + dimension + '\'' +
-                    ", weight='" + weight + '\'' +
-                    ", size='" + size + '\'' +
-                    ", gender='" + gender + '\'' +
-                    ", description='" + description + '\'' +
-                    ", brand='" + brand + '\'' +
-                    ", colour='" + colour + '\'' +
-                    '}';
+                return "Products{" +
+                        "productId='" + productId + '\'' +
+                        ", productName='" + productName + '\'' +
+                        ", productType='" + productType + '\'' +
+                        ", productTypeId='" + productTypeId + '\'' +
+                        ", imageURL='" + imageURL + '\'' +
+                        ", mrp='" + mrp + '\'' +
+                        ", price='" + price + '\'' +
+                        ", dimension='" + dimension + '\'' +
+                        ", weight='" + weight + '\'' +
+                        ", size='" + size + '\'' +
+                        ", gender='" + gender + '\'' +
+                        ", description='" + description + '\'' +
+                        ", brand='" + brand + '\'' +
+                        ", brandId='" + brandId + '\'' +
+                        ", colour='" + colour + '\'' +
+                        '}';
         }
-    }
+}
 
 
 

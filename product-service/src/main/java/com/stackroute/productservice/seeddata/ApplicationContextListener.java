@@ -1,4 +1,4 @@
-package com.stackroute.productservice.seedpackage;
+package com.stackroute.productservice.seeddata;
 
 import com.stackroute.productservice.domain.Products;
 import com.stackroute.productservice.repository.ProductRepository;
@@ -24,13 +24,13 @@ public class ApplicationContextListener implements ApplicationListener<ContextRe
                 .productType("Sports Shoes")
                 .imageURL("https://assets.myntassets.com/h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg")
                 .mrp("2000").price("1499").dimension("14*10*5").weight("750gm").size("6,7,8").gender("Male").description("White flexible running shoes for men,easy to wear and comfort for long running")
-                .brand("Red Tape").colour("White").build();
+                .brand("Red Tape").colour("White").brandId("0").productTypeId("1").build();
         productRepository.save(p1);
         Products p2= Products.builder().productId("102").productName("Raymond Slip on for Men")
                 .productType("formal shoes")
                 .imageURL("https://rukminim1.flixcart.com/image/832/832/jcjejrk0/shoe/f/x/x/rxss00058-b6-42-raymond-blue-original-imaffnhrcbmqsfty.jpeg?q=70")
                 .mrp("7499").price("4894").dimension("14*10*5").weight("780gm").size("6,7,,8,9,10,11").gender("Men").description("Raymond Slip on shoe for Men")
-                .brand("Raymond Slip op").colour("Blue").build();
+                .brand("Raymond Slip op").colour("Blue").brandId("1").productTypeId("2").build();
         productRepository.save(p2);
     }
 }

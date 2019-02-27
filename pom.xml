@@ -31,6 +31,7 @@
         <module>config-server</module>
         <module>eventbrite-service</module>
         <module>delivery-manager-login</module>
+        <module>routing-manager</module>
     </modules>
     <dependencies>
         <dependency>

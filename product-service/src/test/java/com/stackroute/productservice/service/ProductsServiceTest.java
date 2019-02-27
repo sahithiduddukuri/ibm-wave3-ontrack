@@ -49,7 +49,9 @@ public class ProductsServiceTest {
         products.setGender("Women");
         products.setDescription("Raymond shoes for Women");
         products.setBrand("Raymond");
+        products.setBrandId("1");
         products.setColour("Black");
+        products.setProductTypeId("1");
         list = new ArrayList<>();
         list.add(products);
 

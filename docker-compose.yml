@@ -30,7 +30,7 @@ services:
     network_mode: host
 
   neo4j:
-    image: neo4j:3.5
+    image: neo4j:latest
     ports:
       - 7474:7474
       - "7687:7687"
@@ -97,6 +97,8 @@ services:
     build: user-registration-service/
     restart: always
     network_mode: host
+    depends_on:
+      - eurekaserver
     ports:
       - 8805:8805
     expose:
@@ -116,6 +118,7 @@ services:
     depends_on:
       - mongo
       - rabbitmq
+      - eurekaserver
     ports:
       - 8121:8121
     expose:
@@ -129,6 +132,7 @@ services:
     depends_on:
       - neo4j
       - rabbitmq
+      - eurekaserver
     ports:
       - 8086:8086
     expose:
@@ -152,6 +156,7 @@ services:
     depends_on:
       - mongo
       - rabbitmq
+      - eurekaserver
 
     ports:
       - 8998:8998

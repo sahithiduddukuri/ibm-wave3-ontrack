@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface UserRepository extends Neo4jRepository<User, Integer> {
 
-    @Query("match(n:user) return n")
+    @Query("match(n:User) return n")
     List<User> getAllUser();
 
-    @Query("create (User:user)")
+    @Query("create (u:User)")
     User createUser(User user);
 
 }

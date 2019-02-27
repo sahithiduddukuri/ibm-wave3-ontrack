@@ -28,7 +28,7 @@ public class CategoryServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         category = new Category();
-        category.setId(1);
+        category.setProductTypeId("1");
         category.setProductType("flipflops");
         list = new ArrayList<>();
         list.add(category);
@@ -37,7 +37,7 @@ public class CategoryServiceTest {
     @Test
     public void saveCategoryTest()
     {
-        when(categoryRepository.createCategoryNode(category.getId(),category.getProductType())).thenReturn(category);
+        when(categoryRepository.createCategoryNode(category.getProductTypeId(),category.getProductType())).thenReturn(category);
         Category savedCategory = categoryService.createNode(category);
         Assert.assertEquals(category,savedCategory);
     }

@@ -23,10 +23,11 @@ public class BrandServiceImpl implements BrandService{
         return (List<Brand>) brandRepository.findAll();
     }
 
-    public Brand createBrandNode(Brand brand) {
-        Long brandId = brand.getBrandId();
-        String brandName = brand.getBrandName();
-        Brand node = brandRepository.createBrand(brandId,brandName);
+    public Brand createBrandNode(Brand brands) {
+        String brandId = brands.getBrandId();
+        String brand = brands.getBrand();
+        System.out.println("system data"+ brand);
+        Brand node = brandRepository.createBrand(brandId,brand);
         return node;
     }
 }

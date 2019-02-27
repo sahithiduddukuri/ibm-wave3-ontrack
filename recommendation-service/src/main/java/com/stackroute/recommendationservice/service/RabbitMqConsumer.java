@@ -24,8 +24,9 @@ public class RabbitMqConsumer {
 
         product.setProductName(products.getProductName());
         product.setProductId(products.getProductId());
-        System.out.println(product.toString());
+      //  System.out.println(product.toString());
         productRepository.save(product);
+        System.out.println(product);
 
         brand.setBrandName(products.getBrand());
         brandRepository.save(brand);

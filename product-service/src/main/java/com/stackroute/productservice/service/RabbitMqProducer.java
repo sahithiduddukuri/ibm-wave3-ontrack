@@ -25,11 +25,12 @@ public class RabbitMqProducer {
 
 
     public void produce(Products products) {
+           for(int i=1;i<=100;i++) {
+               amqpTemplate.convertAndSend(exchange, routingkey1, products);
+               amqpTemplate.convertAndSend(exchange, routingkey2, products);
 
-            amqpTemplate.convertAndSend(exchange, routingkey1, products);
-            amqpTemplate.convertAndSend(exchange, routingkey2, products);
 
-
-        System.out.println("Send msg = " + products);
+               System.out.println("Send msg = " + products);
+           }
     }
 }

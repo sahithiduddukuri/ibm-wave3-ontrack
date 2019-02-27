@@ -25,6 +25,8 @@ services:
     ports:
       - 27017:27017
     container_name: mongo
+    volumes:
+      - /DB/mongo:/data/db
     network_mode: host
 
   neo4j:
@@ -115,9 +117,9 @@ services:
       - mongo
       - rabbitmq
     ports:
-      - 8181:8181
+      - 8121:8121
     expose:
-      - 8181
+      - 8121
 
   recommendation-service:
     image: recommendation-service:latest

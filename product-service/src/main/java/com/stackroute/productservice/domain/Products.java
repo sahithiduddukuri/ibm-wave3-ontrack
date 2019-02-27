@@ -23,6 +23,8 @@ public class Products {
         private String productName;
         @JsonProperty("productType")
         private String productType;
+        @JsonProperty("productTypeId")
+        private String productTypeId;
         @JsonProperty("imageURL")
         private String imageURL;
         @JsonProperty("mrp")
@@ -41,6 +43,8 @@ public class Products {
         private String description;
         @JsonProperty("brand")
         private String brand;
+        @JsonProperty("brandId")
+        private String brandId;
         @JsonProperty("colour")
         private String colour;
 
@@ -50,6 +54,7 @@ public class Products {
                     "productId=" + productId +
                     ", productName='" + productName + '\'' +
                     ", productType='" + productType + '\'' +
+                    ", productTypeId='" + productTypeId + '\'' +
                     ", imageURL='" + imageURL + '\'' +
                     ", mrp='" + mrp + '\'' +
                     ", price='" + price + '\'' +
@@ -59,6 +64,7 @@ public class Products {
                     ", gender='" + gender + '\'' +
                     ", description='" + description + '\'' +
                     ", brand='" + brand + '\'' +
+                    ", brandId='" + brandId + '\'' +
                     ", colour='" + colour + '\'' +
                     '}';
         }

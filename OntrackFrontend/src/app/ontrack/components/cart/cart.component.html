@@ -1,5 +1,4 @@
 <div class="container">
-        
         <div *ngIf="productDetails">
        <h1 mat-dialog-title>Product Details</h1>
               <p>{{products.Products_id}}</p>
@@ -11,8 +10,9 @@
               <p>{{products.Colour}}</p>
               <p>{{products.MRP}}</p>
               <mat-card-actions>
-                        <button mat-raised-button (click)="buy()">Buy</button>
-                       <button mat-raised-button (click)="remove()">Remove</button>
-                    </mat-card-actions>
+                  <button mat-raised-button (click)="buy()">BUY</button>
+                  <button mat-raised-button (click)="remove()">REMOVE</button>
+                  <button mat-raised-button  (click)="continue()">CONTINUE SHOPPING</button>
+                 </mat-card-actions>
         </div>
        </div>

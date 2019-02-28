@@ -1,3 +1,4 @@
+import { BuyComponent } from './ontrack/components/buy/buy.component';
 // import { CartComponent } from './ontrack/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -17,6 +18,24 @@ const routes: Routes = [
   },
   {
     path: 'AddToCart', component: CartComponent
+  },
+  {
+    path: 'continue', component: HomeComponent
+  },
+  {
+    path: 'buy', component: BuyComponent
+  },
+  {
+    path: 'shopping', component: HomeComponent
+  },
+  {
+    path: 'buys', component: BuyComponent
+  },
+  {
+    path: 'buy1', component: BuyComponent
+  },
+  {
+    path: 'AddtoCart', component: CartComponent
   },
   {
     path: '**', component: HomeComponent

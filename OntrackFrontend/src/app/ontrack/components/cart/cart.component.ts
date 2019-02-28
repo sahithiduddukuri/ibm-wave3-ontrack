@@ -23,6 +23,12 @@ export class CartComponent implements OnInit {
      this.productDetails = false;
    }
   }
+  continue() {
+    this.route.navigate(['/' , 'continue']);
+  }
+  buy() {
+    this.route.navigate(['/' , 'buy']);
+  }
 
   cartToCard($event) {
     console.log($event);

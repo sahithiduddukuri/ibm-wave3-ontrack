@@ -1,0 +1,68 @@
+.container {
+    background-image: url("../../../../assets/img/background.jpg"); 
+    background-image: cover;
+    background-repeat: no-repeat;
+    margin:0px;
+    width: 100%;
+    height: 780px;   
+}
+
+.example-full-width{
+   padding-top: 150px;
+padding-left:700px;
+}
+.id{
+    padding-left: 650px;
+    padding-top:50px;
+    display:flex;
+}
+.col{
+    padding-left: 10px;
+}
+.id1{
+    top: 200px;
+    left:500px;
+    position: relative;
+}
+.id2{
+    top: 200px;
+    right: 500px;
+    position: relative;
+}
+.items{
+    // margin-left: 600px;
+    padding-left: 100px;
+    padding-top: 400px;
+   padding-bottom: 1px;
+    position: relative;
+    
+    // margin: 800px;
+    
+
+    // top: 200px;
+    // left: 700px;
+    // position: relative;
+}
+
+// .items matcard{
+//     display: flex;
+//     color: black;
+//     background-color:white;
+//     margin-top: 10px;
+//     margin-left: 10px;
+//     // float: left;
+//     width: 1000px;
+//     height:1000px;
+//     // font-size: 35px;
+//     // border-bottom-left-radius: 20px;
+//     // border-bottom-right-radius: 20px;
+//     // border-top-left-radius: 20px;
+//     // border-top-right-radius: 20px;
+ 
+//  }
+.items mat-card{
+    height: 300px;
+    width: 400px;
+    left: 80px;
+   // position: relative;
+}

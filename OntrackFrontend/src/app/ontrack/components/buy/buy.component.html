@@ -1,0 +1,28 @@
+<div class="container">
+    <div ng2-carouselamos class= "slide-wrapper"
+    [items]= "items"
+    [width]= "800"
+    [$prev]= "prev"
+    [$next]= "next"
+    [$item]= "item">
+  </div>
+   
+    <ng-template #prev>
+     <button class="id1"> <mat-icon>navigate_before</mat-icon></button>
+    </ng-template>
+    <ng-template #next>
+        <button class="id2"><mat-icon>navigate_next</mat-icon></button>
+      </ng-template>
+    <ng-template #item let-i="index">
+          <div class = "items">
+            <mat-card>fdg</mat-card>
+          <!-- <button mat-raised-button (click)="slot()">"{{item.name}}"</button> -->
+          <!-- <button mat-raised-button (click)="slot()">"{{item.name}}"</button>   -->
+        </div>  
+      </ng-template>  
+      <div mat-card-actions class="id">
+<button mat-raised-button >PAY</button>
+<div class="col">
+<button mat-raised-button (click)="shopping()">CONTINUE SHOPPING</button>
+</div> 
+</div>

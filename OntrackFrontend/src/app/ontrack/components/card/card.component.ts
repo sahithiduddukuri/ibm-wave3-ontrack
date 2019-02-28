@@ -28,6 +28,9 @@ productName: String;
    this.route.navigateByUrl('/AddToCart');
 
   }
+  buys() {
+    this.route.navigate([ '/', 'buys']);
+  }
 
   openDialog(o): void {
     console.log(o, 'this is the data ');

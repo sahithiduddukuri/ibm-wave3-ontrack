@@ -1,6 +1,6 @@
 //package com.stackroute.registrationservice.feedcomponent;
 //
-//import com.stackroute.registrationservice.domain.Registration;
+//import com.stackroute.registrationservice.domain.User;
 //import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 //import com.stackroute.registrationservice.exceptions.UserNotFoundException;
 //import com.stackroute.registrationservice.repository.RegistrationRepository;
@@ -28,7 +28,7 @@
 //    @Override
 //    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 //
-//        registrationRepository.save(new Registration(111, "deb1", "1234", "deb123", "8900147919","15-09-1994","Male"));
+//        registrationRepository.save(new User(111, "deb1", "1234", "deb123", "8900147919","15-09-1994","Male"));
 //
 //    }
 //}
@@ -37,7 +37,7 @@
 //
 //    @Autowired
 //    RegistrationService registrationService;
-//    Registration feedRegistartionData = new Registration();
+//    User feedRegistartionData = new User();
 //
 //    @Override
 //    public void onApplicationEvent(ContextRefreshedEvent event)

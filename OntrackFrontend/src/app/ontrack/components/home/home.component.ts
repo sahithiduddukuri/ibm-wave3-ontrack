@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
-import { RouterEvent, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -9,25 +9,31 @@ import { RouterEvent, Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  productDTO: any = [];
+  products: any;
+  route: any;
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
+
   Login() {
     this.route.navigate(['/' , 'login']);
   }
   Signup() {
     this.route.navigate(['/' , 'Signup']);
   }
+ Profile() {
+    this.route.navigate(['/' , 'profile']);
+  }
   search() {
-    if (this.productDTO.Product_name !== '') {
-     this.productDTO = this.productDTO.filter(res => {
-       return res.this.productDTO.Product_name.toLocaleLowerCase().match(this.productDTO.Product_name.toLocaleLowerCase());
+    if (this.products.Product_name !== '') {
+     this.products = this.products.filter(res => {
+       return res.this.productDTO.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
      });
-    } else if (this.productDTO.Product_name === '') {
+    } else if (this.products.Product_name === '') {
       this.ngOnInit();
     }
   }
+
 }

@@ -1,0 +1,33 @@
+<header>
+  <div class="row1">
+    <img src="./assets/img/logo.svg">
+    <h3><a href="#">{{"SHOEFLY" + name}}</a></h3>
+    <div class = "row">
+      <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
+    </div>
+          <div class="wrap">
+      
+        <mat-card-actions>
+            <button mat-raised-button (click)="Login()">Login</button>
+          </mat-card-actions>
+          
+             <!-- <ng-container *ngIf="name && false; else elseTemplate">
+              <button mat-raised-button (click)="Login()">Login</button>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <button mat-raised-button (click)="Login()">Login</button>
+            </ng-template> -->
+            
+           
+           <!-- <ng-container *ngIf="button; elsebutton">
+            <button mat-raised-button (click)="Login()" class="button">Login</button>
+            
+           </ng-container>
+           <ng-template #elseTemplate>
+            <button mat-raised-button (click)="Logout()" class="elsebutton">Logout</button>
+           </ng-template> -->
+           
+        
+    </div>
+  </div>
+</header>

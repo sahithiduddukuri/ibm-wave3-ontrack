@@ -1,27 +1,29 @@
-package com.stackroute.productssearchservice.domain;
+package com.stackroute.registrationservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "products")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
-public class Products {
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope =Product.class)
+
+public class Product {
+
     @Id
     @JsonProperty("productId")
-    private int productId;
+    private String productId;
     @JsonProperty("productName")
     private String productName;
     @JsonProperty("productType")
     private String productType;
+    @JsonProperty("productTypeId")
+    private String productTypeId;
     @JsonProperty("imageURL")
     private String imageURL;
     @JsonProperty("mrp")
@@ -31,7 +33,7 @@ public class Products {
     @JsonProperty("dimension")
     private String dimension;
     @JsonProperty("weight")
-    private String weight;
+    private  String weight;
     @JsonProperty("size")
     private String size;
     @JsonProperty("gender")
@@ -40,15 +42,18 @@ public class Products {
     private String description;
     @JsonProperty("brand")
     private String brand;
+    @JsonProperty("brandId")
+    private String brandId;
     @JsonProperty("colour")
     private String colour;
 
     @Override
     public String toString() {
-        return "Products{" +
-                "productId=" + productId +
+        return "Product{" +
+                "productId='" + productId + '\'' +
                 ", productName='" + productName + '\'' +
                 ", productType='" + productType + '\'' +
+                ", productTypeId='" + productTypeId + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 ", mrp='" + mrp + '\'' +
                 ", price='" + price + '\'' +
@@ -58,6 +63,7 @@ public class Products {
                 ", gender='" + gender + '\'' +
                 ", description='" + description + '\'' +
                 ", brand='" + brand + '\'' +
+                ", brandId='" + brandId + '\'' +
                 ", colour='" + colour + '\'' +
                 '}';
     }

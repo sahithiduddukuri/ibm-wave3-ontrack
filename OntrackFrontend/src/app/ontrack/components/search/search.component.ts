@@ -9,11 +9,11 @@ import { Search } from './Search';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  products: any = [];
+  productDTO: any = [];
   productName: String;
   constructor() { }
   ngOnInit() {
-    this.products = [
+    this.productDTO = [
       {
         'productId': '1',
         'productName': 'Nike'
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
 
    }
    search() {
-     this.products = this.products.filter(res => {
+     this.productDTO = this.productDTO.filter(res => {
        return res.productName.toLocaleLowerCase().match(this.productName.toLocaleLowerCase());
      });
    }
@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
 
   // constructor(private searchService: SearchService) { }
   // ngOnInit() {
-  //   this.searchService.getProducts(this.startAt, this.endAt).subscribe(products => this.products = products);
+  //   this.searchService.getProducts(this.startAt, this.endAt).subscribe(productDTO => this.productDTO = productDTO);
   // }
 
   // search($event) {

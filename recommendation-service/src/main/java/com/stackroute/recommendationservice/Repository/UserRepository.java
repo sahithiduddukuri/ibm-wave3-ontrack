@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.Repository;
 
-import com.stackroute.recommendationservice.Domain.User;
+import com.stackroute.rabbitmq.domain.User;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 

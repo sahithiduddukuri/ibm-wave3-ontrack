@@ -1,4 +1,4 @@
-package com.stackroute.productservice.domain;
+package com.stackroute.rabbitmq.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,15 +6,13 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "Products")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope =Products.class)
 
-public class Products {
+
+@Data
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = ProductDTO.class)
+
+public class ProductDTO {
 
         @Id
         @JsonProperty("productId")
@@ -51,7 +49,7 @@ public class Products {
         @Override
         public String toString() {
 
-            return "Products{" +
+            return "ProductDTO{" +
                     "productId=" + productId +
                     ", productName='" + productName + '\'' +
                     ", productType='" + productType + '\'' +

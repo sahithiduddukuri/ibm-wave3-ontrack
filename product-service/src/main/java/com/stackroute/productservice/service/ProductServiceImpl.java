@@ -1,17 +1,20 @@
 package com.stackroute.productservice.service;
 
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 import com.stackroute.productservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+
 @Service
 public class ProductServiceImpl implements ProductService {
+
+
     private ProductRepository productRepository;
 
     @Autowired
@@ -22,43 +25,30 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
 
-    public Products saveProduct(Products products) throws ProductAlreadyExistsException {
+    public Product saveProduct(Product product) throws ProductAlreadyExistsException {
 
-         if(productRepository.existsById(products.getProductId())){
-             throw new ProductAlreadyExistsException("Products already exists");
+         if(productRepository.existsById(product.getProductId())){
+             throw new ProductAlreadyExistsException("Product already exists");
          }
-        Products savedProducts = productRepository.save(products);
-         if(savedProducts ==null){
-             throw new ProductAlreadyExistsException("Products already exist");
+        Product savedProduct = productRepository.save(product);
+         if(savedProduct ==null){
+             throw new ProductAlreadyExistsException("Product already exist");
          }
-        return savedProducts;
+        return savedProduct;
     }
     @Override
-    public Products updateProduct(Products products) throws ProductAlreadyUpdatedException {
+    public Product updateProduct(Product product) throws ProductAlreadyUpdatedException {
 
-       if(productRepository.existsById(products.getProductId())){
+       if(productRepository.existsById(product.getProductId())){
 
 
-           throw new ProductAlreadyUpdatedException("Products doesn't exists.");
+           throw new ProductAlreadyUpdatedException("Product doesn't exists.");
        }else
 
 
-                  products.setProductId(products.getProductId());
-                 products.setProductName(products.getProductName());
-                   products.setProductType(products.getProductType());
-        products.setImageURL(products.getMrp());
-        products.setMrp(products.getMrp());
-        products.setPrice(products.getPrice());
-        products.setDimension(products.getDimension());
-        products.setWeight(products.getWeight());
-        products.setSize(products.getSize());
-        products.setGender(products.getGender());
-        products.setDescription(products.getDescription());
-        products.setBrand(products.getBrand());
-        products.setColour(products.getColour());
-        products.setBrandId(products.getBrandId());
-        products.setProductTypeId(products.getProductTypeId());
-        return productRepository.save(products);
+                 product.setProductId(product.getProductId());
+
+        return productRepository.save(product);
 
 
     }
@@ -75,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
                return status;
            }
            else{
-               throw new ProductIdNotFoundException("Products id not found");
+               throw new ProductIdNotFoundException("ProductDTO id not found");
            }
 
 
@@ -84,10 +74,15 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<Products> getAllProducts()
+    public List<Product> getAllProducts()
+
     {
         return productRepository.findAll();
+//                .stream()
+//                .map(productMapper::productToProductDTO)
+//                .collect(Collectors.toList());
     }
+
 
 
 }

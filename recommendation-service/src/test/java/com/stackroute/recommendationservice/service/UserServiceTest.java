@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.User;
+import com.stackroute.rabbitmq.domain.User;
 import com.stackroute.recommendationservice.Repository.UserRepository;
 import org.junit.Assert;
 import org.junit.Before;

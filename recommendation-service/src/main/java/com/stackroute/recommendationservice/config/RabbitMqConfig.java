@@ -19,6 +19,7 @@ public class RabbitMqConfig {
     @Bean
     public SimpleRabbitListenerContainerFactory jsaFactory(ConnectionFactory connectionFactory,
                                                            SimpleRabbitListenerContainerFactoryConfigurer configurer) {
+        System.out.println("-----------------------------------------------");
         SimpleRabbitListenerContainerFactory factory =
                 new SimpleRabbitListenerContainerFactory();
         configurer.configure(factory, connectionFactory);

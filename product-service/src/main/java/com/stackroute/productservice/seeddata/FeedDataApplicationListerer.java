@@ -1,9 +1,11 @@
 package com.stackroute.productservice.seeddata;
 
 import com.opencsv.CSVReaderBuilder;
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.service.ProductService;
+
+import com.stackroute.rabbitmq.domain.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -20,31 +22,31 @@ import com.opencsv.CSVReader;
 public class FeedDataApplicationListerer implements ApplicationListener <ContextRefreshedEvent> {
 
     private ProductService productService;
-    private Products products;
+    private Product product;
 
     @Autowired
     public FeedDataApplicationListerer(ProductService productService) throws ProductAlreadyExistsException {
        this.productService=productService;
 
-        this.products = new Products();
-        this.products.setProductId("111");
-        this.products.setProductName("Nike shoe");
-        this.products.setProductType("sports shoe");
-        this.products.setProductTypeId("101");
-        this.products.setImageURL("");
-        this.products.setMrp("2000");
-        this.products.setPrice("1499");
-        this.products.setDimension("14*10*5");
-        this.products.setWeight("780gm");
-        this.products.setSize("6,7,8,9,10");
-        this.products.setGender("Men");
-        this.products.setDescription("nike men shoe");
-        this.products.setBrand("Nike");
-        this.products.setBrandId("112");
-        this.products.setColour("Green");
+        this.product = new Product();
+        this.product.setProductId("10000000");
+        this.product.setProductName("Nike shoe");
+        this.product.setProductType("sports shoe");
+        this.product.setProductTypeId("101");
+        this.product.setImageURL("");
+        this.product.setMrp("2000");
+        this.product.setPrice("1499");
+        this.product.setDimension("14*10*5");
+        this.product.setWeight("780gm");
+        this.product.setSize("6,7,8,9,10");
+        this.product.setGender("Men");
+        this.product.setDescription("nike men shoe");
+        this.product.setBrand("Nike");
+        this.product.setBrandId("112");
+        this.product.setColour("Green");
 
 
-       productService.saveProduct(products);
+       productService.saveProduct(product);
 
     }
 
@@ -70,23 +72,23 @@ public class FeedDataApplicationListerer implements ApplicationListener <Context
 
             System.out.println("values"+Arrays.toString(row));
 
-                products.setProductId(row[0]);
-                products.setProductName(row[1]);
-                products.setProductType(row[2]);
-                products.setProductTypeId(row[3]);
-                products.setImageURL(row[4]);
-                products.setMrp(row[5]);
-                products.setPrice(row[6]);
-                products.setDimension(row[7]);
-                products.setWeight(row[8]);
-                products.setSize(row[9]);
-                products.setGender(row[10]);
-                products.setDescription(row[11]);
-                products.setBrand(row[12]);
-                products.setBrandId(row[13]);
-                products.setColour(row[14]);
-                productService.saveProduct(products);
-            System.out.println("products values"+products);
+                product.setProductId(row[0]);
+                product.setProductName(row[1]);
+                product.setProductType(row[2]);
+                product.setProductTypeId(row[3]);
+                product.setImageURL(row[4]);
+                product.setMrp(row[5]);
+                product.setPrice(row[6]);
+                product.setDimension(row[7]);
+                product.setWeight(row[8]);
+                product.setSize(row[9]);
+                product.setGender(row[10]);
+                product.setDescription(row[11]);
+                product.setBrand(row[12]);
+                product.setBrandId(row[13]);
+                product.setColour(row[14]);
+                productService.saveProduct(product);
+            System.out.println("productDTO values"+ product);
 
         }
     }

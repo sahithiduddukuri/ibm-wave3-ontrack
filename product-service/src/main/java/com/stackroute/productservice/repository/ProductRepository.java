@@ -1,6 +1,6 @@
 package com.stackroute.productservice.repository;
 
-import com.stackroute.productservice.domain.Products;
+import com.stackroute.rabbitmq.domain.Products;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

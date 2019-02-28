@@ -1,10 +1,10 @@
 package com.stackroute.productservice.service;
 
-import com.stackroute.productservice.domain.Products;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 import com.stackroute.productservice.repository.ProductRepository;
+import com.stackroute.rabbitmq.domain.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;

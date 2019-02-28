@@ -1,9 +1,9 @@
 package com.stackroute.productservice.seeddata;
 
 import com.opencsv.CSVReaderBuilder;
-import com.stackroute.productservice.domain.Products;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.service.ProductService;
+import com.stackroute.rabbitmq.domain.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

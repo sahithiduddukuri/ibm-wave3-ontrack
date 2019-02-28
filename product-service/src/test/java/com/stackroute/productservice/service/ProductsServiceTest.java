@@ -1,10 +1,11 @@
 
 package com.stackroute.productservice.service;
 
-import com.stackroute.productservice.domain.Products;
+
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.repository.ProductRepository;
+import com.stackroute.rabbitmq.domain.Products;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

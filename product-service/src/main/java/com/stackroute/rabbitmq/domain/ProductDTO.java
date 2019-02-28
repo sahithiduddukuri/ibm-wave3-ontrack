@@ -1,4 +1,4 @@
-package com.stackroute.productservice.domain;
+package com.stackroute.rabbitmq.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,15 +6,13 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "Products")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope =Products.class)
 
-public class Products {
+
+@Data
+
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = ProductDTO.class)
+
+public class ProductDTO {
 
         @Id
         @JsonProperty("productId")
@@ -23,6 +21,8 @@ public class Products {
         private String productName;
         @JsonProperty("productType")
         private String productType;
+        @JsonProperty("productTypeId")
+        private String productTypeId;
         @JsonProperty("imageURL")
         private String imageURL;
         @JsonProperty("mrp")
@@ -41,15 +41,19 @@ public class Products {
         private String description;
         @JsonProperty("brand")
         private String brand;
+        @JsonProperty("brandId")
+        private String brandId;
         @JsonProperty("colour")
         private String colour;
 
         @Override
         public String toString() {
-            return "Products{" +
+
+            return "ProductDTO{" +
                     "productId=" + productId +
                     ", productName='" + productName + '\'' +
                     ", productType='" + productType + '\'' +
+                    ", productTypeId='" + productTypeId + '\'' +
                     ", imageURL='" + imageURL + '\'' +
                     ", mrp='" + mrp + '\'' +
                     ", price='" + price + '\'' +
@@ -59,10 +63,12 @@ public class Products {
                     ", gender='" + gender + '\'' +
                     ", description='" + description + '\'' +
                     ", brand='" + brand + '\'' +
+                    ", brandId='" + brandId + '\'' +
                     ", colour='" + colour + '\'' +
                     '}';
+
         }
-    }
+}
 
 
 

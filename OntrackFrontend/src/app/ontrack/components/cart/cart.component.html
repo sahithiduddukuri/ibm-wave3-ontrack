@@ -1,14 +1,14 @@
 <div class="container">
         <div *ngIf="productDetails">
        <h1 mat-dialog-title>Product Details</h1>
-              <p>{{products.Products_id}}</p>
-              <p><img class="id" src="{{this.products.Image_URL}}"></p>
-              <p>{{products.Product_name}}</p>
-              <p>{{products.Price}}</p>
-              <p>{{products.Size}}</p>
-              <p>{{products.Brand}}</p>
-              <p>{{products.Colour}}</p>
-              <p>{{products.MRP}}</p>
+              <p>{{productDTO.Products_id}}</p>
+              <p><img class="id" src="{{this.productDTO.Image_URL}}"></p>
+              <p>{{productDTO.Product_name}}</p>
+              <p>{{productDTO.Price}}</p>
+              <p>{{productDTO.Size}}</p>
+              <p>{{productDTO.Brand}}</p>
+              <p>{{productDTO.Colour}}</p>
+              <p>{{productDTO.MRP}}</p>
               <mat-card-actions>
                   <button mat-raised-button (click)="buy()">BUY</button>
                   <button mat-raised-button (click)="remove()">REMOVE</button>

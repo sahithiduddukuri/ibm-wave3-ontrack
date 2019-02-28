@@ -1,9 +1,12 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.Brand;
-import com.stackroute.recommendationservice.Domain.Product;
-import com.stackroute.recommendationservice.Domain.Products;
+
+import com.stackroute.rabbitmq.domain.Brand;
+import com.stackroute.rabbitmq.domain.Category;
+import com.stackroute.rabbitmq.domain.Product;
+import com.stackroute.rabbitmq.domain.Products;
 import com.stackroute.recommendationservice.Repository.BrandRepository;
+import com.stackroute.recommendationservice.Repository.CategoryRepository;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +20,52 @@ public class RabbitMqConsumer {
     @Autowired
     BrandRepository brandRepository;
 
-    Brand brand;
+    @Autowired
+    CategoryRepository categoryRepository;
+
+    Category category = new Category();
+
+    Brand brands = new Brand();
+
     Product product =new Product();
+
     @RabbitListener(queues="${jsa.rabbitmq.queue1}", containerFactory="jsaFactory")
     public void recievedMessage(Products products) {
+        System.out.println("--------------------------------------");
+        System.out.println(products.toString());
+
 
         product.setProductName(products.getProductName());
         product.setProductId(products.getProductId());
-        System.out.println(product.toString());
+        product.setBrandId(products.getBrandId());
+        product.setBrand(products.getBrand());
+        product.setProductType(products.getProductType());
+        product.setProductTypeId(products.getProductTypeId());
+        product.setColour(products.getColour());
+        product.setDescription(products.getDescription());
+        product.setGender(products.getGender());
+        product.setDimension(products.getDimension());
+        product.setImageURL(products.getImageURL());
+        product.setMrp(products.getMrp());
+        product.setPrice(products.getPrice());
+        product.setSize(products.getSize());
+        product.setWeight(products.getWeight());
+        System.out.println("-------------------------------------------");
         productRepository.save(product);
+        System.out.println(product.toString());
 
-        brand.setBrandName(products.getBrand());
-        brandRepository.save(brand);
+        brands.setBrandId(products.getBrandId());
+        brands.setBrand(products.getBrand());
+        brandRepository.save(brands);
+        System.out.println(brands.toString());
+
+        category.setProductTypeId(products.getProductTypeId());
+        category.setProductType(products.getProductType());
+        categoryRepository.save(category);
+        System.out.println(category.toString());
+
+
+
 
     }
 }

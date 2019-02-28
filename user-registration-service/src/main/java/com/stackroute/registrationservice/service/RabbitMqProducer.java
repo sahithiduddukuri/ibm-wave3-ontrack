@@ -1,7 +1,7 @@
 package com.stackroute.registrationservice.service;
 
 import com.stackroute.registrationservice.domain.Message;
-import com.stackroute.registrationservice.domain.Registration;
+import com.stackroute.registrationservice.domain.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +18,8 @@ public class RabbitMqProducer {
     @Value("${jsa.rabbitmq.routingkey}")
     private String routingkey;
 
-    public void produce(Registration registration){
-        msg = new Message(registration.getUserId(),registration.getPassword());
+    public void produce(User user){
+        msg = new Message(user.getUserId(), user.getPassword());
         amqpTemplate.convertAndSend(exchange, routingkey, msg);
         System.out.println("Send msg = " + msg);
     }

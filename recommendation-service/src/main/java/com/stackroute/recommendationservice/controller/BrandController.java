@@ -1,6 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
-import com.stackroute.recommendationservice.Domain.Brand;
+
+import com.stackroute.rabbitmq.domain.Brand;
 import com.stackroute.recommendationservice.service.BrandService;
 import com.stackroute.recommendationservice.service.BrandServiceImpl;
 import org.springframework.http.HttpStatus;

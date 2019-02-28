@@ -1,5 +1,28 @@
+<<<<<<< HEAD
  <app-header></app-header>
  <body>
+=======
+  <header>
+    <div class="row1">
+      <img src="./assets/img/logo.svg">
+      <h3>SHOEFLY</h3>
+      <div class = "row">
+        <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
+      </div>
+            <div class="wrap">
+          <mat-card-actions>
+              <button mat-raised-button (click)="Login()">Login</button>
+          </mat-card-actions>
+
+          <mat-card-actions>
+              <button mat-raised-button (click)="Profile()">Profile</button>
+          </mat-card-actions>
+
+      </div>
+    </div>
+  </header>
+  <body>
+>>>>>>> e9f64b6cd74995bcae59ad2b0c3555ad97aaf14f
       <img class="landing-wallpaper" src="./assets/img/landing-wallpaper.jpg">
     <app-card></app-card>
   </body>

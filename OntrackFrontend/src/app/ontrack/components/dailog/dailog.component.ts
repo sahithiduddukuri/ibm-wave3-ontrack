@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./dailog.component.scss']
 })
 export class DailogComponent implements OnInit {
-  products: any = [];
+  productDTO: any = [];
   constructor(
     public dialogRef: MatDialogRef<DailogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private onTrack: OnTrackService, public route: Router
@@ -29,7 +29,7 @@ export class DailogComponent implements OnInit {
       // }
     ngOnInit() {
       this.onTrack.openDailog().subscribe(data => {
-        this.products = data;
+        this.productDTO = data;
       });
     }
   closeDailog() {

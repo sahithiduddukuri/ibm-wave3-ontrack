@@ -1,5 +1,6 @@
 package com.stackroute.recommendationservice.service;
-import com.stackroute.recommendationservice.Domain.Product;
+
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,6 +32,20 @@ public class ProductServiceTest {
         product = new Product();
         product.setProductId("1");
         product.setProductName("Shoe");
+        product.setProductType("good");
+        product.setProductTypeId("1");
+        product.setImageURL("hkjh nkj");
+        product.setMrp("2000");
+        product.setPrice("1499");
+        product.setDimension("14*10*5");
+        product.setWeight("750gm");
+        product.setSize("4,5,6,7,8,9");
+        product.setGender("Women");
+        product.setDescription("Raymond shoes for Women");
+        product.setBrand("Raymond");
+        product.setBrandId("1");
+        product.setColour("Black");
+
         list = new ArrayList<> ();
         list.add(product);
     }
@@ -38,7 +53,7 @@ public class ProductServiceTest {
     @Test
     public void saveProductTest()
     {
-        when(productRepository.create(product.getProductId(),product.getProductName())).thenReturn(product);
+        when(productRepository.create(product.getProductId(),product.getProductName(),product.getProductType(),product.getProductTypeId(),product.getImageURL(),product.getMrp(),product.getPrice(),product.getDimension(),product.getWeight(),product.getSize(),product.getGender(),product.getDescription(),product.getBrand(),product.getBrandId(),product.getColour())).thenReturn(product);
         Product savedProduct = productService.createNode(product);
         Assert.assertEquals(product,savedProduct);
     }

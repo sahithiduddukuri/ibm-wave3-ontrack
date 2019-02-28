@@ -1,6 +1,7 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.User;
+
+import com.stackroute.rabbitmq.domain.User;
 import com.stackroute.recommendationservice.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

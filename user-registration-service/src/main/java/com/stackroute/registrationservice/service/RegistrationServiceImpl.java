@@ -1,6 +1,6 @@
 package com.stackroute.registrationservice.service;
 
-import com.stackroute.registrationservice.domain.Registration;
+import com.stackroute.registrationservice.domain.User;
 import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.registrationservice.exceptions.UserNotFoundException;
 import com.stackroute.registrationservice.repository.RegistrationRepository;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class RegistrationServiceImpl implements RegistrationService
 {
     private RegistrationRepository registrationRepository;
-    private Registration registration;
+    private User user;
 
     @Autowired
     public RegistrationServiceImpl(RegistrationRepository registrationRepository)
@@ -23,18 +23,18 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public Registration saveUser(Registration registration) throws UserAlreadyExistsException, UserNotFoundException {
-//        Optional optional = registrationRepository.findById(registration.getUserId());
+    public User saveUser(User user) throws UserAlreadyExistsException, UserNotFoundException {
+//        Optional optional = registrationRepository.findById(user.getUserId());
 //        if((optional.isPresent()))
 //        {
 //            throw new UserAlreadyExistsException();
 //        }
-//        return registrationRepository.insert(registration);
-        if(registrationRepository.existsById(registration.getId()))
+//        return registrationRepository.insert(user);
+        if(registrationRepository.existsById(user.getId()))
         {
             throw new UserAlreadyExistsException("User alreasy exists");
         }
-        Registration savedUser = registrationRepository.save(registration);
+        User savedUser = registrationRepository.save(user);
         if(savedUser == null)
         {
             throw new UserAlreadyExistsException();
@@ -43,7 +43,7 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public List<Registration> getAllUser()
+    public List<User> getAllUser()
     {
         return registrationRepository.findAll();
     }
@@ -65,23 +65,23 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public Registration updateUser(Registration registration) throws UserNotFoundException {
+    public User updateUser(User user) throws UserNotFoundException {
 //        Optional optional = registrationRepository.findById(id);
 //        if(optional.isPresent())
 //        {
-//            registration=registrationRepository.findById(id).get();
-//            registration.setPassword(pass);
-//            registration.setEmailId(mail);
-//            registrationRepository.save(registration);
+//            user=registrationRepository.findById(id).get();
+//            user.setPassword(pass);
+//            user.setEmailId(mail);
+//            registrationRepository.save(user);
 //        }
 //        else
 //        {
 //            throw new UserNotFoundException();
 //        }
-//        return registration;
-        if(registrationRepository.existsById(registration.getId()))
+//        return user;
+        if(registrationRepository.existsById(user.getId()))
         {
-            Registration updateUser=registrationRepository.save(registration);
+            User updateUser=registrationRepository.save(user);
             return updateUser;
         }
         else

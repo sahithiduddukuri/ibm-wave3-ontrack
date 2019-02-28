@@ -12,19 +12,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqConfig {
 
-    @Value("${jsa.rabbitmq.queue}")
+    @Value("${jsa.rabbitmq.queue1}")
     String queueName1;
 
-    @Value("${jsa.rabbitmq.queue}")
+    @Value("${jsa.rabbitmq.queue2}")
     String queueName2;
 
     @Value("${jsa.rabbitmq.exchange}")
     String exchange;
 
-    @Value("${jsa.rabbitmq.routingkey}")
+    @Value("${jsa.rabbitmq.routingkey1}")
     private String routingkey1;
 
-    @Value("${jsa.rabbitmq.routingkey}")
+    @Value("${jsa.rabbitmq.routingkey2}")
     private String routingkey2;
 
     @Bean
@@ -33,7 +33,7 @@ public class RabbitMqConfig {
     }
     @Bean
     Queue autoDeleteQueue2() {
-        return new Queue(queueName1, true);
+        return new Queue(queueName2, true);
     }
 
     @Bean
@@ -56,6 +56,8 @@ public class RabbitMqConfig {
     public MessageConverter jsonMessageConverter(){
         return new Jackson2JsonMessageConverter();
     }
+
+
 
     public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);

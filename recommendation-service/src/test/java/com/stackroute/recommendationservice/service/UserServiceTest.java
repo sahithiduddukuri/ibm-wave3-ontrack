@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.User;
+import com.stackroute.rabbitmq.domain.User;
 import com.stackroute.recommendationservice.Repository.UserRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -29,7 +29,7 @@ public class UserServiceTest {
         MockitoAnnotations.initMocks(this);
         user = new User();
         user.setDob("28/08/1996");
-        user.setEmailId("abc@gmail.com");
+        user.setPassword("abc@gmail.com");
         user.setGender("Female");
         user.setMobileNo("7995947734");
         user.setUserId(1);

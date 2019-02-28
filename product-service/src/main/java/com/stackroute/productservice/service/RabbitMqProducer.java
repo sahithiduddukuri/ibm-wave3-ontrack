@@ -2,7 +2,8 @@ package com.stackroute.productservice.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stackroute.productservice.domain.Products;
+
+import com.stackroute.rabbitmq.domain.Products;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,8 +29,6 @@ public class RabbitMqProducer {
            for(int i=1;i<=100;i++) {
                amqpTemplate.convertAndSend(exchange, routingkey1, products);
                amqpTemplate.convertAndSend(exchange, routingkey2, products);
-
-
                System.out.println("Send msg = " + products);
            }
     }

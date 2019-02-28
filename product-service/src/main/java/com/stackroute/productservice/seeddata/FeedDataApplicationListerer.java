@@ -27,7 +27,7 @@ public class FeedDataApplicationListerer implements ApplicationListener <Context
        this.productService=productService;
 
         this.products = new Products();
-        this.products.setProductId("111");
+        this.products.setProductId("10000000");
         this.products.setProductName("Nike shoe");
         this.products.setProductType("sports shoe");
         this.products.setProductTypeId("101");

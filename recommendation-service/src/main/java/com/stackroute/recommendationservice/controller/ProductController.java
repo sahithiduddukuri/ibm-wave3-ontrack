@@ -1,7 +1,6 @@
 package com.stackroute.recommendationservice.controller;
 
-import com.stackroute.recommendationservice.Domain.Product;
-import com.stackroute.recommendationservice.Domain.Products;
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.recommendationservice.service.ProductService;
 import com.stackroute.recommendationservice.service.RabbitMqConsumer;
 import org.springframework.beans.factory.annotation.Autowired;

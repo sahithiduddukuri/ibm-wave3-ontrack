@@ -1,6 +1,10 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.*;
+
+import com.stackroute.rabbitmq.domain.Brand;
+import com.stackroute.rabbitmq.domain.Category;
+import com.stackroute.rabbitmq.domain.Product;
+import com.stackroute.rabbitmq.domain.Products;
 import com.stackroute.recommendationservice.Repository.BrandRepository;
 import com.stackroute.recommendationservice.Repository.CategoryRepository;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
@@ -27,14 +31,12 @@ public class RabbitMqConsumer {
 
     @RabbitListener(queues="${jsa.rabbitmq.queue1}", containerFactory="jsaFactory")
     public void recievedMessage(Products products) {
+        System.out.println("--------------------------------------");
+        System.out.println(products.toString());
+
 
         product.setProductName(products.getProductName());
         product.setProductId(products.getProductId());
-
-      //  System.out.println(product.toString());
-        productRepository.save(product);
-        System.out.println(product);
-
         product.setBrandId(products.getBrandId());
         product.setBrand(products.getBrand());
         product.setProductType(products.getProductType());
@@ -48,6 +50,7 @@ public class RabbitMqConsumer {
         product.setPrice(products.getPrice());
         product.setSize(products.getSize());
         product.setWeight(products.getWeight());
+        System.out.println("-------------------------------------------");
         productRepository.save(product);
         System.out.println(product.toString());
 

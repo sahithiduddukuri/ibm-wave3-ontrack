@@ -1,7 +1,6 @@
 package com.stackroute.routingmanager.Controller;
 
-import com.stackroute.routingmanager.Domain.Node;
-import com.stackroute.routingmanager.Service.RoutingService;
+import com.stackroute.routingmanager.Domain.Order;
 import com.stackroute.routingmanager.Service.RoutingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,17 +13,22 @@ import org.springframework.web.bind.annotation.*;
 public class RoutingManagerController {
 
     public RoutingServiceImpl routingService;
-    public ResponseEntity responseEntity;
-
     @Autowired
-    public RoutingManagerController(RoutingServiceImpl routingService) {
+    public RoutingManagerController(RoutingServiceImpl routingService)
+    {
         this.routingService = routingService;
     }
 
-    @PostMapping("/node")
-    public ResponseEntity<?> addNode( @RequestBody Node node ) {
+    @PostMapping("/order")
+    public ResponseEntity<?> saveNode( @RequestBody Order order) {
 
-        return new ResponseEntity<>(routingService.addNode(node) , HttpStatus.OK);
+        return new ResponseEntity<>(routingService.saveOrder(order) , HttpStatus.OK);
+    }
+
+    @GetMapping("/route")
+    public ResponseEntity<?> getRoutes() {
+
+        return new ResponseEntity<>(routingService.optimizedRoute(), HttpStatus.OK);
     }
 
 }

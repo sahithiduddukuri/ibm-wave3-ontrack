@@ -7,28 +7,31 @@ import java.util.ArrayList;
 @Data
 public class Vehicle {
 
-    public int VehId;
+    public int vehId;
     public ArrayList<Node> Route = new ArrayList<Node>();
     public int capacity;
     public int load;
-    public int CurLoc;
-    public boolean Closed;
+    public int curLoc;
+    public boolean closed;
+
+    public Vehicle() {
+    }
 
     public Vehicle(int id, int cap)
     {
-        this.VehId = id;
+        this.vehId = id;
         this.capacity = cap;
         this.load = 0;
-        this.CurLoc = 0; //In depot Initially
-        this.Closed = false;
+        this.curLoc = 0; //In depot Initially
+        this.closed = false;
         this.Route.clear();
     }
 
-    public void addNode(Node Customer)//Add Customer to Vehicle Route
+    public void addNode(Node order)//Add Customer to Vehicle Route
     {
-        Route.add(Customer);
-        this.load +=  Customer.demand;
-        this.CurLoc = Customer.nodeId;
+        Route.add(order);
+        this.load +=  order.demand;
+        this.curLoc = order.nodeId;
     }
 
     public boolean CheckIfFits(int dem) //Check if we have Capacity Violation

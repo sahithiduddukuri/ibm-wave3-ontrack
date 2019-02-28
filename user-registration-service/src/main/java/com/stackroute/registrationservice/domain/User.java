@@ -33,7 +33,7 @@ public class User
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-    List<Product> products;
+//    List<Product> products;
     public User(int id, String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
         this.id=id;
         this.name = name;

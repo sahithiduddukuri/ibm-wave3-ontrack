@@ -1,18 +1,23 @@
-<div class="container" >
-  <h1 mat-dialog-title>Product Details</h1>
-  <p >Details: {{ data.o.Product_name }}</p>
-  <p>{{ data.o.Product_type }}</p>
-  <p>{{ data.o.MRP }}</p>
-  <p>{{ data.o.Price }}</p>
-  <p>{{ data.o.Dimension }}</p>
-  <p>{{ data.o.Weight }}</p>
-  <p>{{ data.o.Size }}</p>
-  <p>{{ data.o.Gender }}</p>
-  <p>{{ data.o.Description }}</p>
-  <p>{{ data.o.Brand }}</p>
-  <p>{{ data.o.Colour }}</p>
-  <div mat-dialog-actions>
-  <button mat-raised-button (click)="closeDailog()" md-dailog-close>Ok</button>
-  <button mat-raised-button (click)="buy()" md-dailog-close>Buy</button>
-</div> 
+<div class= "container">
+  <div class="mon">
+  <button (click)="closeDailog()" md-dailog-close><mat-icon>close</mat-icon></button></div>
+<h1 mat-dialog-title>Product Details</h1>
+<p><img class="id" src="{{data.o.Image_URL}}"></p>
+<div class="day">
+<p >Name:{{ data.o.Product_name }}</p>
+<p>Type:{{ data.o.Product_type }}</p>
+<p>MRP:{{ data.o.MRP }}</p>
+<p>Price:{{ data.o.Price }}</p>
+<p>Dimension:{{ data.o.Dimension }}</p>
+<p>Weight:{{ data.o.Weight }}</p>
+<p>Size:{{ data.o.Size }}</p>
+<p>Data:{{ data.o.Gender }}</p>
+<p>Despriction:{{ data.o.Description }}</p>
+<p>Brand:{{ data.o.Brand }}</p>
+<p>Color:{{ data.o.Colour }}</p>
+<div mat-dialog-actions>
+<button mat-raised-button (click)="AddtoCart()" >ADD TO CART</button>
+<button mat-raised-button (click)="buy1()">BUY NOW</button>
   </div>
+</div>
+</div>

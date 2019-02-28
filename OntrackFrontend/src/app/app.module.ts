@@ -1,3 +1,4 @@
+import { LoginService } from './ontrack/components/login/login.service';
 import { OnTrackService } from './ontrack/ontrack.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchService } from './ontrack/components/search/search.service';
@@ -16,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FlexLayoutModule
   ],
-  providers: [OntrackserviceService, SearchService, OnTrackService],
+  providers: [OntrackserviceService, SearchService, OnTrackService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

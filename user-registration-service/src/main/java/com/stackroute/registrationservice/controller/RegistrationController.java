@@ -1,6 +1,6 @@
 package com.stackroute.registrationservice.controller;
 
-import com.stackroute.registrationservice.domain.Registration;
+import com.stackroute.registrationservice.domain.User;
 import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.registrationservice.exceptions.UserNotFoundException;
 import com.stackroute.registrationservice.service.RabbitMqProducer;
@@ -25,14 +25,14 @@ public class RegistrationController {
         this.registrationService = registrationService;
     }
 
-    @PostMapping("registration")
-    public ResponseEntity<?> saveUser(@RequestBody Registration registration) throws UserAlreadyExistsException
+    @PostMapping("user")
+    public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistsException
     {
         try
         {
-           registrationService.saveUser(registration);
-           responseEntity=new ResponseEntity(registration, HttpStatus.CREATED);
-            rabbitMqProducer.produce(registration);
+           registrationService.saveUser(user);
+           responseEntity=new ResponseEntity(user, HttpStatus.CREATED);
+            rabbitMqProducer.produce(user);
         }
         catch (UserAlreadyExistsException ex1)
         {
@@ -64,12 +64,12 @@ public class RegistrationController {
         return responseEntity;
     }
 
-    @PutMapping("registration/{id}")
-    public ResponseEntity<?> updateUser(@RequestBody Registration registration,@PathVariable("id") String id) throws UserNotFoundException
+    @PutMapping("user/{id}")
+    public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable("id") String id) throws UserNotFoundException
     {
         try{
-            Registration updatedTrack = registrationService.updateUser(registration);
-            responseEntity = new ResponseEntity(registration , HttpStatus.OK);
+            User updatedTrack = registrationService.updateUser(user);
+            responseEntity = new ResponseEntity(user, HttpStatus.OK);
         } catch (UserNotFoundException e) {
 
             throw new UserNotFoundException();

@@ -7,14 +7,15 @@ import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import java.util.List;
 
 @Document(collection = "Registrations")
 @Getter
 @Setter
 @NoArgsConstructor
 @Builder
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = Registration.class)
-public class Registration
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = User.class)
+public class User
 {
     @Id
     @JsonProperty("id")
@@ -32,8 +33,8 @@ public class Registration
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-
-    public Registration(int id,String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
+    List<Product> products;
+    public User(int id, String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
         this.id=id;
         this.name = name;
         this.userId = userId;
@@ -45,7 +46,7 @@ public class Registration
 
     @Override
     public String toString() {
-        return "Registration{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", userId='" + userId + '\'' +

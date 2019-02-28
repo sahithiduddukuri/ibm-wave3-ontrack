@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
   Signup() {
     this.route.navigate(['/' , 'Signup']);
   }
+ Profile() {
+    this.route.navigate(['/' , 'profile']);
+  }
   search() {
     if (this.products.Product_name !== '') {
      this.products = this.products.filter(res => {

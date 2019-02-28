@@ -2,7 +2,7 @@
 //package com.stackroute.productservice.controller;
 //
 //import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.stackroute.productservice.domain.Products;
+//import com.stackroute.productservice.domain.ProductDTO;
 //import com.stackroute.productservice.exceptions.ProductIdNotFoundException;
 //import com.stackroute.productservice.service.ProductService;
 //import org.junit.Before;
@@ -38,21 +38,21 @@
 //
 //    @Autowired
 //    private MockMvc mockMvc;
-//    private Products products;
+//    private ProductDTO products;
 //    @MockBean
 //    @Autowired
 //    private ProductService productService;
 //    @InjectMocks
 //    private ProductController productController;
 //
-//    private List<Products> list =null;
+//    private List<ProductDTO> list =null;
 //
 //    @Before
 //    public void setUp(){
 //
 //        MockitoAnnotations.initMocks(this);
 //        mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
-//        products = new Products();
+//        products = new ProductDTO();
 //       products.setProductId("101");
 //       products.setProductName("Adidas Women Sport Shoes");
 //       products.setProductType("Female Sport Shoes");

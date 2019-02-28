@@ -9,7 +9,7 @@ import { RouterEvent, Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  products: any = [];
+  productDTO: any = [];
 
   constructor(private route: Router) { }
 
@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/' , 'Signup']);
   }
   search() {
-    if (this.products.Product_name !== '') {
-     this.products = this.products.filter(res => {
-       return res.this.products.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
+    if (this.productDTO.Product_name !== '') {
+     this.productDTO = this.productDTO.filter(res => {
+       return res.this.productDTO.Product_name.toLocaleLowerCase().match(this.productDTO.Product_name.toLocaleLowerCase());
      });
-    } else if (this.products.Product_name === '') {
+    } else if (this.productDTO.Product_name === '') {
       this.ngOnInit();
     }
   }

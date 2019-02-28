@@ -13,7 +13,7 @@ import { Search } from '../search/Search';
 })
 export class CardComponent implements OnInit {
   constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router) { }
-  products: any = [];
+  productDTO: any = [];
 productName: String;
   @Input()
   o: any;
@@ -43,12 +43,12 @@ productName: String;
 ngOnInit() {
         this.onTrack.Home().subscribe(data => {
           console.log(data);
-          this.products = data;
+          this.productDTO = data;
         });
  }
 //  search() {
-//    if (this.products.Product_name !== '') {
-//     this.products = this.products.filter(res => {
+//    if (this.productDTO.Product_name !== '') {
+//     this.productDTO = this.productDTO.filter(res => {
 //       return res.productName.toLocaleLowerCase().match(this.productName.toLocaleLowerCase());
 //     });
 //    } else if (this.productName === '') {

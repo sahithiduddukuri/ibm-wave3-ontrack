@@ -40,26 +40,22 @@ public class ProductController {
 
             productService.saveProduct(product);
             responseEntity=new ResponseEntity<String>("Created Successfully", HttpStatus.CREATED);
-            productDTO.setProductId(product.getProductId());
-
-                 productDTO.setProductName(productDTO.getProductName());
-                   productDTO.setProductType(productDTO.getProductType());
-        productDTO.setProductTypeId(productDTO.getProductTypeId());
-        productDTO.setImageURL(productDTO.getMrp());
-        productDTO.setMrp(productDTO.getMrp());
-        productDTO.setPrice(productDTO.getPrice());
-        productDTO.setDimension(productDTO.getDimension());
-        productDTO.setWeight(productDTO.getWeight());
-        productDTO.setSize(productDTO.getSize());
-        productDTO.setGender(productDTO.getGender());
-        productDTO.setDescription(productDTO.getDescription());
-        productDTO.setBrand(productDTO.getBrand());
-        productDTO.setBrandId(productDTO.getBrandId());
-        productDTO.setColour(productDTO.getColour());
-
-
-
-            rabbitMqProducer.produce(productDTO);
+            product.setProductId(product.getProductId());
+                 product.setProductName(product.getProductName());
+                   product.setProductType(product.getProductType());
+        product.setProductTypeId(product.getProductTypeId());
+        product.setImageURL(product.getMrp());
+        product.setMrp(product.getMrp());
+        product.setPrice(product.getPrice());
+        product.setDimension(product.getDimension());
+        product.setWeight(product.getWeight());
+        product.setSize(product.getSize());
+        product.setGender(product.getGender());
+        product.setDescription(product.getDescription());
+        product.setBrand(product.getBrand());
+        product.setBrandId(product.getBrandId());
+        product.setColour(product.getColour());
+            rabbitMqProducer.produce(product);
             return responseEntity;
 
     }

@@ -1,81 +1,113 @@
+
+package com.stackroute.productservice.repository;
+import com.stackroute.productservice.domain.Product;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
+import static junit.framework.TestCase.assertTrue;
+
+
+@RunWith(SpringRunner.class)
+@DataMongoTest
+public class ProductsRepositoryTest {
+
+    @Autowired
+    private ProductRepository productRepository;
+    private Product product;
+
+    @Before
+    public void setUp()
+    {
+        this.product = new Product();
+        this.product.setProductId("100");
+       this.product.setProductName("Raymond shoe");
+        this.product.setProductType("good");
+        this.product.setProductTypeId("12");
+        this.product.setImageURL("hkjh nkj");
+        this.product.setMrp("2000");
+        this.product.setPrice("1499");
+        this.product.setDimension("14*10*5");
+        this.product.setWeight("750gm");
+        this.product.setSize("4,5,6,7,8,9");
+        this.product.setGender("Women");
+        this.product.setDescription("Raymond shoes for Women");
+        this.product.setBrand("Raymond");
+        this.product.setBrandId("10");
+        this.product.setColour("Black");
+    }
+    @After
+    public void tearDown(){
+
+        this.productRepository.deleteAll();
+    }
+
+    @Test
+    public void testSaveProduct(){
+        this.productRepository.save(this.product);
+        Product fetchProducts = this.productRepository.findById(this.product.getProductId()).get();
+        Assert.assertEquals("100", fetchProducts.getProductId());
+
+    }
+
+
+
+    @Test
+    public void testSaveProductFailure(){
+//       Product testUser= new Product("10","product name","formal shoe","1","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
+//                "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","10","White");
+        this.product = new Product();
+        this.product.setProductId("10000");
+        this.product.setProductName("Raymond shoe");
+        this.product.setProductType("good");
+        this.product.setProductTypeId("12");
+        this.product.setImageURL("hkjh nkj");
+        this.product.setMrp("2000");
+        this.product.setPrice("1499");
+        this.product.setDimension("14*10*5");
+        this.product.setWeight("750gm");
+        this.product.setSize("4,5,6,7,8,9");
+        this.product.setGender("Women");
+        this.product.setDescription("Raymond shoes for Women");
+        this.product.setBrand("Raymond");
+        this.product.setBrandId("10");
+        this.product.setColour("Black");
+        this.productRepository.save(product);
+        Product fetchUser = this.productRepository.findById(this.product.getProductId()).get();
+        Assert.assertNotSame(fetchUser, this.product);
+    }
 //
-//package com.stackroute.productservice.repository;
-//import com.stackroute.productservice.domain.ProductDTO;
-//import org.junit.After;
-//import org.junit.Assert;
-//import org.junit.Before;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-//import org.springframework.test.context.junit4.SpringRunner;
-//
-//import java.util.List;
-//
-//
-//@RunWith(SpringRunner.class)
-//@DataMongoTest
-//public class ProductsRepositoryTest {
-//
-//    @Autowired
-//    private ProductRepository productRepository;
-//    private ProductDTO products;
-//
-//    @Before
-//    public void setUp()
-//    {
-//        this.products = new ProductDTO();
-//        this.products.setProductId("100");
-//       this.products.setProductName("Raymond shoe");
-//        this.products.setProductType("good");
-//        this.products.setImageURL("hkjh nkj");
-//        this.products.setMrp("2000");
-//        this.products.setPrice("1499");
-//        this.products.setDimension("14*10*5");
-//        this.products.setWeight("750gm");
-//        this.products.setSize("4,5,6,7,8,9");
-//        this.products.setGender("Women");
-//        this.products.setDescription("Raymond shoes for Women");
-//        this.products.setBrand("Raymond");
-//        this.products.setColour("Black");
-//    }
-//    @After
-//    public void tearDown(){
-//
-//        this.productRepository.deleteAll();
-//    }
-//
-//
-//
-//    @Test
-//    public void testSaveProduct(){
-//        this.productRepository.save(this.products);
-//        ProductDTO fetchProducts = this.productRepository.findById(this.products.getProductId()).get();
-//        Assert.assertEquals("100", fetchProducts.getProductId());
-//
-//    }
-//
-//
-//
-//    @Test
-//    public void testSaveProductFailure(){
-//        ProductDTO testUser = new ProductDTO("101","Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
-//                "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","White");
-//        this.productRepository.save(products);
-//        ProductDTO fetchUser = this.productRepository.findById(this.products.getProductId()).get();
-//        Assert.assertNotSame(testUser, this.products);
-//    }
-//
-//    @Test
-//    public void testGetAllProducts(){
-//        ProductDTO u = new ProductDTO();
-//        ProductDTO u1 = new ProductDTO("100","Bata Shoe for women","formal shoe","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
-//                "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","White");
-//        this.productRepository.save(u);
-//        this.productRepository.save(u1);
-//
-//        List<ProductDTO> list = this.productRepository.findAll();
-//        Assert.assertEquals("Bata Shoe for women",list.get(1).getProductName());
-//
-//    }
-//}
+    @Test
+    public void testGetAllProducts(){
+
+        this.product = new Product();
+        this.product.setProductId("10000");
+        this.product.setProductName("Bata Shoe for women");
+        this.product.setProductType("good");
+        this.product.setProductTypeId("12");
+        this.product.setImageURL("hkjh nkj");
+        this.product.setMrp("2000");
+        this.product.setPrice("1499");
+        this.product.setDimension("14*10*5");
+        this.product.setWeight("750gm");
+        this.product.setSize("4,5,6,7,8,9");
+        this.product.setGender("Women");
+        this.product.setDescription("Raymond shoes for Women");
+        this.product.setBrand("Raymond");
+        this.product.setBrandId("10");
+        this.product.setColour("Black");
+        this.productRepository.save(product);
+
+
+        List<Product> list = this.productRepository.findAll();
+        Assert.assertEquals("Bata Shoe for women",product.getProductName());
+
+    }
+}

@@ -1,5 +1,6 @@
 package com.stackroute.productservice.service;
 
+import com.stackroute.productservice.domain.Product;
 import com.stackroute.rabbitmq.domain.ProductDTO;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,12 @@ public class RabbitMqProducer {
 
 
 
-    public void produce(ProductDTO productDTO) {
-           for(int i=1;i<=100;i++) {
-               amqpTemplate.convertAndSend(exchange, routingkey1, productDTO);
-               amqpTemplate.convertAndSend(exchange, routingkey2, productDTO);
-               System.out.println("Send msg = " + productDTO);
-           }
+    public void produce(Product product) {
+
+//           for(int i=1;i<=100;i++) {
+               amqpTemplate.convertAndSend(exchange, routingkey1, product);
+               amqpTemplate.convertAndSend(exchange, routingkey2, product);
+               System.out.println("Send msg = ========" + product);
+//           }
     }
 }

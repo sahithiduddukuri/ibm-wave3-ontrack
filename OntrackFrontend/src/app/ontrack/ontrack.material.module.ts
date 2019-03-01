@@ -16,6 +16,8 @@ import { MatTableModule } from '@angular/material';
 import { FormsModule, FormGroup } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @NgModule({
     declarations: [],
@@ -31,7 +33,7 @@ import {MatIconModule} from '@angular/material/icon';
        MatInputModule,
        MatTableModule,
        FormsModule,
-       MatDatepickerModule, MatNativeDateModule
+       MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule
       ] ,
       exports: [
         MatCardModule,
@@ -44,7 +46,7 @@ import {MatIconModule} from '@angular/material/icon';
           MatGridListModule,
           MatInputModule,
           FormsModule,
-          MatDatepickerModule, MatNativeDateModule
+          MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule
 
          ]
 

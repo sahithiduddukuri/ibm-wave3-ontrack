@@ -1,11 +1,11 @@
 <div class="row" fxLayout.xs="column">
-  <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of productDTO'>
+  <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
       <div fxFlex="20%">
   <mat-card class='product--blue'>
     <mat-card-header>  
-        <img mat-card-image src="{{o.Image_URL}}" alt="{{o.Brand}}">
+        <img mat-card-image src="{{o.imageURL}}" alt="{{o.brand}}">
         <mat-card-title>
-            <p>{{o.Brand}}</p>
+            <p>{{o.brand}}</p>
         </mat-card-title>
         <mat-card-actions align="center">
             <button mat-raised-button (click)="buys()">Buy</button>

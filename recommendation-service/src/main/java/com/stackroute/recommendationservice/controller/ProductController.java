@@ -1,22 +1,18 @@
 package com.stackroute.recommendationservice.controller;
 
-import com.stackroute.rabbitmq.domain.Product;
+import com.stackroute.recommendationservice.Domain.Product;
 import com.stackroute.recommendationservice.service.ProductService;
-import com.stackroute.recommendationservice.service.RabbitMqConsumer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1")
 public class ProductController {
 
     ProductService productService;
-    @Autowired
-    RabbitMqConsumer rabbitMqConsumer;
 
     public ProductController(ProductService productService) {
         this.productService = productService;

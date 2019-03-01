@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   service: any;
-  productDTO: Object;
+  products: Object;
   productDetails = false;
   constructor(private route: Router, private onTrack: OnTrackService) { }
   ngOnInit() {
@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
      this.productDetails = true;
      console.log(this.onTrack.cart);
      console.log(this.onTrack.cart, 'get me the status of the product !!');
-     this.productDTO = this.onTrack.cart;
+     this.products = this.onTrack.cart;
    } else {
      this.productDetails = false;
    }
@@ -32,6 +32,6 @@ export class CartComponent implements OnInit {
 
   cartToCard($event) {
     console.log($event);
-    this.productDTO = $event;
+    this.products = $event;
   }
 }

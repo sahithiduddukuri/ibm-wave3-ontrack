@@ -1,7 +1,8 @@
 package com.stackroute.recommendationservice.service;
 
 
-import com.stackroute.rabbitmq.domain.Category;
+
+import com.stackroute.recommendationservice.Domain.Category;
 import com.stackroute.recommendationservice.Repository.CategoryRepository;
 import org.junit.Assert;
 import org.junit.Before;

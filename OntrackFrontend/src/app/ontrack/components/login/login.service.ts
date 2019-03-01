@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
 
-    private loginUrl = 'http://13.233.3.91:8090/api/user';  // URL to web api
+    private loginUrl = 'http://localhost:8090/api/user';  // URL to web api
 
     constructor(
-        private http: HttpClient) {
+        private http: HttpClient, private router: Router ) {
     }
 
     login(user: any): Observable<any> {
         return this.http.post<any>(this.loginUrl, user);
     }
+    logout() {
+        console.log('i have entered in the logout function');
+        localStorage.removeItem('token');
+        this.router.navigate([`/cards`]);  // after logging out ,it should redirect to homepage
+      }
 
     setCookie(cname: string, cvalue: string, exdays: number) {
-        let date = new Date();
+        const date = new Date();
         date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = `expires=${date.toUTCString()}`;
+        const expires = `expires=${date.toUTCString()}`;
         document.cookie = `${cname}=${cvalue};${expires};path=/`;
     }
 
     getCookie(cname: string) {
-        let name = cname + '=';
-        let ca = document.cookie.split(';');
+        const name = cname + '=';
+        const ca = document.cookie.split(';');
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
             while (c.charAt(0) === ' ') {

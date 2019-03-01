@@ -1,9 +1,5 @@
-
 import { BuyComponent } from './components/buy/buy.component';
 import { HeaderComponent } from './components/header/header.component';
-
-import { ProfileComponent } from './components/profile/profile.component';
-
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClient } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
@@ -35,9 +31,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
   import { from } from 'rxjs';
  @NgModule({
   // tslint:disable-next-line:max-line-length
-
-declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, ProfileComponent],
-
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent],
 
 
   imports: [
@@ -77,5 +71,6 @@ declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompCo
 
   // tslint:disable-next-line:max-line-length
   exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent ]
+
 })
 export class OntrackModule { }

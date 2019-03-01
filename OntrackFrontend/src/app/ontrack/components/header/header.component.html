@@ -5,12 +5,19 @@
     <div class = "row">
       <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
     </div>
-          <div class="wrap">
-      
+          <div class="wrap" *ngIf=userLogged>
         <mat-card-actions>
             <button mat-raised-button (click)="Login()">Login</button>
-          </mat-card-actions>
-          
+            </mat-card-actions>
+          </div>
+          <div class="wrap1"  *ngIf=flag>
+            <mat-card-actions>
+                <button mat-raised-button (click)="Logout()">Logout</button>
+                </mat-card-actions>
+              </div>
+          <div class="id">
+          <button mat-raised-button (click)="cartbutton()"><mat-icon>shopping_cart</mat-icon></button>
+        </div>
              <!-- <ng-container *ngIf="name && false; else elseTemplate">
               <button mat-raised-button (click)="Login()">Login</button>
             </ng-container>
@@ -28,6 +35,6 @@
            </ng-template> -->
            
         
-    </div>
+    
   </div>
 </header>

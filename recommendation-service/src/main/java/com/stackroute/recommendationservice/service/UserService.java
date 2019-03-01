@@ -1,7 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.rabbitmq.domain.User;
-
+import com.stackroute.recommendationservice.Domain.User;
 
 import java.util.List;
 

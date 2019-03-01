@@ -39,9 +39,9 @@ public class ProductServiceImpl implements ProductService{
         String brand = product.getBrand();
         String brandId = product.getBrandId();
         String colour = product.getColour();
-        //Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
+        Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
         //System.out.println("service : "+node);
-        Product node = productRepository.save(product);
+        //Product node = productRepository.save(product);
         return node;
     }
 }

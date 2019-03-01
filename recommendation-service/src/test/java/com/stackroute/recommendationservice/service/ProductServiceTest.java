@@ -51,13 +51,13 @@ public class ProductServiceTest {
         list.add(product);
     }
 
-    @Test
-    public void saveProductTest()
-    {
-        when(productRepository.create(product.getProductId(),product.getProductName(),product.getProductType(),product.getProductTypeId(),product.getImageURL(),product.getMrp(),product.getPrice(),product.getDimension(),product.getWeight(),product.getSize(),product.getGender(),product.getDescription(),product.getBrand(),product.getBrandId(),product.getColour())).thenReturn(product);
-        Product savedProduct = productService.createNode(product);
-        Assert.assertEquals(product,savedProduct);
-    }
+//    @Test
+//    public void saveProductTest()
+//    {
+//        when(productRepository.create(product.getProductId(),product.getProductName(),product.getProductType(),product.getProductTypeId(),product.getImageURL(),product.getMrp(),product.getPrice(),product.getDimension(),product.getWeight(),product.getSize(),product.getGender(),product.getDescription(),product.getBrand(),product.getBrandId(),product.getColour())).thenReturn(product);
+//        Product savedProduct = productService.createNode(product);
+//        Assert.assertEquals(product,savedProduct);
+//    }
 
 //    @Test
 //    public void getProductTest() {

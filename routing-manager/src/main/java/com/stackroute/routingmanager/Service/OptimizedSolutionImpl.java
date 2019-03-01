@@ -12,6 +12,7 @@ public class OptimizedSolutionImpl {
 
     public String optimizedCost(int noOfOrders , int x , int y , int demand) {
 
+        Random ran = new Random(151190);
 
 
         //Problem Parameters
@@ -32,10 +33,11 @@ public class OptimizedSolutionImpl {
         Node depot = new Node(depot_x, depot_y);
 
         nodes[0] = depot;
-        for (int i = 1; i <= noOfNodes; i++) {
+        for (int i = 0; i <= noOfNodes; i++) {
+
             nodes[i] = new Node(i, //Id ) is reserved for depot
-                    x, //Random Cordinates
-                    y,
+                    ran.nextInt(x), //Random Cordinates
+                    ran.nextInt(y),
                     demand);  //Random Demand
 
         }

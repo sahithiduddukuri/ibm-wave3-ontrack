@@ -25,31 +25,6 @@ public class RoutingServiceImpl implements RoutingService {
         this.routingRepository = routingRepository;
     }
 
- /*   @Override
-    public String saveOrder(Order order) {
-        int count =1;
-        Node[] nodes = new Node[count+1];
-
-        Node node = new Node();
-
-        node.setNodeId(order.getOrderId());
-        node.setNode_X(order.getX());
-        node.setNode_Y(order.getY());
-        node.setDemand(order.getDemand());
-
-        for ( int i=0; i<nodes.length; i++) {
-            nodes[i] = new Node(i,
-                    order.getX(),
-                    order.getY(),
-                    order.getDemand());
-        }
-
-        System.out.println("inside save order service");
-        vehicle.addNode(node);
-
-        routingRepository.save(order);
-            return "order added";
-    }*/
 
     @Override
     public String saveOrder(Order order) {

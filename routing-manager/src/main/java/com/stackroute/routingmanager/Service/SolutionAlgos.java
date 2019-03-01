@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class SolutionAlgos {
 
-    int noOfvehicles;
+    int noOfvehicles =5;
     int noOfOrders;
     Vehicle[] vehicles;
     double cost;

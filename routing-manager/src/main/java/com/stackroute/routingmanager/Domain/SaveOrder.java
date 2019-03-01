@@ -7,21 +7,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.util.List;
 
+@Document
 @Data
-public class Order {
+public class SaveOrder {
 
+//    @Id
+//    private String recordId;
     private int orderId;
     private int vehicleId;
     private String orderLoc;
-    private int x;
-    private int y;
+    @Id
     private LocalDate date;
-    private int demand;
     private int noOfOrders;
-    private Node node;
-   // private String slotNo;
+    private List<Node> nodes;
+    // private String slotNo;
 
-    public Order() {
+    public SaveOrder() {
     }
-
 }

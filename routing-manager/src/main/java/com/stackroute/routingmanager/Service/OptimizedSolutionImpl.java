@@ -10,14 +10,13 @@ public class OptimizedSolutionImpl {
 
     Order order;
 
-    public String optimizedCost() {
+    public String optimizedCost(int noOfOrders , int x , int y , int demand) {
 
-        Random ran = new Random(151190);
 
 
         //Problem Parameters
-        int noOfNodes = 30;
-        int noOfVehicles = 10;
+        int noOfNodes = noOfOrders;
+        int noOfVehicles = 5;
         int vehicleCap = 100;
 
         //Depot Coordinates
@@ -35,9 +34,9 @@ public class OptimizedSolutionImpl {
         nodes[0] = depot;
         for (int i = 1; i <= noOfNodes; i++) {
             nodes[i] = new Node(i, //Id ) is reserved for depot
-                    ran.nextInt(100), //Random Cordinates
-                    ran.nextInt(100),
-                    4 + ran.nextInt(7));  //Random Demand
+                    x, //Random Cordinates
+                    y,
+                    demand);  //Random Demand
 
         }
 
@@ -88,8 +87,8 @@ public class OptimizedSolutionImpl {
 
         s.solutionPrint( "Tabu Search" );
 
-       // draw.drawRoutes(s, "TABU_Solution");
-    return "routing done";
+//        draw.drawRoutes(s, "TABU_Solution");
+      return "routing done";
     }
 }
 

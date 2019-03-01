@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class Node {
 
-    public int nodeId;
 
     public Node() {
     }
 
+    public int nodeId;
     public int node_X , node_Y; //Node Coordinates
     public int demand; //Node Demand if Customer
     public boolean isRouted;
@@ -33,4 +33,6 @@ public class Node {
         this.isRouted = false;
         this.isDepot = false;
     }
+
+
 }

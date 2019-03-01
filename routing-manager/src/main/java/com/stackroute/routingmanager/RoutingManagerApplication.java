@@ -14,12 +14,12 @@ public class RoutingManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RoutingManagerApplication.class, args);
-		callMethod();
+		//callMethod();
 	}
 
-	private static void callMethod() {
+	/*private static void callMethod() {
 		OptimizedSolutionImpl optimizedSolution= new OptimizedSolutionImpl();
 		optimizedSolution.optimizedCost();
-	}
+	}*/
 
 }

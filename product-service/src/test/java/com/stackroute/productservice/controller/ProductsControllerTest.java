@@ -112,6 +112,18 @@ public class ProductsControllerTest {
 
     }
     @Test
+    public void saveProductFailure() throws Exception {
+        when(productService.saveProduct(any())).thenReturn(null);
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/product")
+                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(product)))
+                .andExpect(MockMvcResultMatchers.status().isCreated())
+
+                .andDo(MockMvcResultHandlers.print());
+
+        this.rabbitMqProducer.produce(product);
+
+    }
+    @Test
     public void deleteProduct() throws Exception {
         when(productService.deleteProduct(product.getProductId())).thenReturn(true);
         mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/product/{id}", product.getProductId())
@@ -135,11 +147,28 @@ public class ProductsControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andDo(MockMvcResultHandlers.print());
     }
+    @Test
+    public void updateproductFailure() throws Exception {
+        when(productService.updateProduct(any())).thenReturn(null);
+        mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/product")
+                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(product)))
+                .andExpect(MockMvcResultMatchers.status().isCreated())
+                .andDo(MockMvcResultHandlers.print());
+    }
 
 
     @Test
     public void getAllTracks() throws Exception {
         when(productService.getAllProducts()).thenReturn(list);
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/product")
+                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(product)))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+
+    }
+    @Test
+    public void getAllTracksFailure() throws Exception {
+        when(productService.getAllProducts()).thenReturn(null);
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/product")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(product)))
                 .andExpect(MockMvcResultMatchers.status().isOk())

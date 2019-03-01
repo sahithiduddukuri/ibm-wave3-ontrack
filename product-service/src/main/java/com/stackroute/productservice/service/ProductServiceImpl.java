@@ -65,13 +65,12 @@ public class ProductServiceImpl implements ProductService {
                return status;
            }
            else{
-               throw new ProductIdNotFoundException("ProductDTO id not found");
+               throw new ProductIdNotFoundException("Product id not found");
            }
 
 
 
     }
-
 
     @Override
     public List<Product> getAllProducts()

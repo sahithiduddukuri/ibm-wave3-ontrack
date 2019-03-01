@@ -14,17 +14,17 @@ public class GlobalExceptionHandler {
     @ResponseStatus(value= HttpStatus.CONFLICT, reason="ProductDTO already exist")
     @ExceptionHandler(ProductAlreadyExistsException.class)
     public void handleTrackAlreadyExistException(ProductAlreadyExistsException e){
-        System.out.println("ProductDTO already exist");
+        System.out.println("Product already exist");
     }
     @ResponseStatus(value= HttpStatus.NOT_FOUND, reason="ProductDTO id not found")
     @ExceptionHandler(ProductIdNotFoundException.class)
     public void handleTrackNotFoundException(ProductIdNotFoundException e){
-        System.out.println("ProductDTO id not found");
+        System.out.println("Product id not found");
     }
     @ResponseStatus(value= HttpStatus.CONFLICT, reason="ProductDTO already updated")
     @ExceptionHandler(ProductAlreadyUpdatedException.class)
     public void handleTrackAlreadyUdatedException(ProductAlreadyUpdatedException e){
-        System.out.println("ProductDTO already updated");
+        System.out.println("Product already updated");
     }
 }
 

@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   search() {
     if (this.products.Product_name !== '') {
      this.products = this.products.filter(res => {
-       return res.this.productDTO.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
+       return res.this.products.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
      });
     } else if (this.products.Product_name === '') {
       this.ngOnInit();

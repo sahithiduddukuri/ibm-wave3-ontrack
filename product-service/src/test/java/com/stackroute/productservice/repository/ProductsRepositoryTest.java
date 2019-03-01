@@ -61,8 +61,7 @@ public class ProductsRepositoryTest {
 
     @Test
     public void testSaveProductFailure(){
-//       Product testUser= new Product("10","product name","formal shoe","1","h_Red-Tape-Men-Off-White-Walking-Shoes-7341530609306715-1.jpg",
-//                "2000","1899","14*10*5","700gm","8,9,10","women","bata shoes for women","Bata","10","White");
+
         this.product = new Product();
         this.product.setProductId("10000");
         this.product.setProductName("Raymond shoe");
@@ -83,9 +82,9 @@ public class ProductsRepositoryTest {
         Product fetchUser = this.productRepository.findById(this.product.getProductId()).get();
         Assert.assertNotSame(fetchUser, this.product);
     }
-//
+
     @Test
-    public void testGetAllProducts(){
+    public void testGetAllProductsSuccess(){
 
         this.product = new Product();
         this.product.setProductId("10000");
@@ -108,6 +107,32 @@ public class ProductsRepositoryTest {
 
         List<Product> list = this.productRepository.findAll();
         Assert.assertEquals("Bata Shoe for women",product.getProductName());
+
+    }
+    @Test
+    public void testGetAllProductsFailure(){
+
+        this.product = new Product();
+        this.product.setProductId("10000");
+        this.product.setProductName("Bata Shoe for women");
+        this.product.setProductType("good");
+        this.product.setProductTypeId("12");
+        this.product.setImageURL("hkjh nkj");
+        this.product.setMrp("2000");
+        this.product.setPrice("1499");
+        this.product.setDimension("14*10*5");
+        this.product.setWeight("750gm");
+        this.product.setSize("4,5,6,7,8,9");
+        this.product.setGender("Women");
+        this.product.setDescription("Raymond shoes for Women");
+        this.product.setBrand("Raymond");
+        this.product.setBrandId("10");
+        this.product.setColour("Black");
+        this.productRepository.save(product);
+
+
+        List<Product> list = this.productRepository.findAll();
+        Assert.assertNotEquals("Raymond",product.getProductName());
 
     }
 }

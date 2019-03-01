@@ -47,16 +47,13 @@ public class ProductsControllerTest {
     @Autowired
     private ProductService productService;
 
-//    @Autowired
-//    RabbitMqProducer rabbitMqProducer;
+
     @MockBean
     RabbitMqProducer rabbitMqProducer;
 
     @InjectMocks
     private ProductController productController;
 
-//    @InjectMocks
-//    private RabbitMqProducer rabbitMqProducer1;
 
 
     private List<Product> list =null;

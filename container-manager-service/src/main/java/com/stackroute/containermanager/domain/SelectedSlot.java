@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Document
@@ -14,11 +13,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Order
-{
-    private  String responseId;
-    private int orderId;
-    private List<Product> productList;
+public class SelectedSlot {
     @Id
     private LocalDate orderDate;
+    private LocalDate date;
+    private String slotType;
+    private List<Product> productList;
+    private  String responseId;
+
 }

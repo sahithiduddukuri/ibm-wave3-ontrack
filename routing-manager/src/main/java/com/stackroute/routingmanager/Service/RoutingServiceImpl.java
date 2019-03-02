@@ -39,15 +39,7 @@ public class RoutingServiceImpl implements RoutingService {
 
         LocalDate date= order.getDate();
         int noofOrder;
-//        if(routingRepository.existsById(date))
-//        {
-//            Optional<SaveOrder> order1= routingRepository.findById(order.getDate());
-//            noofOrder =  order1.get().getNoOfOrders()+1;
-//            order1.get().setNoOfOrders(noofOrder);
-//        }
-//        else {
-//            noofOrder=1;
-//        }
+
         if (routingRepository.existsById(order.getDate())){
             System.out.println("inside If");
             System.out.println("inside the if ");
@@ -82,6 +74,11 @@ public class RoutingServiceImpl implements RoutingService {
             saveOrder.setNodes(nodeList);
             routingRepository.save(saveOrder);
         }
+
+       /*if(routingRepository.findAll().isEmpty()){
+           Optional<SaveOrder> order1 =
+       }*/
+
         optimizedSolution.optimizedCost(noofOrder,order.getX(),order.getY(),order.getDemand());
         //routingRepository.save(order);
         return "order added";

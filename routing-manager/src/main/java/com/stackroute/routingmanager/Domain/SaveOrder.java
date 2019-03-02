@@ -11,8 +11,6 @@ import java.util.List;
 @Data
 public class SaveOrder {
 
-//    @Id
-//    private String recordId;
     private int orderId;
     private int vehicleId;
     private String orderLoc;
@@ -21,6 +19,7 @@ public class SaveOrder {
     private int noOfOrders;
     private List<Node> nodes;
     // private String slotNo;
+    private List<Slot> slot;
 
     public SaveOrder() {
     }

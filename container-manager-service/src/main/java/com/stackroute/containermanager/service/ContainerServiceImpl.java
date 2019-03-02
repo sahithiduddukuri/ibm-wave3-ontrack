@@ -1,11 +1,10 @@
 package com.stackroute.containermanager.service;
 
-import com.stackroute.containermanager.domain.Order;
-import com.stackroute.containermanager.domain.Slot;
-import com.stackroute.containermanager.domain.SlotAvailability;
-import com.stackroute.containermanager.domain.SlotEvaluation;
+import com.stackroute.containermanager.domain.*;
 import com.stackroute.containermanager.exception.OrderAlreadyExists;
+import com.stackroute.containermanager.exception.OrderNotFound;
 import com.stackroute.containermanager.repository.ContainerRepository;
+import com.stackroute.containermanager.repository.SelectedSlotRepository;
 import com.stackroute.containermanager.repository.SlotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,12 +18,16 @@ public class ContainerServiceImpl implements ContainerService
 {
     private ContainerRepository containerRepository;
     private SlotRepository slotRepository;
+    private SlotEvaluation slotEvaluation;
+    private SelectedSlotRepository selectedSlotRepository;
 
     @Autowired
-    public ContainerServiceImpl(ContainerRepository containerRepository,SlotRepository slotRepository)
+    public ContainerServiceImpl(ContainerRepository containerRepository, SlotRepository slotRepository, SelectedSlotRepository selectedSlotRepository,SlotEvaluation slotEvaluation)
     {
         this.containerRepository = containerRepository;
+        this.selectedSlotRepository = selectedSlotRepository;
         this.slotRepository = slotRepository;
+        this.slotEvaluation = slotEvaluation;
     }
 
     @Override
@@ -44,6 +47,7 @@ public class ContainerServiceImpl implements ContainerService
 //        return savedOrder;
         // getSlots();
     }
+
     public SlotEvaluation getSlot(Order order)
     {
 
@@ -59,7 +63,18 @@ public class ContainerServiceImpl implements ContainerService
                     slot.getAvailableContainer();
                     if(slot.getAvailableContainer() >= order.getProductList().size()*20)
                     {
-                        slot.setCost(slot.getCost()+10);
+                        //slot.setCost(slot.getCost()+10);
+                        if (order.getProductList().size()*20 == 100) {
+                            slot.setCost(10);
+                        } else if (order.getProductList().size()*20 == 80) {
+                            slot.setCost(20);
+                        }else if (order.getProductList().size()*20 == 60) {
+                            slot.setCost(40);
+                        }else if (order.getProductList().size()*20 == 40) {
+                            slot.setCost(60);
+                        }else if (order.getProductList().size()*20 == 20) {
+                            slot.setCost(80);
+                        }
                         slot.setSlotStatus(true);
                     }
                     else
@@ -89,27 +104,27 @@ public class ContainerServiceImpl implements ContainerService
                     for(int j=0;j<3;j++)
                     {
                         Slot slot=new Slot();
-                        if(i==0)
+                        if(j==0)
                         {
                             String slotType="A";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(10);
                             slot.setSlotType("A");
                             slots.add(slot);
                         }
-                        if(i==1)
+                        if(j==1)
                         {
                             String slotType="B";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(10);
                             slot.setSlotType("B");
                             slots.add(slot);
                         }
-                        if(i==2)
+                        if(j==2)
                         {
                             String slotType="B";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(10);
                             slot.setSlotType("B");
                             slots.add(slot);
                         }
@@ -126,27 +141,27 @@ public class ContainerServiceImpl implements ContainerService
                     for(int j=0;j<3;j++)
                     {
                         Slot slot=new Slot();
-                        if(i==0)
+                        if(j==0)
                         {
                             String slotType="A";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(5);
                             slot.setSlotType("A");
                             slots.add(slot);
                         }
-                        if(i==1)
+                        if(j==1)
                         {
                             String slotType="B";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(5);
                             slot.setSlotType("B");
                             slots.add(slot);
                         }
-                        if(i==2)
+                        if(j==2)
                         {
                             String slotType="B";
                             slot.setSlotStatus(true);
-                            slot.setCost(200);
+                            slot.setCost(5);
                             slot.setSlotType("B");
                             slots.add(slot);
                         }
@@ -159,9 +174,27 @@ public class ContainerServiceImpl implements ContainerService
         }
 
     }
-//    getSlots()
-//    {
-//
-//    }
 
+    public SlotEvaluation saveSelecteSlots(SelectedSlot selectedSlot) throws OrderNotFound, OrderAlreadyExists {
+
+        if(containerRepository.existsById(selectedSlot.getResponseId()))
+        {
+            throw new OrderNotFound("Order already exists");
+        }
+
+        SelectedSlot saveSlot = selectedSlotRepository.save(selectedSlot);
+        if(saveSlot==null)
+        {
+            throw new OrderAlreadyExists();
+        }
+
+        return setSlot(selectedSlot);
+    }
+
+    private SlotEvaluation setSlot(SelectedSlot selectedSlot) {
+
+    }
 }
+
+
+

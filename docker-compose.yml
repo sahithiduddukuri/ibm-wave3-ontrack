@@ -159,8 +159,8 @@ services:
       - eurekaserver
 
     ports:
-      - 8998:8998
+      - 8013:8013
     expose:
-      - 8998
+      - 8013
 
 

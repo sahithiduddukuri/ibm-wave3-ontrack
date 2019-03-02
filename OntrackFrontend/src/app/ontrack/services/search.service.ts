@@ -13,7 +13,7 @@ private microServiceUrl: string;
  private errorBody: string;
 
   constructor(private http: HttpClient) {
-      this.microServiceUrl = 'http://localhost:8013/api/v1/';
+      this.microServiceUrl = 'http://localhost:8999/api/v1/';
   }
 
   searchByProductStartsWith(productBrand: string) {

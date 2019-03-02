@@ -24,4 +24,8 @@ AddToCart() {
     this.url = 'http://localhost:8086/api/v1/product';
     return this.http.get(this.url);
 }
+profile() {
+    this.url = 'http://localhost:8805/api/v1/user';
+    return this.http.get(this.url);
+}
 }

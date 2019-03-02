@@ -27,7 +27,7 @@ import { MatInputModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginService } from './components/login/login.service';
+
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
   import { from } from 'rxjs';
  @NgModule({

@@ -1,7 +1,7 @@
-import { LoginService } from './ontrack/components/login/login.service';
+
 import { OnTrackService } from './ontrack/ontrack.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SearchService } from './ontrack/components/search/search.service';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { OntrackserviceService } from './ontrack/ontrackservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './ontrack/services/login.service';
+import { SearchService } from './ontrack/services/search.service';
 
 
 @NgModule({

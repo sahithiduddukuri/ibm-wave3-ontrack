@@ -1,8 +1,9 @@
-import { Ontrack } from './../../ontrack';
+
 import { Component, OnInit, Input} from '@angular/core';
 import { Subject } from 'rxjs';
 import { SearchService } from '../../services/search.service';
 import { Router } from '@angular/router';
+import { Ontrack } from '../../classes/ontrack';
 
 
 

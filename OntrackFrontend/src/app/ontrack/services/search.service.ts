@@ -2,7 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, from } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Ontrack } from '../ontrack';
+import { Ontrack } from '../classes/ontrack';
 
 @Injectable({
  providedIn: 'root'

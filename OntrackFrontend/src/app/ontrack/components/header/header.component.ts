@@ -1,7 +1,8 @@
+import { LoginService } from './../../services/login.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { RouterEvent, Router } from '@angular/router';
-import { LoginService } from '../login/login.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

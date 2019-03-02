@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'; // used for reactive forms
-import { LoginService } from './login.service';
+
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({

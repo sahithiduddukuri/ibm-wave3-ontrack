@@ -2,9 +2,9 @@
   <div class="row1">
     <img src="./assets/img/logo.svg">
     <h3><a href="#">{{"SHOEFLY" + name}}</a></h3>
-    <div class = "row">
+    <!-- <div class = "row">
       <input type="text" #myInput [(ngModel)]="productName" (input)= "search()" placeholder="search by brand"/>
-    </div>
+    </div> -->
           <div class="wrap" *ngIf=userLogged>
         <mat-card-actions>
             <button mat-raised-button (click)="Login()">Login</button>
@@ -18,14 +18,11 @@
           <div class="id">
           <button mat-raised-button (click)="cartbutton()"><mat-icon>shopping_cart</mat-icon></button>
         </div>
-             <!-- <ng-container *ngIf="name && false; else elseTemplate">
-              <button mat-raised-button (click)="Login()">Login</button>
+             <ng-container *ngIf="name && false; else elseTemplate">
+              <div class="id1">
+          <button mat-raised-button (click)="profile()"><mat-icon>account_circle</mat-icon></button>
+        </div>
             </ng-container>
-            <ng-template #elseTemplate>
-              <button mat-raised-button (click)="Login()">Login</button>
-            </ng-template> -->
-            
-           
            <!-- <ng-container *ngIf="button; elsebutton">
             <button mat-raised-button (click)="Login()" class="button">Login</button>
             

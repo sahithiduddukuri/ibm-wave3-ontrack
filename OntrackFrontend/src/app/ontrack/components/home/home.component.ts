@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from 'selenium-webdriver/firefox';
 
 
 @Component({
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
+  route: any;
 
   constructor() { }
-
+  Profile() {
+    this.route.navigate(['/' , 'profile']);
+  }
   ngOnInit() {
-    
   }
 }

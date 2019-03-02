@@ -10,17 +10,32 @@
 .id{
     color:white;
     position: relative;
-    padding-right: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
     padding-top: 35px;
 }
 .id mat-icon{
     color:black;
 }
-.wrap1
+.id1{
+    color:white;
+    position: relative;
+    padding-right: 40px;
+    padding-top: 35px;
+}
+.id1 mat-icon{
+    color:black;
+}
 .wrap
 {
-    padding-right: 15px;
+    // padding-right: 30px;
+    padding-left:900px;
     padding-top: 35px;
+}
+.wrap1
+{
+    padding-right: 10px;
+    padding-top: 29px;
 }
 header{
     background: #2b2b2b;

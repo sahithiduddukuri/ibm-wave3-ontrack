@@ -1,3 +1,4 @@
+import { ProfileComponent } from './ontrack/components/profile/profile.component';
 import { BuyComponent } from './ontrack/components/buy/buy.component';
 // import { CartComponent } from './ontrack/components/cart/cart.component';
 import { NgModule } from '@angular/core';
@@ -39,6 +40,9 @@ const routes: Routes = [
   },
   {
     path: 'cartbutton', component: CartComponent
+  },
+  {
+    path: 'profile', component: ProfileComponent
   },
   {
     path: '**', component: HomeComponent

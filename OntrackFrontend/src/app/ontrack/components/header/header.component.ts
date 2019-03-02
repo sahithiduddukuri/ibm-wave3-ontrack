@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   products: any = [];
   constructor(private route: Router, private loginService: LoginService) { }
   @Input() name;
-// condition: boolean;
+condition: boolean;
 
   ngOnInit() { console.log(this.name);
     if (localStorage.getItem('token') !== null ) {
@@ -33,6 +33,9 @@ export class HeaderComponent implements OnInit {
   }
   cartbutton() {
     this.route.navigate(['/', 'cartbutton']);
+  }
+  profile() {
+    this.route.navigate(['/', 'profile']);
   }
   logout() {
     this.loginService.logout();

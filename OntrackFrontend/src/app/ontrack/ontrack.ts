@@ -1,14 +1,15 @@
 export class Ontrack {
     productId: string;
     productName: string;
-    productPrice: string;
     brand: string;
     imageURL: string;
+    productType: string;
     mrp: string;
     price: string;
+    dimension: string;
+    weight: string;
+    size: string;
     gender: string;
     description: string;
     colour: string;
-    size: string;
-
-}
+    }

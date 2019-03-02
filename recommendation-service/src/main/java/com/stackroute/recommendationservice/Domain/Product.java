@@ -1,4 +1,4 @@
-package com.stackroute.rabbitmq.domain;
+package com.stackroute.recommendationservice.Domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

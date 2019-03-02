@@ -1,8 +1,4 @@
-
 import { BuyComponent } from './ontrack/components/buy/buy.component';
-
-
-
 // import { CartComponent } from './ontrack/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,7 +7,6 @@ import { RegistrationcompComponent } from './ontrack/components/registrationcomp
 import { HomeComponent } from './ontrack/components/home/home.component';
 import { LoginComponent } from './ontrack/components/login/login.component';
 import { CartComponent } from './ontrack/components/cart/cart.component';
-import { ProfileComponent } from './ontrack/components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -25,7 +20,6 @@ const routes: Routes = [
     path: 'AddToCart', component: CartComponent
   },
   {
-
     path: 'continue', component: HomeComponent
   },
   {
@@ -44,8 +38,7 @@ const routes: Routes = [
     path: 'AddtoCart', component: CartComponent
   },
   {
-    path: 'profile', component: ProfileComponent
-
+    path: 'cartbutton', component: CartComponent
   },
   {
     path: '**', component: HomeComponent

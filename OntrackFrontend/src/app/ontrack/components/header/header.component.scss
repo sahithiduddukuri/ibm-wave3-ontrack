@@ -7,6 +7,16 @@
     font-family: 'Righteous', cursive;
     text-decoration: none;
 }
+.id{
+    color:white;
+    position: relative;
+    padding-right: 60px;
+    padding-top: 35px;
+}
+.id mat-icon{
+    color:black;
+}
+.wrap1
 .wrap
 {
     padding-right: 15px;
@@ -30,9 +40,6 @@ form{
     position: relative;
     top: 30px;
     left: 200px;
-}
-.mat-raised-button {
-    margin-right: 20px; 
 }
 input[type=text] {
     width: 30%;

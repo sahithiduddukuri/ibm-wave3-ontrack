@@ -1,18 +1,13 @@
-package com.stackroute.rabbitmq.domain;
+package com.stackroute.recommendationservice.Domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
 
 @Builder
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@NodeEntity
+@Data
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
 public class Products {
     @Id
@@ -26,12 +21,6 @@ public class Products {
     private String productTypeId;
     @JsonProperty("imageURL")
     private String imageURL;
-    @JsonProperty("mrp")
-    private String mrp;
-    @JsonProperty("price")
-    private String price;
-    @JsonProperty("dimension")
-    private String dimension;
     @JsonProperty("weight")
     private  String weight;
     @JsonProperty("size")
@@ -46,6 +35,12 @@ public class Products {
     private String colour;
     @JsonProperty("brandId")
     private String brandId;
+    @JsonProperty("mrp")
+    private String mrp;
+    @JsonProperty("price")
+    private String price;
+    @JsonProperty("dimension")
+    private String dimension;
 
     @Override
     public String toString() {

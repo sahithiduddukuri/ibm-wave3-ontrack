@@ -15,9 +15,14 @@
       </ng-template>
     <ng-template #item let-i="index">
           <div class = "items">
-            <mat-card>fdg</mat-card>
-          <!-- <button mat-raised-button (click)="slot()">"{{item.name}}"</button> -->
-          <!-- <button mat-raised-button (click)="slot()">"{{item.name}}"</button>   -->
+            <mat-card>
+              <mat-card-title>28/02/2019</mat-card-title>
+            <mat-card-content>
+          <button mat-raised-button (click)="slot1()">Slot 1<p>9:00AM-12:00PM</p><p>Price:RS:40/-</p></button> 
+          <button mat-raised-button (click)="slot2()">Stot 2<P>2:00PM-5:00PM</P><p>Price:RS:60/-</p></button> 
+          <button mat-raised-button (click)="slot3()">Slot 3<P>6:00PM-9:00PM</P><p>Price:RS:100/-</p></button>  
+            </mat-card-content>
+        </mat-card>
         </div>  
       </ng-template>  
       <div mat-card-actions class="id">

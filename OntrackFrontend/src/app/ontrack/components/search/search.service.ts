@@ -8,7 +8,7 @@ export class SearchService {
     constructor() { }
 //     constructor(private db: AngularFireDatabase) { }
 //  getProducts(start, end):FirebaseListObservable<any> {
-//      return this.db.list('/productDTO', {
+//      return this.db.list('/products', {
 //          query: {
 //              orderByChild: 'Title',
 //              limitToFirst: 10,

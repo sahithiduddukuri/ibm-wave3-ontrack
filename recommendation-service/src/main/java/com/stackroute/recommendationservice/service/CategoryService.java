@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.rabbitmq.domain.Category;
+import com.stackroute.recommendationservice.Domain.Category;
 
 import java.util.List;
 

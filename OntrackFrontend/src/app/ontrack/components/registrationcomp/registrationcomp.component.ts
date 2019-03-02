@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RegserviceService } from '../../regservice.service';
 import { Myregistration } from '../../classes/myregistration';
-
+import { RegistrationService } from '../../services/registration.service';
 import { HttpClient } from '@angular/common/http';
 import { registerContentQuery } from '@angular/core/src/render3';
-import { RegistrationService } from '../../services/registration.service';
 
 @Component({
   selector: 'app-registrationcomp',

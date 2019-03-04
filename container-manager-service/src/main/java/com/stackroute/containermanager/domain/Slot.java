@@ -8,13 +8,15 @@ public class Slot
     private String slotType;
     private double cost;
     private double availableContainer;
+    private int availableContainerSize = 100;
 
-    public Slot(boolean slotStatus, String slotType, double cost, double availableContainer)
+    public Slot(boolean slotStatus, String slotType, double cost, double availableContainer , int availableContainerSize)
     {
         this.slotStatus = slotStatus;
         this.slotType = slotType;
         this.cost = cost;
         this.availableContainer = availableContainer;
+        this.availableContainerSize = availableContainerSize;
     }
 
     public Slot() {
@@ -50,6 +52,14 @@ public class Slot
 
     public void setAvailableContainer(double availableContainer) {
         this.availableContainer = availableContainer;
+    }
+
+    public int getAvailableContainerSize() {
+        return availableContainerSize;
+    }
+
+    public void setAvailableContainerSize(int availableContainerSize) {
+        this.availableContainerSize = availableContainerSize;
     }
 
     @Override

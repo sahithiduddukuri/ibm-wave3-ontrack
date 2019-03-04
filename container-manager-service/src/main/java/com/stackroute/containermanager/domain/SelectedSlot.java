@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.util.List;
 
-@Document
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,5 +19,7 @@ public class SelectedSlot {
     private String slotType;
     private List<Product> productList;
     private  String responseId;
+    private int orderId;
+
 
 }

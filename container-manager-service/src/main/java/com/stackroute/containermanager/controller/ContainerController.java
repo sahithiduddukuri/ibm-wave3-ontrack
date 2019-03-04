@@ -26,15 +26,17 @@ import java.util.List;
 @RequestMapping(value = "/api/v1")
 public class ContainerController
 {
-    @Autowired
+    public ContainerController() {
+    }
+
     public ContainerServiceImpl containerService;
     public ResponseEntity responseEntity;
 
-//    @Autowired
-//    public ContainerController(ContainerServiceImpl containerService)
-//    {
-//        this.containerService = containerService;
-//    }
+    @Autowired
+    public ContainerController(ContainerServiceImpl containerService)
+    {
+        this.containerService = containerService;
+    }
 
     @PostMapping("/order")
     public ResponseEntity<?>  saveOrderAndGetSlot(@RequestBody Order order) throws OrderAlreadyExists
@@ -43,7 +45,7 @@ public class ContainerController
     }
 
     @PostMapping("/bookedslot")
-    public  ResponseEntity<?> selectedSlot(@RequestBody SelectedSlot selectedSlot) throws OrderNotFound {
+    public  ResponseEntity<?> selectedSlot(@RequestBody SelectedSlot selectedSlot) throws OrderNotFound , OrderAlreadyExists {
         return new ResponseEntity<>(containerService.saveSelecteSlots(selectedSlot),HttpStatus.OK);
     }
 }

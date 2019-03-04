@@ -9,6 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
+@Setter
 
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = ProductDTO.class)
 

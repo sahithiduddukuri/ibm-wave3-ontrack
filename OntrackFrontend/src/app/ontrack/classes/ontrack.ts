@@ -2,8 +2,10 @@ export class Ontrack {
     productId: string;
     productName: string;
     brand: string;
+    brandId:string;
     imageURL: string;
     productType: string;
+    productTypeId:string;
     mrp: string;
     price: string;
     dimension: string;

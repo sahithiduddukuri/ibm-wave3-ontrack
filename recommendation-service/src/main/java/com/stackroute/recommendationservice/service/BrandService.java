@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.Brand;
+import com.stackroute.domain.Brand;
 
 import java.util.List;
 

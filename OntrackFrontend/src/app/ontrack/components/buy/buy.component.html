@@ -15,12 +15,13 @@
     <ng-template #item >
       <div class="items" >       
             <mat-card>
+
                 <div class = "items2" *ngFor='let p of slotsAvailable'>
                     <mat-card-title>{{ p.date }}</mat-card-title>
                       </div>
               <div class="items1" *ngFor='let p of slotsAvailable'>
                 
-            <mat-card-content>
+ <mat-card-content>
                 <div class="ring" *ngFor="let r of p['slots']">
           <button mat-raised-button (click)="slot()">{{ r.slotNumber }}<p>{{ r.slotType }}</p><p>{{ r.cost}}</p></button> 
         </div>  

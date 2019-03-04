@@ -5,6 +5,7 @@ import com.stackroute.productservice.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.service.ProductService;
 
+import com.stackroute.productservice.service.RabbitMqProducer;
 import com.stackroute.rabbitmq.domain.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -23,6 +24,9 @@ public class FeedDataApplicationListerer implements ApplicationListener <Context
 
     private ProductService productService;
     private Product product;
+
+    @Autowired
+    RabbitMqProducer rabbitMqProducer;
 
     @Autowired
     public FeedDataApplicationListerer(ProductService productService) throws ProductAlreadyExistsException {
@@ -88,6 +92,7 @@ public class FeedDataApplicationListerer implements ApplicationListener <Context
                 product.setBrandId(row[13]);
                 product.setColour(row[14]);
                 productService.saveProduct(product);
+            rabbitMqProducer.produce(product);
             System.out.println("productDTO values"+ product);
 
         }

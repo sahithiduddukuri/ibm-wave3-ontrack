@@ -22,8 +22,11 @@ export class BuyComponent implements OnInit {
     // {name : ' 1/03/2019 '},
     // {name : ' 2/03/2019 '}  ];
 }
+
 slotsAvailable: any = [];
 // slots: any = [];
+
+
   ngOnInit() {
     this.onTrack.Buy().subscribe(data => {
       console.log('data fetch from response', data);

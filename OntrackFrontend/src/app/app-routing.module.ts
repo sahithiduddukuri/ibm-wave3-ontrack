@@ -8,6 +8,7 @@ import { RegistrationcompComponent } from './ontrack/components/registrationcomp
 import { HomeComponent } from './ontrack/components/home/home.component';
 import { LoginComponent } from './ontrack/components/login/login.component';
 import { CartComponent } from './ontrack/components/cart/cart.component';
+import { SearchComponent } from './ontrack/components/search/search.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'AddToCart', component: CartComponent
+  },
+  {
+    path: 'AddToCart1', component: CartComponent
   },
   {
     path: 'continue', component: HomeComponent
@@ -36,7 +40,13 @@ const routes: Routes = [
     path: 'buy1', component: BuyComponent
   },
   {
+    path: 'buy2', component: BuyComponent
+  },
+  {
     path: 'AddtoCart', component: CartComponent
+  },
+  {
+    path: 'AddtoCart1', component: CartComponent
   },
   {
     path: 'cartbutton', component: CartComponent
@@ -46,6 +56,9 @@ const routes: Routes = [
   },
   {
     path: '**', component: HomeComponent
+  },
+  {
+    path: 'search', component: SearchComponent
   }
 ];
 

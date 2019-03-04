@@ -11,11 +11,18 @@ export class SearchService {
 private microServiceUrl: string;
  private errorStatus: string;
  private errorBody: string;
-
+ cart;
   constructor(private http: HttpClient) {
-      this.microServiceUrl = 'http://localhost:8999/api/v1/';
+      this.microServiceUrl = 'http://localhost:8013/api/v1/';
   }
-
+  openDailog1() {
+    this.microServiceUrl = 'http://localhost:8013/api/v1/';
+    return this.http.get(this.microServiceUrl);
+}
+AddToCart1() {
+    this.microServiceUrl = 'http://localhost:8013/api/v1/';
+    return this.http.get(this.microServiceUrl);
+}
   searchByProductStartsWith(productBrand: string) {
    const regx = `${productBrand}`;
    console.log('Regx', regx);

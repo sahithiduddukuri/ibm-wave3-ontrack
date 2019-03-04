@@ -1,3 +1,5 @@
+import { Ontrack } from './../../classes/ontrack';
+import { SearchService } from './../../services/search.service';
 import { OnTrackService } from './../../ontrack.service';
 import { Router } from '@angular/router';
 import { Component, OnInit, Inject, Input, Output, EventEmitter} from '@angular/core';
@@ -9,9 +11,10 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class DailogComponent implements OnInit {
   products: any = [];
+  Ontrack: any = [];
   constructor(
     public dialogRef: MatDialogRef<DailogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private onTrack: OnTrackService, public route: Router
+    @Inject(MAT_DIALOG_DATA) public data: any, private onTrack: OnTrackService, private searchService: SearchService, public route: Router
     ) {}
     // productName: String;
     //   @Input()
@@ -30,6 +33,9 @@ export class DailogComponent implements OnInit {
       this.onTrack.openDailog().subscribe(data => {
         this.products = data;
       });
+      this.searchService.openDailog1().subscribe(res => {
+        this.Ontrack = res;
+      });
     }
   closeDailog() {
     this.dialogRef.close('');
@@ -40,5 +46,11 @@ export class DailogComponent implements OnInit {
   AddtoCart() {
     this.route.navigate(['/' , 'AddtoCart']);
   }
+  // buy2() {
+  //   this.route.navigate(['/' , 'buy2']);
+  // }
+  // AddtoCart1() {
+  //   this.route.navigate(['/' , 'AddtoCart1']);
+  // }
 }
 

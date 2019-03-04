@@ -19,7 +19,9 @@ export class BuyComponent implements OnInit {
     {name : ' 1/03/2019 '},
     {name : ' 2/03/2019 '}  ];
 }
-
+Ctrl($scope) {
+    $scope.date = new Date();
+}
   ngOnInit() {
     // this.filteredOptions = this.myControl.valueChanges
   //   .pipe(

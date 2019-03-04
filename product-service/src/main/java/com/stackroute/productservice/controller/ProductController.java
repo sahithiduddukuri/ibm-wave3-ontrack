@@ -1,6 +1,7 @@
 package com.stackroute.productservice.controller;
 
-import com.stackroute.productservice.domain.Product;
+
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.exceptions.ProductAlreadyUpdatedException;
 import com.stackroute.productservice.exceptions.ProductIdNotFoundException;

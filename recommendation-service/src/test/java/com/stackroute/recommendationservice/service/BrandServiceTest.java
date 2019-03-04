@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.service;
 
 
-import com.stackroute.domain.Brand;
+import com.stackroute.rabbitmq.domain.Brand;
 import com.stackroute.recommendationservice.Repository.BrandRepository;
 import org.junit.Assert;
 import org.junit.Before;

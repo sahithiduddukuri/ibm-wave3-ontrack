@@ -1,7 +1,8 @@
 package com.stackroute.productservice.seeddata;
 
 import com.opencsv.CSVReaderBuilder;
-import com.stackroute.productservice.domain.Product;
+
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.productservice.exceptions.ProductAlreadyExistsException;
 import com.stackroute.productservice.service.ProductService;
 

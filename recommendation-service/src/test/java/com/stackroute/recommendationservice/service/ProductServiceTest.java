@@ -1,7 +1,7 @@
 //package com.stackroute.recommendationservice.service;
 //
 //
-//import com.stackroute.domain.Product;
+//import Product;
 //import com.stackroute.recommendationservice.Repository.ProductRepository;
 //import org.junit.Assert;
 //import org.junit.Before;

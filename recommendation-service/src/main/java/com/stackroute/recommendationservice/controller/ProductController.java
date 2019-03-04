@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
 
-import com.stackroute.domain.Product;
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.recommendationservice.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

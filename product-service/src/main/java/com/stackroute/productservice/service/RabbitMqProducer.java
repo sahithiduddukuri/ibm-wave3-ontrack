@@ -1,6 +1,6 @@
 package com.stackroute.productservice.service;
 
-import com.stackroute.productservice.domain.Product;
+import com.stackroute.rabbitmq.domain.Product;
 import com.stackroute.rabbitmq.domain.ProductDTO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RabbitMqProducer {
+
     @Autowired
     private RabbitTemplate rabbitTemplate;
 

@@ -17,18 +17,18 @@ export class DailogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any, private onTrack: OnTrackService, private searchService: SearchService, public route: Router
     ) {}
     // productName: String;
-    //   @Input()
-    //   o: any;
-      // cart: any ;
-      // @Output()
-      //  cartAddEvent = new EventEmitter<any>();
-      // dialogResult: any;
-      // AddToCart(o): void {
-      //   console.log(o, 'click event call');
-      //   this.cartAddEvent.emit(o);
-      //   this.onTrack.cart = o;
-      //  this.route.navigateByUrl('/AddToCart');
-      // }
+      @Input()
+      q: any;
+      cart: any ;
+      @Output()
+       cartAddEvent = new EventEmitter<any>();
+      dialogResult: any;
+      AddToCart(q): void {
+        console.log(q, 'click event call');
+        this.cartAddEvent.emit(q);
+        this.onTrack.cart = q;
+       this.route.navigateByUrl('/AddToCart1');
+      }
     ngOnInit() {
       this.onTrack.openDailog().subscribe(data => {
         this.products = data;

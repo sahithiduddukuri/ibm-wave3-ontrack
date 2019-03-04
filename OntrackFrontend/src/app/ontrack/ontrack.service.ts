@@ -1,3 +1,4 @@
+import { BuyComponent } from './components/buy/buy.component';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -13,15 +14,19 @@ export class OnTrackService {
 
     }
    Home() {
-        this.url = 'http://localhost:8086/api/v1/product';
+        this.url = 'http://localhost:8083/api/v1/product';
         return this.http.get(this.url);
 }
 openDailog() {
-    this.url = 'http://localhost:8086/api/v1/product';
+    this.url = 'http://localhost:8083/api/v1/product';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://localhost:8086/api/v1/product';
+    this.url = 'http://localhost:8083/api/v1/product';
+    return this.http.get(this.url);
+}
+Buy() {
+    this.url = ' http://localhost:3000/slotsAvailable';
     return this.http.get(this.url);
 }
 profile() {

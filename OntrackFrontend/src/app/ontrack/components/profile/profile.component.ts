@@ -4,23 +4,35 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OnTrackService } from '../../ontrack.service';
 import { Myregistration } from '../../classes/myregistration';
+import { Userlogin } from '../../classes/Userlogin';
+import { RegistrationService } from '../../services/registration.service';
+import * as jwt_decode from 'jwt-decode';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user: User;
-  first: any;
-  editForm: FormGroup;
-  userService: any;
+  register: any = [];
   @Input()
-  reg: Myregistration;
-  constructor(private formBuilder: FormBuilder, private router: Router, private ontrack: OnTrackService) { }
-
+  reg: any;
+  loginToken: Userlogin;
+  jti: any;
+  constructor(private services: RegistrationService) { }
   ngOnInit() {
-    this.ontrack.profile().subscribe(data => {
-      console.log(data);
-    });
+    try {
+      const tokenObtained = localStorage.getItem('token');
+      this.loginToken = jwt_decode(tokenObtained);
+      console.log('decoded token', jwt_decode(tokenObtained));
+      this.jti = this.loginToken.jti;
+      console.log('decoded token id', this.loginToken.jti);
+      this.services.profile(this.jti).subscribe(data => {
+        this.reg = data;
+        // console.log(res);
+        console.log( this.reg);
+     });
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
-}

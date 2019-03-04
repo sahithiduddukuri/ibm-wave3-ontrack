@@ -16,7 +16,10 @@
     <ng-template #item let-i="index">
           <div class = "items">
             <mat-card>
-              <mat-card-title>28/02/2019</mat-card-title>
+              <!-- <mat-card-title>28/02/2019</mat-card-title> -->
+              <div ng-app ng-controller="Ctrl">
+                  {{date | date:'yyyy-MM-dd'}}
+              </div>
             <mat-card-content>
           <button mat-raised-button (click)="slot1()">Slot 1<p>9:00AM-12:00PM</p><p>Price:RS:40/-</p></button> 
           <button mat-raised-button (click)="slot2()">Stot 2<P>2:00PM-5:00PM</P><p>Price:RS:60/-</p></button> 

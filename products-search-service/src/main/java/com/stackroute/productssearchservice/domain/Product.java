@@ -11,9 +11,10 @@ import org.springframework.data.annotation.Id;
 @Builder
 public class Product {
     @Id
-    private int productId;
+    private String productId;
     private String productName;
     private String productType;
+    private String productTypeId;
     private String imageURL;
     private String mrp;
     private String price;
@@ -23,6 +24,7 @@ public class Product {
     private String gender;
     private String description;
     private String brand;
+    private String brandId;
     private String colour;
 
 }

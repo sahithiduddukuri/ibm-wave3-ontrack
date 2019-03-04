@@ -14,8 +14,8 @@ import java.util.List;
 @Builder
 public class SelectedSlot {
     @Id
-    private LocalDate orderDate;
-    private LocalDate date;
+    private String orderDate;
+    private String  date;
     private String slotType;
     private List<Product> productList;
     private  String responseId;

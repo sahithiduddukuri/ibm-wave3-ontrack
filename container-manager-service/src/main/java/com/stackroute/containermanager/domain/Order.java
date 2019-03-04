@@ -20,5 +20,5 @@ public class Order
     private int orderId;
     private List<Product> productList;
     @Id
-    private LocalDate orderDate;
+    private String orderDate;
 }

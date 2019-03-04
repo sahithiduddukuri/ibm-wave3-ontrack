@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.time.LocalDate;
 import java.util.Date;
 
-public interface SlotRepository extends MongoRepository<SlotEvaluation, LocalDate>
+public interface SlotRepository extends MongoRepository<SlotEvaluation, String>
 {
     //public SlotEvaluation findByDate(Date date);
 

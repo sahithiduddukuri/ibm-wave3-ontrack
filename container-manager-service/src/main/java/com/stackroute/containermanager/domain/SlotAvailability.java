@@ -6,10 +6,10 @@ import java.util.List;
 
 public class SlotAvailability
 {
-    private LocalDate date;
+    private String date;
     private List<Slot> slots;
 
-    public SlotAvailability(LocalDate date, List<Slot> slots)
+    public SlotAvailability(String date, List<Slot> slots)
     {
         this.date = date;
         this.slots = slots;
@@ -18,11 +18,11 @@ public class SlotAvailability
     public SlotAvailability() {
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -44,7 +44,7 @@ public class ContainerServiceImpl implements ContainerService {
             Optional<SlotEvaluation> slotEvaluation = slotRepository.findById(order.getOrderDate());
             List<SlotAvailability> slotAvailabilities = slotEvaluation.get().getSlotAvailabilities();
             for (SlotAvailability slotAvailability : slotAvailabilities) {
-                LocalDate slotDate = slotAvailability.getDate();
+                String slotDate = slotAvailability.getDate();
                 List<Slot> slots = slotAvailability.getSlots();
                 for (Slot slot : slots) {
                     slot.getSlotType();
@@ -114,7 +114,9 @@ public class ContainerServiceImpl implements ContainerService {
                     slotEvaluation.setSlotAvailabilities(slotAvailabilities);
                 }
                 if (i == 1) {
-                    slotAvailability.setDate(order.getOrderDate().plusDays(1));
+
+//                    slotAvailability.setDate(order.getOrderDate().plusDays(1));
+                    slotAvailability.setDate("2019/03/5");
                     slotAvailabilities.add(slotAvailability);
                     List<Slot> slots = new ArrayList<>();
                     for (int j = 0; j < 3; j++) {
@@ -153,31 +155,32 @@ public class ContainerServiceImpl implements ContainerService {
 
     }
 
-    public String saveSelecteSlots(SelectedSlot selectedSlot) throws OrderNotFound, OrderAlreadyExists {
+    public SlotEvaluation saveSelecteSlots(SelectedSlot selectedSlot) throws OrderNotFound, OrderAlreadyExists {
 
         if (slotRepository.existsById(selectedSlot.getOrderDate())) {
+            System.out.println("inside if");
             Optional<SlotEvaluation> slotEvaluation = slotRepository.findById(selectedSlot.getOrderDate());
             List<SlotAvailability> slotAvailabilities = slotEvaluation.get().getSlotAvailabilities();
+            System.out.println("slotavailabiloity data+++++++++++++++++++++" + slotAvailabilities);
             for (SlotAvailability slotAvailability : slotAvailabilities) {
-                LocalDate slotDate = slotAvailability.getDate();
-                List<Slot> slots = slotAvailability.getSlots();
-                for (Slot slot : slots) {
-                    if (selectedSlot.getDate() == slotDate) {
-                        if (selectedSlot.getSlotType() == slot.getSlotType()) {
+                String slotDate = slotAvailability.getDate();
+//                List<Slot> slots = slotAvailability.getSlots();
+                if (slotDate.equals(slotAvailability.getDate())) {
+                    List<Slot> slots = slotAvailability.getSlots();
+                    for (Slot slot : slots) {
+                        if (selectedSlot.getSlotType().equals(slot.getSlotType())) {
                             int selectedWeight = selectedSlot.getProductList().size() * 20;
                             slot.setAvailableContainerSize(slot.getAvailableContainerSize() - selectedWeight);
                         }
+
                     }
-
-
                 }
 
-
+                return slotRepository.save(slotEvaluation.get());
 
             }
 
-
         }
-    return "slo selected";
+        return null;
     }
-}
+    }

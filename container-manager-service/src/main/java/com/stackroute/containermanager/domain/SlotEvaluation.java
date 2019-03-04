@@ -15,11 +15,12 @@ import java.util.List;
 @Data
 public class SlotEvaluation
 {
-    @Id
+
     private String slotId;
     private int orderId;
     private List<SlotAvailability> slotAvailabilities;
-    private LocalDate orderDate;
+    @Id
+    private String orderDate;
     //private double containerVolume;
 
     public SlotEvaluation(String slotId, List<SlotAvailability> slotAvailabilities)

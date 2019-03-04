@@ -120,9 +120,9 @@ services:
       - rabbitmq
       - eurekaserver
     ports:
-      - 8121:8121
+      - 8084:8084
     expose:
-      - 8121
+      - 8084
 
   recommendation-service:
     image: recommendation-service:latest
@@ -134,9 +134,9 @@ services:
       - rabbitmq
       - eurekaserver
     ports:
-      - 8086:8086
+      - 8083:8083
     expose:
-      - 8086
+      - 8083
 
   ontrackFrontend:
     build: OntrackFrontend/

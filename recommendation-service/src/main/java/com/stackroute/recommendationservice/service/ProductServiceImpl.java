@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public Product createNode(Product product) {
-        Integer productId = product.getProductId();
+        String productId = product.getProductId();
         String productName = product.getProductName();
         String productType = product.getProductType();
         String productTypeId = product.getProductTypeId();
@@ -39,7 +39,8 @@ public class ProductServiceImpl implements ProductService{
         String brand = product.getBrand();
         String brandId = product.getBrandId();
         String colour = product.getColour();
-        Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
+        //Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
+        Product node = productRepository.save(product);
         System.out.println("service : "+node);
         return node;
     }

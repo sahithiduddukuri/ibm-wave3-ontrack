@@ -2,20 +2,16 @@ package com.stackroute.recommendationservice.controller;
 
 
 import com.stackroute.domain.Product;
-import com.stackroute.domain.Products;
 import com.stackroute.recommendationservice.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1")
 public class ProductController {
-
-
-   // Products productss;
 
     ProductService productService;
 

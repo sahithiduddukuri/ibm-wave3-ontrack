@@ -13,7 +13,7 @@ import org.springframework.data.annotation.Id;
 public class Product {
     @Id
     @JsonProperty("productId")
-    private int productId;
+    private String productId;
     @JsonProperty("productName")
     private String productName;
     @JsonProperty("productType")

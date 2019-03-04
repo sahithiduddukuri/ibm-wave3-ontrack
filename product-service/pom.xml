@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!--<parent>-->
+		<!--<groupId>org.springframework.boot</groupId>-->
+		<!--<artifactId>spring-boot-starter-parent</artifactId>-->
+		<!--<version>2.1.2.RELEASE</version>-->
+		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+	<!--</parent>-->
 	<parent>
 		<groupId>com.stackroute</groupId>
 		<artifactId>ibm-wave3-ontrack</artifactId>
@@ -38,12 +44,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.fridujo</groupId>
-			<artifactId>rabbitmq-mock</artifactId>
-			<version>1.0.9</version>
-			<scope>test</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.github.fridujo</groupId>-->
+			<!--<artifactId>rabbitmq-mock</artifactId>-->
+			<!--<version>1.0.9</version>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
 
 
 
@@ -109,12 +115,12 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.6</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.fridujo</groupId>
-			<artifactId>rabbitmq-mock</artifactId>
-			<version>1.0.9</version>
-			<scope>compile</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.github.fridujo</groupId>-->
+			<!--<artifactId>rabbitmq-mock</artifactId>-->
+			<!--<version>1.0.9</version>-->
+			<!--<scope>compile</scope>-->
+		<!--</dependency>-->
 
 	</dependencies>
 

@@ -1,14 +1,18 @@
-package com.stackroute.recommendationservice.Domain;
+package com.stackroute.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
-
-@Builder
 @Data
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Products.class)
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
 public class Products {
     @Id
     @JsonProperty("productId")
@@ -42,24 +46,4 @@ public class Products {
     @JsonProperty("dimension")
     private String dimension;
 
-    @Override
-    public String toString() {
-        return "Products{" +
-                "productId='" + productId + '\'' +
-                ", productName='" + productName + '\'' +
-                ", productType='" + productType + '\'' +
-                ", productTypeId='" + productTypeId + '\'' +
-                ", imageURL='" + imageURL + '\'' +
-                ", mrp='" + mrp + '\'' +
-                ", price='" + price + '\'' +
-                ", dimension='" + dimension + '\'' +
-                ", weight='" + weight + '\'' +
-                ", size='" + size + '\'' +
-                ", gender='" + gender + '\'' +
-                ", description='" + description + '\'' +
-                ", brand='" + brand + '\'' +
-                ", colour='" + colour + '\'' +
-                ", brandId='" + brandId + '\'' +
-                '}';
-    }
 }

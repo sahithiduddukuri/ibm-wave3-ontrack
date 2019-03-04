@@ -1,6 +1,6 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.recommendationservice.Domain.Product;
+import com.stackroute.domain.Product;
 import com.stackroute.recommendationservice.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public Product createNode(Product product) {
-        String productId = product.getProductId();
+        Integer productId = product.getProductId();
         String productName = product.getProductName();
         String productType = product.getProductType();
         String productTypeId = product.getProductTypeId();
@@ -39,10 +39,11 @@ public class ProductServiceImpl implements ProductService{
         String brand = product.getBrand();
         String brandId = product.getBrandId();
         String colour = product.getColour();
-        //Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
-        //System.out.println("service : "+node);
-        Product node1 = productRepository.save(product);
-        return node1;
+        Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
+        System.out.println("service : "+node);
+        return node;
     }
-}
+
+
+    }
 

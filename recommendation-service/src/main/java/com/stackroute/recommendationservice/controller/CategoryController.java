@@ -1,6 +1,7 @@
 package com.stackroute.recommendationservice.controller;
 
-import com.stackroute.recommendationservice.Domain.Category;
+
+import com.stackroute.domain.Category;
 import com.stackroute.recommendationservice.service.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

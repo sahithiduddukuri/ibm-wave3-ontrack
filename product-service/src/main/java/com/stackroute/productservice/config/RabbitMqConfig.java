@@ -1,8 +1,8 @@
 package com.stackroute.productservice.config;
 
-import com.github.fridujo.rabbitmq.mock.compatibility.MockConnectionFactoryFactory;
+//import com.github.fridujo.rabbitmq.mock.compatibility.MockConnectionFactoryFactory;
 import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+//import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -10,7 +10,7 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+//import org.springframework.context.annotation.Import;
 
 @Configuration
 public class RabbitMqConfig {
@@ -21,8 +21,8 @@ public class RabbitMqConfig {
     @Value("${jsa.rabbitmq.queue2}")
     String queueName2;
 
-    @Value("${jsa.rabbitmq.exchange}")
-    String exchange;
+    @Value("${jsa.rabbitmq.topicexchange}")
+    String topicexchange;
 
     @Value("${jsa.rabbitmq.routingkey1}")
     private String routingkey1;
@@ -31,28 +31,28 @@ public class RabbitMqConfig {
     private String routingkey2;
 
     @Bean
-    Queue autoDeleteQueue1() {
+    Queue queue1() {
         return new Queue(queueName1, true);
     }
     @Bean
-    Queue autoDeleteQueue2() {
+    Queue queue2() {
         return new Queue(queueName2, true);
     }
 
     @Bean
-    DirectExchange exchange() {
-        return new DirectExchange(exchange);
+ TopicExchange topicExchange() {
+        return new TopicExchange(topicexchange);
     }
 
     @Bean
-   public Binding bindingrecommendation(Queue autoDeleteQueue1, DirectExchange exchange) {
-        return BindingBuilder.bind(autoDeleteQueue1).to(exchange).with(routingkey1);
+   public Binding bindingrecommendation(Queue queue2, TopicExchange topicExchange) {
+        return BindingBuilder.bind(queue2).to(topicExchange).with(routingkey2);
     }
 
     @Bean
-    public Binding bindingsearch(DirectExchange exchange,
-                             Queue autoDeleteQueue2) {
-        return BindingBuilder.bind(autoDeleteQueue2).to(exchange).with(routingkey2);
+    public Binding bindingsearch(TopicExchange topicExchange,
+                             Queue queue1) {
+        return BindingBuilder.bind(queue1).to(topicExchange).with(routingkey1);
     }
 
     @Bean
@@ -61,8 +61,8 @@ public class RabbitMqConfig {
     }
 
 
-
-    public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    @Bean
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(jsonMessageConverter());
         return rabbitTemplate;

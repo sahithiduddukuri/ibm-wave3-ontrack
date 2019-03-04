@@ -30,8 +30,8 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @Autowired
-    RabbitMqProducer rabbitMqProducer;
+//    @Autowired
+//    RabbitMqProducer rabbitMqProducer;
     @ApiOperation(value="return saveproduct")
     @ApiResponses(value={@ApiResponse(code=100,message=" hello")})
     @PostMapping("product")
@@ -55,7 +55,7 @@ public class ProductController {
         product.setBrand(product.getBrand());
         product.setBrandId(product.getBrandId());
         product.setColour(product.getColour());
-            rabbitMqProducer.produce(product);
+//            rabbitMqProducer.produce(product);
             return responseEntity;
 
     }

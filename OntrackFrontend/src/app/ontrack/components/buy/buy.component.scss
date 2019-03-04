@@ -45,9 +45,13 @@ padding-left:700px;
    padding-bottom: 1px;
     position: relative;
 }
+ mat-card-content{
+     display:flex;
+ }
 
-.items mat-card button{
+.ring button{
     color: white;
+    // display:flex;
     background-image: url("../../../../assets/img/3.jpg");
     background-image: cover;
     background-repeat: no-repeat;
@@ -62,7 +66,7 @@ padding-left:700px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
-.items mat-card{
+   mat-card{
     height: 300px;
     width: 600px;
     left: 80px;
@@ -75,7 +79,7 @@ padding-left:700px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-.items mat-card-title{
+.items2 mat-card-title{
     font-size: 18px;
     position: absolute;
     margin-top:0px;

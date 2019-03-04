@@ -1,36 +1,41 @@
 <app-header></app-header>
 <div class="container">
-    <div ng2-carouselamos class= "slide-wrapper"
-    [items]= "items"
+    <div ng2-carouselamos class= "slide-wrapper"  
+    [items]= "slotsAvailable"
     [width]= "800"
     [$prev]= "prev"
     [$next]= "next"
     [$item]= "item">
-  </div>
    <ng-template #prev>
      <button class="id1"> <mat-icon>navigate_before</mat-icon></button>
     </ng-template>
     <ng-template #next>
         <button class="id2"><mat-icon>navigate_next</mat-icon></button>
-      </ng-template>
-    <ng-template #item let-i="index">
-          <div class = "items">
-            <mat-card>
-              <!-- <mat-card-title>28/02/2019</mat-card-title> -->
-              <div ng-app ng-controller="Ctrl">
-                  {{date | date:'yyyy-MM-dd'}}
-              </div>
-            <mat-card-content>
-          <button mat-raised-button (click)="slot1()">Slot 1<p>9:00AM-12:00PM</p><p>Price:RS:40/-</p></button> 
-          <button mat-raised-button (click)="slot2()">Stot 2<P>2:00PM-5:00PM</P><p>Price:RS:60/-</p></button> 
-          <button mat-raised-button (click)="slot3()">Slot 3<P>6:00PM-9:00PM</P><p>Price:RS:100/-</p></button>  
-            </mat-card-content>
-        </mat-card>
-        </div>  
       </ng-template>  
+    <ng-template #item >
+      <div class="items" >       
+            <mat-card>
+
+                <div class = "items2" *ngFor='let p of slotsAvailable'>
+                    <mat-card-title>{{ p.date }}</mat-card-title>
+                      </div>
+              <div class="items1" *ngFor='let p of slotsAvailable'>
+                
+ <mat-card-content>
+                <div class="ring" *ngFor="let r of p['slots']">
+          <button mat-raised-button (click)="slot()">{{ r.slotNumber }}<p>{{ r.slotType }}</p><p>{{ r.cost}}</p></button> 
+        </div>  
+        </mat-card-content>    
+          
+          </div>
+        </mat-card>
+      </div>
+      </ng-template>  
+    </div>
       <div mat-card-actions class="id">
 <button mat-raised-button >PAY</button>
 <div class="col">
 <button mat-raised-button (click)="shopping()">CONTINUE SHOPPING</button>
 </div> 
+</div>
 </div>

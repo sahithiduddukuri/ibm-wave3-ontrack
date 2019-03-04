@@ -1,20 +1,16 @@
-package com.stackroute.registrationservice.domain;
+package com.stackroute.rabbitmq.domain;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-
-@Getter
-@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope =Product.class)
-
-public class Product {
-
+@Data
+public class ProductDTO {
     @Id
     @JsonProperty("productId")
     private String productId;
@@ -49,8 +45,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "productId='" + productId + '\'' +
+        return "ProductDTO{" +
+                "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", productType='" + productType + '\'' +
                 ", productTypeId='" + productTypeId + '\'' +

@@ -61,8 +61,8 @@ public class ProductServiceTest {
 
     @Test
     public void getProductTest() {
-        productRepository.save(product);
-        when(productRepository.findAll()).thenReturn(list);
+        productRepository.create(product.getProductId(),product.getProductName(),product.getProductType(),product.getProductTypeId(),product.getImageURL(),product.getMrp(),product.getPrice(),product.getDimension(),product.getWeight(),product.getSize(),product.getGender(),product.getDescription(),product.getBrand(),product.getBrandId(),product.getColour());
+        when(productRepository.getAllProducts()).thenReturn(list);
         List<Product> productList = productService.getAll();
         Assert.assertEquals(list, productList);
     }

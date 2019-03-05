@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService{
 
     public List<Product> getAll()
     {
-        return (List<Product>) productRepository.findAll();
+        return (List<Product>) productRepository.getAllProducts();
     }
 
     public Product createNode(Product product) {
@@ -39,8 +39,7 @@ public class ProductServiceImpl implements ProductService{
         String brandId = product.getBrandId();
         String colour = product.getColour();
         Product node = productRepository.create(productId,productName,productType,productTypeId,imageURL,mrp,price,dimension,weight,size,gender,description,brand,brandId,colour);
-        //Product node = productRepository.create(product);
-        System.out.println("service : "+node);
+        //System.out.println("service : "+node);
         return node;
     }
 

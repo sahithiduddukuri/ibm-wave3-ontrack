@@ -15,15 +15,18 @@ export class OnTrackService {
     }
    Home() {
 
-        this.url = 'http://localhost:8083/api/v1/product';
+
+        this.url = 'http://13.233.3.91:8083/api/v1/product';
         return this.http.get(this.url);
 }
 openDailog() {
-    this.url = 'http://localhost:8083/api/v1/product';
+    this.url = 'http://13.233.3.91:8083/api/v1/product';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://localhost:8083/api/v1/product';
+   
+
+
 
         this.url = 'http://13.233.3.91:8083/api/v1/product';
         return this.http.get(this.url);
@@ -37,7 +40,7 @@ AddToCart() {
     return this.http.get(this.url);
 }
 Buy() {
-    this.url = ' http://localhost:3000/slotsAvailable';
+    this.url = ' http://13.233.3.91:3000/slotsAvailable';
 
     return this.http.get(this.url);
 }

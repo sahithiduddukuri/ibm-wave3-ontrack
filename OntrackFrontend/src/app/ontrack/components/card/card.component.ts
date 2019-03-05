@@ -49,13 +49,4 @@ ngOnInit() {
           this.products = data;
         });
  }
-//  search() {
-//    if (this.products.Product_name !== '') {
-//     this.products = this.products.filter(res => {
-//       return res.productName.toLocaleLowerCase().match(this.productName.toLocaleLowerCase());
-//     });
-//    } else if (this.productName === '') {
-//      this.ngOnInit();
-//    }
-//  }
-  }
+}

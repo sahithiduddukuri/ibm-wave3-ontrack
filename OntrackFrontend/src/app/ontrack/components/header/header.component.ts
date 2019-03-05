@@ -17,7 +17,8 @@ export class HeaderComponent implements OnInit {
   @Input() name;
 condition: boolean;
 
-  ngOnInit() { console.log(this.name);
+  ngOnInit() {
+    console.log(this.name);
     if (localStorage.getItem('token') !== null ) {
       this.flag = true;
      this.userLogged = false;

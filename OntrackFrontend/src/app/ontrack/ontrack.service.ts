@@ -14,17 +14,6 @@ export class OnTrackService {
 
     }
    Home() {
-<<<<<<< HEAD
-        this.url = 'http://localhost:8083/api/v1/product';
-        return this.http.get(this.url);
-}
-openDailog() {
-    this.url = 'http://localhost:8083/api/v1/product';
-    return this.http.get(this.url);
-}
-AddToCart() {
-    this.url = 'http://localhost:8083/api/v1/product';
-=======
         this.url = 'http://13.233.3.91:8083/api/v1/product';
         return this.http.get(this.url);
 }
@@ -38,7 +27,6 @@ AddToCart() {
 }
 Buy() {
     this.url = ' http://localhost:3000/slotsAvailable';
->>>>>>> 96fdb23c3c61dfbfbe4008295d3ee8d75cb14a94
     return this.http.get(this.url);
 }
 profile() {

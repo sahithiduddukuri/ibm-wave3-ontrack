@@ -29,7 +29,7 @@ AddToCart() {
     return this.http.get(this.url);
 }
 Buy() {
-    this.url = ' http://13.233.3.91:3000/slotsAvailable';
+    this.url = 'http://localhost:3000/slotsAvailable';
 
     return this.http.get(this.url);
 }

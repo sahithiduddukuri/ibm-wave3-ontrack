@@ -19,18 +19,7 @@ export class OnTrackService {
         this.url = 'http://13.233.3.91:8083/api/v1/product';
         return this.http.get(this.url);
 }
-openDailog() {
-    this.url = 'http://13.233.3.91:8083/api/v1/product';
-    return this.http.get(this.url);
-}
-AddToCart() {
-   
 
-
-
-        this.url = 'http://13.233.3.91:8083/api/v1/product';
-        return this.http.get(this.url);
-}
 openDailog() {
     this.url = 'http://13.233.3.91:8083/api/v1/product';
     return this.http.get(this.url);

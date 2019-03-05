@@ -48,16 +48,16 @@ cart: any ;
 
 // }
  ngOnInit() {
-          this.Ontrack.Home().subscribe(data => {
-            console.log(data);
-            this.ontracks = data;
-          });
+          // this.Ontrack.Home().subscribe(data => {
+          //   console.log(data);
+          //   this.ontracks = data;
+          // });
   }
-  // search(value) {
-  //  this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
-  //     this.ontracks = res.body;
-  //     console.log(res);
-  //     console.log( this.ontracks);
-  //  });
-  // }
+  search(value) {
+   this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
+      this.ontracks = res.body;
+      console.log(res);
+      console.log( this.ontracks);
+   });
+  }
 }

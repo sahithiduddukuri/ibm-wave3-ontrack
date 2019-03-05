@@ -61,11 +61,11 @@ ngOnInit() {
           this.products = data;
         });
  }
- search(value) {
-  this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
-     this.ontracks = res.body;
-     console.log(res);
-     console.log( this.ontracks);
-  });
- }
+//  search(value) {
+//   this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
+//      this.ontracks = res.body;
+//      console.log(res);
+//      console.log( this.ontracks);
+//   });
+//  }
 }

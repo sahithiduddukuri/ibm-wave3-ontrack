@@ -1,6 +1,6 @@
 import { Ontrack } from './../../classes/ontrack';
 import { SearchService } from './../../services/search.service';
-import { OnTrackService } from './../../ontrack.service';
+import { OnTrackService } from '../../services/ontrack.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

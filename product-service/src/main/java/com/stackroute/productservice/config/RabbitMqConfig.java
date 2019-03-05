@@ -73,9 +73,9 @@ public class RabbitMqConfig {
 
 
 
-//        @Bean
-//        public ConnectionFactory connectionFactory() {
-//            return new CachingConnectionFactory(MockConnectionFactoryFactory.build());
-//        }
+        @Bean
+        public ConnectionFactory connectionFactory() {
+            return new CachingConnectionFactory(MockConnectionFactoryFactory.build());
+        }
 
 }

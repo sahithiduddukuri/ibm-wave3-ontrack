@@ -14,7 +14,7 @@ export class OnTrackService {
 
     }
    Home() {
-        this.url = 'http://13.233.3.91:8083/api/v1/product';
+        this.url = 'http://localhost:8083/api/v1/products';
         return this.http.get(this.url);
 }
 openDailog() {

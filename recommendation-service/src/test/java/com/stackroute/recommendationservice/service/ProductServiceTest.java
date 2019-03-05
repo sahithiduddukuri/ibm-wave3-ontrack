@@ -2,8 +2,9 @@ package com.stackroute.recommendationservice.service;
 
 
 
-import com.stackroute.rabbitmq.domain.Product;
+
 import com.stackroute.recommendationservice.Repository.ProductRepository;
+import com.stackroute.recommendationservice.domain.Product;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -61,7 +62,7 @@ public class ProductServiceTest {
 
     @Test
     public void getProductTest() {
-        productRepository.save(product);
+        productRepository.create(product.getProductId(),product.getProductName(),product.getProductType(),product.getProductTypeId(),product.getImageURL(),product.getMrp(),product.getPrice(),product.getDimension(),product.getWeight(),product.getSize(),product.getGender(),product.getDescription(),product.getBrand(),product.getBrandId(),product.getColour());
         when(productRepository.findAll()).thenReturn(list);
         List<Product> productList = productService.getAll();
         Assert.assertEquals(list, productList);

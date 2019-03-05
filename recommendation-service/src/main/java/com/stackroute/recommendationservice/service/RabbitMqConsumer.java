@@ -2,7 +2,7 @@ package com.stackroute.recommendationservice.service;
 
 import com.stackroute.rabbitmq.domain.Brand;
 import com.stackroute.rabbitmq.domain.Category;
-import com.stackroute.rabbitmq.domain.Product;
+import com.stackroute.recommendationservice.domain.Product;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

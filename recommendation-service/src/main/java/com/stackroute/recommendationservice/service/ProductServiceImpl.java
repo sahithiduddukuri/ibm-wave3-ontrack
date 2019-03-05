@@ -1,7 +1,8 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.rabbitmq.domain.Product;
+
 import com.stackroute.recommendationservice.Repository.ProductRepository;
+import com.stackroute.recommendationservice.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,8 @@ public class ProductServiceImpl implements ProductService{
 
     public List<Product> getAll()
     {
-        return (List<Product>) productRepository.getAllProducts();
+        System.out.println("qiwgdiudqgw");
+        return (List<Product>)productRepository.findAll();
     }
 
     public Product createNode(Product product) {

@@ -168,6 +168,5 @@ services:
     ports:
       - 9000:9000
     network_mode: host
-      - 8013
 
 

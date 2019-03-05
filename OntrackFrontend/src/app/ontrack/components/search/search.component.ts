@@ -25,39 +25,39 @@ cart: any ;
   dialogResult: any;
 
  constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService) { }
- AddToCart1(q): void {
-  console.log(q, 'click event call');
-  this.cartAddEvent.emit(q);
-  this.searchService.cart = q;
- this.route.navigateByUrl('/AddToCart1');
+//  AddToCart1(q): void {
+//   console.log(q, 'click event call');
+//   this.cartAddEvent.emit(q);
+//   this.searchService.cart = q;
+//  this.route.navigateByUrl('/AddToCart1');
 
-}
-buy2() {
-  this.route.navigate([ '/', 'buy2']);
-}
+// }
+// buy2() {
+//   this.route.navigate([ '/', 'buy2']);
+// }
 
-openDialog1(q): void {
-  console.log(q, 'this is the data ');
- const dialogRef = this.dialog.open(DailogComponent,  {
-   data: { q }
-  });
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    this.dialogResult = result;
-  });
+// openDialog1(q): void {
+//   console.log(q, 'this is the data ');
+//  const dialogRef = this.dialog.open(DailogComponent,  {
+//    data: { q }
+//   });
+//   dialogRef.afterClosed().subscribe(result => {
+//     console.log('The dialog was closed');
+//     this.dialogResult = result;
+//   });
 
-}
+// }
  ngOnInit() {
           this.Ontrack.Home().subscribe(data => {
             console.log(data);
             this.ontracks = data;
           });
   }
-  search(value) {
-   this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
-      this.ontracks = res.body;
-      console.log(res);
-      console.log( this.ontracks);
-   });
-  }
+  // search(value) {
+  //  this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
+  //     this.ontracks = res.body;
+  //     console.log(res);
+  //     console.log( this.ontracks);
+  //  });
+  // }
 }

@@ -1,3 +1,33 @@
+<div class="row">
+  <mat-form-field appearance="outline" >
+        <input type="text" #myInput [(ngModel)]="ontracks.brand"  placeholder="search by brand" (input)="search($event.target.value)">
+        <mat-icon  matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+<div class="container">
+<div *ngFor='let q of ontracks'>
+    <div fxFlex="20%">
+<mat-card class='product--blue'>
+  <mat-card-header>
+      <img mat-card-image src="{{q.imageURL}}" alt="{{q.brand}}">
+      <mat-card-title>
+
+          <p>{{ q.brand }}</p>
+
+      </mat-card-title>
+      <mat-card-actions align="center">
+        <button mat-raised-button (click)="buys()">Buy</button>
+        <button mat-raised-button (click)="openDialog(q)">Details</button>
+           <button mat-raised-button (click)="AddToCart(q)">AddToCart</button>
+      </mat-card-actions>
+</mat-card-header>
+</mat-card>
+</div>
+</div>
+</div>
+
+
+
 <div class="row" fxLayout.xs="column">
   <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
       <div fxFlex="20%">

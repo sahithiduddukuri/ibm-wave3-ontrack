@@ -24,13 +24,6 @@ export class CartComponent implements OnInit {
      this.products = this.onTrack.cart;
    }
    // tslint:disable-next-line:one-line
-   else if (this.searchService.cart !== undefined || this.searchService.cart !== null) {
-     this.productDetails = true;
-     console.log(this.searchService.cart);
-     console.log(this.searchService.cart, 'get searched products');
-     this.Ontrack = this.searchService.cart;
-   }
-   // tslint:disable-next-line:one-line
    else {
      this.productDetails = false;
    }

@@ -30,6 +30,7 @@ AddToCart() {
 }
 Buy() {
 
+
     this.url = ' http://13.233.3.91:3000/slotsAvailable';
 
 

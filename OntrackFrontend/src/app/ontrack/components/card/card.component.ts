@@ -7,15 +7,22 @@ import { DailogComponent } from './../dailog/dailog.component';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../services/ontrack.service';
 import { Search } from '../search/Search';
+import { SearchService } from '../../services/search.service';
+import { Ontrack } from '../../classes/ontrack';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router, private db: AngularFireDatabase) { }
+
+  // tslint:disable-next-line:max-line-length
+  constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router, private searchService: SearchService, private db: AngularFireDatabase) { }
+
   products: any = [];
 productName: String;
+@Input() Ontrack: any;
+ private ontracks: Ontrack[];
   @Input()
   o: any;
   cart: any ;
@@ -53,5 +60,12 @@ ngOnInit() {
           console.log(data);
           this.products = data;
         });
+ }
+ search(value) {
+  this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
+     this.ontracks = res.body;
+     console.log(res);
+     console.log( this.ontracks);
+  });
  }
 }

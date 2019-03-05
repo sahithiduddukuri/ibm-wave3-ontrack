@@ -16,18 +16,19 @@ export class DailogComponent implements OnInit {
     public dialogRef: MatDialogRef<DailogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private onTrack: OnTrackService, private searchService: SearchService, public route: Router
     ) {}
-    // productName: String;
+
       @Input()
+      o: any;
       q: any;
       cart: any ;
       @Output()
        cartAddEvent = new EventEmitter<any>();
       dialogResult: any;
-      AddToCart(q): void {
-        console.log(q, 'click event call');
-        this.cartAddEvent.emit(q);
-        this.onTrack.cart = q;
-       this.route.navigateByUrl('/AddToCart1');
+      AddToCart(o): void {
+        console.log(o, 'click event call');
+        this.cartAddEvent.emit(o);
+        this.onTrack.cart = o;
+       this.route.navigateByUrl('/AddToCarts');
       }
     ngOnInit() {
       this.onTrack.openDailog().subscribe(data => {
@@ -46,11 +47,5 @@ export class DailogComponent implements OnInit {
   AddtoCart() {
     this.route.navigate(['/' , 'AddtoCart']);
   }
-  // buy2() {
-  //   this.route.navigate(['/' , 'buy2']);
-  // }
-  // AddtoCart1() {
-  //   this.route.navigate(['/' , 'AddtoCart1']);
-  // }
 }
 

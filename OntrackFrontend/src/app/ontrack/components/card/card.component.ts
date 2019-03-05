@@ -24,20 +24,20 @@ productName: String;
 @Input() Ontrack: any;
  private ontracks: Ontrack[];
   @Input()
-  o: any;
+  product: any;
   cart: any ;
   @Output()
    cartAddEvent = new EventEmitter<any>();
   dialogResult: any;
-  AddToCart(o): void {
-    console.log(o, 'click event call');
-    this.cartAddEvent.emit(o);
-    this.onTrack.cart = o;
+  AddToCart(product): void {
+    console.log(product, 'click event call');
+    this.cartAddEvent.emit(product);
+    this.onTrack.cart = product;
    this.route.navigateByUrl('/AddToCart');
    this.db.list('/products').valueChanges().subscribe(data => {
     console.log('data value', data);
   });
-  this.db.list('/products').push(o);
+  this.db.list('/products').push(product);
 
   }
   buys() {

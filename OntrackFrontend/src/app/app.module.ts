@@ -21,6 +21,7 @@ import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from 'angularfire2';
+import { OntrackMaterialModule } from './ontrack/ontrack.material.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AngularFireModule } from 'angularfire2';
     BrowserModule,
     AppRoutingModule,
     OntrackModule,
+    OntrackMaterialModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

@@ -56,24 +56,33 @@ form{
     top: 30px;
     left: 200px;
 }
-input[type=text] {
-    width: 30%;
-    padding: 10px 10px;
-    margin: 0px 0;
-    left: 400px;
-    box-sizing: border-box;
-    color: #000;
-    position: absolute;
-    top: 30px;
-    // border-radius: 8px;
-    z-index: 1;
-    position: fixed;
-  }
+// input[type=text] {
+//     width: 30%;
+//     padding: 10px 10px;
+//     margin: 0px 0;
+//     left: 400px;
+//     box-sizing: border-box;
+//     color: #000;
+//     position: absolute;
+//     top: 30px;
+//     // border-radius: 8px;
+//     z-index: 1;
+//     position: fixed;
+//   }
   
-  .row {
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
-    flex-flow: row wrap;
-    overflow: auto;   
-  }  
+//   .row {
+//     width: 100%;
+//     justify-content: flex-start;
+//     display: flex;
+//     flex-flow: row wrap;
+//     overflow: auto;   
+//   }  
+  .id3{
+    color:white;
+    position: relative;
+    padding-left: 600px;
+    padding-top: 32px;
+ }
+ .id3 mat-icon{
+    color:black;
+ }

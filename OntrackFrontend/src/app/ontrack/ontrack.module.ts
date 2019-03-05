@@ -71,7 +71,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent ]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent]
 
 })
 export class OntrackModule { }

@@ -9,6 +9,7 @@ import { HomeComponent } from './ontrack/components/home/home.component';
 import { LoginComponent } from './ontrack/components/login/login.component';
 import { CartComponent } from './ontrack/components/cart/cart.component';
 import { SearchComponent } from './ontrack/components/search/search.component';
+// import { BuyingHistoryComponent } from './ontrack/components/buying-history/buying-history.component';
 
 
 const routes: Routes = [
@@ -55,10 +56,10 @@ const routes: Routes = [
     path: 'profile', component: ProfileComponent
   },
   {
-    path: '**', component: HomeComponent
+    path: 'search', component: SearchComponent
   },
   {
-    path: 'search', component: SearchComponent
+    path: '**', component: HomeComponent
   }
 ];
 

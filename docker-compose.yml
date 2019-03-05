@@ -161,8 +161,12 @@ services:
     ports:
       - 8013:8013
     expose:
-      -8013
-    expose:
       - 8013
+
+  sonarqube:
+    image: sonarqube
+    ports:
+      - 9000:9000
+    network_mode: host
 
 

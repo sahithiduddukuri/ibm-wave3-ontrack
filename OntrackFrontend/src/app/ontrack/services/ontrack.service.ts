@@ -1,4 +1,4 @@
-import { BuyComponent } from './components/buy/buy.component';
+// import { BuyComponent } from '../components/buy/buy.component';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,8 +15,8 @@ export class OnTrackService {
     }
    Home() {
 
-
-        this.url = 'http://13.233.3.91:8083/api/v1/product';
+         this.url = 'http://13.233.3.91:8083/api/v1/product';
+        console.log('this method call');
         return this.http.get(this.url);
 }
 
@@ -29,7 +29,10 @@ AddToCart() {
     return this.http.get(this.url);
 }
 Buy() {
-    this.url = 'http://localhost:3000/slotsAvailable';
+
+
+    this.url = ' http://13.233.3.91:3000/slotsAvailable';
+
 
     return this.http.get(this.url);
 }

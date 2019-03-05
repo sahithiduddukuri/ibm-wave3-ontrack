@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { OnTrackService } from '../../ontrack.service';
+import { OnTrackService } from '../../services/ontrack.service';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',

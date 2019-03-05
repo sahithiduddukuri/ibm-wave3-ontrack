@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'firebase';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { OnTrackService } from '../../ontrack.service';
+import { OnTrackService } from '../../services/ontrack.service';
 import { Myregistration } from '../../classes/myregistration';
 import { Userlogin } from '../../classes/Userlogin';
 import { RegistrationService } from '../../services/registration.service';

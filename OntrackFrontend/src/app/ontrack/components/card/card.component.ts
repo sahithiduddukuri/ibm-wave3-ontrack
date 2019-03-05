@@ -1,10 +1,11 @@
+import { AngularFireDatabase } from '@angular/fire/database';
 import { CartComponent } from './../cart/cart.component';
 import { Router } from '@angular/router';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DailogComponent } from './../dailog/dailog.component';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { OnTrackService } from '../../ontrack.service';
+import { OnTrackService } from '../../services/ontrack.service';
 import { Search } from '../search/Search';
 @Component({
   selector: 'app-card',
@@ -12,7 +13,7 @@ import { Search } from '../search/Search';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router) { }
+  constructor(public dialog: MatDialog, private onTrack: OnTrackService, public route: Router, private db: AngularFireDatabase) { }
   products: any = [];
 productName: String;
   @Input()
@@ -26,6 +27,10 @@ productName: String;
     this.cartAddEvent.emit(o);
     this.onTrack.cart = o;
    this.route.navigateByUrl('/AddToCart');
+   this.db.list('/products').valueChanges().subscribe(data => {
+    console.log('data value', data);
+  });
+  this.db.list('/products').push(o);
 
   }
   buys() {

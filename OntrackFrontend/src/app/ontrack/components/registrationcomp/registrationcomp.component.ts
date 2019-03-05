@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RegserviceService } from '../../regservice.service';
+import { RegserviceService } from '../../services/regservice.service';
 import { Myregistration } from '../../classes/myregistration';
 import { RegistrationService } from '../../services/registration.service';
 import { HttpClient } from '@angular/common/http';

@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService{
 
     public List<Product> getAll()
     {
-        return (List<Product>) productRepository.findAll();
+        return (List<Product>) productRepository.getAllProducts();
     }
 
     public Product createNode(Product product) {

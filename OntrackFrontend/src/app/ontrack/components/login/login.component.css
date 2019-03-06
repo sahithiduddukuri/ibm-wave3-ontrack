@@ -37,3 +37,9 @@ p{
 mat-label{
     font-size: 20px;
 }
+h1
+{
+    position: absolute;
+    padding-top: 80px;
+    padding-left: 870px;
+}

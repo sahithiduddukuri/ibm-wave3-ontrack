@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'; // used for reactive forms
+import { FormBuilder, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms'; // used for reactive forms
 
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { ErrorStateMatcher } from '@angular/material';
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+  }
 
 
 @Component({
@@ -12,6 +19,14 @@ import { LoginService } from '../../services/login.service';
 })
 
 export class LoginComponent implements OnInit {
+
+
+  matcher = new MyErrorStateMatcher();
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
   names;
     user = this.fb.group({ // for reactive groups, we are creating form builder groups which is where we create
       // one group and add multiple properties

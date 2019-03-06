@@ -66,6 +66,9 @@ const routes: Routes = [
     path: 'search', component: SearchComponent
   },
   {
+    path: 'search/:brand', component: SearchComponent
+  },
+  {
     path: '**', component: HomeComponent
   }
 ];

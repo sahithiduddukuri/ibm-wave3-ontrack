@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private route: Router, private loginService: LoginService) { }
   @Input() name;
 condition: boolean;
-
+text: String;
   ngOnInit() {
     console.log(this.name);
     if (localStorage.getItem('token') !== null ) {
@@ -39,19 +39,25 @@ condition: boolean;
   profile() {
     this.route.navigate(['/', 'profile']);
   }
+  searchbar() {
+    this.route.navigate(['/', 'search', this.text]);
+  }
   logout() {
     this.loginService.logout();
      this.flag = false;
      this.userLogged = true;
    // location.reload();
   }
-  search() {
-    if (this.products.Product_name !== '') {
-     this.products = this.products.filter(res => {
-       return res.this.products.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
-     });
-    } else if (this.products.Product_name === '') {
-      this.ngOnInit();
-    }
+  search(value) {
+    this.text = value;
   }
+  // search() {
+  //   if (this.products.Product_name !== '') {
+  //    this.products = this.products.filter(res => {
+  //      return res.this.products.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
+  //    });
+  //   } else if (this.products.Product_name === '') {
+  //     this.ngOnInit();
+  //   }
+  // }
 }

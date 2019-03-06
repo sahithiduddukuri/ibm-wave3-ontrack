@@ -28,16 +28,8 @@ productName: String;
 product: any;
 db: any;
 
-constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute) { }
-ngOnInit() {
-   this.brand = this.ac.snapshot.params['brand'];
-  this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {
-     this.ontracks = res.body;
-     console.log(res);
-     console.log( this.ontracks);
-  });
- }
- AddToCart(product): void {
+constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute, private db: AngularFireDatabase) { }
+AddToCart(product): void {
    console.log(product, 'click event call');
    this.cartAddEvent.emit(product);
    this.searchService.cart = product;
@@ -48,6 +40,15 @@ ngOnInit() {
  this.db.list('/products').push(product);
 
  }
+ngOnInit() {
+   this.brand = this.ac.snapshot.params['brand'];
+  this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {
+     this.ontracks = res.body;
+     console.log(res);
+     console.log( this.ontracks);
+  });
+ }
+ 
  buys() {
    this.route.navigate([ '/', 'buys']);
  }

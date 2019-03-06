@@ -10,8 +10,8 @@
 .button{
     z-index: 1;
     position: absolute;
-    margin-left:600px;
-    top:35px;
+    margin-left:590px;
+    top:33px;
  }
 .sak{
     color:white;
@@ -34,12 +34,11 @@
 }
 .wrap
 {
-    position: relative;
-    padding-left:1000px;
-    padding-top: 34px;
+    padding-top: 28px;
 }
 .wrap1
 {
+
     padding-right: 10px;
     padding-top: 35px;
 }
@@ -71,7 +70,6 @@ input[type=text] {
     color: #000;
     position: absolute;
     top: 30px;
-    // border-radius: 8px;
     z-index: 1;
     position: fixed;
   }
@@ -83,12 +81,3 @@ input[type=text] {
     flex-flow: row wrap;
     overflow: auto;   
   }  
-  .id3{
-    color:white;
-    position: relative;
-    padding-left: 600px;
-    padding-top: 32px;
- }
- .id3 mat-icon{
-    color:black;
- }

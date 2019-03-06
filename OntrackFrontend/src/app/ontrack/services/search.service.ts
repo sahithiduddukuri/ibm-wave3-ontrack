@@ -15,7 +15,7 @@ private microServiceUrl: string;
   constructor(private http: HttpClient) {
 
   }
-  openDailog1() {
+  openDailog() {
     this.microServiceUrl = 'http://13.233.3.91:8013/api/v1/';
     return this.http.get(this.microServiceUrl);
 }

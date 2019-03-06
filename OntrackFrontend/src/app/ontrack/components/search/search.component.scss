@@ -48,6 +48,7 @@
   justify-content: flex-start;
   padding-bottom: 50px;
   padding-left: 14.5px;
+  padding-top: 100px;
  }
  mat-card-action button {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -73,16 +74,4 @@
  mat-card-action button:hover:before {
   color: #2B2D42;
  }
- input[type=text] {
-  width: 30%;
-  padding: 10px 10px;
-  margin: 0px 0;
-  left: 400px;
-  box-sizing: border-box;
-  color: #000;
-  position: absolute;
-  top: 30px;
-  // border-radius: 8px;
-  z-index: 1;
-  position: fixed;
- }
+ 

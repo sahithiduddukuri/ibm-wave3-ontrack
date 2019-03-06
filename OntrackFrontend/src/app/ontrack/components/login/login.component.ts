@@ -50,9 +50,6 @@ export class LoginComponent implements OnInit {
       if (res.message === 'User successfully logged in') {
         localStorage.setItem('token' , res.token);
         this.router.navigate([`/home`]);
-        // this.loginService.setCookie('token', res.token, 1);
-        // this.loginService.setCookie('message', res.message, 1);
-        // let token = this.loginService.getCookie('token');
       } else {
         window.alert('Credentials you entered are incorrect');
       }

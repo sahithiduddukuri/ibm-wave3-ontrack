@@ -4,6 +4,7 @@ import { OnTrackService } from '../../services/ontrack.service';
 import { Router } from '@angular/router';
 import { Component, OnInit, Inject, Input, Output, EventEmitter} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { database } from 'firebase';
 @Component({
   selector: 'app-dailog',
   templateUrl: './dailog.component.html',
@@ -34,7 +35,7 @@ export class DailogComponent implements OnInit {
       this.onTrack.openDailog().subscribe(data => {
         this.products = data;
       });
-      this.searchService.openDailog1().subscribe(res => {
+      this.searchService.openDailog().subscribe(res => {
         this.Ontrack = res;
       });
     }

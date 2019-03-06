@@ -8,8 +8,6 @@ import { Ontrack } from '../../classes/ontrack';
 import { DailogComponent } from '../dailog/dailog.component';
 import { MatDialog } from '@angular/material';
 
-
-
 @Component({
 selector: 'app-search',
 templateUrl: './search.component.html',
@@ -23,46 +21,46 @@ cart: any ;
 brand: any;
 @Output()
 cartAddEvent = new EventEmitter<any>();
- dialogResult: any;
+dialogResult: any;
+products: any = [];
+productName: String;
+@Input()
+product: any;
+db: any;
 
 constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute) { }
-//  AddToCart1(q): void {
-//   console.log(q, 'click event call');
-//   this.cartAddEvent.emit(q);
-//   this.searchService.cart = q;
-//  this.route.navigateByUrl('/AddToCart1');
-
-// }
-// buy2() {
-//   this.route.navigate([ '/', 'buy2']);
-// }
-
-// openDialog1(q): void {
-//   console.log(q, 'this is the data ');
-//  const dialogRef = this.dialog.open(DailogComponent,  {
-//    data: { q }
-//   });
-//   dialogRef.afterClosed().subscribe(result => {
-//     console.log('The dialog was closed');
-//     this.dialogResult = result;
-//   });
-
-// }
 ngOnInit() {
-         // this.Ontrack.Home().subscribe(data => {
-         //   console.log(data);
-         //   this.ontracks = data;
-         // });
-        //  this.searchService.searchByProductStartsWith(value).subscribe((res: any) => {
-        //    this.ontracks = res.body;
-        //    console.log(res);
-        //    console.log( this.ontracks);
-        // });
-        this.brand = this.ac.snapshot.params['brand'];
+   this.brand = this.ac.snapshot.params['brand'];
   this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {
      this.ontracks = res.body;
      console.log(res);
      console.log( this.ontracks);
   });
  }
+ AddToCart(product): void {
+   console.log(product, 'click event call');
+   this.cartAddEvent.emit(product);
+   this.Ontrack.cart = product;
+  this.route.navigateByUrl('/AddToCart');
+  this.db.list('/products').valueChanges().subscribe(data => {
+   console.log('data value', data);
+ });
+ this.db.list('/products').push(product);
+
+ }
+ buys() {
+   this.route.navigate([ '/', 'buys']);
+ }
+
+ openDialog(o): void {
+   console.log(o, 'this is the data ');
+  const dialogRef = this.dialog.open(DailogComponent,  {
+    data: { o }
+   });
+   dialogRef.afterClosed().subscribe(result => {
+     console.log('The dialog was closed');
+     this.dialogResult = result;
+   });
+
+}
 }

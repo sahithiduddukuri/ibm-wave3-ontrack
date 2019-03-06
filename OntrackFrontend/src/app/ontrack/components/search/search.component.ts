@@ -27,7 +27,7 @@ products: any = [];
 productName: String;
 @Input()
 product: any;
-db: any;
+
 
 constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute, private db: AngularFireDatabase) { }
 AddToCart(product): void {

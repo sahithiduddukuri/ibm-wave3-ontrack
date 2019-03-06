@@ -7,6 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Ontrack } from '../../classes/ontrack';
 import { DailogComponent } from '../dailog/dailog.component';
 import { MatDialog } from '@angular/material';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
 selector: 'app-search',

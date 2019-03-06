@@ -1,5 +1,6 @@
+<app-header></app-header>
 <div class="row" fxLayout.xs="column">
-    <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of data'>
+    <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
         <div fxFlex="20%">
     <mat-card class='product--blue'>
       <mat-card-header>  
@@ -8,9 +9,11 @@
               <p>{{o.brand}}</p>
           </mat-card-title>
           <mat-card-actions align="center">
-              <button mat-raised-button (click)="buys()">Buy</button>
-             <button mat-raised-button (click)="openDialog(o)">Details</button>
-                <button mat-raised-button (click)="AddToCart(o)">AddToCart</button>
+            
+              <button mat-raised-button (click)="buy3()">BUY</button>
+              <button mat-raised-button (click)="remove3()">REMOVE</button>
+              <button mat-raised-button  (click)="continue3()">CONTINUE SHOPPING</button>
+          
           </mat-card-actions>
     </mat-card-header> 
   </mat-card>

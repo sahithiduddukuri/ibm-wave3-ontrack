@@ -13,7 +13,7 @@ private microServiceUrl: string;
  private errorBody: string;
  cart;
   constructor(private http: HttpClient) {
-      // this.microServiceUrl = 'http://localhost:8013/api/v1/';
+
   }
   openDailog1() {
     this.microServiceUrl = 'http://13.233.3.91:8013/api/v1/';

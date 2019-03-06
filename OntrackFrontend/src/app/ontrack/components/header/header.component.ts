@@ -46,18 +46,8 @@ text: String;
     this.loginService.logout();
      this.flag = false;
      this.userLogged = true;
-   // location.reload();
   }
   search(value) {
     this.text = value;
   }
-  // search() {
-  //   if (this.products.Product_name !== '') {
-  //    this.products = this.products.filter(res => {
-  //      return res.this.products.Product_name.toLocaleLowerCase().match(this.products.Product_name.toLocaleLowerCase());
-  //    });
-  //   } else if (this.products.Product_name === '') {
-  //     this.ngOnInit();
-  //   }
-  // }
 }

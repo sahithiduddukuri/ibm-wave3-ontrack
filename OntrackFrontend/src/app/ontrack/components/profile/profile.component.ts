@@ -28,7 +28,6 @@ export class ProfileComponent implements OnInit {
       console.log('decoded token id', this.loginToken.jti);
       this.services.profile(this.jti).subscribe(data => {
         this.reg = data;
-        // console.log(res);
         console.log( this.reg);
      });
       } catch (error) {

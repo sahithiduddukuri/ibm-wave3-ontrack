@@ -43,22 +43,32 @@
         </tr>
         <tr>
         <td><mat-form-field class="example-full-width">
-          <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+          <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required >
         </mat-form-field></td>
         </tr>
        
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-            <input matInput placeholder="MobileNo" [(ngModel)]="mobileNo" name="mobileNo" required>
-            </mat-form-field>
+            <input matInput placeholder="MobileNo" pattern="[^0-9][+-]?[0-9]{1,10}[^0-9]" maxlength="10"  [(ngModel)]="mobileNo" name="mobileNo" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Contact number is required</div>
+              <div *ngIf="f.password.errors.minlength">Contact number must be at least 10 characters</div>
+          </div>
+          </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
-            <mat-form-field class="example-full-width">
+            <!-- <mat-form-field class="example-full-width">
             <input matInput placeholder="Date Of Birth" [(ngModel)]="dateofBirth" name="dob" required>
-            </mat-form-field>
+            </mat-form-field> -->
+            <mat-form-field class="full-width">
+              <mat-label>Date of Birth</mat-label>
+         <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dateOfBirth" name="dateOfBirth" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
           </td>
         </tr>
  

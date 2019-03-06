@@ -4,13 +4,26 @@ import { Myregistration } from '../../classes/myregistration';
 import { RegistrationService } from '../../services/registration.service';
 import { HttpClient } from '@angular/common/http';
 import { registerContentQuery } from '@angular/core/src/render3';
-
+import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material';
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+  }
 @Component({
   selector: 'app-registrationcomp',
   templateUrl: './registrationcomp.component.html',
   styleUrls: ['./registrationcomp.component.scss']
 })
 export class RegistrationcompComponent implements OnInit {
+
+  matcher = new MyErrorStateMatcher();
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
   value: string;
   @Input()
   private regform: Myregistration;
@@ -41,5 +54,4 @@ export class RegistrationcompComponent implements OnInit {
  ngOnInit() {
 
 }
-
 }

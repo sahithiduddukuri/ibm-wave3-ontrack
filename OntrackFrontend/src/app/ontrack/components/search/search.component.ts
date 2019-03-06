@@ -40,7 +40,7 @@ ngOnInit() {
  AddToCart(product): void {
    console.log(product, 'click event call');
    this.cartAddEvent.emit(product);
-   this.Ontrack.cart = product;
+   this.searchService.cart = product;
   this.route.navigateByUrl('/AddToCart');
   this.db.list('/products').valueChanges().subscribe(data => {
    console.log('data value', data);

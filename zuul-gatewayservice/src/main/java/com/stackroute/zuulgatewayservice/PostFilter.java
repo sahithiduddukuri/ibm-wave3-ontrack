@@ -3,6 +3,7 @@ package com.stackroute.zuulgatewayservice;
 import com.netflix.zuul.ZuulFilter;
 
 public class PostFilter extends ZuulFilter {
+
     @Override
     public String filterType() {
         return "post";
@@ -24,5 +25,4 @@ public class PostFilter extends ZuulFilter {
 
         return null;
     }
-
 }

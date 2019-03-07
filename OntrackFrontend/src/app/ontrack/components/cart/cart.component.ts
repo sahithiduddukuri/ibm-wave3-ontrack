@@ -16,13 +16,17 @@ export class CartComponent implements OnInit {
   productDetails = false;
   constructor(private route: Router, private onTrack: OnTrackService, private searchService: SearchService) { }
   ngOnInit() {
-  //   console.log('Is this getting executed ..!!!');
    if (this.onTrack.cart !== undefined || this.onTrack.cart !== null) {
      this.productDetails = true;
      console.log(this.onTrack.cart);
      console.log(this.onTrack.cart, 'get me the status of the product !!');
      this.products = this.onTrack.cart;
-   }
+   } else if (this.searchService.cart !== undefined || this.searchService.cart !== null) {
+    this.productDetails = true;
+    console.log(this.searchService.cart);
+    console.log(this.searchService.cart, 'get me the status of the product !!');
+    this.products = this.searchService.cart;
+  }
    // tslint:disable-next-line:one-line
    else {
      this.productDetails = false;

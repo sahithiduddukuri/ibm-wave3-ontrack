@@ -7,6 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Ontrack } from '../../classes/ontrack';
 import { DailogComponent } from '../dailog/dailog.component';
 import { MatDialog } from '@angular/material';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
 selector: 'app-search',
@@ -26,9 +27,8 @@ products: any = [];
 productName: String;
 @Input()
 product: any;
-db: any;
-
-constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute) { }
+// tslint:disable-next-line:max-line-length
+constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute, private db: AngularFireDatabase) { }
 ngOnInit() {
    this.brand = this.ac.snapshot.params['brand'];
   this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {

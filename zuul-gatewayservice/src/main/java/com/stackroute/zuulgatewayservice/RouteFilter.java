@@ -3,6 +3,7 @@ package com.stackroute.zuulgatewayservice;
 import com.netflix.zuul.ZuulFilter;
 
 public class RouteFilter extends ZuulFilter {
+
     @Override
     public String filterType() {
         return "route";

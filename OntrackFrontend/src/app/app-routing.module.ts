@@ -51,10 +51,7 @@ const routes: Routes = [
     path: 'buy3', component: BuyComponent
   },
   {
-    path: 'AddtoCart', component: CartComponent
-  },
-  {
-    path: 'AddtoCart1', component: CartComponent
+    path: 'AddtoCart', component: BuyingHistoryComponent
   },
   {
     path: 'cartbutton', component: BuyingHistoryComponent

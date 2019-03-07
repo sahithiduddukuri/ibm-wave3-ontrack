@@ -1,14 +1,12 @@
 import { AngularFireDatabase } from '@angular/fire/database';
-import { CartComponent } from './../cart/cart.component';
 import { Router } from '@angular/router';
-
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { DailogComponent } from './../dailog/dailog.component';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../services/ontrack.service';
-import { Search } from '../search/Search';
 import { SearchService } from '../../services/search.service';
 import { Ontrack } from '../../classes/ontrack';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

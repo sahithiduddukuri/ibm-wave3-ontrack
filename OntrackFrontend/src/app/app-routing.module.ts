@@ -21,12 +21,6 @@ const routes: Routes = [
     path: 'signup', component: RegistrationcompComponent
   },
   {
-    path: 'AddToCart', component: CartComponent
-  },
-  {
-    path: 'AddToCart1', component: CartComponent
-  },
-  {
     path: 'continue', component: HomeComponent
   },
   {

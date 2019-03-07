@@ -1,20 +1,33 @@
 
 <div class="row" fxLayout.xs="column">
-    <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
+    <div fxLayout="col" fxLayoutGap="3px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
         <div fxFlex="20%">
     <mat-card class='product--blue'>
       <mat-card-header>  
-          <img mat-card-image src="{{o.imageURL}}" alt="{{o.brand}}">
-          <mat-card-title>
-              <p>{{o.brand}}</p>
-          </mat-card-title>
-          <mat-card-actions align="center">
-              <button mat-raised-button (click)="buy3()">BUY</button>
-              <button mat-raised-button (click)="remove3()">REMOVE</button>
-              <button mat-raised-button  (click)="continue3()">CONTINUE SHOPPING</button>
-          </mat-card-actions>
-    </mat-card-header> 
+          <img mat-card-md-image src="{{o.imageURL}}" alt="{{o.brand}}">
+          </mat-card-header>         
+        <div class="sing">
+          <p>{{ o.productName }}</p>
+          <h3>{{ o.price +"/-"}}</h3>
+          <p style='text-decoration:line-through'>{{ o.mrp }}</p>
+          <p style="color:green">Discount: {{((o.mrp-o.price)/100)+"%  Off"}}</p>
+        </div>
+        <mat-card-footer>
+            <button mat-raised-button (click)="remove3()">REMOVE</button>
+        </mat-card-footer>
+  </mat-card>
+</div>
+</div>
+<div class="next">
+  <mat-card class="footer">
+      <div  class="continuenext">
+        <button mat-raised-button class="continueproduct" style="background:orange; color:white" (click)="continue3()">CONTINUE SHOPPING</button>
+        <button mat-raised-button class="buyproduct" style="background:green; color:white" (click)="buy3()">BUY</button>
+        </div>
   </mat-card>
   </div>
-    </div>
-  </div>
+</div>
+
+
+
+ 

@@ -8,9 +8,10 @@
             <p>{{o.brand}}</p>
         </mat-card-title>
         <mat-card-actions align="center">
-            <button mat-raised-button (click)="buys()">Buy</button>
-           <button mat-raised-button (click)="openDialog(o)">Details</button>
-              <button mat-raised-button (click)="AddToCart(o)">AddToCart</button>
+            
+           <button mat-raised-button (click)="openDialog(o)">DETAILS<mat-icon>toc</mat-icon></button>
+              <button mat-raised-button (click)="AddToCart(o)">ADDTOCART<mat-icon>add_shopping_cart</mat-icon></button>
+              <button mat-raised-button (click)="buys()">BUY<mat-icon>flash_on</mat-icon></button>
         </mat-card-actions>
   </mat-card-header> 
 </mat-card>

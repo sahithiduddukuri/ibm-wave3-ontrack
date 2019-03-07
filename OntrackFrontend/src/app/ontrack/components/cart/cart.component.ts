@@ -15,7 +15,6 @@ export class CartComponent implements OnInit {
   productDetails = false;
   constructor(private route: Router, private onTrack: OnTrackService, private searchService: SearchService) { }
   ngOnInit() {
-  //   console.log('Is this getting executed ..!!!');
    if (this.onTrack.cart !== undefined || this.onTrack.cart !== null) {
      this.productDetails = true;
      console.log(this.onTrack.cart);

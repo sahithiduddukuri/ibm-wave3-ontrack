@@ -19,7 +19,7 @@ slotsAvailable: any = [];
     this.onTrack.Buy().subscribe(data => {
       console.log('data fetch from response', data);
       this.slotsAvailable = data;
-    }); 
+    });
   }
 shopping() {
 this.route.navigate(['/' , 'shopping']);

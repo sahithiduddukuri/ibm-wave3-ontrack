@@ -28,9 +28,10 @@ productName: String;
 @Input()
 product: any;
 
-
+// tslint:disable-next-line:max-line-length
 constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute, private db: AngularFireDatabase) { }
-AddToCart(product): void {
+
+ AddToCart(product): void {
    console.log(product, 'click event call');
    this.cartAddEvent.emit(product);
    this.searchService.cart = product;
@@ -49,7 +50,6 @@ ngOnInit() {
      console.log( this.ontracks);
   });
  }
- 
  buys() {
    this.route.navigate([ '/', 'buys']);
  }

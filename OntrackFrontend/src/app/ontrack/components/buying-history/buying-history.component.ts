@@ -16,7 +16,7 @@ products: any;
   console.log('this is buying history');
   this.db.list('/products').valueChanges().subscribe(data => {
    console.log('data value from firebase', data);
-   let pr = data;
+   const pr = data;
    console.log('value of pr is ', pr);
    this.products = data;
    console.log('value in products', this.products);

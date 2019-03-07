@@ -3,9 +3,10 @@ package com.stackroute.zuulgatewayservice;
 import com.netflix.zuul.ZuulFilter;
 
 public class ErrorFilter extends ZuulFilter {
+
     @Override
     public String filterType() {
-        return "route";
+        return "error";
     }
 
     @Override
@@ -21,6 +22,7 @@ public class ErrorFilter extends ZuulFilter {
     @Override
     public Object run() {
         System.out.println("Inside Route Filter");
+
         return null;
     }
 }

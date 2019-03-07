@@ -23,7 +23,7 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public User saveUser(User user) throws UserAlreadyExistsException, UserNotFoundException {
+    public User saveUser(User user) throws UserAlreadyExistsException {
 //        Optional optional = registrationRepository.findById(user.getUserId());
 //        if((optional.isPresent()))
 //        {
@@ -45,7 +45,7 @@ public class RegistrationServiceImpl implements RegistrationService
     @Override
     public List<User> getAllUser()
     {
-        return registrationRepository.findAll();
+        return (List<User>) registrationRepository.findAll();
     }
 
     @Override
@@ -88,5 +88,10 @@ public class RegistrationServiceImpl implements RegistrationService
         {
             throw new UserNotFoundException("User is not exists");
         }
+    }
+
+    @Override
+    public User getByUserId(String userId) {
+        return registrationRepository.findByUserId(userId);
     }
 }

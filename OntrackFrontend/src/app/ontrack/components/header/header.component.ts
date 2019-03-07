@@ -27,8 +27,15 @@ text: String;
      this.userLogged = true;
        }
    }
+
   Login() {
     this.route.navigate(['/' , 'login']);
+  }
+  Logout() {
+    this.loginService.logout();
+     this.flag = false;
+     this.userLogged = true;
+   // location.reload();
   }
   Signup() {
     this.route.navigate(['/' , 'Signup']);

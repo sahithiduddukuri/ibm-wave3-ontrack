@@ -33,7 +33,7 @@ public class Product {
     @JsonProperty("dimension")
     private String dimension;
     @JsonProperty("weight")
-    private String weight;
+    private  String weight;
     @JsonProperty("size")
     private String size;
     @JsonProperty("gender")

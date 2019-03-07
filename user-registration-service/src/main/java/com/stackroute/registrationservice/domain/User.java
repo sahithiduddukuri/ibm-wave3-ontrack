@@ -24,7 +24,6 @@ public class User
     private String name;
     @JsonProperty("userId")
     private String userId;
-
     @JsonProperty("password")
     private String password;
     @JsonProperty("mobileNo")

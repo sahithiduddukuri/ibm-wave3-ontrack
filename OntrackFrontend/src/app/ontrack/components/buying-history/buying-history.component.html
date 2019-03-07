@@ -1,6 +1,25 @@
+<!-- <div class="section">
+    <mat-card>
+        <div class="bingo">
+      <mat-card-title>  
+          <P>PRICE DETAILS</P>
+          </mat-card-title>   
+          <mat-card-content>      
+      
+         
+      
+     
+          
+              <p>TOTAL AMOUNT</p>
 
+      
+      </mat-card-content>
+    </div>
+    </mat-card>
+    
+    </div> -->
 <div class="row" fxLayout.xs="column">
-    <div fxLayout="col" fxLayoutGap="3px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
+    <div class="column" fxLayout="col" fxLayoutGap="3px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
         <div fxFlex="20%">
     <mat-card class='product--blue'>
       <mat-card-header>  
@@ -8,9 +27,9 @@
           </mat-card-header>         
         <div class="sing">
           <p>{{ o.productName }}</p>
-          <h3>{{ o.price +"/-"}}</h3>
-          <p style='text-decoration:line-through'>{{ o.mrp }}</p>
-          <p style="color:green">Discount: {{((o.mrp-o.price)/100)+"%  Off"}}</p>
+          <h3>₹{{ o.price +"/-"}}</h3>
+          <p style='text-decoration:line-through'>₹{{ o.mrp }}</p>
+          <p style="color:green">Discount: {{(((o.mrp-o.price)/o.mrp)*100)+"%  Off"}}</p>
         </div>
         <mat-card-footer>
             <button mat-raised-button (click)="remove3()">REMOVE</button>
@@ -27,7 +46,6 @@
   </mat-card>
   </div>
 </div>
-
 
 
  

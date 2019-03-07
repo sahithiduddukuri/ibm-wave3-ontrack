@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class BuyingHistoryComponent implements OnInit {
 products: any;
-​
- constructor(private db: AngularFireDatabase, private route: Router) { }
+
+ constructor(private db: AngularFireDatabase, private route: Router) {  }
 ​
  ngOnInit() {
   console.log('this is buying history');

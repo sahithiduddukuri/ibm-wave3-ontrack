@@ -8,8 +8,9 @@ import java.util.List;
 
 public interface RegistrationService
 {
-    public User saveUser(User user) throws UserAlreadyExistsException, UserNotFoundException;
+    public User saveUser(User user) throws UserAlreadyExistsException;
     public List<User> getAllUser();
     public boolean deleteUser(int id) throws UserNotFoundException;
     public User updateUser(User user) throws UserNotFoundException;
+    public User getByUserId(String userId);
 }

@@ -27,8 +27,15 @@ text: String;
      this.userLogged = true;
        }
    }
+
   Login() {
     this.route.navigate(['/' , 'login']);
+  }
+  Logout() {
+    this.loginService.logout();
+     this.flag = false;
+     this.userLogged = true;
+   // location.reload();
   }
   Signup() {
     this.route.navigate(['/' , 'Signup']);
@@ -41,12 +48,6 @@ text: String;
   }
   searchbar() {
     this.route.navigate(['/', 'search', this.text]);
-  }
-  logout() {
-    this.loginService.logout();
-     this.flag = false;
-     this.userLogged = true;
-   // location.reload();
   }
   search(value) {
     this.text = value;

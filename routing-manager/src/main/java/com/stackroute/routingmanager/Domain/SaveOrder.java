@@ -15,11 +15,11 @@ public class SaveOrder {
     private int vehicleId;
     private String orderLoc;
     @Id
-    private LocalDate date;
+    private String orderDate; //selected slot date
+    //private String selectedSlotType;
     private int noOfOrders;
-    private List<Node> nodes;
+    private List<Slot> slots;
     // private String slotNo;
-    private List<Slot> slot;
 
     public SaveOrder() {
     }

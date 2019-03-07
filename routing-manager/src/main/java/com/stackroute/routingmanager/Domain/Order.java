@@ -15,11 +15,11 @@ public class Order {
     private String orderLoc;
     private int x;
     private int y;
-    private LocalDate date;
+    private String orderDate;
     private int demand;
     private int noOfOrders;
     private Node node;
-   // private String slotNo;
+    private String slotType;
 
     public Order() {
     }

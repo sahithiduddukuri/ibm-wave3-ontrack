@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 
 @Repository
-public interface RoutingRepository extends MongoRepository<SaveOrder, LocalDate> {
+public interface RoutingRepository extends MongoRepository<SaveOrder, String> {
 
 //    public Order save(Order order);
 }

@@ -61,13 +61,38 @@ services:
     build: DM-login-angular-master/
     image: ontrack
     container_name: ontrack-delivery-front-end
-    network_mode: "host"
+    network_mode: host
     hostname: localhost
     ports:
       - 4201:4201
     restart: always
-#    healthcheck:
-#    test: "exit 0"
+
+  routing-manager:
+    build: routing-manager/
+    image: routing-manager
+    container_name: routing-manager
+    network_mode: host
+    hostname: localhost
+    expose:
+      - 8010
+    ports:
+      - 8010:8010
+    restart: always
+
+  container-manager-service:
+    build: container-manager-service/
+    image: container-manager-service
+    container_name: container-manager-service
+    network_mode: host
+    hostname: localhost
+    expose:
+      - 8011
+    ports:
+      - 8011:8011
+    restart: always
+
+
+
 
 
 

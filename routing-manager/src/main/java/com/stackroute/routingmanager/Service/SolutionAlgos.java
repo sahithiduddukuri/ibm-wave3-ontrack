@@ -300,12 +300,15 @@ public class SolutionAlgos {
                 int RoutSize = vehicles[j].Route.size();
                 for (int k = 0; k < RoutSize ; k++) {
                     if (k == RoutSize-1)
-                    { System.out.print(vehicles[j].Route.get(k).nodeId );  }
+                    {
+                        System.out.println("node value is ++++++++++++++++++++++"+vehicles[j].Route.get(k));
+                        System.out.print(vehicles[j].Route.get(k).nodeId );  }
                     else
                     { System.out.print(vehicles[j].Route.get(k).nodeId+ "->"); }
                 }
                 System.out.println();
             }
+            System.out.println("hiiiiiiiiiiiiiiiiiiii"+vehicles[j].getRoute());
         }
         System.out.println("\nSolution Cost "+this.cost+"\n");
         return "Routes Created";

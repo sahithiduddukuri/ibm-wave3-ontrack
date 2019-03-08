@@ -23,7 +23,14 @@ products: any;
   });
   console.log('data store in products', this.products);
  }
-
+ totalPrice() {
+  let total = 0;
+  for (let count = 0; count < this.products.length; count++) {
+      total +=  Number(this.products[count].price);
+      console.log(total);
+  }
+  return total;
+}
  continue3() {
     this.route.navigate(['/' , 'continue']);
   }

@@ -22,28 +22,19 @@
   <div class="items3">
    <div class="price">
    <mat-card>
-    <mat-form-field class="example-full-width">
-                 <mat-card-title>
-                   <h4>PRICE DETAILS</h4>
-                 </mat-card-title>
-                 <mat-card-content>
-                   <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
-                         <div fxFlex="20%">
   
-  
-                           <h5>Price:{{o.price}}</h5>
-                           <div class="items2" *ngFor='let p of slotsAvailable' >
-  
-                   <mat-card-content>
-                           <div class="ring" *ngFor="let r of p['slots']">
-  
-                       <p class="cost">{{ r.cost + "/-"}}</p>
-  
-                   </div>
-                   </mat-card-content>
-                   </div>
-  
-                   </div>
-                     </div>
-                   </mat-card-content>
-               </mat-form-field>
+      <mat-list>
+          <mat-list-item>PRICE DETAILS</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Price of items:</mat-list-item>
+          <mat-list-item>Delivery Charge:</mat-list-item>
+          <hr style="border: 0.3px dashed grey;" />
+          
+          <mat-divider></mat-divider> 
+          <p></p>
+          <mat-list-item>AMOUNT PAYABLE:₹</mat-list-item>
+         
+        </mat-list> 
+        </mat-card>
+        </div>
+        </div>

@@ -8,20 +8,22 @@
   border-color: black;
   margin: 25px;
 }
+
 .sing{
     margin-left: 100px;
 }
 .section{
   margin-right: 60px;
-  margin-top:120px;
+  margin-top:80px;
   padding-bottom: 120px;
   padding-left: 100px;
   float: right;
   width: 400px;
 }
 
-.bingo{
-  align-content: center;
+.lays{
+  float: right;
+position: fixed;
 }
 .product--blue {
     display:flex;

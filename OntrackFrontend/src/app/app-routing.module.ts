@@ -45,6 +45,9 @@ const routes: Routes = [
     path: 'buy3', component: BuyComponent
   },
   {
+    path: 'AddToCart', component: BuyingHistoryComponent
+  },
+  {
     path: 'AddtoCart', component: BuyingHistoryComponent
   },
   {

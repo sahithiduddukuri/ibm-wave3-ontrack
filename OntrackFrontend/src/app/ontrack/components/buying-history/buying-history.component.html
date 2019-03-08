@@ -1,23 +1,36 @@
-<!-- <div class="section">
+<div class="section">
+    <!-- <div  *ngFor='let o of products.price'>
+     -->
     <mat-card>
         <div class="bingo">
-      <mat-card-title>  
+      <!-- <mat-card-title>  
           <P>PRICE DETAILS</P>
           </mat-card-title>   
-          <mat-card-content>      
-      
-         
-      
-     
-          
-              <p>TOTAL AMOUNT</p>
+          <mat-card-footer>      
+       <p>TOTAL AMOUNT</p>
 
       
-      </mat-card-content>
+      </mat-card-footer> -->
+      <mat-toolbar>  
+          <mat-toolbar-row>
+            <span>PRICE DETAILS</span><hr>
+          </mat-toolbar-row>
+          
+          <mat-toolbar-row *ngFor='let v of products.price'>
+            var sum = 0;
+            
+            sum=sum+v.products.price;
+            <p>{{ sum }}</p>
+          </mat-toolbar-row>
+          <span>Price</span>
+          <mat-toolbar-row>
+              <span>Total Amount</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
     </div>
     </mat-card>
-    
-    </div> -->
+  
+    </div>
 <div class="row" fxLayout.xs="column">
     <div class="column" fxLayout="col" fxLayoutGap="3px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
         <div fxFlex="20%">

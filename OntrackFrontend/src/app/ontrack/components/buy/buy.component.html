@@ -1,41 +1,49 @@
-
 <div class="container">
-    <div ng2-carouselamos class= "slide-wrapper"  
-    [items]= "slotsAvailable"
-    [width]= "800"
-    [$prev]= "prev"
-    [$next]= "next"
-    [$item]= "item">
-   <ng-template #prev>
-     <button class="id1"> <mat-icon>navigate_before</mat-icon></button>
-    </ng-template>
-    <ng-template #next>
-        <button class="id2"><mat-icon>navigate_next</mat-icon></button>
-      </ng-template>  
-    <ng-template #item >
-      <div class="items" >       
-            <mat-card>
-
-                <div class = "items2" *ngFor='let p of slotsAvailable'>
-                    <mat-card-title>{{ p.date }}</mat-card-title>
-                      </div>
-              <div class="items1" *ngFor='let p of slotsAvailable'>
-                
- <mat-card-content>
-                <div class="ring" *ngFor="let r of p['slots']">
-          <button mat-raised-button (click)="slot()">{{ r.slotNumber }}<p>{{ r.slotType }}</p><p>{{ r.cost}}</p></button> 
-        </div>  
-        </mat-card-content>    
-          
-          </div>
-        </mat-card>
-      </div>
-      </ng-template>  
-    </div>
-      <div mat-card-actions class="id">
-<button mat-raised-button >PAY</button>
-<div class="col">
-<button mat-raised-button (click)="shopping()">CONTINUE SHOPPING</button>
-</div> 
-</div>
-</div>
+  <div class="items">
+  <mat-card>
+   <div class="items2" *ngFor='let p of slotsAvailable' >
+             <mat-card-title>{{ p.date }}</mat-card-title>
+  <mat-card-content>
+         <div class="ring" *ngFor="let r of p['slots']">
+  
+   <button mat-raised-button (click)="slot()" [disabled]="r.slotStatus">{{ r.slotNumber }}
+     <mat-icon>cross</mat-icon>
+     <p class="type">{{ r.slotType }}</p>
+     <p class="cost">{{ r.cost + "/-"}}</p>
+   </button>
+  </div>
+  </mat-card-content>
+  </div>
+  </mat-card>
+  </div>
+  <div mat-card-actions class="id">
+  <button mat-raised-button (click)="shopping()">CONTINUE</button>
+  </div>
+  <div class="items3">
+   <div class="price">
+   <mat-card>
+    <mat-form-field class="example-full-width">
+                 <mat-card-title>
+                   <h4>PRICE DETAILS</h4>
+                 </mat-card-title>
+                 <mat-card-content>
+                   <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
+                         <div fxFlex="20%">
+  
+  
+                           <h5>Price:{{o.price}}</h5>
+                           <div class="items2" *ngFor='let p of slotsAvailable' >
+  
+                   <mat-card-content>
+                           <div class="ring" *ngFor="let r of p['slots']">
+  
+                       <p class="cost">{{ r.cost + "/-"}}</p>
+  
+                   </div>
+                   </mat-card-content>
+                   </div>
+  
+                   </div>
+                     </div>
+                   </mat-card-content>
+               </mat-form-field>

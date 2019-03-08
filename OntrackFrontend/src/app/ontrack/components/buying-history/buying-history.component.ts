@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import { Router } from '@angular/router';
 ​
@@ -23,6 +23,7 @@ products: any;
   });
   console.log('data store in products', this.products);
  }
+
  continue3() {
     this.route.navigate(['/' , 'continue']);
   }

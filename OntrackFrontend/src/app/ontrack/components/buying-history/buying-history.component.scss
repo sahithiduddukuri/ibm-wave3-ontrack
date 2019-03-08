@@ -13,10 +13,12 @@
     margin-left: 100px;
 }
 .section{
-  margin-right: 60px;
+  margin-right: 160px;
   margin-top:80px;
   padding-bottom: 120px;
-  padding-left: 100px;
+  
+
+  padding-left: 200px;
   float: right;
   width: 400px;
 }
@@ -24,15 +26,16 @@
 .lays{
   float: right;
 position: fixed;
+padding-right: 160px;
 }
 .product--blue {
     display:flex;
   box-shadow: 1px 5px 15px #ccc;
   width: 32.5em;
-  height: 200px;
+  height: 190px;
   border-radius: 3px;
    padding: 1em;
-  margin-left: 16px;
+  margin-left: 100px;
   overflow: auto;
   position: relative;
   flex: auto;
@@ -72,6 +75,7 @@ mat-card-actions {
   bottom: 0%;
 }
 .row {
+  margin-top: 1px;
   padding-top: 100px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -114,7 +118,7 @@ mat-card-action button:hover:before {
   position: relative;
 }
 .next {
-margin-left: 16px;
+margin-left: 100px;
   
   
   position: fixed;
@@ -122,7 +126,7 @@ margin-left: 16px;
   
 }
 .continuenext{
-    margin-left: 120px;
+    margin-left: 160px;
 }
 .continueproduct{
     right: 20px;

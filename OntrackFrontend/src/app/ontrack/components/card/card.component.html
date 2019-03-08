@@ -3,15 +3,16 @@
       <div fxFlex="20%">
   <mat-card class='product--blue'>
     <mat-card-header>  
-        <img mat-card-image src="{{o.imageURL}}" alt="{{o.brand}}">
+        <img mat-card-image src="{{o.imageURL}}" alt="{{o.brand}}" [products paginate=true]>
+      
         <mat-card-title>
             <p>{{o.brand}}</p>
         </mat-card-title>
         <mat-card-actions align="center">
             
-           <button mat-raised-button (click)="openDialog(o)">DETAILS<mat-icon>toc</mat-icon></button>
-              <button mat-raised-button (click)="AddToCart(o)">ADDTOCART<mat-icon>add_shopping_cart</mat-icon></button>
-              <button mat-raised-button (click)="buys()">BUY<mat-icon>flash_on</mat-icon></button>
+           <button mat-raised-button (click)="openDialog(o)"><mat-icon>toc</mat-icon></button>
+              <button mat-raised-button (click)="AddToCart(o)"><mat-icon>add_shopping_cart</mat-icon></button>
+              <button mat-raised-button (click)="buys()"><mat-icon>flash_on</mat-icon></button>
         </mat-card-actions>
   </mat-card-header> 
 </mat-card>

@@ -22,19 +22,32 @@
   <div class="items3">
    <div class="price">
    <mat-card>
-  
+      
       <mat-list>
-          <mat-list-item>PRICE DETAILS</mat-list-item>
+          <mat-list-item>PRICE DETAILS
+            
+          </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>Price of items:</mat-list-item>
-          <mat-list-item>Delivery Charge:</mat-list-item>
+          <mat-list-item>Price of Order:₹</mat-list-item>
+          <!-- <div *ngFor='let p of slotsAvailable' >
+              <div class="ring" *ngFor="let r of p['slots']" >
+              
+                      <p class="cost">{{ r.cost + "/-"}}</p>
+                
+          <mat-list-item>Delivery Charge:₹</mat-list-item>
+          </div>
+          </div> -->
           <hr style="border: 0.3px dashed grey;" />
           
           <mat-divider></mat-divider> 
           <p></p>
-          <mat-list-item>AMOUNT PAYABLE:₹</mat-list-item>
+          <mat-list-item>TOTAL AMOUNT:₹</mat-list-item>
+          <div *ngFor='let o of products'>
          
+          <p>{{ sum }}</p>
+          </div>
         </mat-list> 
+      
         </mat-card>
         </div>
         </div>

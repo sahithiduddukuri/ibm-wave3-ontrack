@@ -153,9 +153,9 @@ public class RoutingServiceImpl implements RoutingService {
         vehicle.addNode(node);
         OptimizedSolutionImpl optimizedSolution = new OptimizedSolutionImpl();
 
-       // String date = order.getOrderDate();
+        // String date = order.getOrderDate();
         int noofOrder;
-        SaveOrder saveOrder;
+//        SaveOrder saveOrder;
         List<Node> nodeList;
 
         if(routingRepository.existsById(order.getOrderDate()))
@@ -185,12 +185,12 @@ public class RoutingServiceImpl implements RoutingService {
         }
         else{
             System.out.println("inside else first time############################");
-            saveOrder= new SaveOrder();
+            SaveOrder saveOrder= new SaveOrder();
             noofOrder = 2;
             saveOrder.setNoOfOrders(noofOrder);
             saveOrder.setOrderDate(order.getOrderDate());
             saveOrder.setOrderId(order.getOrderId());
-            newOrder.setVehicleId(order.getVehicleId());
+            saveOrder.setVehicleId(order.getVehicleId());
             nodeList = new ArrayList<>();
             List<Slot> slots = new ArrayList<>();
             Slot slot = new Slot("A", nodeList);
@@ -200,19 +200,14 @@ public class RoutingServiceImpl implements RoutingService {
             slots.add(slot1);
             slots.add(slot2);
             System.out.println("slots are +++++"+slots.size());
-//            for(int i=0;i < slots.size();i++)
-//            {
-//                System.out.println("Slots value are+++++==========++++++++++++++++"+slots);
-//
-//            }
-            newOrder.setSlots(slots);
-            newOrder.setNoOfOrders(noofOrder);
+            saveOrder.setSlots(slots);
+            saveOrder.setNoOfOrders(noofOrder);
             System.out.println("Before Routing service save for new save");
-            routingRepository.save(newOrder);
+            routingRepository.save(saveOrder);
 
         }
         optimizedSolution.optimizedCost(noofOrder, order.getX(), order.getY(), order.getDemand());
-       routingRepository.save(order);
+//       routingRepository.save(order);
         return "order added";
     }
 

@@ -33,6 +33,7 @@
         <module>delivery-manager-login</module>
         <module>routing-manager</module>
         <module>container-manager-service</module>
+        <module>delivery-manager</module>
     </modules>
     <dependencies>
         <dependency>

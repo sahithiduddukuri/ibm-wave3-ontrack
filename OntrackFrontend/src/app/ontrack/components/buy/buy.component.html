@@ -1,41 +1,53 @@
-
 <div class="container">
-    <div ng2-carouselamos class= "slide-wrapper"  
-    [items]= "slotsAvailable"
-    [width]= "800"
-    [$prev]= "prev"
-    [$next]= "next"
-    [$item]= "item">
-   <ng-template #prev>
-     <button class="id1"> <mat-icon>navigate_before</mat-icon></button>
-    </ng-template>
-    <ng-template #next>
-        <button class="id2"><mat-icon>navigate_next</mat-icon></button>
-      </ng-template>  
-    <ng-template #item >
-      <div class="items" >       
-            <mat-card>
-
-                <div class = "items2" *ngFor='let p of slotsAvailable'>
-                    <mat-card-title>{{ p.date }}</mat-card-title>
-                      </div>
-              <div class="items1" *ngFor='let p of slotsAvailable'>
+  <div class="items">
+  <mat-card>
+   <div class="items2" *ngFor='let p of slotsAvailable' >
+             <mat-card-title>{{ p.date }}</mat-card-title>
+  <mat-card-content>
+         <div class="ring" *ngFor="let r of p['slots']">
+  
+   <button mat-raised-button (click)="slot()" [disabled]="r.slotStatus">{{ r.slotNumber }}
+     <mat-icon>cross</mat-icon>
+     <p class="type">{{ r.slotType }}</p>
+     <p class="cost">{{ r.cost + "/-"}}</p>
+   </button>
+  </div>
+  </mat-card-content>
+  </div>
+  </mat-card>
+  </div>
+  <div mat-card-actions class="id">
+  <button mat-raised-button (click)="shopping()">CONTINUE</button>
+  </div>
+  <div class="items3">
+   <div class="price">
+   <mat-card>
+      
+      <mat-list>
+          <mat-list-item>PRICE DETAILS
+            
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Price of Order:₹</mat-list-item>
+          <!-- <div *ngFor='let p of slotsAvailable' >
+              <div class="ring" *ngFor="let r of p['slots']" >
+              
+                      <p class="cost">{{ r.cost + "/-"}}</p>
                 
- <mat-card-content>
-                <div class="ring" *ngFor="let r of p['slots']">
-          <button mat-raised-button (click)="slot()">{{ r.slotNumber }}<p>{{ r.slotType }}</p><p>{{ r.cost}}</p></button> 
-        </div>  
-        </mat-card-content>    
-          
+          <mat-list-item>Delivery Charge:₹</mat-list-item>
           </div>
+          </div> -->
+          <hr style="border: 0.3px dashed grey;" />
+          
+          <mat-divider></mat-divider> 
+          <p></p>
+          <mat-list-item>TOTAL AMOUNT:₹</mat-list-item>
+          <div *ngFor='let o of products'>
+         
+          <p>{{ sum }}</p>
+          </div>
+        </mat-list> 
+      
         </mat-card>
-      </div>
-      </ng-template>  
-    </div>
-      <div mat-card-actions class="id">
-<button mat-raised-button >PAY</button>
-<div class="col">
-<button mat-raised-button (click)="shopping()">CONTINUE SHOPPING</button>
-</div> 
-</div>
-</div>
+        </div>
+        </div>

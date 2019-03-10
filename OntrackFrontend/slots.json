@@ -10,7 +10,7 @@
                 },
                 {
                     "slotNumber": "Slot 2",
-                    "slotStatus": true,
+                    "slotStatus": false,
                     "slotType": "2:00PM-5:00PM",
                     "cost": 40
                 },

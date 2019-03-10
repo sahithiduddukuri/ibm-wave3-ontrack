@@ -11,34 +11,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RegistrationServiceImpl implements RegistrationService
-{
+public class RegistrationServiceImpl implements RegistrationService {
     private RegistrationRepository registrationRepository;
     private User user;
 
     @Autowired
-    public RegistrationServiceImpl(RegistrationRepository registrationRepository)
-    {
+    public RegistrationServiceImpl(RegistrationRepository registrationRepository) {
         this.registrationRepository = registrationRepository;
     }
 
     @Override
-    public User saveUser(User user) throws UserAlreadyExistsException, UserNotFoundException {
-        if(registrationRepository.existsById(user.getUserId()))
-        {
+    public User saveUser(User user) throws UserAlreadyExistsException {
+        if (registrationRepository.existsById(user.getUserId())) {
             throw new UserAlreadyExistsException("User alreasy exists");
         }
         User savedUser = registrationRepository.save(user);
-        if(savedUser == null)
-        {
+        if (savedUser == null) {
             throw new UserAlreadyExistsException();
         }
         return savedUser;
     }
 
     @Override
-    public List<User> getAllUser()
-    {
+    public List<User> getAllUser() {
         return registrationRepository.findAll();
     }
 
@@ -46,13 +41,10 @@ public class RegistrationServiceImpl implements RegistrationService
     public boolean deleteUser(String userId) throws UserNotFoundException {
         boolean status = false;
         Optional optional = registrationRepository.findById(userId);
-        if(optional.isPresent())
-        {
+        if (optional.isPresent()) {
             registrationRepository.deleteById(userId);
-            status=true;
-        }
-        else
-        {
+            status = true;
+        } else {
             throw new UserNotFoundException();
         }
         return status;
@@ -61,14 +53,12 @@ public class RegistrationServiceImpl implements RegistrationService
     @Override
     public User updateUser(User user) throws UserNotFoundException {
 
-        if(registrationRepository.existsById(user.getUserId()))
-        {
-            User updateUser=registrationRepository.save(user);
+        if (registrationRepository.existsById(user.getUserId())) {
+            User updateUser = registrationRepository.save(user);
             return updateUser;
-        }
-        else
-        {
+        } else {
             throw new UserNotFoundException("User is not exists");
         }
     }
+
 }

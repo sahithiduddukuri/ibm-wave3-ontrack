@@ -12,15 +12,14 @@ import { OnTrackService } from '../../services/ontrack.service';
   styleUrls: ['./buy.component.scss']
 })
 export class BuyComponent implements OnInit {
+  constructor(private route: Router, private onTrack: OnTrackService) {  }
 slotsAvailable: any = [];
-constructor(private route: Router, private onTrack: OnTrackService) {
-}
-ngOnInit() {
+  ngOnInit() {
     this.onTrack.Buy().subscribe(data => {
-    console.log('data fetch from response', data);
-    this.slotsAvailable = data;
+      console.log('data fetch from response', data);
+      this.slotsAvailable = data;
     });
-}
+  }
 shopping() {
 this.route.navigate(['/' , 'shopping']);
 }

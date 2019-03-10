@@ -27,16 +27,10 @@ products: any = [];
 productName: String;
 @Input()
 product: any;
+
 // tslint:disable-next-line:max-line-length
 constructor(public dialog: MatDialog, private route: Router, private searchService: SearchService, private ac: ActivatedRoute, private db: AngularFireDatabase) { }
-ngOnInit() {
-   this.brand = this.ac.snapshot.params['brand'];
-  this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {
-     this.ontracks = res.body;
-     console.log(res);
-     console.log( this.ontracks);
-  });
- }
+
  AddToCart(product): void {
    console.log(product, 'click event call');
    this.cartAddEvent.emit(product);
@@ -47,6 +41,14 @@ ngOnInit() {
  });
  this.db.list('/products').push(product);
 
+ }
+ngOnInit() {
+   this.brand = this.ac.snapshot.params['brand'];
+  this.searchService.searchByProductStartsWith(this.brand).subscribe((res: any) => {
+     this.ontracks = res.body;
+     console.log(res);
+     console.log( this.ontracks);
+  });
  }
  buys() {
    this.route.navigate([ '/', 'buys']);

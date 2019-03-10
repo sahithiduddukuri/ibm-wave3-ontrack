@@ -7,7 +7,7 @@ import { CardComponent } from './ontrack/components/card/card.component';
 import { RegistrationcompComponent } from './ontrack/components/registrationcomp/registrationcomp.component';
 import { HomeComponent } from './ontrack/components/home/home.component';
 import { LoginComponent } from './ontrack/components/login/login.component';
-import { CartComponent } from './ontrack/components/cart/cart.component';
+// import { CartComponent } from './ontrack/components/cart/cart.component';
 import { SearchComponent } from './ontrack/components/search/search.component';
 import { BuyingHistoryComponent } from './ontrack/components/buying-history/buying-history.component';
 // import { BuyingHistoryComponent } from './ontrack/components/buying-history/buying-history.component';
@@ -19,12 +19,6 @@ const routes: Routes = [
   },
   {
     path: 'signup', component: RegistrationcompComponent
-  },
-  {
-    path: 'AddToCart', component: CartComponent
-  },
-  {
-    path: 'AddToCart1', component: CartComponent
   },
   {
     path: 'continue', component: HomeComponent
@@ -51,7 +45,13 @@ const routes: Routes = [
     path: 'buy3', component: BuyComponent
   },
   {
+    path: 'AddToCart', component: BuyingHistoryComponent
+  },
+  {
     path: 'AddtoCart', component: BuyingHistoryComponent
+  },
+  {
+    path: 'AddtoCart1', component: BuyingHistoryComponent
   },
   {
     path: 'cartbutton', component: BuyingHistoryComponent

@@ -45,7 +45,7 @@ public class RabbitMqConfig {
 
     @Bean
     public Binding bindingrecommendation(TopicExchange topicExchange,
-                                 Queue queue4) {
+                                         Queue queue4) {
         return BindingBuilder.bind(queue4).to(topicExchange).with(routingkey4);
     }
     @Bean

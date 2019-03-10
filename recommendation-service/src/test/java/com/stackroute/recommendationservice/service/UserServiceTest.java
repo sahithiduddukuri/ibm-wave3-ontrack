@@ -29,10 +29,10 @@ public class UserServiceTest {
         MockitoAnnotations.initMocks(this);
         user = new User();
         user.setDateofBirth("28/08/1996");
-        user.setPassword("abc@gmail.com");
+        user.setPassword("abc123");
         user.setGender("Female");
         user.setMobileNo("7995947734");
-        user.setUserId("1");
+        user.setUserId("abc@gmail.com");
         user.setName("Geetha");
         list = new ArrayList<>();
         list.add(user);

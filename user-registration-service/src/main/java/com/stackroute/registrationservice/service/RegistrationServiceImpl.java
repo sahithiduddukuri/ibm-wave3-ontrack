@@ -24,13 +24,7 @@ public class RegistrationServiceImpl implements RegistrationService
 
     @Override
     public User saveUser(User user) throws UserAlreadyExistsException, UserNotFoundException {
-//        Optional optional = registrationRepository.findById(user.getUserId());
-//        if((optional.isPresent()))
-//        {
-//            throw new UserAlreadyExistsException();
-//        }
-//        return registrationRepository.insert(user);
-        if(registrationRepository.existsById(user.getId()))
+        if(registrationRepository.existsById(user.getUserId()))
         {
             throw new UserAlreadyExistsException("User alreasy exists");
         }
@@ -49,12 +43,12 @@ public class RegistrationServiceImpl implements RegistrationService
     }
 
     @Override
-    public boolean deleteUser(int id) throws UserNotFoundException {
+    public boolean deleteUser(String userId) throws UserNotFoundException {
         boolean status = false;
-        Optional optional = registrationRepository.findById(id);
+        Optional optional = registrationRepository.findById(userId);
         if(optional.isPresent())
         {
-            registrationRepository.deleteById(id);
+            registrationRepository.deleteById(userId);
             status=true;
         }
         else
@@ -66,20 +60,8 @@ public class RegistrationServiceImpl implements RegistrationService
 
     @Override
     public User updateUser(User user) throws UserNotFoundException {
-//        Optional optional = registrationRepository.findById(id);
-//        if(optional.isPresent())
-//        {
-//            user=registrationRepository.findById(id).get();
-//            user.setPassword(pass);
-//            user.setEmailId(mail);
-//            registrationRepository.save(user);
-//        }
-//        else
-//        {
-//            throw new UserNotFoundException();
-//        }
-//        return user;
-        if(registrationRepository.existsById(user.getId()))
+
+        if(registrationRepository.existsById(user.getUserId()))
         {
             User updateUser=registrationRepository.save(user);
             return updateUser;

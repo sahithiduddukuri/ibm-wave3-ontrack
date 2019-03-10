@@ -3,7 +3,7 @@ package com.stackroute.registrationservice.controller;
 import com.stackroute.registrationservice.domain.User;
 import com.stackroute.registrationservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.registrationservice.exceptions.UserNotFoundException;
-//import com.stackroute.registrationservice.service.RabbitMqProducer;
+import com.stackroute.registrationservice.service.RabbitMqProducer;
 import com.stackroute.registrationservice.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,8 @@ public class RegistrationController {
     private ResponseEntity responseEntity;
     private RegistrationService registrationService;
 
-//    @Autowired
-//    RabbitMqProducer rabbitMqProducer;
+    @Autowired
+    RabbitMqProducer rabbitMqProducer;
 
     @Autowired
     public RegistrationController(RegistrationService registrationService) {
@@ -26,31 +26,19 @@ public class RegistrationController {
     }
 
     @PostMapping("user")
-    public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistsException
-    {
-        try
-        {
-           registrationService.saveUser(user);
-           responseEntity=new ResponseEntity(user, HttpStatus.CREATED);
-          //  rabbitMqProducer.produce(user);
-        }
-        catch (UserAlreadyExistsException ex1)
-        {
-            throw new UserAlreadyExistsException();
-        }
-        catch (Exception ex2)
-        {
-            responseEntity=new ResponseEntity<>("Error",HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> save(@RequestBody User user) throws UserAlreadyExistsException, UserNotFoundException {
+        ResponseEntity responseEntity;
+        registrationService.saveUser(user);
+        responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         return responseEntity;
     }
 
-    @DeleteMapping("registration/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") int id) throws UserNotFoundException
+    @DeleteMapping("registration/{userId}")
+    public ResponseEntity<?> deleteUser(@PathVariable("userId") String userId) throws UserNotFoundException
     {
         try
         {
-            registrationService.deleteUser(id);
+            registrationService.deleteUser(userId);
             responseEntity=new ResponseEntity("Successfully deleted",HttpStatus.OK);
         }
         catch (UserNotFoundException ex2)
@@ -64,8 +52,8 @@ public class RegistrationController {
         return responseEntity;
     }
 
-    @PutMapping("user/{id}")
-    public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable("id") String id) throws UserNotFoundException
+    @PutMapping("user/{userId}")
+    public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable("userId") String userId) throws UserNotFoundException
     {
         try{
             User updatedTrack = registrationService.updateUser(user);

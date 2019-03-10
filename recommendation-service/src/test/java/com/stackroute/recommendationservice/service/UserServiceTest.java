@@ -1,7 +1,7 @@
 package com.stackroute.recommendationservice.service;
 
-import com.stackroute.rabbitmq.domain.User;
 import com.stackroute.recommendationservice.Repository.UserRepository;
+import com.stackroute.recommendationservice.domain.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,12 +28,12 @@ public class UserServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         user = new User();
-        user.setDob("28/08/1996");
+        user.setDateofBirth("28/08/1996");
         user.setPassword("abc@gmail.com");
         user.setGender("Female");
         user.setMobileNo("7995947734");
-        user.setUserId(1);
-        user.setUserName("Geetha");
+        user.setUserId("1");
+        user.setName("Geetha");
         list = new ArrayList<>();
         list.add(user);
     }
@@ -41,14 +41,14 @@ public class UserServiceTest {
     @Test
     public void saveUserTest()
     {
-        when(userRepository.save((User)any())).thenReturn(user);
+        when(userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword())).thenReturn(user);
         User savedUser = userService.createUser(user);
         Assert.assertEquals(user,savedUser);
     }
 
     @Test
     public void getUsersTest() {
-        userRepository.save(user);
+        userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword());
         when(userRepository.findAll()).thenReturn(list);
         List<User> userList = userService.getAllUser();
         Assert.assertEquals(list, userList);

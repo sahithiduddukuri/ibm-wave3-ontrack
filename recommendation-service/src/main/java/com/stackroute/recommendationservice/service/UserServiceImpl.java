@@ -1,8 +1,8 @@
 package com.stackroute.recommendationservice.service;
 
 
-import com.stackroute.rabbitmq.domain.User;
 import com.stackroute.recommendationservice.Repository.UserRepository;
+import com.stackroute.recommendationservice.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,13 @@ public class UserServiceImpl implements  UserService{
     }
 
     public User createUser(User user) {
-        User savedUser = userRepository.save(user);
+        String name = user.getName();
+        String userId = user.getUserId();
+        String gender = user.getGender();
+        String dateofBirth = user.getDateofBirth();
+        String password = user.getPassword();
+        String mobileNo = user.getMobileNo();
+        User savedUser = userRepository.createUser(name,userId,gender,dateofBirth,mobileNo,password);
         return savedUser;
     }
 }

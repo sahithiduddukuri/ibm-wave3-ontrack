@@ -1,3 +1,5 @@
+import { Address } from './address';
+
 export class Myregistration {
     name: string;
     userId: string;
@@ -5,4 +7,5 @@ export class Myregistration {
     mobileNo: string;
     dateofBirth: string;
     gender: string;
+    address: Address;
 }

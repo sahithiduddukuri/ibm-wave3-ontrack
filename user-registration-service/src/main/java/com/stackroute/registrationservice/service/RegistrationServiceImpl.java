@@ -6,11 +6,13 @@ import com.stackroute.registrationservice.exceptions.UserNotFoundException;
 import com.stackroute.registrationservice.repository.RegistrationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@CrossOrigin("*")
 public class RegistrationServiceImpl implements RegistrationService {
     private RegistrationRepository registrationRepository;
     private User user;

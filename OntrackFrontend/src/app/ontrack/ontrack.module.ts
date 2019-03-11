@@ -81,11 +81,11 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
 
   // tslint:disable-next-line:max-line-length
-<<<<<<< HEAD
+
   exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent]
-=======
+
   exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent]
->>>>>>> 859cef6f791838a479cdf7c2937eb60d8b4e94c1
+
 
 })
 export class OntrackModule { }

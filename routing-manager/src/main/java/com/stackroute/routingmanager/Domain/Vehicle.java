@@ -13,6 +13,7 @@ public class Vehicle {
     public int load;
     public int curLoc;
     public boolean closed;
+    public double cost;
 
     public Vehicle() {
     }

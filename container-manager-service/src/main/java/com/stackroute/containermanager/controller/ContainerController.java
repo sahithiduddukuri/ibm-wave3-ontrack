@@ -64,8 +64,8 @@ public class ContainerController
 
 
 
-        String uri = "http://localhost:8010/api/v1/order";
-       SelectedSlot selectedSlot1 = restTemplate.postForObject(uri,selectedSlot,SelectedSlot.class);
+      /*  String uri = "http://localhost:8010/api/v1/order";
+       SelectedSlot selectedSlot1 = restTemplate.postForObject(uri,selectedSlot,SelectedSlot.class);*/
 
 
         return new ResponseEntity<>(containerService.saveSelecteSlots(selectedSlot),HttpStatus.OK);

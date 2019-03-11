@@ -28,8 +28,8 @@ public class RoutingManagerController {
         System.out.println("in controller{}{}{}{}{}"+routingService.locationlatlng(order));
         String[] result = new String[2];
         result = routingService.locationlatlng(order);
-        int x = Integer.parseInt(result[0]);
-        int y = Integer.parseInt(result[1]);
+        double x = Double.parseDouble(result[0]);
+        double y = Double.parseDouble(result[1]);
 
         order.setX(x);
         order.setY(y);

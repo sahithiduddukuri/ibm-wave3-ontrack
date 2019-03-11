@@ -64,7 +64,7 @@ services:
     ports:
       - 8808:8808
     expose:
-      - 8808//    private List<Location> locationList = new ArrayList<>();
+      - 8808
 
   ontrack-delivery-front-end:
     build: DM-login-angular-master/

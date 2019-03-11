@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -31,11 +32,13 @@ public class ContainerController
 
     public ContainerServiceImpl containerService;
     public ResponseEntity responseEntity;
+    public RestTemplate restTemplate;
 
     @Autowired
-    public ContainerController(ContainerServiceImpl containerService)
+    public ContainerController(ContainerServiceImpl containerService,RestTemplate restTemplate)
     {
         this.containerService = containerService;
+        this.restTemplate = restTemplate;
     }
 
     @PostMapping("/order")
@@ -46,6 +49,25 @@ public class ContainerController
 
     @PostMapping("/bookedslot")
     public  ResponseEntity<?> selectedSlot(@RequestBody SelectedSlot selectedSlot) throws OrderNotFound , OrderAlreadyExists {
+
+
+     /*   private int orderId;
+        private int vehicleId;
+        private String orderLoc;
+        private int x;
+        private int y;
+        private String orderDate;
+        private int demand;
+        private int noOfOrders;
+        private Node node;
+        private String slotType; */
+
+
+
+        String uri = "http://localhost:8010/api/v1/order";
+       SelectedSlot selectedSlot1 = restTemplate.postForObject(uri,selectedSlot,SelectedSlot.class);
+
+
         return new ResponseEntity<>(containerService.saveSelecteSlots(selectedSlot),HttpStatus.OK);
     }
 }

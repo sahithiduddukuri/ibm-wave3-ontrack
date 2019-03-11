@@ -15,11 +15,32 @@ import java.util.List;
 public class SelectedSlot {
     @Id
     private String orderDate;
-    private String  date;
+    private String  slotDate;
     private String slotType;
     private List<Product> productList;
     private  String responseId;
     private int orderId;
 
+    public SelectedSlot(String orderDate, String slotDate, String slotType, List<Product> productList, String responseId, int orderId) {
+        this.orderDate = orderDate;
+        this.slotDate = slotDate;
+        this.slotType = slotType;
+        this.productList = productList;
+        this.responseId = responseId;
+        this.orderId = orderId;
+    }
+
+    private String orderLoc;
+
+     /*   private int orderId;
+        private int vehicleId;
+        private String orderLoc;
+        private int x;
+        private int y;
+        private String orderDate;
+        private int demand;
+        private int noOfOrders;
+        private Node node;
+        private String slotType; */
 
 }

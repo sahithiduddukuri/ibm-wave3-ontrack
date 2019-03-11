@@ -1,4 +1,4 @@
-<div class="row" fxLayout.xs="column">
+<!-- <div class="row" fxLayout.xs="column">
   <div fxLayout="" fxLayoutGap="32px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
       <div fxFlex="20%">
   <mat-card class='product--blue'>
@@ -18,4 +18,28 @@
 </mat-card>
 </div>
   </div>
+</div> -->
+
+<div class="row">
+  <div class="col-4" *ngFor='let o of products'>
+    <section class="p-10">
+        <mat-card class='product--blue'>
+            <mat-card-header>  
+                <img mat-card-image src="{{o.imageURL}}" alt="{{o.brand}}" [products paginate=true]>
+              
+                <mat-card-title>
+                    <p>{{o.brand}}</p>
+                </mat-card-title>
+                <mat-card-actions align="center">
+                    
+                   <button mat-raised-button (click)="openDialog(o)"><mat-icon>toc</mat-icon></button>
+                      <button mat-raised-button (click)="AddToCart(o)"><mat-icon>add_shopping_cart</mat-icon></button>
+                      <button mat-raised-button (click)="buys()"><mat-icon>flash_on</mat-icon></button>
+                </mat-card-actions>
+          </mat-card-header> 
+        </mat-card>
+    </section>
+
+  </div>
+
 </div>

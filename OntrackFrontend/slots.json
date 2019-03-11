@@ -27,7 +27,7 @@
             "slots": [
                 {
                     "slotNumber": "Slot 1",
-                    "slotStatus": true,
+                    "slotStatus": false,
                     "slotType": "9:00AM-12:00PM",
                     "cost": 60
                 },

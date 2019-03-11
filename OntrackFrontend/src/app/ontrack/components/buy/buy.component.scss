@@ -6,7 +6,6 @@
     width: 100%;
     height: 780px;
     display: flex;
-    margin-left: 100px;
     padding-top: 170px;
  }
  
@@ -33,10 +32,8 @@
  }
  
  .items{
- 
     padding-bottom: 1px;
     height: 30%;
- 
  }
  
  mat-card-content{
@@ -80,12 +77,13 @@
  }
  .type{
     position: absolute;
-    top: 3px;
+    top: 23px;
     left: 30px;
  }
  .cost{
     color:white;
     font-size: 15px;
+    padding-top: 10px;
  }
  .price{
     float:right;
@@ -97,3 +95,7 @@
  mat-list mat-list-item{
      color: white;
  }
+ mat-card {
+   width: 550px;
+   height: 300px;
+}

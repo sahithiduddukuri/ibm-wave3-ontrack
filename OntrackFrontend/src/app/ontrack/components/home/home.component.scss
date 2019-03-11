@@ -1,13 +1,15 @@
 body{
-    padding-top: 100px; 
+    padding-top: 10px; 
     width: 99%;
     padding-left: 0%;
     margin-left: 0%;
 }  
-.landing-wallpaper {
-    height: 600px;
+.carousel-inner[_ngcontent-c4] img[_ngcontent-c4] {
+    height: 650px;
     width: 100%;
-    padding-left: 10px;
-    background-size: auto;
-    background-repeat: no-repeat;
+    padding-top: 100px;
+    
+}
+.carousel {
+    position: relative;
 }

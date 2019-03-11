@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule, MatIconModule, MatLabel, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatRadioModule } from '@angular/material';
@@ -27,16 +28,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
-import { PaymentComponent } from './components/payment/payment.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent],
 
 
   imports: [
   CommonModule,
   HttpClientModule,
+  HttpModule,
   MatCardModule,
   OntrackMaterialModule,
   BrowserAnimationsModule,
@@ -72,7 +74,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent]
 
 })
 export class OntrackModule { }

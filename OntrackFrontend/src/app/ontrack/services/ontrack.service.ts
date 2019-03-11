@@ -15,24 +15,22 @@ export class OnTrackService {
     }
    Home() {
 
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'http://localhost:8083/api/v1/products';
     console.log('this method call');
     return this.http.get(this.url);
 }
 
 openDailog() {
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'http://localhost:8083/api/v1/products';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'http://localhost:8083/api/v1/products';
     return this.http.get(this.url);
 }
 Buy() {
 
-this.url = ' http://localhost:3000/slotsAvailable';
-
-
+    this.url = ' http://localhost:3000/slotsAvailable';
     return this.http.get(this.url);
 }
 profile() {

@@ -7,6 +7,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule, MatIconModule, MatLabel, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatRadioModule } from '@angular/material';
@@ -26,16 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+
 import { PaymentComponent } from './components/payment/payment.component';
-import { HttpModule } from '@angular/http';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
   declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent],
 
-
-  imports: [
+ imports: [
   CommonModule,
   HttpClientModule,
   HttpModule,

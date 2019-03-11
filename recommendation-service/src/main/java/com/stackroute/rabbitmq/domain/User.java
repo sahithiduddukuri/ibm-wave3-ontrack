@@ -1,21 +1,43 @@
-package com.stackroute.rabbitmq.domain;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-
-@NodeEntity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class User {
-    @Id
-    private int userId;
-    private String userName;
-    private String mobileNo;
-    private String password;
-    private String dob;
-    private String gender;
-}
+//package com.stackroute.rabbitmq.domain;
+//
+//import com.fasterxml.jackson.annotation.JsonProperty;
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+//import org.neo4j.ogm.annotation.Id;
+//import org.neo4j.ogm.annotation.NodeEntity;
+//
+//@NodeEntity
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//public class User {
+//    @JsonProperty("id")
+//    private int id;
+//    @JsonProperty("name")
+//    private String name;
+//    @JsonProperty("userId")
+//    private String userId;
+//
+//    @JsonProperty("password")
+//    private String password;
+//    @JsonProperty("mobileNo")
+//    private String mobileNo;
+//    @JsonProperty("dateofBirth")
+//    private String dateofBirth;
+//    @JsonProperty("gender")
+//    private String gender;
+//
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", userId='" + userId + '\'' +
+//                ", password='" + password + '\'' +
+//                ", mobileNo='" + mobileNo + '\'' +
+//                ", dateofBirth='" + dateofBirth + '\'' +
+//                ", gender='" + gender + '\'' +
+//                '}';
+//    }
+//}

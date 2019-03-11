@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import java.util.List;
 
 @Document(collection = "Registrations")
@@ -17,9 +17,10 @@ import java.util.List;
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = User.class)
 public class User
 {
+//    @Id
+//    @JsonProperty("id")
+//    private int id;
     @Id
-    @JsonProperty("id")
-    private int id;
     @JsonProperty("name")
     private String name;
     @JsonProperty("userId")
@@ -32,9 +33,8 @@ public class User
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-//    List<Product> products;
-    public User(int id, String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
-        this.id=id;
+    //    List<Product> products;
+    public User(String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
         this.name = name;
         this.userId = userId;
         this.password = password;
@@ -46,13 +46,12 @@ public class User
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", userId='" + userId + '\'' +
                 ", password='" + password + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +
-                ", gender='" + gender +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 }

@@ -1,6 +1,8 @@
 <h1>Payment</h1>
 
-<form action="" method="POST" id="payment-form" (submit)="getToken()">
+<!-- <form action="" method="POST" id="payment-form" (submit)="getToken()"> -->
+<form>
+
   <span class="payment-message">{{message}}</span>
 
   <div class="form-row">
@@ -34,5 +36,9 @@
     </label>
   </div>
 
-  <input type="submit" value="Submit Payment">
+
+
+
+  <button (click)="chargeCreditCard()">Submit</button>
 </form>
+

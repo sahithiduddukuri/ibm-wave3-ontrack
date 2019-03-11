@@ -10,7 +10,7 @@ public interface RegistrationService
 {
     public User saveUser(User user) throws UserAlreadyExistsException;
     public List<User> getAllUser();
-    public boolean deleteUser(int id) throws UserNotFoundException;
+    public boolean deleteUser(String userId) throws UserNotFoundException;
     public User updateUser(User user) throws UserNotFoundException;
-    public User getByUserId(String userId);
+    //public User getByUserId(String userId);
 }

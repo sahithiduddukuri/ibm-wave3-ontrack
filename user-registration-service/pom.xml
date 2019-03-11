@@ -8,9 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
-	<!--<groupId>com.stackroute</groupId>-->
-	<artifactId>user-user-service</artifactId>
-	<!--<version>0.0.1-SNAPSHOT</version>-->
+
+	<groupId>com.stackroute</groupId>
+	<artifactId>user-registration-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>user-registration-service</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -23,10 +24,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

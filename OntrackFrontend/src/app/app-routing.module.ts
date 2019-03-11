@@ -11,6 +11,8 @@ import { LoginComponent } from './ontrack/components/login/login.component';
 import { SearchComponent } from './ontrack/components/search/search.component';
 import { BuyingHistoryComponent } from './ontrack/components/buying-history/buying-history.component';
 import { PaymentComponent } from './ontrack/components/payment/payment.component';
+import { EditProfileComponent } from './ontrack/components/edit-profile/edit-profile.component';
+
 // import { BuyingHistoryComponent } from './ontrack/components/buying-history/buying-history.component';
 
 
@@ -59,6 +61,9 @@ const routes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent
+  },
+  {
+    path: 'edit-profile', component: EditProfileComponent
   },
   {
     path: 'search', component: SearchComponent

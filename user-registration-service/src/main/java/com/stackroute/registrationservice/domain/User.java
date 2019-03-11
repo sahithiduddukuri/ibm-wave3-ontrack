@@ -33,14 +33,16 @@ public class User
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-    //    List<Product> products;
-    public User(String name, String userId, String password, String mobileNo, String dateofBirth, String gender) {
+    private Address address;
+
+    public User(String name, String userId, String password, String mobileNo, String dateofBirth, String gender, Address address) {
         this.name = name;
         this.userId = userId;
         this.password = password;
         this.mobileNo = mobileNo;
-        this.dateofBirth=dateofBirth;
-        this.gender=gender;
+        this.dateofBirth = dateofBirth;
+        this.gender = gender;
+        this.address = address;
     }
 
     @Override
@@ -52,6 +54,7 @@ public class User
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +
                 ", gender='" + gender + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

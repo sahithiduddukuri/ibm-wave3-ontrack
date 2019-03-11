@@ -100,9 +100,9 @@ services:
     depends_on:
       - eurekaserver
     ports:
-      - 8805:8805
+      - 8015:8015
     expose:
-      - 8805
+      - 8015
 #
 #  mongodb:
 #    image: mongo:3.4-jessie

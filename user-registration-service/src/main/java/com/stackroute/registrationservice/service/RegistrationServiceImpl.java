@@ -61,4 +61,9 @@ public class RegistrationServiceImpl implements RegistrationService {
         }
     }
 
+    @Override
+    public User getByUserId(String userId) {
+        return registrationRepository.findByUserId(userId);
+    }
+
 }

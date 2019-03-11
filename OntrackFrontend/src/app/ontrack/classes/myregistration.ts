@@ -5,4 +5,5 @@ export class Myregistration {
     mobileNo: string;
     dateofBirth: string;
     gender: string;
+    address: string;
 }

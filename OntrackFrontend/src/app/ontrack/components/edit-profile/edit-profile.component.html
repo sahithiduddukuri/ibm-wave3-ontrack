@@ -21,6 +21,11 @@
             <input  matInput  placeholder="MobileNo" [(ngModel)]="mobileNo" name="mobileNo" required>
          </mat-form-field>
 
+         <mat-form-field class="full-width" appearance = "outline">
+          <mat-label>Address</mat-label>
+          <input  matInput  placeholder="Address" [(ngModel)]="address" name="address" required>
+       </mat-form-field>
+
              <mat-form-field class="full-width" appearance = "outline" >
                 <mat-label>Date of Birth</mat-label>
            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dateOfBirth" name="dateOfBirth">
@@ -35,8 +40,8 @@
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="submit()" color="accent">Submit</button>
-     <button mat-raised-button [routerLink]="['/profile']" class="btn btn-link" color="accent"> Cancel</button>
+      <button mat-raised-button (click)="submit($event)" color="primary">Submit</button>
+     <button mat-raised-button (click)="cancel()" class="btn btn-link" color="primary"> Cancel</button>
     </mat-card-actions>
   </section>
   </section>

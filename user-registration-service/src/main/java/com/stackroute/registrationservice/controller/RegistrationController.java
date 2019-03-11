@@ -33,7 +33,7 @@ public class RegistrationController {
         return responseEntity;
     }
 
-    @DeleteMapping("registration/{userId}")
+    @DeleteMapping("user/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable("userId") String userId) throws UserNotFoundException
     {
         try
@@ -68,8 +68,15 @@ public class RegistrationController {
         }
         return responseEntity;
     }
+    @GetMapping("user/{userId}")
+    public ResponseEntity<?> getByUserId(@PathVariable("userId") String userId)
+    {
+        User user=registrationService.getByUserId(userId);
+        responseEntity=new ResponseEntity<User>(user,HttpStatus.OK);
+        return responseEntity;
+    }
 
-    @GetMapping("registration")
+    @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
         try

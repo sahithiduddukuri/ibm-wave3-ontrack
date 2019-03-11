@@ -1,28 +1,20 @@
+
 <section
-      class="laststep"
-      fxLayout
-      fxLayout="column"
-      fxLayoutAlign="center center"
-     
-      fxLayoutGap="10px"
-    >
-    <div class = "col">
-    <mat-card>
-     <img mat-card-image class="img" src="../../../../assets/img/userprofile.png" width ="50px" height = "50px">
-  </mat-card>
-  </div>
-  <mat-card class="col1">
-    <h3>Personal Information</h3>
-    <label class="step1">Name : {{ reg.name }}</label> <br />
-    <br />
-    <label class="step1">User Id : {{ reg.userId }}</label> <br />
-    <br />
-    <label class="step1">MobileNo : {{ reg.mobileNo }}</label> <br />
-    <br />
-    <label class="step1">Date of Birth : {{ reg.dateofBirth }}</label> <br />
-    <br />
-    <label class="step1">Gender : {{ reg.gender }}</label> <br />
-    <br />
-    <button mat-raised-button (click)="edit($event)" type="submit">Edit</button>
-    </mat-card>
-  </section>
+class="laststep">
+<mat-card class="col1">
+<h3>Personal Information</h3>
+<label class="step1">Name : {{ reg.name }}</label> <br />
+<br />
+<label class="step1">userId : {{ reg.userId }}</label> <br />
+<br />
+<label class="step1">MobileNo : {{ reg.mobileNo }}</label> <br />
+<br />
+<label class="step1">Address : {{ reg.address.addressDetails}} {{ reg.address.city}} {{ reg.address.state}} {{ reg.address.country}}</label> <br />
+<br />
+<label class="step1">Date of Birth : {{ reg.dateofBirth }}</label> <br />
+<br />
+<label class="step1">Gender : {{ reg.gender }}</label> <br />
+<br />
+<button mat-raised-button class ="btn"(click)="edit($event)" type="submit">Edit</button>
+</mat-card>
+

@@ -5,9 +5,8 @@
              <mat-card-title>{{ p.date }}</mat-card-title>
   <mat-card-content>
          <div class="ring" *ngFor="let r of p['slots']">
-  
-   <button mat-raised-button (click)="slot()" [disabled]="r.slotStatus">{{ r.slotNumber }}
-     <mat-icon>cross</mat-icon>
+ 
+   <button mat-raised-button (click)="slot(r)" [disabled]="r.slotStatus">{{ r.slotNumber }}
      <p class="type">{{ r.slotType }}</p>
      <p class="cost">{{ r.cost + "/-"}}</p>
    </button>
@@ -17,37 +16,29 @@
   </mat-card>
   </div>
   <div mat-card-actions class="id">
-  <button mat-raised-button (click)="shopping()">CONTINUE</button>
+  <button mat-raised-button (click)="shop()">CONTINUE</button>
   </div>
   <div class="items3">
    <div class="price">
    <mat-card>
-      
+ 
       <mat-list>
           <mat-list-item>PRICE DETAILS
-            
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>Price of Order:₹</mat-list-item>
-          <!-- <div *ngFor='let p of slotsAvailable' >
-              <div class="ring" *ngFor="let r of p['slots']" >
-              
-                      <p class="cost">{{ r.cost + "/-"}}</p>
-                
-          <mat-list-item>Delivery Charge:₹</mat-list-item>
-          </div>
-          </div> -->
-          <hr style="border: 0.3px dashed grey;" />
-          
-          <mat-divider></mat-divider> 
+          <mat-list-item>Price of Order:₹{{ price }}
+          </mat-list-item>
+          <mat-list-item>Delivery Charge:₹ {{charge}}
+          </mat-list-item>
+           <mat-divider></mat-divider>
           <p></p>
-          <mat-list-item>TOTAL AMOUNT:₹</mat-list-item>
+          <mat-list-item>TOTAL AMOUNT:₹{{price+charge}}</mat-list-item>
           <div *ngFor='let o of products'>
-         
+ 
           <p>{{ sum }}</p>
           </div>
-        </mat-list> 
-      
+        </mat-list>
+ 
         </mat-card>
         </div>
         </div>

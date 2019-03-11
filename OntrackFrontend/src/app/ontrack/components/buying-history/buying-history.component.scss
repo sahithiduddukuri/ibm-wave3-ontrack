@@ -1,143 +1,137 @@
 .example-card {
-  top: 150px;
-  width: 400px;
-  height: 425px;
-  left: 30px;
-  right: 30px;
-  box-shadow: 3px 3px 3px 3px black;
-  border-color: black;
-  margin: 25px;
-}
-
-.sing{
-    margin-left: 100px;
-}
-.section{
-  margin-right: 160px;
-  margin-top:80px;
-  padding-bottom: 120px;
+   top: 150px;
+   width: 400px;
+   height: 425px;
+   left: 30px;
+   right: 30px;
+   box-shadow: 3px 3px 3px 3px black;
+   border-color: black;
+   margin: 25px;
+  }
   
-
-  padding-left: 200px;
-  float: right;
-  width: 400px;
-}
-
-.lays{
-  float: right;
-position: fixed;
-padding-right: 160px;
-}
-.product--blue {
-    display:flex;
-  box-shadow: 1px 5px 15px #ccc;
-  width: 32.5em;
-  height: 190px;
-  border-radius: 3px;
-   padding: 1em;
-  margin-left: 100px;
-  overflow: auto;
-  position: relative;
-  flex: auto;
-  bottom: 80px;
-  padding-top: 90px;
-  margin-top: 0.9px;
-}
-mat-card-header {
- margin-left:0px; 
-  margin-top: 12px;
-
-}
-mat-card-footer {
-    position: absolute;
-    margin-top:160px;
-    margin-left: 50px;
-   
-   }
-mat-card-title {
-  position: absolute;
-  font-size: 15px;
-  left: 20px;
-  top: 10px;
-}
-mat-card-actions {
-  padding-top: 0px;
-  position: absolute;
-  bottom: 1px;
-}
-.mat-card-actions,
-.mat-card-content,
-.mat-card-subtitle {
-  display: block;
-  margin-bottom: 10px;
-}
-.column{
-  bottom: 0%;
-}
-.row {
-  margin-top: 1px;
-  padding-top: 100px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-bottom: 1px;
-  padding-left: 14.5px;
-}
-.row{
-  background-image: url("../../../../assets/img/background.jpg"); 
-  background-image: cover;
-  background-position:fixed;
-  background-repeat:repeat;
-}
-mat-card-action button {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: black;
-  border-radius: 3px;
-  padding: 1em 3em;
-  margin: 1em 0 0 0;
-  background: none;
-  cursor: pointer;
-}
-mat-card-action button:hover {
-  background: white;
-  color: #2b2d42;
-}
-mat-card-action button:before {
-  font-family: FontAwesome;
-  content: "\f07A";
-  color: #fff;
-  position: absolute;
-  font-size: 1.5em;
-  margin: 0 -1.5em;
-}
-mat-card-action button:hover:before {
-  color: #2b2d42;
-}
-.remov {
-  padding-left: 180px;
-  position: relative;
-}
-.next {
-margin-left: 100px;
+  .sing{
+     margin-left: 100px;
+  }
+  .section{
+   margin-right: 60px;
+   margin-top:80px;
+   padding-bottom: 120px;
+   padding-left: 100px;
+   float: right;
+   width: 400px;
+  }
   
-  
+  .lays{
+   float: right;
   position: fixed;
-  bottom: 80px;
+  }
+  .product--blue {
+     display:flex;
+   box-shadow: 1px 5px 15px #ccc;
+   width: 32.5em;
+   border-radius: 3px;
+    padding: 1em;
+    margin-left: 110px;
+   overflow: auto;
+   position: absolute;
+   height: 230px;
+   flex: auto;
+   margin-top: 0.9px;
   
-}
-.continuenext{
-    margin-left: 160px;
-}
-.continueproduct{
-    right: 20px;
-}
-.footer{
-    width: 32.5em;
-    height: 20px;
-    bottom: 24px;
-    height: 50px;
-    position:fixed;
-    
-    display:flex;
-}
-
+  }
+  mat-card-header {
+  margin-left:0px;
+   margin-top: 12px;
+  
+  }
+  mat-card-footer {
+     position: absolute;
+     margin-top:160px;
+     margin-left: 50px;
+  
+    }
+  mat-card-title {
+   position: absolute;
+   font-size: 15px;
+   left: 20px;
+   top: 10px;
+  }
+  mat-card-actions {
+   padding-top: 0px;
+   position: absolute;
+   bottom: 1px;
+  }
+  .mat-card-actions,
+  .mat-card-content,
+  .mat-card-subtitle {
+   display: block;
+   margin-bottom: 10px;
+  }
+  .column{
+   bottom: 0%;
+  }
+  .row {
+   padding-top: 100px;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   padding-bottom: 1px;
+   padding-left: 14.5px;
+  }
+  .row{
+  // background-image: url("../../../../assets/img/background.jpg");
+   background-image: cover;
+   background-position:fixed;
+   background-repeat:repeat;
+  }
+  mat-card-action button {
+   border: 1px solid rgba(255, 255, 255, 0.5);
+   color: black;
+   border-radius: 3px;
+   padding: 1em 3em;
+   margin: 1em 0 0 0;
+   background: none;
+   cursor: pointer;
+  }
+  mat-card-action button:hover {
+   background: white;
+   color: #2b2d42;
+  }
+  mat-card-action button:before {
+   font-family: FontAwesome;
+   content: "\f07A";
+   color: #fff;
+   position: absolute;
+   font-size: 1.5em;
+   margin: 0 -1.5em;
+  }
+  mat-card-action button:hover:before {
+   color: #2b2d42;
+  }
+  .remov {
+   padding-left: 180px;
+   position: relative;
+  }
+  .next {
+  margin-left: 16px;
+  
+  
+   position: fixed;
+   bottom: 80px;
+  
+  }
+  .continuenext{
+     margin-left: 120px;
+  }
+  .continueproduct{
+     right: 20px;
+  }
+  .footer{
+     width: 32.5em;
+     height: 20px;
+     bottom: 54px;
+     height: 50px;
+     position:fixed;
+     margin-left: 106px;
+     display:flex;
+  }

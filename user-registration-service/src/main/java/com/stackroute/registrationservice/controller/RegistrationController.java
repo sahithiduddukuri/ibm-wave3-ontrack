@@ -69,6 +69,13 @@ RegistrationController {
         }
         return responseEntity;
     }
+    @GetMapping("user/{userId}")
+    public ResponseEntity<?> getByUserId(@PathVariable("userId") String userId)
+    {
+        User user=registrationService.getByUserId(userId);
+        responseEntity=new ResponseEntity<User>(user,HttpStatus.OK);
+        return responseEntity;
+    }
 
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()

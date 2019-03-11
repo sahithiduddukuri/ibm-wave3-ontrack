@@ -24,7 +24,16 @@ public class RoutingManagerController {
 
     @PostMapping("/order")
     public ResponseEntity<?> saveNode( @RequestBody Order order) {
-        //routingService.latlng
+        routingService.locationlatlng(order);
+        System.out.println("in controller{}{}{}{}{}"+routingService.locationlatlng(order));
+        String[] result = new String[2];
+        result = routingService.locationlatlng(order);
+        int x = Integer.parseInt(result[0]);
+        int y = Integer.parseInt(result[1]);
+
+        order.setX(x);
+        order.setY(y);
+
         return new ResponseEntity<>(routingService.saveOrder(order) , HttpStatus.OK);
     }
 

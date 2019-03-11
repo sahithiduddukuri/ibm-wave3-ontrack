@@ -17,8 +17,7 @@ public class Latitudelongitude
 
     public String[] getDistanceMatrix(List<Location> locationList) {
 
-        String[] startLocation = null;
-        String[] endLocation = null;
+        String[] endLocation = new String[2];
         System.out.println("Inside distance method");
         String url1 = "https://maps.googleapis.com/maps/api/directions/json?";
         String origins = "origins=";
@@ -30,7 +29,7 @@ public class Latitudelongitude
         String inline = "";
         //https://maps.googleapis.com/maps/api/directions/json?origin=Bangalore&destination=Pune&key=AIzaSyCS63yTeP52jSiVNCbt7fo_pdKmsT8Xjs4
 
-        while (!(locationList.isEmpty())) {
+
             if (count < 1) {
                 for (int i = 0; i < locationList.size(); i++) {
                     for (int j = 0; j < 1; j++) {
@@ -137,16 +136,15 @@ public class Latitudelongitude
                     String [] j27 = j26.split("\":");
                     String end_location_lat = j27[1].toString();
                     System.out.println("End location: lat = "+end_location_lat);
-
-
-
+                    endLocation[0] = end_location_lat;
+                    endLocation[1] = end_location_lng;
                     conn.disconnect();
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }
-        return null;
+
+        return endLocation;
     }
 }

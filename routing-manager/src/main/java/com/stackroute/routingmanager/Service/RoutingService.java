@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface RoutingService {
 
+    public String[] locationlatlng(Order order);
+
     public String saveOrder(Order order);
 
     public List<Vehicle> optimizedRoute(String slotType, String date);

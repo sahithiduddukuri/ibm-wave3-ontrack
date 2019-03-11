@@ -37,10 +37,15 @@ text: String;
      this.userLogged = true;
    // location.reload();
   }
+  // Cartbutton() {
+  //   this.loginService.logout();
+  //   this.flag = false;
+  //   this.userLogged = true;
+  // }
   Signup() {
     this.route.navigate(['/' , 'Signup']);
   }
-  cartbutton() {
+  Cartbutton() {
     this.route.navigate(['/', 'cartbutton']);
   }
   profile() {

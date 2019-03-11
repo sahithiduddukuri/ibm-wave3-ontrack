@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import { Router } from '@angular/router';
 ​
@@ -9,7 +9,16 @@ import { Router } from '@angular/router';
 })
 export class BuyingHistoryComponent implements OnInit {
 products: any;
-
+@Output() MessageEvent = new EventEmitter<string>();
+ totalPrice(total) {
+ total = 0;
+  for (let count = 0; count < this.products.length; count++) {
+      total +=  Number(this.products[count].price);
+      console.log(total);
+  }
+  return total;
+  this.MessageEvent.emit(this.totalPrice(total));
+}
  constructor(private db: AngularFireDatabase, private route: Router) {  }
 ​
  ngOnInit() {
@@ -23,14 +32,6 @@ products: any;
   });
   console.log('data store in products', this.products);
  }
- totalPrice() {
-  let total = 0;
-  for (let count = 0; count < this.products.length; count++) {
-      total +=  Number(this.products[count].price);
-      console.log(total);
-  }
-  return total;
-}
  continue3() {
     this.route.navigate(['/' , 'continue']);
   }

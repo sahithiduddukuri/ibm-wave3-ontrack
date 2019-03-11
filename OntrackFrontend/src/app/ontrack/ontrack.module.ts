@@ -1,3 +1,4 @@
+import { PaymentComponent } from './components/payment/payment.component';
 import { BuyingHistoryComponent } from './components/buying-history/buying-history.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BuyComponent } from './components/buy/buy.component';
@@ -33,7 +34,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
   import { from } from 'rxjs';
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent],
 
 
   imports: [
@@ -72,7 +73,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent]
 
 })
 export class OntrackModule { }

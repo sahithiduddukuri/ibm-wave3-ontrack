@@ -29,18 +29,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
-<<<<<<< HEAD
+
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
   declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, EditProfileComponent, BuyingHistoryComponent, PaymentComponent],
-=======
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
   declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent],
->>>>>>> 859cef6f791838a479cdf7c2937eb60d8b4e94c1
+
 
 
   imports: [

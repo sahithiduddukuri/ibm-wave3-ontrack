@@ -29,11 +29,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+<<<<<<< HEAD
 
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
   declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, EditProfileComponent, BuyingHistoryComponent, PaymentComponent],
+=======
+
+
+ @NgModule({
+  // tslint:disable-next-line:max-line-length
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, EditProfileComponent, BuyingHistoryComponent, PaymentComponent],
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
+ @NgModule({
+  // tslint:disable-next-line:max-line-length
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent],
+
+>>>>>>> c6b0f0a16894c666551814107546dece24f30ab9
 
 
   imports: [
@@ -75,9 +89,9 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 
   // tslint:disable-next-line:max-line-length
+exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent]
 
-  // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent]
+
 
 })
 export class OntrackModule { }

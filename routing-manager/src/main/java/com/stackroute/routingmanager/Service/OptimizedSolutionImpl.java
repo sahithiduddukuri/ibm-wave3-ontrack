@@ -4,20 +4,22 @@ import com.stackroute.routingmanager.Domain.Node;
 import com.stackroute.routingmanager.Domain.Order;
 import com.stackroute.routingmanager.Domain.Vehicle;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class OptimizedSolutionImpl {
 
     Order order;
 
-    public String optimizedCost(int noOfOrders , int x , int y , int demand) {
+    public List<Vehicle> optimizedCost(int noOfOrders , List<Node> nodeList,List<Integer> demand) {
 
         Random ran = new Random(151190);
 
+        System.out.println("no Of Order value is++++++++++++++"+demand+"demeand size#######3$$$$$%%%%"+demand.size() );
 
         //Problem Parameters
         int noOfNodes = noOfOrders;
-        int noOfVehicles = 5;
+        int noOfVehicles = 2;
         int vehicleCap = 100;
 
         //Depot Coordinates
@@ -29,23 +31,24 @@ public class OptimizedSolutionImpl {
 
         //Initialise
         //Create Random Customers
-        Node[] nodes = new Node[noOfNodes + 1];
+        Node[] nodes = new Node[noOfNodes-3 + 1];
         Node depot = new Node(depot_x, depot_y);
 
         nodes[0] = depot;
-        for (int i = 0; i <= noOfNodes; i++) {
-
-            nodes[i] = new Node(i, //Id ) is reserved for depot
-                    ran.nextInt(x), //Random Cordinates
-                    ran.nextInt(y),
-                    demand);  //Random Demand
+        for (int i = 1; i <= noOfNodes-3; i++) {
+            System.out.println("@@@@@##############$$$$$$$$$$$$$$%%%%%%check its calling in forloop#########$$$$$%%%%%%%%%%%%");
+//            nodes[i] = new Node(i, //Id ) is reserved for depot
+//                    ran.nextInt(x), //Random Cordinates
+//                    ran.nextInt(y),
+//                    demand);  //Random Demand
+            nodes[i] = new Node(i,nodeList.get(i).node_X,nodeList.get(i).node_Y,demand.get(i));
 
         }
 
         double[][] distanceMatrix = new double[noOfNodes + 1][noOfNodes + 1];
         double delta_x, delta_y;
-        for (int i = 0; i <= noOfNodes; i++) {
-            for (int j = i + 1; j <= noOfNodes; j++) //The table is summetric to the first diagonal
+        for (int i = 0; i <= noOfNodes-3; i++) {
+            for (int j = i + 1; j <= noOfNodes-3; j++) //The table is summetric to the first diagonal
             {                                      //Use this to compute distances in O(n/2)
 
                 delta_x = (nodes[i].node_X - nodes[j].node_X);
@@ -63,8 +66,8 @@ public class OptimizedSolutionImpl {
         int printMatrix = 0; //If we want to print diastance matrix
 
         if (printMatrix == 1) {
-            for (int i = 0; i <= noOfNodes; i++) {
-                for (int j = 0; j <= noOfNodes; j++) {
+            for (int i = 0; i <= noOfNodes-3; i++) {
+                for (int j = 0; j <= noOfNodes-3; j++) {
                     System.out.print(distanceMatrix[i][j] + "  ");
                 }
                 System.out.println();
@@ -79,24 +82,20 @@ public class OptimizedSolutionImpl {
 
         s.greedySolution(nodes, distanceMatrix);
 
-        s.solutionPrint( "Greedy_Solution" );
+        List<Vehicle> nodes1 = s.solutionPrint( "Greedy_Solution" );
+
+        System.out.println("this Sout is in optimized solution class^^^^^^$$$$$$$$$$$$$^^^^^^^^^^^^"+nodes1);
 
 //        draw.drawRoutes(s, "Greedy_Solution");
 
 
 
-        s.tabuSearch(TABU_Horizon, distanceMatrix);
-
-        s.solutionPrint( "Tabu Search" );
+//        s.tabuSearch(TABU_Horizon, distanceMatrix);
+//
+//        s.solutionPrint( "Tabu Search" );
 
 //        draw.drawRoutes(s, "TABU_Solution");
-      return "routing done";
+//      return "routing done";
+        return nodes1;
     }
 }
-
-
-
-
-
-
-

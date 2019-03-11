@@ -17,7 +17,7 @@ public class SaveOrder {
     @Id
     private String orderDate; //selected slot date
     //private String selectedSlotType;
-    private int noOfOrders;
+//    private int noOfOrders;
     private List<Slot> slots;
     // private String slotNo;
 

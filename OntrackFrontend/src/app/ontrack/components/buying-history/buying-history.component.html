@@ -10,25 +10,26 @@
           <mat-list-item>{{o.brand}}:
               ₹{{o.price}}</mat-list-item>
           </div>
-          <mat-divider></mat-divider> 
+          <mat-divider></mat-divider>
           <p></p>
-          <mat-list-item>TOTAL AMOUNT:₹{{totalPrice(total)}}</mat-list-item>
+          <mat-list-item>TOTAL AMOUNT:₹{{totalPrice()}}</mat-list-item>
           <div *ngFor='let o of products'>
-         
           <p>{{ sum }}</p>
           </div>
-        </mat-list> 
+        </mat-list>
     </div>
+    <button mat-raised-button (click)="totalPrice()">CONTINUE</button>
     </mat-card>
-  
+ 
+ 
     </div>
-<div class="row" fxLayout.xs="column">
+ <div class="row" fxLayout.xs="column">
     <div class="column" fxLayout="col" fxLayoutGap="3px" fxLayoutAlign="flex-start" *ngFor='let o of products'>
         <div fxFlex="20%">
     <mat-card class='product--blue'>
-      <mat-card-header>  
+      <mat-card-header>
           <img mat-card-md-image src="{{o.imageURL}}" alt="{{o.brand}}">
-          </mat-card-header>         
+          </mat-card-header>
         <div class="sing">
           <p>{{ o.productName }}</p>
           <h3>₹{{ o.price +"/-"}}</h3>
@@ -39,9 +40,9 @@
             <button mat-raised-button (click)="remove3()">REMOVE</button>
         </mat-card-footer>
   </mat-card>
-</div>
-</div>
-<div class="next">
+ </div>
+ </div>
+ <div class="next">
   <mat-card class="footer">
       <div  class="continuenext">
         <button mat-raised-button class="continueproduct" style="background:orange; color:white" (click)="continue3()">CONTINUE SHOPPING</button>
@@ -49,7 +50,4 @@
         </div>
   </mat-card>
   </div>
-</div>
-
-
- 
+ </div>

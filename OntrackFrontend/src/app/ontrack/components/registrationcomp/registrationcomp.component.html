@@ -65,7 +65,7 @@
             <td>
                 <mat-form-field class="full-width" style="margin-bottom: -5px">
                 <mat-label>Date of Birth</mat-label>
-           <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dateOfBirth" name="dateOfBirth" required>
+           <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="dateofBirth" name="dateofBirth" required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -84,12 +84,6 @@
             </td>
           </tr>
   
-          <!-- <p>
-            <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Address"></textarea>
-            </mat-form-field>
-          </p> -->
-          <!-- Address section -->
           <tr>
           <td>
               <mat-form-field class="example-full-width" style="margin-bottom: -5px">
@@ -100,15 +94,12 @@
           <!-- city and state section -->
           <table class="example-full-width" cellspacing="0" style="margin-bottom: -5px"><tr>
               <td><mat-form-field class="example-full-width" style="margin-bottom: -5px">
-              <input matInput placeholder="City">
+              <input matInput placeholder="City" [(ngModel)]="city" name="city" required>
             </mat-form-field></td>
             <td><mat-form-field class="example-full-width" style="margin-bottom: -5px">
-              <input matInput placeholder="State">
+              <input matInput placeholder="State" [(ngModel)]="state" name="state" required>
             </mat-form-field></td>
-            <!-- <td><mat-form-field class="example-full-width">
-              <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-            </mat-form-field></td> -->
+            
           </tr>
           <tr>
             <td>

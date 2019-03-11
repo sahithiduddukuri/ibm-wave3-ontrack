@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RegserviceService } from '../../services/regservice.service';
-import { Myregistration } from '../../classes/myregistration';
+import { Myregistration } from '../../classes/Myregistration';
 import { RegistrationService } from '../../services/registration.service';
 import { HttpClient } from '@angular/common/http';
 import { registerContentQuery } from '@angular/core/src/render3';
 import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup, FormBuilder } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material';
+import { ErrorStateMatcher, MatSnackBar } from '@angular/material';
+import { Address } from '../../classes/address';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -57,8 +58,18 @@ export class RegistrationcompComponent implements OnInit {
   private mobileNo: string;
   private dateofBirth: string;
   private gender: string;
+  private address: string;
+  private city: string;
+  private state: string;
+  private country: string;
+  private myaddress: Address;
   formBuilder: any;
 register(event: any) {
+    this.myaddress = new Address;
+    this.myaddress.addressDetails = this.address;
+    this.myaddress.city = this.city;
+    this.myaddress.state = this.state;
+    this.myaddress.country = this.country;
     this.regform = new Myregistration();
     this.regform.name = this.name;
     this.regform.userId = this.userId;
@@ -66,7 +77,12 @@ register(event: any) {
     this.regform.mobileNo = this.mobileNo;
     this.regform.dateofBirth = this.dateofBirth;
     this.regform.gender = this.gender;
+    this.regform.address = this.myaddress;
     console.log(this.regform);
+    console.log(this.myaddress.addressDetails);
+    console.log(this.myaddress.city);
+    console.log(this.myaddress.state);
+    console.log(this.myaddress.country);
     this.value = event.target.value;
     this.regserv.addregister(this.regform).subscribe(data => {
       console.log('data', data);
@@ -76,6 +92,6 @@ register(event: any) {
   constructor(private regserv: RegistrationService, private http: HttpClient) {
    console.log('name' , this.value);
   }
- ngOnInit() {
+  ngOnInit() {
 }
 }

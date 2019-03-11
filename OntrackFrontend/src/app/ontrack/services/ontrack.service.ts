@@ -34,7 +34,7 @@ Buy() {
     return this.http.get(this.url);
 }
 profile() {
-    this.url = 'http://13.233.3.91:8015/api/v1/user';
+    this.url = 'http://localhost:8015/api/v1/user/';
     return this.http.get(this.url);
 }
 }

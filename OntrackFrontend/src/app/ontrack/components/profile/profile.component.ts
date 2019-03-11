@@ -3,7 +3,7 @@ import { User } from 'firebase';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OnTrackService } from '../../services/ontrack.service';
-import { Myregistration } from '../../classes/myregistration';
+import { Myregistration } from '../../classes/Myregistration';
 import { Userlogin } from '../../classes/Userlogin';
 import { RegistrationService } from '../../services/registration.service';
 import * as jwt_decode from 'jwt-decode';
@@ -18,7 +18,10 @@ export class ProfileComponent implements OnInit {
   reg: any;
   loginToken: Userlogin;
   jti: any;
-  constructor(private services: RegistrationService) { }
+  constructor(private services: RegistrationService, private router: Router) { }
+  edit() {
+    this.router.navigateByUrl('edit-profile');
+  }
   ngOnInit() {
     try {
       const tokenObtained = localStorage.getItem('token');
@@ -28,7 +31,7 @@ export class ProfileComponent implements OnInit {
       console.log('decoded token id', this.loginToken.jti);
       this.services.profile(this.jti).subscribe(data => {
         this.reg = data;
-        console.log( this.reg);
+        console.log('this is reg response', this.reg);
      });
       } catch (error) {
         console.log(error);

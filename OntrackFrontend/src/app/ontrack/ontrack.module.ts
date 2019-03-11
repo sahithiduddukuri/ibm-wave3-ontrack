@@ -27,6 +27,7 @@ import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { PaymentComponent } from './components/payment/payment.component';
+import { HttpModule } from '@angular/http';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
@@ -36,6 +37,7 @@ import { PaymentComponent } from './components/payment/payment.component';
   imports: [
   CommonModule,
   HttpClientModule,
+  HttpModule,
   MatCardModule,
   OntrackMaterialModule,
   BrowserAnimationsModule,

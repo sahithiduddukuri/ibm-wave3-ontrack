@@ -30,6 +30,7 @@ public class RegistrationController {
         ResponseEntity responseEntity;
         registrationService.saveUser(user);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
+        rabbitMqProducer.produce(user);
         return responseEntity;
     }
 

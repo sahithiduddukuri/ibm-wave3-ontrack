@@ -1,7 +1,10 @@
 package com.stackroute.containermanager.domain;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class Slot
 {
     private boolean slotStatus;
@@ -9,57 +12,9 @@ public class Slot
     private double cost;
     private double availableContainer;
     private int availableContainerSize = 100;
-
-    public Slot(boolean slotStatus, String slotType, double cost, double availableContainer , int availableContainerSize)
-    {
-        this.slotStatus = slotStatus;
-        this.slotType = slotType;
-        this.cost = cost;
-        this.availableContainer = availableContainer;
-        this.availableContainerSize = availableContainerSize;
-    }
+    private List<Container> containers;
 
     public Slot() {
-    }
-
-    public boolean isSlotStatus() {
-        return slotStatus;
-    }
-
-    public void setSlotStatus(boolean slotStatus) {
-        this.slotStatus = slotStatus;
-    }
-
-    public String getSlotType() {
-        return slotType;
-    }
-
-    public void setSlotType(String slotType) {
-        this.slotType = slotType;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
-    public double getAvailableContainer() {
-        return availableContainer;
-    }
-
-    public void setAvailableContainer(double availableContainer) {
-        this.availableContainer = availableContainer;
-    }
-
-    public int getAvailableContainerSize() {
-        return availableContainerSize;
-    }
-
-    public void setAvailableContainerSize(int availableContainerSize) {
-        this.availableContainerSize = availableContainerSize;
     }
 
     @Override

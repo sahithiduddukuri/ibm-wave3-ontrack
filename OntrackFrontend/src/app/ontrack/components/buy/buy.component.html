@@ -17,7 +17,7 @@
   </mat-card>
   </div>
   <div mat-card-actions class="id">
-  <button mat-raised-button (click)="shopping()">CONTINUE</button>
+  <button mat-raised-button (click)="shop()">CONTINUE</button>
   </div>
   <div class="items3">
    <div class="price">
@@ -28,7 +28,9 @@
             
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>Price of Order:₹</mat-list-item>
+          <mat-list-item>Price of Order:₹
+            <!-- <app-buying-history (MessageEvent)="receiveMessage($event)"></app-buying-history> -->
+          </mat-list-item>
           <!-- <div *ngFor='let p of slotsAvailable' >
               <div class="ring" *ngFor="let r of p['slots']" >
               

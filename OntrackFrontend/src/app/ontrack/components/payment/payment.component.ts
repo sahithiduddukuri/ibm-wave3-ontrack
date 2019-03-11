@@ -45,4 +45,5 @@ export class PaymentComponent implements OnInit {
         console.log(resp);
       });
   }
+
 }

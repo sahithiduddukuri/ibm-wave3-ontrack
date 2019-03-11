@@ -7,8 +7,7 @@ import lombok.Data;
 public class Location
 {
     private String location;
-//    private String orderLatitude;
-//    private String orderLongitude;
+
 
     public Location() {
     }

@@ -17,7 +17,7 @@ public class RoutingManagerApplication {
 //		optimizedSolution.optimizedCost();
 //	}
 
-	public static void callMethod(){
+	/*public static void callMethod(){
 		System.out.println("Inside call method");
 		List<Location> locationList = new ArrayList<>();
 		Location location1 = new Location("Bangalore, Karnataka, India");
@@ -31,10 +31,10 @@ public class RoutingManagerApplication {
 		Latitudelongitude latitudelongitude = new Latitudelongitude();
 		latitudelongitude.getDistanceMatrix(locationList);
 		System.out.println("locationList" + locationList);
-	}
+	}*/
 	public static void main(String[] args) {
 		SpringApplication.run(RoutingManagerApplication.class, args);
-		callMethod();
+//		callMethod();
 	}
 
 	/*private static void callMethod() {

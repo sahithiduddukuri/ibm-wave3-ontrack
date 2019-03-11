@@ -24,7 +24,7 @@ public class RoutingManagerController {
 
     @PostMapping("/order")
     public ResponseEntity<?> saveNode( @RequestBody Order order) {
-
+        //routingService.latlng
         return new ResponseEntity<>(routingService.saveOrder(order) , HttpStatus.OK);
     }
 

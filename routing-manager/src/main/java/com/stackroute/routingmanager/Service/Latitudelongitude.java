@@ -8,13 +8,12 @@ import org.json.simple.parser.JSONParser;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Latitudelongitude
 {
-//    private List<Location> locationList = new ArrayList<>();
-
 
     public String[] getDistanceMatrix(List<Location> locationList) {
 
@@ -110,8 +109,6 @@ public class Latitudelongitude
                     String [] j18 = j17.split("\":");
                     String start_location_lat = j18[1].toString();
                     System.out.println("Start location : lat = "+start_location_lat);
-                    startLocation[0] = start_location_lat;
-                    startLocation[1] = start_location_lng;
                     String [] j5 = j2.split("end_location");
 
                    // System.out.println("wfdiufiuuuuuuuuuuuuiffiuf"+ j5[1].toString());
@@ -140,8 +137,7 @@ public class Latitudelongitude
                     String [] j27 = j26.split("\":");
                     String end_location_lat = j27[1].toString();
                     System.out.println("End location: lat = "+end_location_lat);
-                    endLocation[0] = end_location_lat;
-                    endLocation[1] = end_location_lng;
+
 
 
                     conn.disconnect();
@@ -151,6 +147,6 @@ public class Latitudelongitude
                 }
             }
         }
-        return startLocation;
+        return null;
     }
 }

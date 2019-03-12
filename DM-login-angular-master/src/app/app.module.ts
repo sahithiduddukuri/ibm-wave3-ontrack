@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { LoginModule} from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,15 @@
 .id
 {
-    margin-top: 10%;
-    margin-left: 58%;
+    margin-top: 5%;
+    margin-left: 8%;
     clear: both;
 }
 .password{
-    margin-left: 58%;  
+    margin-left: 8%;  
 }
 .btn {
-    margin-left: 66%;
-    width: 5%;
+    margin-left: 40%;
+    width: 7%;
 }
 .container {
     background-image: url("../../../../assets/img/background.jpg"); 
@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     margin:0px;
     width: 100%;
-    height: 780px;   
+    height: 750px;   
 }
 .mat-form-field {
     display: inline-block;
@@ -27,19 +27,32 @@
 }
 p{
     font-size: 20px;
-    padding-left: 58%;
+    padding-left: 8%;
+    margin-top: 15%
     
 }
 .btn1{
-    margin-left: 66%;
-    width: 5%;
+    margin-left: 36%;
+    width: 8%;
+    font-size: 20px;
 }
 mat-label{
     font-size: 20px;
 }
 h1
-{
+ {
+    position: relative;
+    margin-left: 36%;
+}
+.pics{
+    margin-top:200px;
     position: absolute;
-    padding-top: 80px;
-    padding-left: 870px;
+    margin-left:700px;
+    width:380px;
+    height:300px;
+    border-radius:40px;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 50px 50px 50px 50px;
+    background-image: url("../../../../assets/img/background.jpeg");
+    opacity: 0.9;
 }

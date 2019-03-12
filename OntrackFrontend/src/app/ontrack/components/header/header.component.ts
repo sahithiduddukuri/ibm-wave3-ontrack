@@ -12,6 +12,7 @@ import { RouterEvent, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   flag: boolean;
  userLogged: boolean;
+ userLoggedIn: boolean;
   products: any = [];
   constructor(private route: Router, private loginService: LoginService) { }
   @Input() name;
@@ -21,10 +22,12 @@ text: String;
     console.log(this.name);
     if (localStorage.getItem('token') !== null ) {
       this.flag = true;
+      this.userLoggedIn = true;
      this.userLogged = false;
     } else {
       this.flag = false;
      this.userLogged = true;
+     this.userLoggedIn = false;
        }
    }
 

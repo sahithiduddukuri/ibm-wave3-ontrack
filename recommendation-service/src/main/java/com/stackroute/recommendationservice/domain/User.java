@@ -32,7 +32,6 @@ public class User {
     private Address address;
 
 
-
     @Override
     public String toString() {
         return "User{" +
@@ -42,6 +41,7 @@ public class User {
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +
                 ", gender='" + gender + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OnTrackService } from '../../services/ontrack.service';
 import { SearchService } from '../../services/search.service';
 import { Ontrack } from '../../classes/ontrack';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-card',
@@ -25,7 +26,9 @@ private ontracks: Ontrack[];
   @Output()
    cartAddEvent = new EventEmitter<any>();
    dialogResult: any;
-   AddToCart(product): void {
+   private helper = new JwtHelperService();
+  private currentUser = this.currentUser = this.helper.decodeToken(localStorage.getItem('token'));
+  AddToCart(product): void {
     console.log(product, 'click event call');
     this.cartAddEvent.emit(product);
     this.onTrack.cart = product;

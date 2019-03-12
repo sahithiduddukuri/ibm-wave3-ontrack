@@ -39,4 +39,8 @@ profile() {
     this.url = 'http://13.233.3.91:8015/api/v1/user';
     return this.http.get(this.url);
 }
+REMOVE() {
+    this.url = 'http://13.233.3.91:8083/api/v1/AddToCart';
+    return this.http.get(this.url);
+ }
 }

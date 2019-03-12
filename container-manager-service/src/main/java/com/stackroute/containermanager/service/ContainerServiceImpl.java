@@ -41,32 +41,32 @@ public class ContainerServiceImpl implements ContainerService {
                     slot.getSlotType();
                     slot.getAvailableContainer();
                     List<Container> containers= slot.getContainers();
-                    if(containers.get(0).getAvailableContainerSize()>= order.getProductList().size()*20)
+                    if(containers.get(0).getAvailableContainerSize()>= order.getProductCount()*20)
                     {
-                        if (order.getProductList().size() * 20 == 100) {
+                        if (order.getProductCount()* 20 == 100) {
                             slot.setCost(10);
-                        } else if (order.getProductList().size() * 20 == 80) {
+                        } else if (order.getProductCount()* 20 == 80) {
                             slot.setCost(20);
-                        } else if (order.getProductList().size() * 20 == 60) {
+                        } else if (order.getProductCount() * 20 == 60) {
                             slot.setCost(40);
-                        } else if (order.getProductList().size() * 20 == 40) {
+                        } else if (order.getProductCount() * 20 == 40) {
                             slot.setCost(60);
-                        } else if (order.getProductList().size() * 20 == 20) {
+                        } else if (order.getProductCount() * 20 == 20) {
                             slot.setCost(80);
                         }
                         slot.setSlotStatus(true);
                     }
-                    else if(containers.get(1).getAvailableContainerSize()>= order.getProductList().size()*20)
+                    else if(containers.get(1).getAvailableContainerSize()>= order.getProductCount()*20)
                     {
-                        if (order.getProductList().size() * 20 == 100) {
+                        if (order.getProductCount()* 20 == 100) {
                             slot.setCost(10);
-                        } else if (order.getProductList().size() * 20 == 80) {
+                        } else if (order.getProductCount() * 20 == 80) {
                             slot.setCost(20);
-                        } else if (order.getProductList().size() * 20 == 60) {
+                        } else if (order.getProductCount()* 20 == 60) {
                             slot.setCost(40);
-                        } else if (order.getProductList().size() * 20 == 40) {
+                        } else if (order.getProductCount() * 20 == 40) {
                             slot.setCost(60);
-                        } else if (order.getProductList().size() * 20 == 20) {
+                        } else if (order.getProductCount() * 20 == 20) {
                             slot.setCost(80);
                         }
                         slot.setSlotStatus(true);
@@ -122,10 +122,10 @@ public class ContainerServiceImpl implements ContainerService {
                             slots.add(slot);
                         }
                         if (j == 2) {
-                            String slotType = "B";
+                            String slotType = "C";
                             slot.setSlotStatus(true);
                             slot.setCost(10);
-                            slot.setSlotType("B");
+                            slot.setSlotType("C");
                             List<Container> containers=new ArrayList<>();
                             Container container = new Container("1",100,100);
                             Container container1 =new Container("2",100,100);
@@ -141,7 +141,7 @@ public class ContainerServiceImpl implements ContainerService {
                 }
                 if (i == 1) {
 //                    slotAvailability.setDate(order.getOrderDate().plusDays(1));
-                    slotAvailability.setDate("2019/03/5");
+                    slotAvailability.setDate(getNextDate(order.getOrderDate()));
                     slotAvailabilities.add(slotAvailability);
                     List<Slot> slots = new ArrayList<>();
                     for (int j = 0; j < 3; j++) {
@@ -175,10 +175,10 @@ public class ContainerServiceImpl implements ContainerService {
                             slots.add(slot);
                         }
                         if (j == 2) {
-                            String slotType = "B";
+                            String slotType = "C";
                             slot.setSlotStatus(true);
                             slot.setCost(5);
-                            slot.setSlotType("B");
+                            slot.setSlotType("C");
                             List<Container> containers=new ArrayList<>();
                             Container container = new Container("1",100,100);
                             Container container1 =new Container("2",100,100);
@@ -209,7 +209,7 @@ public class ContainerServiceImpl implements ContainerService {
                     List<Slot> slots = slotAvailability.getSlots();
                     for (Slot slot : slots) {
                         if (selectedSlot.getSlotType().equals(slot.getSlotType())) {
-                            int selectedWeight = selectedSlot.getProductList().size() * 20;
+                            int selectedWeight = selectedSlot.getProductCount()* 20;
                             List<Container> containers= slot.getContainers();
                             if(containers.get(0).getAvailableContainerSize()>selectedWeight)
                             {
@@ -230,5 +230,17 @@ public class ContainerServiceImpl implements ContainerService {
             }
         }
         return null;
+    }
+
+    public static String getNextDate(String  curDate) {
+        String nextDate="";
+
+        try {
+            LocalDate date = LocalDate.now();
+            date = date.plusDays(1);
+            nextDate = date.toString();
+        } finally {
+            return nextDate;
+        }
     }
 }

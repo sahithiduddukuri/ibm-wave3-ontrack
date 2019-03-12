@@ -20,13 +20,15 @@ public class SelectedSlot {
     private List<Product> productList;
     private  String responseId;
     private int orderId;
+    private int productCount;
 
-    public SelectedSlot(@JsonProperty String orderDate,@JsonProperty String date,@JsonProperty String slotType,@JsonProperty List<Product> productList,@JsonProperty String responseId,@JsonProperty int orderId) {
+    public SelectedSlot(@JsonProperty String orderDate,@JsonProperty String date,@JsonProperty String slotType,@JsonProperty List<Product> productList,@JsonProperty String responseId,@JsonProperty int orderId,@JsonProperty int productCount) {
         this.orderDate = orderDate;
         this.date = date;
         this.slotType = slotType;
         this.productList = productList;
         this.responseId = responseId;
         this.orderId = orderId;
+        this.productCount = productCount;
     }
 }

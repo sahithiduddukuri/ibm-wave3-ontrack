@@ -18,6 +18,7 @@ public class SelectedSlot {
     private String  slotDate;
     private String slotType;
     private List<Product> productList;
+    private int productCount;
     private  String responseId;
     private int orderId;
 

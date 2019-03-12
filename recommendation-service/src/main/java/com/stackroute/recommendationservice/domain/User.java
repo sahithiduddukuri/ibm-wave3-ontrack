@@ -28,7 +28,8 @@ public class User {
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-
+    @JsonProperty("address")
+    private Address address;
 
 
     @Override
@@ -40,6 +41,7 @@ public class User {
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +
                 ", gender='" + gender + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

@@ -15,11 +15,11 @@ export class RegistrationService {
 constructor(private http: HttpClient ) {}
 addregister(reg: Myregistration) {
   console.log(reg);
-  this.url = 'http://localhost:8015/api/v1/user/';
+  this.url = 'http://localhost:8015/api/v1/user';
   return this.http.post(this.url, JSON.stringify(reg) , this.httpOptions);
  }
  profile(userId: String) {
-  this.url = 'http://localhost:8015/api/v1/user/' + userId;
+  this.url = 'http://13.233.3.91:8015/api/v1/user/' + userId;
   return this.http.get(this.url);
  }
 }

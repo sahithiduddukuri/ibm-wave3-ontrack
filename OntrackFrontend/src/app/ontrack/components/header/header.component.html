@@ -22,7 +22,7 @@
           <button mat-raised-button matTooltip="CART ITEMS"
           aria-label="Button that displays a tooltip when focused or hovered over" (click)="Cartbutton()"><mat-icon>shopping_cart</mat-icon></button>
         </div>
-        <div class="vak">
+        <div class="vak" *ngIf=userLoggedIn>
           <button mat-raised-button matTooltip="USER PROFILE"
           aria-label="Button that displays a tooltip when focused or hovered over" (click)="profile()"><mat-icon>account_circle</mat-icon></button>
         </div>   

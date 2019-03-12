@@ -20,10 +20,10 @@
   </div>
   <div class="items3">
    <div class="price">
-   <mat-card>
+   <mat-card class="greenlays">
  
       <mat-list>
-          <mat-list-item>PRICE DETAILS
+          <mat-list-item class="one"><h4 align="center">PRICE DETAILS</h4>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>Price of Order:₹{{ price }}
@@ -32,7 +32,7 @@
           </mat-list-item>
            <mat-divider></mat-divider>
           <p></p>
-          <mat-list-item>TOTAL AMOUNT:₹{{price+charge}}</mat-list-item>
+          <mat-list-item>Total Amount:₹{{price+charge}}</mat-list-item>
           <div *ngFor='let o of products'>
  
           <p>{{ sum }}</p>

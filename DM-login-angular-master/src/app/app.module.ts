@@ -1,3 +1,5 @@
+import { HomeService } from './services/Home.service';
+import { LoginService } from './login/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -9,6 +11,7 @@ import { LoginModule} from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { ContainerComponent } from './container/container.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { ContainerComponent } from './container/container.component';
     ReactiveFormsModule,
     FormsModule,
     HomeModule
+  ],
+  providers: [
+   LoginService, HomeService
   ],
   bootstrap: [AppComponent]
 })

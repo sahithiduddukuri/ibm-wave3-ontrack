@@ -21,7 +21,7 @@
     <mat-hint></mat-hint>
   </mat-form-field>
   <br>
-  <button mat-button color="primary" type="submit" [disabled]="!user.valid">Login</button>
+  <button mat-raised-button color="primary" type="submit" (click)="login1()" [disabled]="!user.valid">Login</button>
 </form>
 
 <app-footer></app-footer>

@@ -1,0 +1,28 @@
+.container{
+    padding-top: 200PX;
+    display:flex;
+}
+.sing{
+    margin-left: 300px;
+    height:200px;
+    width:400px;
+    font-size: 40px;
+    color:white;
+    background-color:blue;
+    border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.zing{
+    margin-left: 200px;
+    height:200px;
+    width:400px;
+    font-size: 40px;
+    color:white;
+    background-color:blue;
+    border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}

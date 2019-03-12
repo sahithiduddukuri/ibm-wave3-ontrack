@@ -15,7 +15,8 @@ export class LoginComponent {
     password: ['', Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) { } // using router
+  // tslint:disable-next-line:max-line-length
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router, private route: Router) { } // using router
   // to reroute valid logged in user to some other page
 
   login() {
@@ -31,5 +32,8 @@ export class LoginComponent {
         window.alert('Credentials you entered are incorrect');
       }
     });
+  }
+  login1() {
+    this.route.navigate(['/' , 'button2']);
   }
 }

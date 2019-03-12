@@ -19,7 +19,7 @@ addregister(reg: Myregistration) {
   return this.http.post(this.url, JSON.stringify(reg) , this.httpOptions);
  }
  profile(userId: String) {
-  this.url = 'http://localhost:8015/api/v1/user/' + userId;
+  this.url = 'http://13.233.3.91:8015/api/v1/user/' + userId;
   return this.http.get(this.url);
  }
 }

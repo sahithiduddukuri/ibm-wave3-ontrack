@@ -20,13 +20,15 @@ public class Order
     private List<Product> productList;
     @Id
     private String orderDate;
+    private int productCount;
 
 
-    public Order(@JsonProperty String responseId,@JsonProperty int orderId,@JsonProperty List<Product> productList,@JsonProperty String orderDate) {
+    public Order(@JsonProperty String responseId,@JsonProperty int orderId,@JsonProperty List<Product> productList,@JsonProperty String orderDate,@JsonProperty int productCount) {
         this.responseId = responseId;
         this.orderId = orderId;
         this.productList = productList;
         this.orderDate = orderDate;
+        this.productCount = productCount;
     }
 
 

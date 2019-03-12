@@ -20,7 +20,7 @@
     margin-top: 80px;
     margin-bottom: 5px;
     position: absolute;
-    opacity: 0.9;
+    opacity: 0.89;
    }
    mat-radio-button{
        display: inline;
@@ -35,6 +35,20 @@ mat-card-content{
 width: 100%;
 align-content: left;
 margin-bottom: 5px;
+}
+mat-card-actions{
+    padding-top: 5px;
+}
+.example-full-width-1{
+    width: 100%;
+}
+.full-width{
+    width: 80%;
+    right: 10%;
+}
+.regbutton {
+    margin-top: 5px;
+    // color: aquamarine;
 }
 mat-card-actions{
     padding-top: 5px;

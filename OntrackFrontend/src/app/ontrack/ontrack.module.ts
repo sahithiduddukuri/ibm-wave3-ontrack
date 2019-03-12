@@ -1,4 +1,3 @@
-import { PaymentComponent } from './components/payment/payment.component';
 import { BuyingHistoryComponent } from './components/buying-history/buying-history.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BuyComponent } from './components/buy/buy.component';
@@ -28,14 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 // For MDB Angular Pro
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+
+import { PaymentComponent } from './components/payment/payment.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent],
 
-
-  imports: [
+ imports: [
   CommonModule,
   HttpClientModule,
   HttpModule,
@@ -74,7 +74,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, EditProfileComponent]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent]
 
 })
 export class OntrackModule { }

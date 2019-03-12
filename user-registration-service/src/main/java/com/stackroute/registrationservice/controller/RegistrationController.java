@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1/")
-public class RegistrationController {
+public class
+RegistrationController {
 
     private ResponseEntity responseEntity;
     private RegistrationService registrationService;
@@ -30,10 +31,11 @@ public class RegistrationController {
         ResponseEntity responseEntity;
         registrationService.saveUser(user);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
+        rabbitMqProducer.produce(user);
         return responseEntity;
     }
 
-    @DeleteMapping("registration/{userId}")
+    @DeleteMapping("user/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable("userId") String userId) throws UserNotFoundException
     {
         try
@@ -41,10 +43,10 @@ public class RegistrationController {
             registrationService.deleteUser(userId);
             responseEntity=new ResponseEntity("Successfully deleted",HttpStatus.OK);
         }
-        catch (UserNotFoundException ex2)
-        {
-            throw new UserNotFoundException();
-        }
+//        catch (UserNotFoundException ex2)
+//        {
+//            throw new UserNotFoundException();
+//        }
         catch (Exception exc)
         {
             responseEntity=new ResponseEntity<>("Error",HttpStatus.INTERNAL_SERVER_ERROR);
@@ -68,8 +70,15 @@ public class RegistrationController {
         }
         return responseEntity;
     }
+    @GetMapping("user/{userId}")
+    public ResponseEntity<?> getByUserId(@PathVariable("userId") String userId)
+    {
+        User user=registrationService.getByUserId(userId);
+        responseEntity=new ResponseEntity<User>(user,HttpStatus.OK);
+        return responseEntity;
+    }
 
-    @GetMapping("registration")
+    @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
         try

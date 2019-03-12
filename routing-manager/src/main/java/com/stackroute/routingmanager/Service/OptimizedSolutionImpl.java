@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class OptimizedSolutionImpl {
+public class OptimizedSolutionImpl implements OptimizedSolution {
 
     Order order;
 
+    @Override
     public List<Vehicle> optimizedCost(int noOfOrders , List<Node> nodeList,List<Integer> demand) {
 
         Random ran = new Random(151190);
@@ -23,8 +24,8 @@ public class OptimizedSolutionImpl {
         int vehicleCap = 100;
 
         //Depot Coordinates
-        int depot_x = 50;
-        int depot_y = 50;
+        double depot_x = 50;
+        double depot_y = 50;
 
         //Tabu Parameter
         int TABU_Horizon = 10;

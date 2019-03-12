@@ -1,4 +1,4 @@
-package com.stackroute.deliverymanagerlogin.Domain;
+package com.stackroute.deliverymanager.Domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -13,8 +13,8 @@ public class Order {
     private int orderId;
     private int vehicleId;
     private String orderLoc;
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     private String orderDate;
     private int demand;
     private int noOfOrders;

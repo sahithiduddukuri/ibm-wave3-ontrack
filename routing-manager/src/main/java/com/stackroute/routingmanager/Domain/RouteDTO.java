@@ -8,7 +8,7 @@ public class RouteDTO {
 
     private Node node;
     public int nodeId;
-    public int node_X , node_Y;
+    public double node_X , node_Y;
     public ArrayList<Node> Route = new ArrayList<Node>();
 
     @Autowired

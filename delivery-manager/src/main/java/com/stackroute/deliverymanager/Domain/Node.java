@@ -1,4 +1,4 @@
-package com.stackroute.routingmanager.Domain;
+package com.stackroute.deliverymanager.Domain;
 
 import lombok.Data;
 
@@ -10,13 +10,13 @@ public class Node {
     }
 
     public int nodeId;
-    public double node_X , node_Y; //Node Coordinates
+    public int node_X , node_Y; //Node Coordinates
     public int demand; //Node Demand if Customer
     public boolean isRouted;
     private boolean isDepot; //True if it Depot Node
 
 
-    public Node(double depot_x,double depot_y) //Cunstructor for depot
+    public Node(int depot_x, int depot_y) //Cunstructor for depot
     {
         this.nodeId = 0;
         this.node_X = depot_x;
@@ -24,7 +24,7 @@ public class Node {
         this.isDepot = true;
     }
 
-    public Node(int id ,double x, double y, int demand) //Cunstructor for Customers
+    public Node(int id , int x, int y, int demand) //Cunstructor for Customers
     {
         this.nodeId = id;
         this.node_X = x;

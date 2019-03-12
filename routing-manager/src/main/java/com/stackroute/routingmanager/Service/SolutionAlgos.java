@@ -247,6 +247,7 @@ public class SolutionAlgos {
                 System.out.println();
             }
             nodeList.add(vehicles[j]);
+            vehicles[j].setCost(this.cost);
             System.out.println("hiiiiiiiiiiiiiiiiiiii"+vehicles[j].getRoute());
         }
         System.out.println("This is the list of nodes ######@@@@@@@@@@@@#######"+nodeList);

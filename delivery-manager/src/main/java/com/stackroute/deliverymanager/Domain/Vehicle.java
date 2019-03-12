@@ -1,5 +1,6 @@
-package com.stackroute.routingmanager.Domain;
+package com.stackroute.deliverymanager.Domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,12 +14,11 @@ public class Vehicle {
     public int load;
     public int curLoc;
     public boolean closed;
-    public double cost;
 
     public Vehicle() {
     }
 
-    public Vehicle(int id, int cap)
+    public Vehicle(@JsonProperty int id,@JsonProperty int cap)
     {
         this.vehId = id;
         this.capacity = cap;

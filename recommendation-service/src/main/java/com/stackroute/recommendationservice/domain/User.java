@@ -9,8 +9,8 @@ import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class User {
 //    @JsonProperty("id")
 //    private int id;

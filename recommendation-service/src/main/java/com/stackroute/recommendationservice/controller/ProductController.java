@@ -22,7 +22,7 @@ public class ProductController {
     @GetMapping("products")
     public ResponseEntity<?> getAll()
     {
-        System.out.println("aoisGoisa"+productService.getAll() );
+        //System.out.println("aoisGoisa"+productService.getAll() );
         return new ResponseEntity<List<Product>>(productService.getAll(), HttpStatus.OK);
     }
 

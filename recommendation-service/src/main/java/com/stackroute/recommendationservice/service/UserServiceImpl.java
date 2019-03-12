@@ -33,7 +33,7 @@ public class UserServiceImpl implements  UserService{
         String password = user.getPassword();
         String mobileNo = user.getMobileNo();
         Address address = user.getAddress();
-        User savedUser = userRepository.createUser(name,userId,gender,dateofBirth,mobileNo,password,address);
+        User savedUser = userRepository.createUserNode(name,userId,gender,dateofBirth,mobileNo,password,address);
         return savedUser;
     }
 }

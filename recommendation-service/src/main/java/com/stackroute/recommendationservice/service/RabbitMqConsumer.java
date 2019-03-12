@@ -24,6 +24,7 @@ public class RabbitMqConsumer {
     UserService userService;
 
     Product product;
+
     User user;
 
     Category category = new Category();
@@ -53,11 +54,12 @@ public class RabbitMqConsumer {
         productService.createNode(this.product);
 
     }
+
     @RabbitListener(queues="${jsa.rabbitmq.queue4}", containerFactory="jsaFactory")
     public void receivedmessagefromuser(User user){
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println("recieved user: " +user.toString());
-        userService.createUser(user);
+        System.out.println("recieved user : " +user.toString());
+        // userService.createUser(user);
 
     }
 }

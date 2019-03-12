@@ -44,14 +44,14 @@ public class UserServiceTest {
     @Test
     public void saveUserTest()
     {
-        when(userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress())).thenReturn(user);
+        when(userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress())).thenReturn(user);
         User savedUser = userService.createUser(user);
         Assert.assertEquals(user,savedUser);
     }
 
     @Test
     public void getUsersTest() {
-        userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress());
+        userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress());
         when(userRepository.findAll()).thenReturn(list);
         List<User> userList = userService.getAllUser();
         Assert.assertEquals(list, userList);

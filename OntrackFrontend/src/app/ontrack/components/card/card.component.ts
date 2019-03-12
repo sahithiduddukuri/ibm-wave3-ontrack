@@ -36,6 +36,7 @@ private ontracks: Ontrack[];
    this.db.list('/products').valueChanges().subscribe(data => {
     console.log('data value', data);
   });
+  product.userName = this.currentUser.jti;
   this.db.list('/products').push(product);
   }
   buys() {

@@ -1,4 +1,4 @@
-import { JwtHelperService } from '@auth0/angular-jwt';
+ import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject} from 'angularfire2/database';

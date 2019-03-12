@@ -14,6 +14,6 @@ public interface UserRepository extends Neo4jRepository<User, String> {
     List<User> getAllUser();
 
     @Query("create (u:User) SET u.name={name},u.userId={userId},u.gender={gender},u.dateofBirth={dateofBirth},u.mobileNo={mobileNo},u.password={password},u.address={address}")
-    User createUser(@Param("name") String name, @Param("userId") String userId, @Param("gender") String gender, @Param("dateofBirth") String dateofBirth, @Param("mobileNo") String mobileNo, @Param("password") String password, @Param("address") Address address);
+    User createUserNode(@Param("name") String name, @Param("userId") String userId, @Param("gender") String gender, @Param("dateofBirth") String dateofBirth, @Param("mobileNo") String mobileNo, @Param("password") String password, @Param("address") Address address);
 
 }

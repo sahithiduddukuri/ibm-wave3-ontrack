@@ -36,7 +36,7 @@ public class RoutingServiceImpl implements RoutingService {
 
 
     @Override
-    public String saveOrder(Order order) {
+    public SaveOrder saveOrder(Order order) {
         Node node = new Node();
         node.setNodeId(order.getOrderId());
         node.setNode_X(order.getX());
@@ -70,7 +70,7 @@ public class RoutingServiceImpl implements RoutingService {
                 }
             }
             saveOrder.get().setSlots(slots);
-            routingRepository.save(saveOrder.get());
+             return routingRepository.save(saveOrder.get());
         }
         else{
             System.out.println("inside else first time############################");
@@ -105,10 +105,10 @@ public class RoutingServiceImpl implements RoutingService {
             saveOrder.setSlots(slots);
 
             System.out.println("Before Routing service save for new save");
-            routingRepository.save(saveOrder);
+            return routingRepository.save(saveOrder);
         }
 
-        return "order added";
+//        return "order added";
     }
 
 
@@ -117,6 +117,7 @@ public class RoutingServiceImpl implements RoutingService {
 
     @Override
     public List<Vehicle> optimizedRoute(String slotType,String date) {
+        System.out.println("slottype@@#######"+slotType + "date&&&&&&&&&&" + date);
         Optional<SaveOrder> saveOrder = routingRepository.findById(date);
         List<Slot> slots = saveOrder.get().getSlots();
         int noOfOrder=0;

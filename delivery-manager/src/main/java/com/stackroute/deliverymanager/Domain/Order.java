@@ -21,10 +21,13 @@ public class Order
     @Id
     private String orderDate;
 
+
     public Order(@JsonProperty String responseId,@JsonProperty int orderId,@JsonProperty List<Product> productList,@JsonProperty String orderDate) {
         this.responseId = responseId;
         this.orderId = orderId;
         this.productList = productList;
         this.orderDate = orderDate;
     }
+
+
 }

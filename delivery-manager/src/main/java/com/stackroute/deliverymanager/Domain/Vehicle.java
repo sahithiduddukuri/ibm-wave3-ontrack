@@ -1,5 +1,6 @@
 package com.stackroute.deliverymanager.Domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(int id, int cap)
+    public Vehicle(@JsonProperty int id,@JsonProperty int cap)
     {
         this.vehId = id;
         this.capacity = cap;

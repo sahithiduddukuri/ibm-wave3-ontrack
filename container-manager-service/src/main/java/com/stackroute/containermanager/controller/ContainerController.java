@@ -32,13 +32,11 @@ public class ContainerController
 
     public ContainerServiceImpl containerService;
     public ResponseEntity responseEntity;
-    public RestTemplate restTemplate;
 
     @Autowired
-    public ContainerController(ContainerServiceImpl containerService,RestTemplate restTemplate)
+    public ContainerController(ContainerServiceImpl containerService)
     {
         this.containerService = containerService;
-        this.restTemplate = restTemplate;
     }
 
     @PostMapping("/order")

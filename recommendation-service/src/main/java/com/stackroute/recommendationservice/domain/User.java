@@ -28,6 +28,8 @@ public class User {
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
+    @JsonProperty("address")
+    private Address address;
 
 
 

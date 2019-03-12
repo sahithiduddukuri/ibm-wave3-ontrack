@@ -1,6 +1,7 @@
 package com.stackroute.recommendationservice.service;
 
 import com.stackroute.recommendationservice.Repository.UserRepository;
+import com.stackroute.recommendationservice.domain.Address;
 import com.stackroute.recommendationservice.domain.User;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
     User user;
-
+    Address address;
     @Mock
     UserRepository userRepository;
 
@@ -28,12 +29,14 @@ public class UserServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         user = new User();
+        address = new Address("123/A","bangalore","Karnataka","India");
         user.setDateofBirth("28/08/1996");
         user.setPassword("abc123");
         user.setGender("Female");
         user.setMobileNo("7995947734");
         user.setUserId("abc@gmail.com");
         user.setName("Geetha");
+        user.setAddress(address);
         list = new ArrayList<>();
         list.add(user);
     }
@@ -41,14 +44,14 @@ public class UserServiceTest {
     @Test
     public void saveUserTest()
     {
-        when(userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword())).thenReturn(user);
+        when(userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress())).thenReturn(user);
         User savedUser = userService.createUser(user);
         Assert.assertEquals(user,savedUser);
     }
 
     @Test
     public void getUsersTest() {
-        userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword());
+        userRepository.createUser(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress());
         when(userRepository.findAll()).thenReturn(list);
         List<User> userList = userService.getAllUser();
         Assert.assertEquals(list, userList);

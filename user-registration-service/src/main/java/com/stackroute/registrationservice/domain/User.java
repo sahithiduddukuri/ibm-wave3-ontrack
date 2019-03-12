@@ -34,6 +34,7 @@ public class User
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
+    @JsonProperty("address")
     private Address address;
 
     public User(String name, String userId, String password, String mobileNo, String dateofBirth, String gender, Address address) {

@@ -13,17 +13,10 @@
   "dependencies": {
     "@angular/animations": "^7.2.8",
     "@angular/cdk": "^7.3.2",
-<<<<<<< HEAD
     "@angular/common": "^7.2.8",
     "@angular/http": "^6.1.0",
     "@angular/compiler": "^7.2.8",
     "@angular/core": "^7.2.8",
-=======
-    "@angular/common": "~7.2.0",
-    "@angular/http": "^6.1.0",
-    "@angular/compiler": "~7.2.0",
-    "@angular/core": "^7.2.7",
->>>>>>> d47fb31ef6305d3e2ee50e9efeb38d31376ca87d
     "@angular/fire": "^5.1.1",
     "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "^7.2.8",

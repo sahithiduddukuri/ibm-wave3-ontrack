@@ -16,7 +16,7 @@ private microServiceUrl: string;
 
   }
   openDailog() {
-    this.microServiceUrl = 'http://13.233.3.91:8013/api/v1/';
+    this.microServiceUrl = 'http://localhost:8013/api/v1/';
     return this.http.get(this.microServiceUrl);
 }
 AddToCart() {

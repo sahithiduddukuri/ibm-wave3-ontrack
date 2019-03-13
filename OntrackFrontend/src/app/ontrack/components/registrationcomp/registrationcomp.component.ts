@@ -7,6 +7,7 @@ import { registerContentQuery } from '@angular/core/src/render3';
 import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup, FormBuilder } from '@angular/forms';
 import { ErrorStateMatcher, MatSnackBar } from '@angular/material';
 import { Address } from '../../classes/address';
+import { Router } from '@angular/router';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -86,10 +87,11 @@ register(event: any) {
     this.value = event.target.value;
     this.regserv.addregister(this.regform).subscribe(data => {
       console.log('data', data);
+      this.router.navigate([`/home`]);
     });
 
   }
-  constructor(private regserv: RegistrationService, private http: HttpClient) {
+  constructor(private regserv: RegistrationService, private http: HttpClient, private router: Router) {
    console.log('name' , this.value);
   }
   ngOnInit() {

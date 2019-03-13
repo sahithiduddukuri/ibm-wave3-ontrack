@@ -76,7 +76,7 @@ services:
       - 8888
 
 
-  userauthentication:
+  user-authentication:
     image: user-authentication-service:latest
     build: user-authentication/
     restart: always
@@ -92,7 +92,7 @@ services:
       - 8090
 
 
-  userregistrationservice:
+  user-registration-service:
     image: user-registration-servcie:latest
     build: user-registration-service/
     restart: always
@@ -110,7 +110,7 @@ services:
 #    ports:
 #      - 27017:27017
 
-  productservice:
+  product-service:
     image: product-servcie:latest
     build: product-service/
     restart: always
@@ -163,15 +163,15 @@ services:
     expose:
       - 8013
 
-#  stripe-payment:
-#    build: stripe-payment/
-#    image: stripe-payment:latest
-#    container_name: stripe-payment
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8014:8014
-#    restart: always
+  stripe-payment:
+    build: stripe-payment/
+    image: stripe-payment:latest
+    container_name: stripe-payment
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8014:8014
+    restart: always
 
   sonarqube:
     image: sonarqube

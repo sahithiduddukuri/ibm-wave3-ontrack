@@ -45,7 +45,7 @@ public class DeliveryManagerController {
     public ResponseEntity<?>  saveOrder(@RequestBody OrderDTO order)
     {
         System.out.println("this is order value"+order);
-        String uri = "http://localhost:8010/api/v1/order";
+        String uri = "http://13.234.142.187:8010/api/v1/order";
         System.out.println("order" + order);
         SaveOrder result = restTemplate.postForObject(uri,order,SaveOrder.class);
         System.out.println(result);
@@ -55,7 +55,7 @@ public class DeliveryManagerController {
     @GetMapping("/routes")
     public ResponseEntity<?> getRoute(@RequestParam("slotType") String slotType,@RequestParam("date") String date)
     {
-        String uri = "http://localhost:8010/api/v1/route";
+        String uri = "http://13.234.142.187:8010/api/v1/route";
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(uri)
                 .queryParam("slotType", slotType)
                 .queryParam("date",date);

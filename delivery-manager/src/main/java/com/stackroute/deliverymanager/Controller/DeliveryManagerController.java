@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@CrossOrigin(value = "*")
 @RequestMapping( value = "/api/v1")
 public class DeliveryManagerController {
 

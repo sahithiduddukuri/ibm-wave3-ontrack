@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@CrossOrigin(value="*")
 @RequestMapping( value = "api/v1")
 public class RoutingManagerController {
 

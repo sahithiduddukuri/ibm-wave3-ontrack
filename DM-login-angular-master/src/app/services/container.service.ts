@@ -18,8 +18,8 @@ export class ContainerService {
    }
 
  containerMethod(selectedSlot: SelectedSlot) {
-   this.url = 'http://localhost:8018/api/v1/bookedslot';
-   console.log('this method call');
+   this.url = 'http://localhost:8019/api/v1/bookedslot';
+   console.log('this method call', selectedSlot);
    return this.http.post(this.url, JSON.stringify(selectedSlot) , this.httpOptions);
  }
 }

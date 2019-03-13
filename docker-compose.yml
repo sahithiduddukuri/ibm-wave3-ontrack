@@ -75,7 +75,7 @@ services:
     network_mode: host
     hostname: localhost
     ports:
-      - 4201:4201
+      - 4200:4200
     restart: always
 
   routing-manager:

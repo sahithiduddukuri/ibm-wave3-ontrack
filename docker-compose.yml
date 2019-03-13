@@ -26,17 +26,17 @@ services:
       - 27017:27017
     container_name: mongo
     volumes:
-      - /DB/mongo:/data/db
+      - $HOME/DB/mongo/db:/data/db
     network_mode: host
 
   neo4j:
     image: neo4j:latest
     ports:
       - 7474:7474
-      - "7687:7687"
+      - 7687:7687
     network_mode: host
     volumes:
-      - '/neo4j/data:/data'
+      - $HOME/DB/neo4j/data:/data
     environment:
       - NEO4J_AUTH=neo4j/root123
     container_name: neo4j

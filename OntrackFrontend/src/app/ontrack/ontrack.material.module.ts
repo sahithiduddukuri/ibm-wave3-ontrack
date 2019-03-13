@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import { MatGridListModule, MatNativeDateModule} from '@angular/material';
+import { MatGridListModule, MatNativeDateModule, MatSelectModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -33,7 +33,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
        MatInputModule,
        MatTableModule,
        FormsModule,
-       MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule
+       MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule
       ] ,
       exports: [
         MatCardModule,
@@ -46,7 +46,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
           MatGridListModule,
           MatInputModule,
           FormsModule,
-          MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule
+          MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule
 
          ]
 

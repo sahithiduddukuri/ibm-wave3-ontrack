@@ -8,6 +8,19 @@
   border-color: black;
   margin: 25px;
  }
+ .sea{
+  padding-left: 13px;
+  margin-top: 20px;
+ }
+ .bharath{
+  padding-left: 13px;
+  margin-top: 20px;
+ }
+ .sing{
+   display: flex;
+   padding-left:40px;
+   margin-left:  10px;
+ }
  .container{
   display:flex;
  }
@@ -22,20 +35,20 @@
   position: relative;
   flex: auto;
  }
- mat-card-header{
-  margin :auto;
-  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
-  width: 67%; /*Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 100%;
- }
  mat-card-title{
-  position: absolute;font-size: 15px;
+  position: absolute;font-size: 20px;
   left: 20px;;
-  top: 10px;
+  top: 0px;
  }
  mat-card-actions{
   position:absolute;
   bottom: 1px;
+ }
+ mat-card-content img{
+ padding-left: 50px;
+ height: 250px;
+ width: 250px;
+ padding-top: 20px
  }
  .mat-card-actions, .mat-card-content, .mat-card-subtitle {
   display: block;
@@ -49,14 +62,20 @@
   padding-bottom: 50px;
   padding-left: 14.5px;
  }
+ mat-card-actions{
+   padding-left: 100px;
+ }
  mat-card-action button {
   border: 1px solid rgba(255, 255, 255, 0.5);
   color: black;
   border-radius: 3px;
   padding: 1em 3em;
   margin: 1em 0 0 0;
-  background: none;
+  background-color: black;
   cursor: pointer;
+ }
+ mat-card-footer{
+   bottom:3px;
  }
  mat-card-action button:hover {
  background: white;
@@ -85,57 +104,3 @@
   z-index: 1;
   position: fixed;
  }
- .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-[class*="col-"] {
-  width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-  .col-1 {
-    width: 8%;
-  }
-  .col-2 {
-    width: 16%;
-  }
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33%;
-  }
-  .col-5 {
-    width: 41%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-7 {
-    width: 58%;
-  }
-  .col-8 {
-    width: 66%;
-  }
-  .col-9 {
-    width: 75%;
-  }
-  .col-10 {
-    width: 83%;
-  }
-  .col-11 {
-    width: 91%;
-  }
-  .col-12 {
-    width: 100%;
-  }
-}
-
-.p-10 {
-  padding: 10px !important;
-}

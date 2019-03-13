@@ -13,7 +13,7 @@ export class ContainerComponent implements OnInit {
   
     ngOnInit() {
 
-      this.containerService.containerMethod().subscribe(data => {
+      this.containerService.containerMethod(this.bookedslots).subscribe(data => {
         console.log('data fetch from response', data);
         this.bookedslots = data;
      });

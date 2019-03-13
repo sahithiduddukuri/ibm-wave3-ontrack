@@ -13,28 +13,23 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ContainerComponent } from './container/container.component';
-<<<<<<< HEAD
 import { ChartsService } from './services/charts.service';
 import { ChartComponent } from './chart/app.chart';
 
-=======
 import { ButtonComponent } from './button/button.component';
 import { HomeComponent } from './home/home.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
->>>>>>> fc5736e7aacd068685947891433425cd6502ed1c
+import { ContainerService } from './services/container.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-<<<<<<< HEAD
-    // ChartComponent
-=======
     ButtonComponent,
     LoginComponent,
-    HeaderComponent, FooterComponent, HomeComponent
->>>>>>> fc5736e7aacd068685947891433425cd6502ed1c
+    HeaderComponent, FooterComponent, HomeComponent, ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -56,15 +51,14 @@ import {MatCardModule} from '@angular/material/card';
     MatNativeDateModule
   ],
   providers: [
-<<<<<<< HEAD
-   LoginService, HomeService, ChartsService
-=======
-   LoginService, HomeService, MatDatepickerModule, MatNativeDateModule
->>>>>>> fc5736e7aacd068685947891433425cd6502ed1c
+   LoginService, HomeService, ChartsService,
+
+    MatDatepickerModule, MatNativeDateModule, ContainerService
+
   ],
   bootstrap: [AppComponent],
   exports: [ContainerComponent,
     ButtonComponent,
-    LoginComponent,HeaderComponent, FooterComponent, HomeComponent]
+    LoginComponent, HeaderComponent, FooterComponent, HomeComponent, ContainerComponent, ChartComponent]
 })
 export class AppModule { }

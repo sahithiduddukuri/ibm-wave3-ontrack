@@ -6,7 +6,7 @@ export class HomeService {
     constructor(private http: HttpClient) {
     }
     Buy() {
-         this.url = 'http://localhost:3000/slotsAvailable';
+         this.url = 'http://localhost:3000/route';
     console.log('this method call');
     return this.http.get(this.url);
     }

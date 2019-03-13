@@ -1,24 +1,25 @@
-<!-- <div class="container">
-  <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <mat-card>
-    <div class="items2" *ngFor='let p of slotsAvailable' >
-              <mat-card-title>{{ p.date }}</mat-card-title>
-   <mat-card-content>
-          <div class="ring" *ngFor="let r of p['slots']">
+<app-header></app-header>
+<div class="container">
   
-    <button mat-raised-button (click)="slot(r)" [disabled]="r.slotStatus">{{ r.slotNumber }}
-      <p class="type">{{ r.slotType }}</p>
-    </button>
-   </div>
-   </mat-card-content>
-   </div>
+  <mat-card class="cards">
+  
+     <div class="items" *ngFor="let p of data.slotAvailabilities" > 
+      
+      <mat-card-title>{{ p.date }}</mat-card-title>
+
+    
+      <div class="bingo" *ngFor="let r of p.slots">
+          <p class="type">{{ r.slotType }}</p>
+          <mat-card class="lays" *ngFor="let q of r.containers">
+              <p class="type">{{ q.totalContainerSize-q.availableContainerSize }}%</p>
+          </mat-card>
+          </div>
+   
+        </div>
    </mat-card>
   
    <div mat-card-actions class="id">
    <button mat-raised-button (click)="shop()">CONTINUE</button>
    </div>
-  </div> -->
+  </div> 
+  <app-footer></app-footer>

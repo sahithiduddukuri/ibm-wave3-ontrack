@@ -18,8 +18,8 @@ public class RoutingServiceImpl implements RoutingService {
     @Override
     public String[] locationlatlng(Order order) {
         List<Location> locations = new ArrayList<>();
-        Location location0 = new Location("Bangalore");
-        Location location1 = new Location(order.getOrderLoc());
+        Location location1 = new Location("Bangalore");
+        Location location0 = new Location(order.getOrderLoc());
         locations.add(location0);
         locations.add(location1);
         Latitudelongitude latitudelongitude = new Latitudelongitude();

@@ -24,7 +24,7 @@ public class DeliveryManagerController {
     @PostMapping("/slot")
     public ResponseEntity<?>  saveSlot(@RequestBody Order order)
     {
-        String uri = "http://13.234.142.187:8011/api/v1/order";
+        String uri = "http://localhost:8011/api/v1/order";
         System.out.println("order" + order);
         SlotEvaluation result = restTemplate.postForObject(uri,order,SlotEvaluation.class);
         System.out.println(result);
@@ -34,7 +34,7 @@ public class DeliveryManagerController {
     @PostMapping("/slotbooked")
     public ResponseEntity<?> getSelectedSlot(@RequestBody SelectedSlot selectedSlot)
     {
-        String uri = "http://13.234.142.187:8011/api/v1/bookedslot";
+        String uri = "http://localhost:8011/api/v1/bookedslot";
         System.out.println("select slot"+ selectedSlot);
         SlotEvaluation result = restTemplate.postForObject(uri,selectedSlot,SlotEvaluation.class);
         System.out.println(result);
@@ -55,7 +55,7 @@ public class DeliveryManagerController {
     @GetMapping("/routes")
     public ResponseEntity<?> getRoute(@RequestParam("slotType") String slotType,@RequestParam("date") String date)
     {
-        String uri = "http://13.234.142.187:8010/api/v1/route";
+        String uri = "http://localhost:8010/api/v1/route";
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(uri)
                 .queryParam("slotType", slotType)
                 .queryParam("date",date);

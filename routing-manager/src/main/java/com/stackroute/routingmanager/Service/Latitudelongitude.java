@@ -32,12 +32,12 @@ public class Latitudelongitude
 
             if (count < 1) {
                 for (int i = 0; i < locationList.size(); i++) {
-                    for (int j = 0; j < 1; j++) {
+                    for (int j = 0; j < 2; j++) {
                         System.out.println("LocationList"+locationList.get(i).toString());
                         String str1 = locationList.get(0).getLocation();
                         System.out.println("Source loaction"+str1);
                         String str2 = locationList.get(1).getLocation();
-                        origins ="origin="+  str1;
+                        origins ="origin=" +str1 ;
                         destinations ="destination="+  str2;
 
                     System.out.println("origins" + origins);
@@ -91,7 +91,7 @@ public class Latitudelongitude
 
                   String startLocationCoordinates = j4[0].toString();
 
-                    System.out.println("Start loaction coordinates = "+startLocationCoordinates);
+                //    System.out.println("Start loaction coordinates = "+startLocationCoordinates);
                     String [] j7 = startLocationCoordinates.split("lng");
                     String j9 = j7[1].toString();
                    // System.out.println("j9"+j9);
@@ -99,7 +99,7 @@ public class Latitudelongitude
                     String j11 = j10[0].toString();
                     String [] j12 = j11.split("\":");
                     String start_location_lng = j12[1].toString();
-                    System.out.println("Start location : lat = " + start_location_lng);
+                  //  System.out.println("Start location : lat = " + start_location_lng);
                     String j15 = j10[1].toString();
                    // System.out.println("j15" + j15);
                     String [] j16 = j15.split("lat");
@@ -107,7 +107,7 @@ public class Latitudelongitude
                    // System.out.println("j17" + j17);
                     String [] j18 = j17.split("\":");
                     String start_location_lat = j18[1].toString();
-                    System.out.println("Start location : lat = "+start_location_lat);
+                 //   System.out.println("Start location : lat = "+start_location_lat);
                     String [] j5 = j2.split("end_location");
 
                    // System.out.println("wfdiufiuuuuuuuuuuuuiffiuf"+ j5[1].toString());

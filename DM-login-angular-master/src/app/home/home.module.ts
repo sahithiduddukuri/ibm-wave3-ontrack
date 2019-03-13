@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { MatCardModule, MatFormFieldModule, MatNativeDateModule, MatInputModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ChartComponent } from '../chart/app.chart';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

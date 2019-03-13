@@ -11,12 +11,15 @@ import { LoginModule} from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { ContainerComponent } from './container/container.component';
+import { ChartsService } from './services/charts.service';
+import { ChartComponent } from './chart/app.chart';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContainerComponent
+    ContainerComponent,
+    // ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { ContainerComponent } from './container/container.component';
     HomeModule
   ],
   providers: [
-   LoginService, HomeService
+   LoginService, HomeService, ChartsService
   ],
   bootstrap: [AppComponent]
 })

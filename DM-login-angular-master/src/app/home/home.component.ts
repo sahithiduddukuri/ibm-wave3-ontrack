@@ -1,13 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { importType } from '@angular/compiler/src/output/output_ast';
 import { HomeService } from '../services/Home.service';
+import { ChartComponent } from '../chart/app.chart';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild(ChartComponent) chartComponent: ChartComponent;
  slotsAvailable: any = [];
  url: any;
 totalPrice() {

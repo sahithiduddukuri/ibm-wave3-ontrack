@@ -21,4 +21,5 @@ public class Order
     private List<Product> productList;
     @Id
     private String orderDate;
+    private int productCount;
 }

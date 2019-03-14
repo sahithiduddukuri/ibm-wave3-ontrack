@@ -20,8 +20,14 @@ public class BrandServiceImpl implements BrandService{
 
     public List<Brand> getAll()
     {
+        return (List<Brand>) brandRepository.getAll();
+    }
+
+    public List<Brand> getAllBrand()
+    {
         return (List<Brand>) brandRepository.findAll();
     }
+
 
     public Brand createBrandNode(Brand brands) {
         String brandId = brands.getBrandId();

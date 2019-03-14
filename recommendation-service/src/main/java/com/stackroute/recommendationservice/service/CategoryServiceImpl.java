@@ -24,6 +24,11 @@ public class CategoryServiceImpl implements CategoryService {
         return (List<Category>) categoryRepository.getAllProducts();
     }
 
+    public List<Category> getAll()
+    {
+        return (List<Category>) categoryRepository.findAll();
+    }
+
     public Category createNode(Category category) {
         String productTypeId = category.getProductTypeId();
         String productType = category.getProductType();

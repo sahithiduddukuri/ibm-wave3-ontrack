@@ -38,6 +38,7 @@ public class RabbitMqConsumer {
         category.setProductType(product.getProductType());
         category.setProductTypeId(product.getProductTypeId());
         categoryService.createNode(category);
+        categoryService.getAllCategories();
 
         System.out.println("recieved : " +category.toString());
         Product product1 = new Product();
@@ -46,6 +47,7 @@ public class RabbitMqConsumer {
         brand.setBrandId(product.getBrandId());
         brand.setBrand(product.getBrand());
         brandService.createBrandNode(brand);
+        brandService.getAll();
         System.out.println("brand : " +brand.toString());
 
 

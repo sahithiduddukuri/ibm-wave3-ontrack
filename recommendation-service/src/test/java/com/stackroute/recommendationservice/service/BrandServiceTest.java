@@ -45,9 +45,9 @@ public class BrandServiceTest {
 
     @Test
     public void getBrandTest() {
-        brandRepository.save(brands);
+        brandRepository.createBrand(brands.getBrandId(),brands.getBrand());
         when(brandRepository.findAll()).thenReturn(list);
-        List<Brand> userList = brandService.getAll();
+        List<Brand> userList = brandService.getAllBrand();
         Assert.assertEquals(list, userList);
     }
 }

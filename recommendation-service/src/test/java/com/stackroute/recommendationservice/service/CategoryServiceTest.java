@@ -47,8 +47,8 @@ public class CategoryServiceTest {
     public void getCategoryTest() {
         categoryRepository.createCategoryNode(category.getProductTypeId(),category.getProductType());
         when(categoryRepository.findAll()).thenReturn(list);
-        List<Category> userList = categoryService.getAllCategories();
-        Assert.assertNotEquals(list, userList);
+        List<Category> userList = categoryService.getAll();
+        Assert.assertEquals(list, userList);
     }
 }
 

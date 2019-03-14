@@ -50,8 +50,6 @@ public class Product {
     private String brandId;
     @JsonProperty("colour")
     private String colour;
-    @Relationship(type="IS_OF_CATEGORY",direction=Relationship.OUTGOING)
-    private Category category;
 
     @Override
     public String toString() {

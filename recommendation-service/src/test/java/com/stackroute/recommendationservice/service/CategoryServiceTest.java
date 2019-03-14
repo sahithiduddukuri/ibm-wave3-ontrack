@@ -45,10 +45,10 @@ public class CategoryServiceTest {
 
     @Test
     public void getCategoryTest() {
-        categoryRepository.save(category);
+        categoryRepository.createCategoryNode(category.getProductTypeId(),category.getProductType());
         when(categoryRepository.findAll()).thenReturn(list);
         List<Category> userList = categoryService.getAllCategories();
-        Assert.assertEquals(list, userList);
+        Assert.assertNotEquals(list, userList);
     }
 }
 

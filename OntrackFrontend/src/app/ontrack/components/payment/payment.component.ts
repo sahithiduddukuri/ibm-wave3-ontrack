@@ -43,7 +43,7 @@ export class PaymentComponent implements OnInit {
   chargeCard(token: string) {
     // tslint:disable-next-line:prefer-const
     let headers = new Headers({'token': token, 'amount': 100});
-    this.http.post('http://localhost:8014/payment/charge', {}, {headers: headers})
+    this.http.post('http://13.233.3.91:8014/payment/charge', {}, {headers: headers})
       .subscribe(resp => {
         console.log(resp);
       });

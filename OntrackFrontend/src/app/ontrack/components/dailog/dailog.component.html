@@ -1,26 +1,56 @@
 
 <div class= "container">
+
+
+
+
   <div class="mon">
-  <button (click)="closeDailog()" md-dailog-close>
+  <button matTooltip="Close"
+  aria-label="Button that displays a tooltip when focused or hovered over" (click)="closeDailog()" md-dailog-close>
     <mat-icon>close</mat-icon>
-  </button></div>
+  </button>
+</div>
+
+
+
+
 <h1 mat-dialog-title>Product Details</h1>
-<p><img class="id" src="{{data.o.imageURL}}"></p>
-<div class="day">
-<p >Name:{{ data.o.productName }}</p>
-<p>Type:{{ data.o.productType }}</p>
-<p>MRP:{{ data.o.mrp }}</p>
-<p>Price:{{ data.o.price }}</p>
-<p>Dimension:{{ data.o.dimension }}</p>
-<p>Weight:{{ data.o.weight }}</p>
-<p>Size:{{ data.o.size }}</p>
-<p>Data:{{ data.o.gender }}</p>
-<p>Despriction:{{ data.o.description }}</p>
-<p>Brand:{{ data.o.brand }}</p>
-<p>Color:{{ data.o.colour }}</p>
-<div mat-dialog-actions>
-<button mat-raised-button (click)="AddtoCart()" >ADD TO CART</button>
-<button mat-raised-button (click)="buy1()">BUY NOW</button>
+
+
+<div class="wang">
+ 
+ <div class="id">
+   <img mat-card-image src="{{data.o.imageURL}}">
+</div>
+
+
+ <div class="day">
+ <h4>Name:{{ data.o.productName }}</h4>
+ <h4>Type:{{ data.o.productType }}</h4>
+ <h4>MRP:{{ data.o.mrp }}</h4>
+ <h4>Price:{{ data.o.price }}</h4>
+ <h4>Dimension:{{ data.o.dimension }}</h4>
+ <h4>Weight:{{ data.o.weight }}</h4>
+ <h4>Size:</h4>
+ <mat-form-field>
+  <select matNativeControl required>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+  </select>
+ </mat-form-field>
+ <h4>Gender:{{ data.o.gender }}</h4>
+ <h4>Despriction:{{ data.o.description }}</h4>
+ <h4>Brand:{{ data.o.brand }}</h4>
+ <h4>Color:{{ data.o.colour }}</h4>
+</div>
+</div>
+ <div mat-dialog-actions>
+ <button mat-raised-button  matTooltip="ADD TO CART"
+ aria-label="Button that displays a tooltip when focused or hovered over" (click)="AddtoCart()" ><mat-icon>add_shopping_cart</mat-icon></button>
+ <button mat-raised-button matTooltip="BUY NOW"
+ aria-label="Button that displays a tooltip when focused or hovered over" (click)="buy1()"><mat-icon>flash_on</mat-icon></button>
   </div>
-</div>
-</div>
+ 
+ </div>

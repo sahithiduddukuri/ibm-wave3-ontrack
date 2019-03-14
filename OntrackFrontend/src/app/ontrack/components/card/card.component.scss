@@ -10,16 +10,16 @@
  }
  .sea{
   padding-left: 13px;
-  margin-top: 20px;
+  margin-top: 10px;
  }
  .bharath{
   padding-left: 13px;
-  margin-top: 20px;
+  margin-top: 10px;
  }
  .sing{
    display: flex;
-   padding-left:40px;
    margin-left:  10px;
+   margin-bottom: 10px;
  }
  .container{
   display:flex;
@@ -27,22 +27,24 @@
  .product--blue{
   box-shadow: 1px 5px 15px #CCC;
   width: 24.5em;
-  height: 400px;
+  height: 450px;
   border-radius: 3px;
   padding: 2em;
   margin: 1em;
   overflow: auto;
   position: relative;
   flex: auto;
+  left: 50px;
  }
  mat-card-title{
   position: absolute;font-size: 20px;
-  left: 20px;;
-  top: 0px;
+  left: 20px;
+  top: 10px;
  }
  mat-card-actions{
   position:absolute;
-  bottom: 1px;
+  // bottom: 1px;
+  margin-top: 5px;
  }
  mat-card-content img{
  padding-left: 50px;
@@ -63,7 +65,7 @@
   padding-left: 14.5px;
  }
  mat-card-actions{
-   padding-left: 100px;
+   padding-left: 50px;
  }
  mat-card-action button {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -75,7 +77,7 @@
   cursor: pointer;
  }
  mat-card-footer{
-   bottom:3px;
+   bottom:2px;
  }
  mat-card-action button:hover {
  background: white;

@@ -1,13 +1,9 @@
 .container{
-    height:300px;
+    height:600px;
     width: 1000px;
  }
- .day{
-    float:right;
-    font-family: 'Righteous', cursive;
- }
- .mon{
-    float:right;
+ .wang{
+    display:flex;
  } 
  .id{
     height: 300px;
@@ -20,4 +16,17 @@
      float:right;
      padding-left: 1px;
      top:0%;
+ }
+ .mon{
+    padding-left:970px; 
+ }
+ .day{
+    padding-left: 600px;
+ }
+ h1{
+    padding-left: 650px;
+ }
+ mat-dialog-actions{
+    position: absolute;
+    left: 900px;
  }

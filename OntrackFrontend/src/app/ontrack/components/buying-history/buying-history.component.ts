@@ -62,7 +62,7 @@ dataProducts: any;
     console.log('this is the image url', products_id);
     console.log('/products/' + products_id);
     this.db.list('/products/' + products_id).remove();
-    // this.db.list('/products/-L_vPzpG7liLwgC5KxGX').remove();
+    this.db.list('/products/-L_voORmcalYxWvn5r7r').remove();
 
     console.log(this.db.list('/products', ref => ref.orderByChild('userName').equalTo(this.currentUser.jti)));
     console.log('removed');

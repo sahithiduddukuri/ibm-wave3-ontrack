@@ -22,6 +22,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { OntrackMaterialModule } from './ontrack/ontrack.material.module';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -45,7 +46,7 @@ import { OntrackMaterialModule } from './ontrack/ontrack.material.module';
   AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
   // tslint:disable-next-line:max-line-length
-  providers: [OntrackserviceService, SearchService, OnTrackService, LoginService, AngularFireAuth, AngularFireDatabase,  AngularFireStorageModule, AngularFireModule, AngularFirestoreModule],
+  providers: [OntrackserviceService, SearchService, OnTrackService, LoginService, AngularFireAuth, AngularFireDatabase,  AngularFireStorageModule, AngularFireModule, AngularFirestoreModule, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

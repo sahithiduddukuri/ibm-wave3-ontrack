@@ -56,11 +56,125 @@ h1
     background-image: url("../../../../assets/img/background.jpeg");
     opacity: 0.9;
 }
-@media (max-width: 1024px){
-    .pics[_ngcontent-c4] {
+@media (max-width:1024px)
+{
+    .button[_ngcontent-c1] {
+        z-index: 1;
+        position: absolute;
+        margin-left: 390px;
+        top: 33px;
+    }  
+ input[type=text] {
+    width: 25%;
+    padding: 10px 10px;
+    margin: 0px 0;
+    left: 400px;
+    box-sizing: border-box;
+    color: #000;
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+    position: fixed;
+}
+wrap {
+    padding-top: 35px;
+}
+.pics {
+    margin-top: 200px;
+    position: absolute;
+    padding-left: 0%;
+    margin-left: 250px;
+    width: 380px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 50px 50px 50px 50px;
+    background-image: url("../../../../assets/img/background.jpeg");
+    opacity: 0.9;
+}
+
+
+
+}
+@media (max-width:786px){
+    input[type=text] {
+        width: 15%;
+        padding: 10px 10px;
+        margin: 0px 0;
+        left: 300px;
+        box-sizing: border-box;
+        color: #000;
+        position: absolute;
+        top: 30px;
+        z-index: 1;
+        position: fixed;
+    }
+    .button {
+        z-index: 1;
+        position: absolute;
+        margin-left: 140px;
+        top: 33px;
+    }
+    .wrap {
+        padding-top: 35px;
+    }
+}
+
+
+
+
+
+@media (max-width:320px)
+{header img
+    {
+        height: 50px;
+        width: 100px;
+    }
+
+    input[type=text] {
+        width: 19%;
+        padding: 10px 10px;
+        margin: 0px 0;
+        left: 10px;
+        box-sizing: border-box;
+        color: #000;
+        top: 100px;
+        margin-top: 22px;
+        position: absolute;
+        top: 30px;
+        z-index: 1;
+        /* position: fixed; */
+    }
+    .button {
+        z-index: 1;
+        position: absolute;
+        margin-left: -58px;
+        top: 55px;
+    }
+    .wrap {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 19px;
+    }
+    .sak {
+        color: white;
+        position: relative;
+        padding-right: 55px;
+        padding-left: 20px;
+        padding-top: 55px;
+    }
+    .container {
+        background-image: url("../../../../assets/img/background.jpg");
+        background-image: cover;
+        background-repeat: no-repeat;
+        margin: 0px;
+        width: 200%;
+        height: 750px;
+    }
+    .pics {
         margin-top: 200px;
         position: absolute;
-        margin-left: 250px;
+        margin-left: 100px;
         width: 380px;
         height: 300px;
         border-radius: 40px;
@@ -69,28 +183,18 @@ h1
         opacity: 0.9;
     }
 }
-@media(max-width: 320px){
-    .container[_ngcontent-c4] {
-        background-image: url("../../../../assets/img/background.jpg");
-        background-image: cover;
-        background-repeat: no-repeat;
-        margin: 0px;
-        width: 200%;
-        height: 750px;
-    }
-}
-@media(max-width: 375px){
-    .container[_ngcontent-c4] {
-        background-image: url("../../../../assets/img/background.jpg");
-        background-image: cover;
-        background-repeat: no-repeat;
-        margin: 0px;
-        width: 200%;
-        height: 750px;
-    }
-}
 @media(max-width: 425px){
-    .container[_ngcontent-c4] {
+    .container {
+        background-image: url("../../../../assets/img/background.jpg");
+        background-image: cover;
+        background-repeat: no-repeat;
+        margin: 0px;
+        width: 200%;
+        height: 750px;
+    }
+} 
+@media(max-width: 375px){
+    .container {
         background-image: url("../../../../assets/img/background.jpg");
         background-image: cover;
         background-repeat: no-repeat;

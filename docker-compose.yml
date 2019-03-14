@@ -54,7 +54,7 @@ services:
       expose:
       - 8888
 
-  deliverymanagerlogin:
+  delivery-manager-login:
     image: deliverymanagerlogin:latest
     build: delivery-manager-login/
     restart: always

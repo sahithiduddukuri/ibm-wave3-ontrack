@@ -12,7 +12,7 @@ public interface UserRepository extends Neo4jRepository<User, String> {
     @Query("match(n:User) return n")
     List<User> getAllUser();
 
-    @Query("Merge (u:User) SET u.name={name},u.userId={userId},u.gender={gender},u.dateofBirth={dateofBirth},u.mobileNo={mobileNo},u.password={password}")
+    @Query("Create (u:User) SET u.name={name},u.userId={userId},u.gender={gender},u.dateofBirth={dateofBirth},u.mobileNo={mobileNo},u.password={password}")
     User createUserNode(@Param("name") String name, @Param("userId") String userId, @Param("gender") String gender, @Param("dateofBirth") String dateofBirth, @Param("mobileNo") String mobileNo, @Param("password") String password);
 
 }

@@ -15,6 +15,6 @@ public interface CategoryRepository extends Neo4jRepository<Category, String> {
     @Query("MATCH (a:Product),(b:Category) WHERE b.productType = a.productType MERGE (a)-[:IS_OF_CATEGORY]->(b) RETURN a,b")
     Product getAllProducts();
 
-    @Query("Merge (c:Category) SET c.id={productId},c.productType={productType}")
+    @Query("Create (c:Category) SET c.id={productId},c.productType={productType}")
     Category createCategoryNode(@Param("productId") String productId, @Param("productType") String productType);
 }

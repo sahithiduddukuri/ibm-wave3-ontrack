@@ -84,13 +84,13 @@ input[type=text] {
   }  
 @media (max-width:1024px)
 {
-    .button[_ngcontent-c1] {
+    .button {
         z-index: 1;
         position: absolute;
         margin-left: 390px;
         top: 33px;
     }  
- input[type=text][_ngcontent-c1] {
+ input[type=text] {
     width: 25%;
     padding: 10px 10px;
     margin: 0px 0;
@@ -102,12 +102,12 @@ input[type=text] {
     z-index: 1;
     position: fixed;
 }
-wrap[_ngcontent-c1] {
+.wrap {
     padding-top: 35px;
 }
 }
 @media (max-width:786px){
-    input[type=text][_ngcontent-c1][_ngcontent-c1] {
+    input[type=text] {
         width: 15%;
         padding: 10px 10px;
         margin: 0px 0;
@@ -119,24 +119,93 @@ wrap[_ngcontent-c1] {
         z-index: 1;
         position: fixed;
     }
-    .button[_ngcontent-c1][_ngcontent-c1] {
+    .button {
         z-index: 1;
         position: absolute;
         margin-left: 140px;
         top: 33px;
     }
-    .wrap[_ngcontent-c1] {
+    .wrap {
         padding-top: 35px;
     }
 }
+@media (max-width:425px){
+    header img {
+        height: 100px;
+        width: 100px;
+    }
+    input[type=text] {
+        width: 15%;
+        padding: 10px 10px;
+        margin: 0px 0;
+        left: 100px;
+        color: #000;
+        position: absolute;
+        top: 55px;
+    }
+    .button {
+        z-index: 1;
+        position: absolute;
+        margin-left: -10px;
+        top: 57px
+    }
+        .wrap {
+            padding-top: 35px;
+            position: absolute;
+            margin-left: 250px;
+            margin-top: 30px;
+    }
+    .sak {
+        color: white;
+        position: relative;
+        padding-right: 40px;
+        padding-left: 20px;
+        padding-top: 55px;
+    }
+ }
+ @media (max-width:375px){
+    header img {
+        height: 100px;
+        width: 100px;
+    }
+    input[type=text] {
+        width: 15%;
+        padding: 10px 10px;
+        margin: 0px 0;
+        left: 100px;
+        color: #000;
+        position: absolute;
+        top: 55px;
+    }
+    .button {
+        z-index: 1;
+        position: absolute;
+        margin-left: -10px;
+        top: 57px
+    }
+        .wrap {
+            padding-top: 35px;
+            position: absolute;
+            margin-left: 250px;
+            margin-top: 30px;
+    }
+    .sak {
+        color: white;
+        position: relative;
+        padding-right: 0px;
+        padding-left: 20px;
+        padding-top: 55px;
+    }
+ }
+  
 @media (max-width:320px)
-{header[_ngcontent-c1] img[_ngcontent-c1]
+{header img
     {
         height: 50px;
         width: 100px;
     }
 
-    input[type=text][_ngcontent-c1][_ngcontent-c1][_ngcontent-c1] {
+    input[type=text] {
         width: 19%;
         padding: 10px 10px;
         margin: 0px 0;
@@ -150,18 +219,18 @@ wrap[_ngcontent-c1] {
         z-index: 1;
         /* position: fixed; */
     }
-    .button[_ngcontent-c1][_ngcontent-c1][_ngcontent-c1] {
+    .button {
         z-index: 1;
         position: absolute;
         margin-left: -110px;
         top: 55px;
     }
-    .wrap[_ngcontent-c1] {
+    .wrap {
         position: absolute;
         margin-left: 150px;
         margin-top: 19px;
     }
-    .sak[_ngcontent-c1] {
+    .sak {
         color: white;
         position: relative;
         padding-right: 55px;

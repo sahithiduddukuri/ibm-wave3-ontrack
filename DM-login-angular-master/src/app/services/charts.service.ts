@@ -12,7 +12,7 @@ export class ChartsService {
 
   getJSON(date, slot): Observable<any> {
 
-    return this.http.get('http://localhost:8010/api/v1/route' + "?" + "date=" + date + "&" + "slotType=" + slot);
+    return this.http.get('http://13.234.142.187:8010/api/v1/route' + "?" + "date=" + date + "&" + "slotType=" + slot);
   }
 }
 

@@ -16,16 +16,15 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, scope = User.class)
-public class User
-{
-//    @Id
+public class User {
+    //    @Id
 //    @JsonProperty("id")
 //    private int id;
     @Id
-    @JsonProperty("name")
-    private String name;
     @JsonProperty("userId")
     private String userId;
+    @JsonProperty("name")
+    private String name;
     @JsonProperty("password")
     private String password;
     @JsonProperty("mobileNo")
@@ -107,8 +106,8 @@ public class User
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
-                ", userId='" + userId + '\'' +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +

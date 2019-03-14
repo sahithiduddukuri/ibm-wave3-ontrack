@@ -29,7 +29,7 @@ public class RabbitMqConsumer {
 
     Category category = new Category();
     Brand brand = new Brand();
-    @RabbitListener(queues="${jsa.rabbitmq.queue2}", containerFactory="jsaFactory")
+    @RabbitListener(queues="${jsa.rabbitmq.queue2}")
     public void recievedMessageFromProduct(Product product) {
 
         System.out.println("rabbitMq call");
@@ -55,11 +55,12 @@ public class RabbitMqConsumer {
 
     }
 
-    @RabbitListener(queues="${jsa.rabbitmq.queue4}", containerFactory="jsaFactory")
+    @RabbitListener(queues="${jsa.rabbitmq.queue4}")
     public void receivedmessagefromuser(User user){
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         System.out.println("recieved user : " +user.toString());
-        // userService.createUser(user);
+        this.user = user;
+        userService.createUser(user);
 
     }
 }

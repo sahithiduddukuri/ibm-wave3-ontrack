@@ -1,3 +1,4 @@
+import { OrderComponent } from './ontrack/components/order/order.component';
 import { ProfileComponent } from './ontrack/components/profile/profile.component';
 import { BuyComponent } from './ontrack/components/buy/buy.component';
 // import { CartComponent } from './ontrack/components/cart/cart.component';
@@ -73,6 +74,9 @@ const routes: Routes = [
   },
   {
     path: 'payment', component: PaymentComponent
+  },
+  {
+    path: 'order', component: OrderComponent
   },
   {
     path: '**', component: HomeComponent

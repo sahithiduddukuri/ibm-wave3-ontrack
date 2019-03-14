@@ -1,3 +1,4 @@
+import { OrderComponent } from './components/order/order.component';
 import { BuyingHistoryComponent } from './components/buying-history/buying-history.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BuyComponent } from './components/buy/buy.component';
@@ -33,7 +34,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent, OrderComponent],
 
  imports: [
   CommonModule,
@@ -74,7 +75,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent, OrderComponent]
 
 })
 export class OntrackModule { }

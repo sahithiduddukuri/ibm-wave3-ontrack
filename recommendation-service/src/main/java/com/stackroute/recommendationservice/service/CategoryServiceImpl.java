@@ -2,6 +2,7 @@ package com.stackroute.recommendationservice.service;
 
 import com.stackroute.rabbitmq.domain.Category;
 import com.stackroute.recommendationservice.Repository.CategoryRepository;
+import com.stackroute.recommendationservice.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     public List<Category> getAllCategories()
     {
-        return (List<Category>) categoryRepository.findAll();
+        return (List<Category>) categoryRepository.getAllProducts();
     }
 
     public Category createNode(Category category) {

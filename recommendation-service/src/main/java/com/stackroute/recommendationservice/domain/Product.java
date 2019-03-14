@@ -1,12 +1,15 @@
 package com.stackroute.recommendationservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.stackroute.rabbitmq.domain.Brand;
+import com.stackroute.rabbitmq.domain.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 //import org.springframework.data.annotation.Id;
 
 //@Builder
@@ -47,6 +50,8 @@ public class Product {
     private String brandId;
     @JsonProperty("colour")
     private String colour;
+    @Relationship(type="IS_OF_CATEGORY",direction=Relationship.OUTGOING)
+    private Category category;
 
     @Override
     public String toString() {

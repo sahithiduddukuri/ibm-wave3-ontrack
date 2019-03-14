@@ -39,39 +39,28 @@
 </mat-card>  -->
 
 <head>
-  <script>$('.input-cart-number').on('keyup change', function(){
-  
-    var cardNumber = '';
-    $('.input-cart-number').each(function(){
-      cardNumber += $(this).val();
-      
-    })
-    
-    $('.credit-card-box .number').html(card_number);
-  });
-  
-  $('#card-holder').on('keyup change', function(){
-    $t = $(this);
-    $('.credit-card-box .card-holder div').html($t.val());
-  });
-  
-  
-  $('#card-cvc').on('focus', function(){
-    $('.credit-card-box').addClass('hover');
-  }).on('blur', function(){
-    $('.credit-card-box').removeClass('hover');
-  }).on('keyup change', function(){
-    $('.cvc div').html($(this).val());
-  });
-  
-  
-  setTimeout(function(){
-    $('#card-cvc').focus().delay(1000).queue(function(){
-      $(this).blur().dequeue();
-    });
-  }, 500);
-  
-  
+  <script>
+    new Card({
+  form: 'form',
+  container: '.card',
+  formSelectors: {
+    cardNumberInput: 'input[name=cardNumber]',
+    expiryMonthInput: 'input[name=expiryMonth]',
+    expiryYearInput: 'input[name=expiryYear]',
+    cvcInput: 'input[name=cvc]',
+    nameOnCardInput: 'input[name=nameOnCard]'
+  },
+
+  width: 390, // optional — default 350px
+  formatting: true,
+
+  placeholders: {
+    number: '•••• •••• •••• ••••',
+    name: 'Full Name',
+    expiry: '••/••',
+    cvc: '•••'
+  }
+})
   </script>
 </head>
 <div class="checkout">
@@ -143,7 +132,7 @@
   <form class="form" autocomplete="off" novalidate>
     <fieldset>
       <label for="card-number">Card Number</label>
-        <input id="card-number" class="input-cart-number" [(ngModel)]="cardNumber" name="card-number" type="text" size="20" data-stripe="number">
+        <input id="card-number" class="input-cart-number" [(ngModel)]="cardNumber" name="cardNumber" type="text" size="20" data-stripe="number">
         
     </fieldset>
     <fieldset>
@@ -153,10 +142,10 @@
     <fieldset class="fieldset-expiration">
       <label for="card-expiration-month">Expiration (MM/YYYY)</label>
       <div class="form-row">
-        <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" size="2" data-stripe="exp_month">
+        <input [(ngModel)]="expiryMonth" name="expiryMonth" type="text" size="2" data-stripe="exp_month">
       </div>
       <div class="form-row">
-      <input [(ngModel)]="expiryYear" name="expiry-year" type="text" size="2" data-stripe="exp_year">
+      <input [(ngModel)]="expiryYear" name="expiryyear" type="text" size="2" data-stripe="exp_year">
     </div>
   </fieldset>
     <fieldset class="fieldset-cvc">

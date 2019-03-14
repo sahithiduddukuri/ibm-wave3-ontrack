@@ -20,7 +20,6 @@ public class ProductServiceImpl implements ProductService{
 
     public List<Product> getAll()
     {
-        System.out.println("qiwgdiudqgw");
         return (List<Product>)productRepository.findAll();
     }
 
@@ -46,5 +45,5 @@ public class ProductServiceImpl implements ProductService{
     }
 
 
-    }
+}
 

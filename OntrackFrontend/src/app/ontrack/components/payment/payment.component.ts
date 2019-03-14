@@ -1,6 +1,8 @@
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 // import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -14,7 +16,7 @@ export class PaymentComponent implements OnInit {
   cvc: string;
   message: string;
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private router: Router) {}
   ngOnInit() {
   }
   chargeCreditCard() {
@@ -31,6 +33,7 @@ export class PaymentComponent implements OnInit {
         // tslint:disable-next-line:prefer-const
         let token = response.id;
         this.chargeCard(token);
+        this.router.navigate([`/order`]);
       } else {
         this.message = response.error.message;
         console.log(response.error.message);
@@ -45,5 +48,4 @@ export class PaymentComponent implements OnInit {
         console.log(resp);
       });
   }
-
 }

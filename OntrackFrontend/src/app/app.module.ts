@@ -27,7 +27,7 @@ import { OntrackMaterialModule } from './ontrack/ontrack.material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

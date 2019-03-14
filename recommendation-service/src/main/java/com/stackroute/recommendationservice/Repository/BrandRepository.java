@@ -1,18 +1,18 @@
 package com.stackroute.recommendationservice.Repository;
 
 import com.stackroute.rabbitmq.domain.Brand;
+import com.stackroute.recommendationservice.domain.Product;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
 
 public interface BrandRepository extends Neo4jRepository<Brand, String> {
 
-    @Query("match(n:Brand) return n")
-    List<Brand> getAll();
+    @Query("match (a:Product), (b:Brand) where a.brand = b.brand merge (a)-[:related]->(b) return a,b")
+    Product getAll();
 
-    @Query("create (b:Brand) SET b.brandId={brandId},b.brand={brand}")
+    @Query("Merge (b:Brand) SET b.brandId={brandId},b.brand={brand}")
     Brand createBrand(@Param("brandId") String brandId, @Param("brand") String brand);
 }
 

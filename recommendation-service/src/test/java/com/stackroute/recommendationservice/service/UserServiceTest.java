@@ -17,7 +17,6 @@ import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
     User user;
-    Address address;
     @Mock
     UserRepository userRepository;
 
@@ -29,14 +28,12 @@ public class UserServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         user = new User();
-        address = new Address("123/A","bangalore","Karnataka","India");
         user.setDateofBirth("28/08/1996");
         user.setPassword("abc123");
         user.setGender("Female");
         user.setMobileNo("7995947734");
         user.setUserId("abc@gmail.com");
         user.setName("Geetha");
-        user.setAddress(address);
         list = new ArrayList<>();
         list.add(user);
     }
@@ -44,14 +41,14 @@ public class UserServiceTest {
     @Test
     public void saveUserTest()
     {
-        when(userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress())).thenReturn(user);
+        when(userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword())).thenReturn(user);
         User savedUser = userService.createUser(user);
         Assert.assertEquals(user,savedUser);
     }
 
     @Test
     public void getUsersTest() {
-        userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword(),user.getAddress());
+        userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword());
         when(userRepository.findAll()).thenReturn(list);
         List<User> userList = userService.getAllUser();
         Assert.assertEquals(list, userList);

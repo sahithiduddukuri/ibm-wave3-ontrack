@@ -163,15 +163,15 @@ services:
     expose:
       - 8013
 
-#  stripe-payment:
-#    build: stripe-payment/
-#    image: stripe-payment:latest
-#    container_name: stripe-payment
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8014:8014
-#    restart: always
+  stripe-payment:
+    build: stripe-payment/
+    image: stripe-payment:latest
+    container_name: stripe-payment
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8014:8014
+    restart: always
 
   sonarqube:
     image: sonarqube

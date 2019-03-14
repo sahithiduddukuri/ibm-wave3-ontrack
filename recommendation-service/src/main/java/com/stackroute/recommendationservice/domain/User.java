@@ -9,17 +9,13 @@ import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
 @Data
-//@AllArgsConstructor
-//@NoArgsConstructor
 public class User {
-//    @JsonProperty("id")
-//    private int id;
+
     @Id
-    @JsonProperty("name")
-    private String name;
     @JsonProperty("userId")
     private String userId;
-
+    @JsonProperty("name")
+    private String name;
     @JsonProperty("password")
     private String password;
     @JsonProperty("mobileNo")
@@ -28,20 +24,17 @@ public class User {
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-    @JsonProperty("address")
-    private Address address;
 
 
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
-                ", userId='" + userId + '\'' +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", dateofBirth='" + dateofBirth + '\'' +
                 ", gender='" + gender + '\'' +
-                ", address=" + address +
                 '}';
     }
 }

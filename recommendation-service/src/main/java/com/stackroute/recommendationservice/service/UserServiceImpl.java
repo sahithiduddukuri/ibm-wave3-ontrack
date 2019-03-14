@@ -20,11 +20,13 @@ public class UserServiceImpl implements  UserService{
         this.userRepository = userRepository;
     }
 
+    @Override
     public List<User> getAllUser()
     {
         return (List<User>) userRepository.findAll();
     }
 
+    @Override
     public User createUser(User user) {
         String name = user.getName();
         String userId = user.getUserId();
@@ -32,8 +34,19 @@ public class UserServiceImpl implements  UserService{
         String dateofBirth = user.getDateofBirth();
         String password = user.getPassword();
         String mobileNo = user.getMobileNo();
-        Address address = user.getAddress();
-        User savedUser = userRepository.createUserNode(name,userId,gender,dateofBirth,mobileNo,password,address);
+        User savedUser = userRepository.createUserNode(name,userId,gender,dateofBirth,mobileNo,password);
         return savedUser;
+
     }
+
+//    public User createUser(User user) {
+//        String name = user.getName();
+//        String userId = user.getUserId();
+//        String gender = user.getGender();
+//        String dateofBirth = user.getDateofBirth();
+//        String password = user.getPassword();
+//        String mobileNo = user.getMobileNo();
+//        User savedUser = userRepository.createUserNode(name,userId,gender,dateofBirth,mobileNo,password);
+//        return savedUser;
+//    }
 }

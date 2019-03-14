@@ -30,11 +30,11 @@ import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 import { PaymentComponent } from './components/payment/payment.component';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
  @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent, OrderComponent],
+  declarations: [HomeComponent, CardComponent, SearchComponent, RegistrationcompComponent, DailogComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, ProfileComponent, BuyingHistoryComponent, PaymentComponent, OrderComponent],
 
  imports: [
   CommonModule,
@@ -75,7 +75,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
 
   // tslint:disable-next-line:max-line-length
-  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, EditProfileComponent, PaymentComponent, OrderComponent]
+  exports: [HomeComponent, CardComponent, SearchComponent, DailogComponent, RegistrationcompComponent, CartComponent, HeaderComponent, LoginComponent, BuyComponent, BuyingHistoryComponent, PaymentComponent, OrderComponent]
 
 })
 export class OntrackModule { }

@@ -19,9 +19,6 @@ export class ProfileComponent implements OnInit {
   loginToken: Userlogin;
   jti: any;
   constructor(private services: RegistrationService, private router: Router) { }
-  edit() {
-    this.router.navigateByUrl('edit-profile');
-  }
   ngOnInit() {
     try {
       const tokenObtained = localStorage.getItem('token');

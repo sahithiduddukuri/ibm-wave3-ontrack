@@ -5,11 +5,15 @@
  .wang{
     display:flex;
  } 
- .id{
-    height: 300px;
-    width:  500px;
-    position: absolute;
- }
+//  .id{
+//     height: 300px;
+//     width:  500px;
+//     position:relative;
+//  }
+.mat-card-lg-image{
+   height:300px;
+   width:500px;
+}
  mat-icon{
      color:black;
      text-decoration: none;
@@ -21,12 +25,12 @@
     padding-left:970px; 
  }
  .day{
-    padding-left: 600px;
+    padding-left: 100px;
  }
  h1{
     padding-left: 650px;
  }
- mat-dialog-actions{
-    position: absolute;
-    left: 900px;
- }
+.ding button{
+   height:40px;
+   width:40px;
+}

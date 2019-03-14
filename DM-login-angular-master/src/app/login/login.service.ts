@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class LoginService {
 
-    private loginUrl = 'http://localhost:8808/api/deliveryManager';  // URL to web api
+    private loginUrl = 'http://13.234.142.187:8808/api/deliveryManager';  // URL to web api
 
     constructor(
         private http: HttpClient) {

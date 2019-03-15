@@ -16,16 +16,16 @@ private microServiceUrl: string;
 
   }
   openDailog() {
-    this.microServiceUrl = 'https://shoefly.stackroute.io:8092/products-search-service/api/v1/';
+    this.microServiceUrl = 'https://shoefly.stackroute.io/products-search-service/api/v1/';
     return this.http.get(this.microServiceUrl);
 }
 AddToCart() {
-    this.microServiceUrl = 'https://shoefly.stackroute.io:8092/products-search-service/api/v1/';
+    this.microServiceUrl = 'https://shoefly.stackroute.io/products-search-service/api/v1/';
     return this.http.get(this.microServiceUrl);
 }
   searchByProductStartsWith(productBrand: string) {
    const regx = `${productBrand}`;
-   this.microServiceUrl = 'https://shoefly.stackroute.io:8092/products-search-service/api/v1/';
+   this.microServiceUrl = 'https://shoefly.stackroute.io/products-search-service/api/v1/';
    console.log('Regx', regx);
    console.log('hello world' + this.microServiceUrl + 'search-brand/' + productBrand);
    console.log( 'result' + this.http.get(this.microServiceUrl + 'search-brand/' + productBrand , { observe: 'response' }));

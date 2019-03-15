@@ -27,24 +27,24 @@ export class OnTrackService {
 }
 
 openDailog() {
-    this.url = 'http://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 Buy(order: Order) {
 
-    this.url = ' http://ontrack.stackroute.io:8092/delivery-manager/api/v1/slot';
+    this.url = ' https://ontrack.stackroute.io:8092/delivery-manager/api/v1/slot';
     return this.http.post(this.url, JSON.stringify(order) , this.httpOptions);
  }
  OrderSave(slot: Slot) {
-   this.url = 'http://ontrack.stackroute.io:8092/delivery-manager/api/v1/saveorder';
+   this.url = 'https://ontrack.stackroute.io:8092/delivery-manager/api/v1/saveorder';
     return this.http.post(this.url, JSON.stringify(slot), this.httpOptions);
  }
 profile() {
-    this.url = 'http://shoefly.stackroute.io:8092/user-registration/api/v1/user/';
+    this.url = 'https://shoefly.stackroute.io:8092/user-registration/api/v1/user/';
     return this.http.get(this.url);
 }
 REMOVE() {

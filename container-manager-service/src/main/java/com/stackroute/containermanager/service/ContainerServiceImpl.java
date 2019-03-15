@@ -232,6 +232,18 @@ public class ContainerServiceImpl implements ContainerService {
         return null;
     }
 
+    @Override
+    public SlotEvaluation getSlotByDate(String date) throws OrderNotFound {
+//        return null;
+        if(slotRepository.existsById(date))
+        {
+            return slotRepository.findById(date).get();
+        }
+        else{
+            return null;
+        }
+    }
+
     public static String getNextDate(String  curDate) {
         String nextDate="";
 

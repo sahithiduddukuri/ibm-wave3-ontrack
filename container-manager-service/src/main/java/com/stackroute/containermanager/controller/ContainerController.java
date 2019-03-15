@@ -46,24 +46,18 @@ public class ContainerController
     @PostMapping("/bookedslot")
     public  ResponseEntity<?> selectedSlot(@RequestBody SelectedSlot selectedSlot) throws OrderNotFound , OrderAlreadyExists {
 
-
-     /*   private int orderId;
-        private int vehicleId;
-        private String orderLoc;
-        private int x;
-        private int y;
-        private String orderDate;
-        private int demand;
-        private int noOfOrders;
-        private Node node;
-        private String slotType; */
-
-
-
-      /*  String uri = "http://localhost:8010/api/v1/order";
-       SelectedSlot selectedSlot1 = restTemplate.postForObject(uri,selectedSlot,SelectedSlot.class);*/
-
-
         return new ResponseEntity<>(containerService.saveSelecteSlots(selectedSlot),HttpStatus.OK);
+    }
+
+    @GetMapping("/getSlot")
+    public ResponseEntity<?> getSlot(@RequestParam("date") String date) throws OrderNotFound
+    {
+        try {
+            return new ResponseEntity <SlotEvaluation>(containerService.getSlotByDate(date), HttpStatus.OK);
+        }
+        catch(Error err)
+        {
+            return new ResponseEntity<>(err.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 }

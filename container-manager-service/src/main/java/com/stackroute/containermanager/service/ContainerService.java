@@ -14,5 +14,6 @@ public interface ContainerService
 {
     public SlotEvaluation saveOrderAndGetSlots(Order order) throws OrderAlreadyExists;
     public SlotEvaluation saveSelecteSlots(SelectedSlot selectedSlot) throws OrderNotFound, OrderAlreadyExists;
+    public SlotEvaluation getSlotByDate(String date) throws OrderNotFound;
 
 }

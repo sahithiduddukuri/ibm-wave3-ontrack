@@ -69,5 +69,21 @@ public class DeliveryManagerController {
         return new ResponseEntity<List<Vehicle>>((List<Vehicle>) result,HttpStatus.OK);
     }
 
+
+    @GetMapping("getSlot/")
+    public ResponseEntity<?> getSlot(@RequestParam("date") String date)
+    {
+        String uri = "http://0.0.0.0:8011/api/v1/getSlot";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(uri)
+                .queryParam("date", date);
+
+
+        Map<String, String> uriParams = new HashMap<String, String>();
+        uriParams.put("date",date);
+        SlotEvaluation result = restTemplate.getForObject(builder.buildAndExpand(uriParams).toUri(),SlotEvaluation.class);
+        System.out.println(result);
+        return new ResponseEntity<SlotEvaluation>(result,HttpStatus.OK);
+    }
+
 }
 

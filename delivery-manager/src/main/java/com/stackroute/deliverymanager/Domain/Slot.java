@@ -1,5 +1,8 @@
 package com.stackroute.deliverymanager.Domain;
 
+import lombok.Data;
+import java.util.List;
+@Data
 public class Slot
 {
     private boolean slotStatus;
@@ -7,7 +10,7 @@ public class Slot
     private double cost;
     private double availableContainer;
     private int availableContainerSize = 100;
-
+    private List<Container> containers;
     public Slot(boolean slotStatus, String slotType, double cost, double availableContainer , int availableContainerSize)
     {
         this.slotStatus = slotStatus;

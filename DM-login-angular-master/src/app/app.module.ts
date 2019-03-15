@@ -7,7 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // tslint:disable-next-line:max-line-length
-import { MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatToolbarModule, MatNativeDateModule } from '@angular/material';
+import { MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatToolbarModule, MatNativeDateModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -21,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { ContainerService } from './services/container.service';
+import { DatePipe } from '@angular/common';
+import { SlotComponent } from './slot/slot.component';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { ContainerService } from './services/container.service';
     ContainerComponent,
     ButtonComponent,
     LoginComponent,
-    HeaderComponent, FooterComponent, HomeComponent, ChartComponent
+    HeaderComponent, FooterComponent, HomeComponent, ChartComponent, SlotComponent
   ],
   imports: [
     BrowserModule,
@@ -48,17 +50,20 @@ import { ContainerService } from './services/container.service';
     MatIconModule,
     MatDatepickerModule,
     MatCardModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [
    LoginService, HomeService, ChartsService,
 
-    MatDatepickerModule, MatNativeDateModule, ContainerService
+    MatDatepickerModule, MatNativeDateModule, ContainerService, DatePipe
 
   ],
   bootstrap: [AppComponent],
   exports: [ContainerComponent,
     ButtonComponent,
-    LoginComponent, HeaderComponent, FooterComponent, HomeComponent, ContainerComponent, ChartComponent]
+    LoginComponent, HeaderComponent, FooterComponent, HomeComponent, ContainerComponent, ChartComponent, SlotComponent]
 })
 export class AppModule { }

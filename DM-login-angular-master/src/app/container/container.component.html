@@ -1,25 +1,28 @@
-<app-header></app-header>
+<app-header></app-header> 
 <div class="container">
+  <table>
+    <tr>
+      <td>
+          <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Choose a date"
+                (dateInput)="addEvent($event)"
+              />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+</td>
+<td>
+  <div mat-card-actions class="id">
+    <button mat-raised-button (click)="checkcontainer()">CHECK CONTAINER</button>
+    </div>
+  </td>
+  </tr>
+  </table>
   
-  <mat-card class="cards">
-  
-     <div class="items" *ngFor="let p of data.slotAvailabilities" > 
-      
-      <mat-card-title>{{ p.date }}</mat-card-title>
-
-    
-      <div class="bingo" *ngFor="let r of p.slots">
-          <p class="type">{{ r.slotType }}</p>
-          <mat-card class="lays" *ngFor="let q of r.containers">
-              <p class="type">{{ q.totalContainerSize-q.availableContainerSize }}%</p>
-          </mat-card>
-          </div>
-   
-        </div>
-   </mat-card>
-  
-   <div mat-card-actions class="id">
-   <button mat-raised-button (click)="shop()">CONTINUE</button>
-   </div>
-  </div> 
+  <div *ngIf='loaded'>
+  <app-slot [date]="slotDate" ></app-slot>
+</div>
   <app-footer></app-footer>

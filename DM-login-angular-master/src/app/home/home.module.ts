@@ -20,7 +20,8 @@ import { ChartComponent } from '../chart/app.chart';
     MatNativeDateModule, MatInputModule
   ],
   providers: [
-MatDatepickerModule
+MatDatepickerModule,
+MatFormFieldModule
   ],
   exports: [
     HomeComponent

@@ -10,7 +10,8 @@
  
   .id{
     position: absolute;
-    padding-left: 80px;
+    padding-left: 180px;
+    margin-top: 60px;
     color: lightgreen;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -21,7 +22,7 @@
  .cards {
    width: 750px;
    height: 400px;
-   margin-top: 400px;
+   margin-top: 100px;
    margin-left: 250px;
    left: 100px;
    background-color: #dbdfe4;

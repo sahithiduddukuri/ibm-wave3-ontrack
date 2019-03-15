@@ -1,29 +1,45 @@
+<app-header></app-header>
+<table>
+  <tr>
+    <td>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Choose a date"
+          (dateInput)="addEvent($event)"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field>
+        <mat-select placeholder="Choose slots">
+          <mat-option
+            *ngFor="let slot of slots"
+            value="{{ slot.value }}"
+            (click)="onClick(slot.value)">
+            {{ slot.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
 
-  <div class="container">
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-card>
-      <div class="items2" *ngFor='let p of slotsAvailable' >
-                <mat-card-title>{{ p.date }}</mat-card-title>
-     <mat-card-content>
-            <div class="ring" *ngFor="let r of p['slots']">
-    
-      <button mat-raised-button (click)="slot(r)" [disabled]="r.slotStatus">{{ r.slotNumber }}
-        <p class="type">{{ r.slotType }}</p>
+    <td>
+      <button (click)="showGraph()" type="submit" #submitButton>
+        Show routes
       </button>
-     </div>
-     </mat-card-content>
-     </div>
-     </mat-card>
-    
-     <div mat-card-actions class="id">
-     <button mat-raised-button (click)="shop()">CONTINUE</button>
-     </div>
-    </div>
-    
-    <!-- <app-chart></app-chart> -->
-    
-    
+    </td>
+  </tr>
+</table>
+
+<div *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>
+<mat-card>
+  <p>x-axis: latitude</p>
+  <p>y-axis: longitude</p>
+</mat-card>
+<app-chart></app-chart>
+<app-footer></app-footer>

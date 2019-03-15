@@ -1,7 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContainerService } from '../services/container.service';
 import { SelectedSlot } from './cont';
+import { DatePipe } from '@angular/common';
+import { MatDatepickerInputEvent } from "@angular/material/datepicker";
+import { SlotComponent } from '../slot/slot.component';
 
 @Component({
   selector: 'app-container',
@@ -12,38 +15,27 @@ export class ContainerComponent implements OnInit {
   @Input() SelectedSlot: any;
   bookedslots: SelectedSlot;
   data: any;
+  dateValue: any;
+  slots: any;
+  slotDate: string;
+  message: String = 'hello';
+  loaded: boolean;
   private selectedSlot: SelectedSlot[];
-    constructor(private router: Router, private containerService: ContainerService) { }
-  
-    ngOnInit() {
-     this.bookedslots = new SelectedSlot();
-this.bookedslots.orderDate=new Date().toDateString();
-this.bookedslots.orderId=123243;
-this.bookedslots.productCount=2;
-this.bookedslots.slotDate=new Date().toDateString();
-this.bookedslots.slotType='A';
-
-console.log('this is the post value',this.bookedslots);
-
-this.containerService.containerMethod(this.bookedslots).subscribe(resp => {
-   console.log('value from response++++',resp);
-   this.data = resp;
-   console.log('this is the value of after resp+++', this.data.slotAvailabilities);
-
-})
-// this.loginService.login(this.user.value)
-// .subscribe(res => {
-//   console.log('Res: ', res);
-//   if (res.message === 'User successfully logged in') {
-//     this.router.navigate([`/home`]);
-//     this.loginService.setCookie('token', res.token, 1);
-//     // this.loginService.setCookie('message', res.message, 1);
-//     // let token = this.loginService.getCookie('token');
-//   } else {
-//     window.alert('Credentials you entered are incorrect');
-//   }
-// });
+    constructor(private router: Router, private containerService: ContainerService, private datePipe: DatePipe) { }
+  ngOnInit() {
+    this.loaded = false;
 }
+addEvent(event: MatDatepickerInputEvent<Date>) {
+  console.log('console date picker call');
+  this.loaded = false;
+    console.log(event.value);
+    this.dateValue = event.value;
+    this.slotDate = this.datePipe.transform(this.dateValue, 'yyy-MM-dd');
+    console.log('date value in container is@@@@@@@@@@@@', this.slotDate);
+  }
+  checkcontainer() {
+    this.loaded = true;
+  }
 
     //   this.containerService.containerMethod(this.bookedslots).subscribe( resp => {
     //     console.log('data fetch from response+++++++++', resp);

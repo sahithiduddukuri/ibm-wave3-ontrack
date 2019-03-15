@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Chart } from 'chart.js/dist/Chart.bundle.js';
 import { ChartsService } from '../services/charts.service';
 import { DatePipe } from '@angular/common';
@@ -13,67 +13,58 @@ export class ChartComponent {
   date: any;
   slot: String;
   formatDate: any;
+  errorMessage = "";
+  flag = false;
 
-  constructor(private chartsService: ChartsService, private datePipe: DatePipe) {}
-
-  // getSelectedSlot(value: String) {
-  //  console.log('this is the value of selected', value);
-  //  this.slot = value;
-  // }
+  constructor(private chartsService: ChartsService, private datePipe: DatePipe, private ref: ChangeDetectorRef) { }
+  
   getChartInfo(dateValue: Date, slotType: String) {
+    let lat = [];
+    let long = [];
+    let allNodes = [];
+    let fomattedData = [];
     this.date = dateValue;
     this.slot = slotType;
     this.formatDate = this.datePipe.transform(dateValue, 'yyyy-MM-dd');
-    console.log('date ', dateValue);
-    console.log('slot type value', slotType);
-    console.log('Date after format', this.formatDate);
     this.chartsService.getJSON(this.formatDate, this.slot).subscribe(res => {
-      console.log('res from json server', res);
-        let lat;
-        let long;
-        let allNodes;
-      lat = res.map(e => {  
-        return e.Route.map(f => {
-          if (f != null) {
-          return f.node_X;
+      if (res === null || res.length === 0) {
+        this.chart = null;
+        this.flag = false;
+        this.ref.detectChanges();
+      } else {
+        this.flag = true;
+      res.map((data: any) => {
+        if (data['Route'].length !== 0) {
+          data['Route'].map((x: any) => {
+            lat.push(x.node_X);
+            long.push(x.node_Y);
+            allNodes.push(x.nodeId);
+          });
+         }
+      });
+      for (let index = 0; index < allNodes.length; index++) {
+        fomattedData.push(
+          {
+            x: lat[index],
+            y: long[index]
           }
-        });
-      });
-      long = res.map(e => {
-        return e.Route.map(f => {
-          if (f != null) {
-          return f.node_Y;
-          }
-        });
-      });
-      allNodes = res.map(e => {
-        return  e.Route.map(f => {
-          return f.nodeId;
-        });
-      });
-      // let nodes = [];
-      // console.log(allNodes, lat, long);
-      // allNodes.forEach((res: any) => {
-      //   nodes.push(res);
-      // });
-      this.newChart(lat[0], lat[0], long[0]);
+          );
+      }
+      this.newChart(allNodes, fomattedData);
+      this.ref.markForCheck();
+    }
     });
   }
 
-  newChart(allNodes: any, lat: any, long: any) {
+  newChart(allNodes: any, fomattedData: any) {
     this.chart = new Chart('canvas', {
-      type: 'line',
+      type: 'scatter',
       data: {
         labels: allNodes,
         datasets: [
           {
-            data: lat,
-            borderColor: '#3cba9f',
-            fill: false,
-          },
-          {
-            data: long,
-            borderColor: '#ffcc00',
+            data: fomattedData,
+            borderColor: 'lightblue',
             fill: false,
           }
         ]
@@ -82,10 +73,13 @@ export class ChartComponent {
         legend: {
           display: false
         },
+        showLines: true,
         scales: {
           xAxes: [
             {
-              display: true
+              display: true,
+              type: 'linear',
+              position: 'bottom'
             }
           ],
           yAxes: [
@@ -97,4 +91,13 @@ export class ChartComponent {
       }
     });
   }
+
+  // this function would be used to update the graph. commenting it as it isn't required as of now
+  // addData(chart:any, label:any, data:any) {
+  //   chart.data.labels.push(label);
+  //   chart.data.datasets.forEach((dataset:any) => {
+  //     dataset.data.push(data);
+  //   });
+  //   chart.update();
+  // }
 }

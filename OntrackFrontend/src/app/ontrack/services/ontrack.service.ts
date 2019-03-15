@@ -21,39 +21,39 @@ export class OnTrackService {
     }
    Home() {
 
-    this.url = 'https://shoefly.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
     console.log('this method call');
     return this.http.get(this.url);
 }
 
 openDailog() {
-    this.url = 'https://shoefly.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'https://shoefly.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 Buy(order: Order) {
 
-    this.url = ' https://ontrack.stackroute.io/delivery-manager/api/v1/slot';
+    this.url = ' https://ontrack-zuul.stackroute.io/delivery-manager/api/v1/slot';
     return this.http.post(this.url, JSON.stringify(order) , this.httpOptions);
  }
  OrderSave(slot: Slot) {
-   this.url = 'https://ontrack.stackroute.io/delivery-manager/api/v1/saveorder';
+   this.url = 'https://ontrack-zuul.stackroute.io/delivery-manager/api/v1/saveorder';
     return this.http.post(this.url, JSON.stringify(slot), this.httpOptions);
  }
 profile() {
-    this.url = 'https://shoefly.stackroute.io/user-registration/api/v1/user/';
+    this.url = 'https://shoefly-zuul.stackroute.io/user-registration/api/v1/user/';
     return this.http.get(this.url);
 }
 REMOVE() {
-    this.url = 'http://shoefly.stackroute.io/recommendation-service/api/v1/AddToCart';
+    this.url = 'http://shoefly-zuul.stackroute.io/recommendation-service/api/v1/AddToCart';
     return this.http.get(this.url);
  }
 
  saveSlot(selectedSlot: SelectedSlot) {
-     this.url = 'http://ontrack.stackroute.io/delivery-manager/v1/slotbooked';
+     this.url = 'http://ontrack-zuul.stackroute.io/delivery-manager/v1/slotbooked';
       return this.http.post(this.url, JSON.stringify(selectedSlot), this.httpOptions);
  }
 }

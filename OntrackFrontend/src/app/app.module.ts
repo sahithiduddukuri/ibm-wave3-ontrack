@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { OntrackMaterialModule } from './ontrack/ontrack.material.module';
 import { DatePipe } from '@angular/common';
+import { MatInputModule } from '@angular/material';
 
 
 
@@ -37,6 +38,7 @@ import { DatePipe } from '@angular/common';
     OntrackMaterialModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
     FlexLayoutModule,

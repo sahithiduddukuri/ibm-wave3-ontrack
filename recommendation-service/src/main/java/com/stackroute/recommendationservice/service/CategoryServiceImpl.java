@@ -19,6 +19,7 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
+    @Override
     public List<Category> getAllCategories()
     {
         return (List<Category>) categoryRepository.getAllProducts();
@@ -29,6 +30,7 @@ public class CategoryServiceImpl implements CategoryService {
         return (List<Category>) categoryRepository.findAll();
     }
 
+    @Override
     public Category createNode(Category category) {
         String productTypeId = category.getProductTypeId();
         String productType = category.getProductType();

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import { MatGridListModule, MatNativeDateModule, MatSelectModule} from '@angular/material';
+import { MatGridListModule, MatNativeDateModule, MatSelectModule, MatRadioModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -27,11 +27,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
       MatButtonModule,
       MatIconModule,
       MatToolbarModule,
+      MatSelectModule,
       MatMenuModule, MatFormFieldModule,
-       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
+       MatInputModule,
+       MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
        MatInputModule,
        MatTableModule,
+       MatRadioModule,
        FormsModule,
        MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule
       ] ,
@@ -43,10 +46,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
         MatMenuModule, MatFormFieldModule,
         MatTableModule,
         MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
-          MatGridListModule,
-          MatInputModule,
-          FormsModule,
-          MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule
+        MatGridListModule,
+        MatInputModule,
+        FormsModule,
+        MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatSelectModule
 
          ]
 

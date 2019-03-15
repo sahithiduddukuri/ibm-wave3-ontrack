@@ -9,10 +9,9 @@ import org.springframework.data.repository.query.Param;
 
 public interface BrandRepository extends Neo4jRepository<Brand, String> {
 
-    @Query("match (a:Product), (b:Brand) where a.brand = b.brand merge (a)-[:IS_OF_BRAND]->(b) return a,b")
-    Product getAll();
+    @Query("MATCH (a:Product), (b:Brand) where b.brand = a.brand MERGE (a)-[:IS_OF_BRAND]->(b) return a,b")
+    Product getAllBrands();
 
     @Query("Create (b:Brand) SET b.brandId={brandId},b.brand={brand}")
     Brand createBrand(@Param("brandId") String brandId, @Param("brand") String brand);
 }
-

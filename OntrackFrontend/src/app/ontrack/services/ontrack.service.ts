@@ -21,39 +21,39 @@ export class OnTrackService {
     }
    Home() {
 
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'https://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
     console.log('this method call');
     return this.http.get(this.url);
 }
 
 openDailog() {
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'https://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'http://13.233.3.91:8083/api/v1/products';
+    this.url = 'https://shoefly.stackroute.io:8092/recommendation-service/api/v1/products';
     return this.http.get(this.url);
 }
 Buy(order: Order) {
 
-    this.url = ' http://13.234.142.187:8015/api/v1/slot';
+    this.url = ' https://ontrack.stackroute.io:8092/delivery-manager/api/v1/slot';
     return this.http.post(this.url, JSON.stringify(order) , this.httpOptions);
  }
  OrderSave(slot: Slot) {
-   this.url = 'http://13.234.142.187:8015/api/v1/saveorder';
+   this.url = 'https://ontrack.stackroute.io:8092/delivery-manager/api/v1/saveorder';
     return this.http.post(this.url, JSON.stringify(slot), this.httpOptions);
  }
 profile() {
-    this.url = 'http://13.233.3.91:8015/api/v1/user/';
+    this.url = 'https://shoefly.stackroute.io:8092/user-registration/api/v1/user/';
     return this.http.get(this.url);
 }
 REMOVE() {
-    this.url = 'http://13.233.3.91:8083/api/v1/AddToCart';
+    this.url = 'http://shoefly.stackroute.io:recommendation-service/api/v1/AddToCart';
     return this.http.get(this.url);
  }
 
  saveSlot(selectedSlot: SelectedSlot) {
-     this.url = 'http://13.234.142.187:8015/api/v1/slotbooked';
+     this.url = 'http://ontrack.stackroute.io:8092/delivery-manager/v1/slotbooked);
       return this.http.post(this.url, JSON.stringify(selectedSlot), this.httpOptions);
  }
 }

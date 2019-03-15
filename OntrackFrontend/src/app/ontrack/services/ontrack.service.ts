@@ -53,7 +53,7 @@ REMOVE() {
  }
 
  saveSlot(selectedSlot: SelectedSlot) {
-     this.url = 'http://ontrack.stackroute.io:8092/delivery-manager/v1/slotbooked);
+     this.url = 'http://ontrack.stackroute.io:8092/delivery-manager/v1/slotbooked';
       return this.http.post(this.url, JSON.stringify(selectedSlot), this.httpOptions);
  }
 }

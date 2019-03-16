@@ -7,9 +7,8 @@
          <div class="ring" *ngFor="let r of p.slots">
  
    <button mat-raised-button (click)="slot(p)" [disabled]="r.slotStatus">{{ r.slotNumber }}
-     <p class="type">{{ r.slotType }}</p>
-     <!-- <p ng-if="r.slotType === 'A' ">9AM-12PM</p>
-     <p ng-if="r.slotType === 'B' ">1PM-4PM</p> -->
+
+     
 
      <p>{{r.slotType === "A" ? "9AM-12PM" : r.slotType === "B" ? "1PM-4PM" : "4PM-10PM" }} </p>
      <p class="cost">{{ r.cost + "/-"}}</p>
@@ -30,13 +29,14 @@
           <mat-list-item class="one"><h4 align="center">PRICE DETAILS</h4>
           </mat-list-item>
           <mat-divider></mat-divider>
-          <mat-list-item>Price of Order:₹{{ price }}
+          <mat-list-item>Price of Order:<div class="priceee">₹{{ price }}</div>
           </mat-list-item>
-          <mat-list-item>Delivery Charge:₹ {{charge}}
+          <mat-list-item>Delivery Charge:<div class="chargeee">₹{{charge}}</div>
           </mat-list-item>
            <mat-divider></mat-divider>
           <p></p>
-          <mat-list-item>Total Amount:₹{{price+charge}}</mat-list-item>
+          
+          <mat-list-item>Total Amount:<div class="totalll">₹{{total}}</div></mat-list-item>
           <div *ngFor='let o of products'>
  
           <p>{{ sum }}</p>

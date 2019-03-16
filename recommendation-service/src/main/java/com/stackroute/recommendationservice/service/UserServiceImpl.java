@@ -20,10 +20,17 @@ public class UserServiceImpl implements  UserService{
         this.userRepository = userRepository;
     }
 
+
+    public List<User> getAll()
+    {
+        return (List<User>) userRepository.findAll();
+
+    }
+
     @Override
     public List<User> getAllUser()
     {
-        return (List<User>) userRepository.findAll();
+        return (List<User>) userRepository.getAllUser();
     }
 
     @Override
@@ -39,14 +46,4 @@ public class UserServiceImpl implements  UserService{
 
     }
 
-//    public User createUser(User user) {
-//        String name = user.getName();
-//        String userId = user.getUserId();
-//        String gender = user.getGender();
-//        String dateofBirth = user.getDateofBirth();
-//        String password = user.getPassword();
-//        String mobileNo = user.getMobileNo();
-//        User savedUser = userRepository.createUserNode(name,userId,gender,dateofBirth,mobileNo,password);
-//        return savedUser;
-//    }
 }

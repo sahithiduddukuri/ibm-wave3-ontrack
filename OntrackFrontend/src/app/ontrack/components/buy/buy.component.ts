@@ -26,6 +26,7 @@ order: Order;
 slots: any;
 slotType: String;
 date: any;
+total: Number;
 slotsSelected: any;
 slotsAvailable: any = [];
 totalPrice() {
@@ -54,13 +55,14 @@ slot(value) {
    this.slotsSelected.slots.map( resp => {
       this.charge = resp.cost;
       this.slotType = resp.slotType;
+      this.total  = this.price + this.charge ;
    });
   //  this.charge = this.slotsSelected.cost;
   // this.slotType = this.slotsSelected.slotType;
   console.log('slottype value is', this.slotType);
   localStorage.setItem('slot', this.slotType.toString());
   console.log('this is the charge value', this.charge);
-      sessionStorage.setItem('charge', this.charge);
+  sessionStorage.setItem('charge', this.charge);
 }
 shop() {
 this.route.navigate(['/' , 'payment']);

@@ -48,12 +48,12 @@ profile() {
     return this.http.get(this.url);
 }
 REMOVE() {
-    this.url = 'http://shoefly-zuul.stackroute.io/recommendation-service/api/v1/AddToCart';
+    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/AddToCart';
     return this.http.get(this.url);
  }
 
  saveSlot(selectedSlot: SelectedSlot) {
-     this.url = 'http://ontrack-zuul.stackroute.io/delivery-manager/v1/slotbooked';
+     this.url = 'https://ontrack-zuul.stackroute.io/delivery-manager/v1/slotbooked';
       return this.http.post(this.url, JSON.stringify(selectedSlot), this.httpOptions);
  }
 }

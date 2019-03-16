@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
 selector: 'app-buying-history',
@@ -12,6 +13,7 @@ styleUrls: ['./buying-history.component.scss']
 export class BuyingHistoryComponent implements OnInit {
 products: any;
 dataProducts: any;
+
 
 constructor(private db: AngularFireDatabase, private route: Router) {  }
 private helper = new JwtHelperService();
@@ -50,6 +52,11 @@ remove3(products_id) {
 //   console.log(this.db.list('/products', ref => ref.orderByChild('userName').equalTo(this.currentUser.jti)));
 //   console.log('removed');
 
+     let itemRef =  this.db.list('/products');
+     let items = itemRef.snapshotChanges().pipe( map(changes => changes.map(c => ({key: c.payload.key, ...c.payload.val()}))));
+     items.subscribe(data => {
+       console.log('@@@#####@@@@$$$$$$######@@@@@@$$$$%%%%%', data);
+     }); 
     this.db.list('/products').valueChanges().subscribe(data => {
       console.log('data value from firebase', data);
       this.dataProducts = data;

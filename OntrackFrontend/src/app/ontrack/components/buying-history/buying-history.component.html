@@ -11,7 +11,7 @@
             ₹{{o.price}}</mat-list-item>
         </div>
         <mat-divider></mat-divider> 
-        <mat-list-item>TOTAL AMOUNT:₹{{totalPrice()}}</mat-list-item>
+        <mat-list-item>TOTAL AMOUNT:₹{{ totalPrice() }}</mat-list-item>
         <div *ngFor='let o of products'>
        
         <p>{{ sum }}</p>
@@ -19,7 +19,15 @@
       </mat-list> 
   </div>
   </mat-card>
+  <div class="next">
+    
+      
+          <button mat-raised-button class="continueproduct" style="background:orange; color:white" (click)="continue3()">CONTINUE SHOPPING</button>
+          <button mat-raised-button class="buyproduct" style="background:green; color:white" (click)="buy3()">BUY</button>
+          </div>
+    
   </div>
+ 
 <div class="row" fxLayout.xs="column" *ngFor='let o of products'>
   <mat-card class='product--blue'>
     <mat-card-header>  
@@ -37,12 +45,5 @@
 </mat-card>
 </div>
 
-<div class="next">
-<mat-card class="footer">
-    <div  class="continuenext">
-      <button mat-raised-button class="continueproduct" style="background:orange; color:white" (click)="continue3()">CONTINUE SHOPPING</button>
-      <button mat-raised-button class="buyproduct" style="background:green; color:white" (click)="buy3()">BUY</button>
-      </div>
-</mat-card>
-</div>
+
 

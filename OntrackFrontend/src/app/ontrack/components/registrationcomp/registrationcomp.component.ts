@@ -87,7 +87,7 @@ register(event: any) {
     this.value = event.target.value;
     this.regserv.addregister(this.regform).subscribe(data => {
       console.log('data', data);
-      this.router.navigate([`/home`]);
+      this.router.navigate([`/login`]);
     });
 
   }

@@ -44,7 +44,7 @@ Buy(order: Order) {
     return this.http.post(this.url, JSON.stringify(slot), this.httpOptions);
  }
 profile() {
-    this.url = 'https://shoefly-zuul.stackroute.io/user-registration/api/v1/user/';
+    this.url = 'https://shoefly-zuul.stackroute.io/user-registration-service/api/v1/user/';
     return this.http.get(this.url);
 }
 REMOVE() {

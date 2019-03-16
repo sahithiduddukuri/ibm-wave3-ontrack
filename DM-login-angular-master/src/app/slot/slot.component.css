@@ -6,6 +6,7 @@
     height: 780px;
     display: flex;
     padding-top: 100px;
+    
  }
  
   .id{
@@ -22,14 +23,15 @@
  .cards {
    width: 750px;
    height: 400px;
-   margin-top: 100px;
-   margin-left: 250px;
-   left: 100px;
-   background-color: #dbdfe4;
+   margin-top: 150px;
+   margin-left: -150px;
+   /* left: 100px;
+   background-color: #dbdfe4; */
    border-bottom-left-radius: 20px;
    border-bottom-right-radius: 20px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
+   opacity:0.5;
 } 
 .items {
     display: flex;

@@ -34,6 +34,6 @@ export class LoginComponent {
     });
   }
   login1() {
-    this.route.navigate(['/' , 'button2']);
+    this.route.navigate(['/' , 'button']);
   }
 }

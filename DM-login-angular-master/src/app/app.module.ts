@@ -15,7 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ContainerComponent } from './container/container.component';
 import { ChartsService } from './services/charts.service';
 import { ChartComponent } from './chart/app.chart';
-
+import {AgmCoreModule} from '@agm/core';
 import { ButtonComponent } from './button/button.component';
 import { HomeComponent } from './home/home.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -23,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ContainerService } from './services/container.service';
 import { DatePipe } from '@angular/common';
 import { SlotComponent } from './slot/slot.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { SlotComponent } from './slot/slot.component';
     ContainerComponent,
     ButtonComponent,
     LoginComponent,
-    HeaderComponent, FooterComponent, HomeComponent, ChartComponent, SlotComponent
+    HeaderComponent, FooterComponent, HomeComponent, ChartComponent, SlotComponent, MapComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,8 @@ import { SlotComponent } from './slot/slot.component';
     MatNativeDateModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAXigGROgiWO9fwGbXcOY09c6YHRZ8hPKo'})
   ],
   providers: [
    LoginService, HomeService, ChartsService,

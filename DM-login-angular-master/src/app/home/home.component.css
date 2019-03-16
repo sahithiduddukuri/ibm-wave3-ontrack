@@ -1,8 +1,20 @@
-
+.container {
+   background-image: url('../../assets/img/Export.jpg');
+   background-image: cover;
+   background-repeat: no-repeat;
+   margin-left:-10px;
+   width: 1535px;
+   height: 780px;
+   /* display: flex; */
+}
 table {
    padding-top: 100px;
    padding-left: 35%
 }
 mat-card{
    width:150px;
+   opacity:0.5;
+}
+mat-card p{
+   color: blue;
 }

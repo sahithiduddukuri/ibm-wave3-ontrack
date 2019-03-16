@@ -25,7 +25,7 @@ public class Latitudelongitude
         int count = 0;
         String destinations = "destinations=";
         String destination = "";
-        String url2 = "key=AIzaSyCHzS817cDnQkBLzyT4iE12p53xUgo--Vo";
+        String url2 = "key=AIzaSyAXigGROgiWO9fwGbXcOY09c6YHRZ8hPKo";
         String inline = "";
         //https://maps.googleapis.com/maps/api/directions/json?origin=Bangalore&destination=Pune&key=AIzaSyCS63yTeP52jSiVNCbt7fo_pdKmsT8Xjs4
 

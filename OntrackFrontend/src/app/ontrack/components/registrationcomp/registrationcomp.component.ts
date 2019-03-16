@@ -87,11 +87,11 @@ register(event: any) {
     this.value = event.target.value;
     this.regserv.addregister(this.regform).subscribe(data => {
       console.log('data', data);
-      this.router.navigate([`/home`]);
+      this.route.navigate(['/' , 'home']);
     });
 
   }
-  constructor(private regserv: RegistrationService, private http: HttpClient, private router: Router) {
+  constructor(private regserv: RegistrationService, private http: HttpClient, private route: Router) {
    console.log('name' , this.value);
   }
   ngOnInit() {

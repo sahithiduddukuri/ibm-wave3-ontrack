@@ -1,5 +1,6 @@
+import { OrderComponent } from './../order/order.component';
 import { Address } from './../../classes/address';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 // import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 import { RegistrationService } from '../../services/registration.service';
@@ -9,13 +10,16 @@ import { Slot } from '../../classes/Slot';
 import { OnTrackService } from '../../services/ontrack.service';
 import { SelectedSlot } from '../../classes/SelectedSlot';
 import { DatePipe} from '@angular/common';
-
+import { Router } from '@angular/router';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material';
+import { EventEmitter } from 'events';
 @Component({
  selector: 'app-payment',
  templateUrl: './payment.component.html',
  styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
+  [x: string]: any;
  slot: Slot;
  nameOnCard: string;
  cardNumber: string;
@@ -28,21 +32,36 @@ export class PaymentComponent implements OnInit {
  jti: any;
  Address: any;
  SlotSeleted: SelectedSlot;
- constructor(private http: Http, private registraion: RegistrationService, private ontarck: OnTrackService, private datePipe: DatePipe) {}
- ngOnInit() {
- }
- chargeCreditCard() {
-   this.message = 'Loading...';
-   // tslint:disable-next-line:prefer-const
-   let form = document.getElementsByTagName('form')[0];
-   (<any>window).Stripe.card.createToken({
-     number: this.cardNumber,
-     exp_month: this.expiryMonth,
-     exp_year: this.expiryYear,
-     cvc: this.cvc
-   }, (status: number, response: any) => {
-     if (status === 200) {
-       // tslint:disable-next-line:prefer-const
+ // tslint:disable-next-line:max-line-length
+ constructor(private http: Http, private registraion: RegistrationService, private ontarck: OnTrackService, private datePipe: DatePipe, private route: Router, private bottomSheet: MatBottomSheet) {}
+ @Output()
+ orderAddEvent = new EventEmitter();
+
+
+
+ openBottomSheet(message): void {
+  this.bottomSheet.open(OrderComponent, {
+    data : {
+      message: 'Transaction Successful'
+    }
+  });
+  this.message = 'Loading...';
+  // tslint:disable-next-line:prefer-const
+  let form = document.getElementsByTagName('form')[0];
+  (<any>window).Stripe.card.createToken({
+    number: this.cardNumber,
+    exp_month: this.expiryMonth,
+    exp_year: this.expiryYear,
+    cvc: this.cvc
+  },   (status: number, response: any)  => {
+    if (status === 200) {
+      // this.message = 'Transaction successful';
+      // this.ontarck.message.next()
+      this.ontarck.message.next('Transaction successful');
+      // tslint:disable-next-line:prefer-const
+      let token = response.id;
+       this.chargeCard(token);
+
        try {
          const tokenObtained = localStorage.getItem('token');
          this.loginToken = jwt_decode(tokenObtained);
@@ -69,12 +88,9 @@ export class PaymentComponent implements OnInit {
         this.ontarck.OrderSave(this.slot).subscribe(resp => {
          console.log('response fron post', resp);
         });
-        // tslint:disable-next-line:prefer-const
-       let token = response.id;
-       this.chargeCard(token);
-
      } else {
        this.message = response.error.message;
+       this.ontarck.message.next(response.error.message);
        console.log(response.error.message);
      }
    });
@@ -95,5 +111,9 @@ export class PaymentComponent implements OnInit {
        console.log(resp);
      });
  }
-
+ ngOnInit() {
+}
+ openLink(event: MouseEvent): void {
+  this.bottomSheetRef.dismiss();
+}
 }

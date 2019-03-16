@@ -11,6 +11,7 @@ import { SelectedSlot } from '../classes/SelectedSlot';
 @Injectable()
 export class OnTrackService {
     url: any;
+    message: any = new Subject();
     response: any;
      cart;
      httpOptions = {
@@ -33,6 +34,9 @@ openDailog() {
 AddToCart() {
     this.url = 'http://13.233.3.91:8083/api/v1/products';
     return this.http.get(this.url);
+}
+openBottomSheet() {
+return this.http.get(this.message);
 }
 Buy(order: Order) {
 

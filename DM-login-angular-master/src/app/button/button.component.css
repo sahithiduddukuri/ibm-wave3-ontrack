@@ -7,10 +7,8 @@
     height:200px;
     width:400px;
     font-size: 40px;
-    /* color:white;
-    background-color:blue; */
-    color:blue;
-    opacity:0.5;
+    color:white;
+    background-color:black;
     border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -21,16 +19,15 @@
     height:200px;
     width:400px;
     font-size: 40px;
-    color:blue;
-    opacity:0.5;
-    /* background-color:black; */
+    color:white;
+    background-color:black;
     border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 .kranthi{
-    background-image: url('../../assets/img/Nature-Landscape-Road-Mountain-2560-x-1600.jpg');
+    background-image: url('../../assets/img/image.png');
     /* background-image: cover; */
     background-repeat: no-repeat;
     background-image: cover;

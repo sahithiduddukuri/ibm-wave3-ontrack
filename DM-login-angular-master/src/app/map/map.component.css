@@ -4,6 +4,18 @@
     background-color: black;
 }
 .container{
-    background-color: black;
-    opacity:0.9;
+    display:flex;
+    margin-left:10px;
+}
+mat-card{
+    /* position: absolute; */
+    margin-top:80px;
+    height:580px;
+    width:500px;
+}
+mat-card-title{
+    margin-left: 200px;
+}
+mat-card-content{
+    margin-top:20px;
 }

@@ -12,7 +12,7 @@ export class ChartsService {
 
   getJSON(date, slot): Observable<any> {
 
-    return this.http.get('http://ontrack-zuul.stackroute.io/delivery-manager/api/v1/routes' + "?" + "date=" + date + "&" + "slotType=" + slot);
+    return this.http.get('https://ontrack-zuul.stackroute.io/delivery-manager/api/v1/routes' + "?" + "date=" + date + "&" + "slotType=" + slot);
   }
 }
 

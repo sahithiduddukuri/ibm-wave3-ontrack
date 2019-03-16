@@ -18,13 +18,13 @@ export class ContainerService {
    }
 
  containerMethod(selectedSlot: SelectedSlot) {
-   this.url = 'http://ontrack-zuul.stackroute.io/api/v1/bookedslot';
+   this.url = 'https://ontrack-zuul.stackroute.io/api/v1/bookedslot';
    console.log('this method call', selectedSlot);
    return this.http.post(this.url, JSON.stringify(selectedSlot) , this.httpOptions);
  }
 
    GetSlot(date: String): Observable<any>  {
-     this.url = 'http://ontrack-zuul.stackroute.io/api/v1/getSlot/?date=' + date ;
+     this.url = 'https://ontrack-zuul.stackroute.io/api/v1/getSlot/?date=' + date ;
      return this.http.get(this.url);
    }
 }

@@ -1,15 +1,15 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import {
   Component,
   OnInit,
   ViewChild,
   ElementRef,
   ChangeDetectorRef
-} from "@angular/core";
-import { importType } from "@angular/compiler/src/output/output_ast";
-import { HomeService } from "../services/Home.service";
-import { ChartComponent } from "../chart/app.chart";
-import { MatDatepickerInputEvent } from "@angular/material/datepicker";
+} from '@angular/core';
+import { importType } from '@angular/compiler/src/output/output_ast';
+import { HomeService } from '../services/Home.service';
+import { ChartComponent } from '../chart/app.chart';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 export interface Food {
   value: string;
@@ -17,33 +17,33 @@ export interface Food {
 }
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   chart = [];
   slots: Food[] = [
-    { value: "A", viewValue: "9:00-12:00" },
-    { value: "B", viewValue: "13:00-16:00" },
-    { value: "C", viewValue: "16:00-22:00" }
+    { value: 'A', viewValue: '9:00-12:00' },
+    { value: 'B', viewValue: '13:00-16:00' },
+    { value: 'C', viewValue: '16:00-22:00' }
   ];
 
   @ViewChild(ChartComponent) chartComponent: ChartComponent;
-  @ViewChild("submitButton") submitButton: ElementRef;
+  @ViewChild('submitButton') submitButton: ElementRef;
   slotsAvailable: any = [];
   url: any;
   dateValue: Date;
   selectedSlot: String;
-  errorMessage = "";
+  errorMessage = '';
 
   constructor(private ref: ChangeDetectorRef) {}
-  ngOnInit() {
-    this.submitButton.nativeElement.disabled = true;
-  }
+  // ngOnInit() {
+  //   // this.submitButton.nativeElement.disabled = true;
+  // }
 
   totalPrice() {
-    console.log("this is child");
+    console.log('this is child');
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
       this.submitButton.nativeElement.disabled = false;
       console.log(event.value);
       this.dateValue = event.value;
-      console.log("date value in home is", this.dateValue);
+      console.log('date value in home is', this.dateValue);
     }
   }
 
@@ -62,17 +62,17 @@ export class HomeComponent implements OnInit {
       this.submitButton.nativeElement.disabled = true;
     } else {
       this.submitButton.nativeElement.disabled = false;
-      console.log("selected value", value);
+      console.log('selected value', value);
       this.selectedSlot = value;
     }
   }
 
   showGraph() {
     if (this.dateValue === null || this.selectedSlot === null) {
-      this.errorMessage = "All fields are compulsory";
+      this.errorMessage = 'All fields are compulsory';
     } else {
       // if (this.chartComponent.flag === false) {
-      //   this.errorMessage = "Please choose both fields";
+      //   this.errorMessage = 'Please choose both fields';
       //   this.ref.detectChanges();
       // } else {
       //   this.errorMessage = null;

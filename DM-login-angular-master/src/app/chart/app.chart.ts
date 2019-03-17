@@ -13,16 +13,15 @@ export class ChartComponent {
   date: any;
   slot: String;
   formatDate: any;
-  errorMessage = "";
+  errorMessage = '';
   flag = false;
 
   constructor(private chartsService: ChartsService, private datePipe: DatePipe, private ref: ChangeDetectorRef) { }
-  
   getChartInfo(dateValue: Date, slotType: String) {
-    let lat = [];
-    let long = [];
-    let allNodes = [];
-    let fomattedData = [];
+    const lat = [];
+    const long = [];
+    const allNodes = [];
+    const fomattedData = [];
     this.date = dateValue;
     this.slot = slotType;
     this.formatDate = this.datePipe.transform(dateValue, 'yyyy-MM-dd');
@@ -93,11 +92,11 @@ export class ChartComponent {
   }
 
   // this function would be used to update the graph. commenting it as it isn't required as of now
-  // addData(chart:any, label:any, data:any) {
-  //   chart.data.labels.push(label);
-  //   chart.data.datasets.forEach((dataset:any) => {
-  //     dataset.data.push(data);
-  //   });
-  //   chart.update();
-  // }
+  addData(chart:any, label:any, data:any) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset:any) => {
+      dataset.data.push(data);
+    });
+    chart.update();
+  }
 }

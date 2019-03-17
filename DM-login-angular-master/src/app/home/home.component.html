@@ -31,14 +31,14 @@
       </mat-form-field>
     </mat-card>
   <!-- <mat-card class="wing"> -->
-      <button mat-raised-button class="wing" (click)="showGraph()" type="submit" #submitButton>
+      <button (click)="showGraph()" type="submit" #submitButton>
         Show routes
     </button>
     <!-- </mat-card> -->
 </div>
-<!-- <div *ngIf="errorMessage">
+<div *ngIf="errorMessage">
   {{ errorMessage }}
-</div> -->
+</div>
 <mat-card class="zumbo">
   <h2>X-axis: Latitude</h2>
   <h2>Y-axis: Longitude</h2>

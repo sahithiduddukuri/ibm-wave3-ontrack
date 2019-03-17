@@ -12,6 +12,7 @@ export class ChartsService {
 
   getJSON(date, slot): Observable<any> {
 
+    // tslint:disable-next-line:max-line-length
     return this.http.get('https://ontrack-zuul.stackroute.io/delivery-manager/api/v1/routes' + "?" + "date=" + date + "&" + "slotType=" + slot);
   }
 }

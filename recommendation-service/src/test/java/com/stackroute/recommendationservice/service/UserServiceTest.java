@@ -50,7 +50,7 @@ public class UserServiceTest {
     public void getUsersTest() {
         userRepository.createUserNode(user.getName(),user.getUserId(),user.getGender(),user.getDateofBirth(),user.getMobileNo(),user.getPassword());
         when(userRepository.findAll()).thenReturn(list);
-        List<User> userList = userService.getAll();
+        List<User> userList = userService.getAllUser();
         Assert.assertEquals(list, userList);
     }
 }

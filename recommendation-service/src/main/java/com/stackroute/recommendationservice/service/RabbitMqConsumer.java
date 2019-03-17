@@ -63,8 +63,6 @@ public class RabbitMqConsumer {
         System.out.println("recieved user : " +user.toString());
         this.user = user;
         userService.createUser(user);
-        userService.getAllUser();
-
 
     }
 }

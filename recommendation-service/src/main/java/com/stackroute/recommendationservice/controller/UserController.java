@@ -2,6 +2,7 @@ package com.stackroute.recommendationservice.controller;
 
 
 
+import com.stackroute.recommendationservice.domain.Product;
 import com.stackroute.recommendationservice.domain.User;
 import com.stackroute.recommendationservice.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,11 @@ public class UserController {
         userService.createUser(user);
         responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
         return responseEntity;
+    }
+
+    @GetMapping("products")
+    public ResponseEntity<?> getProductsByGender(@RequestParam("gender") String gender)
+    {
+        return new ResponseEntity<List<Product>>(userService.getProducts(gender), HttpStatus.OK);
     }
 }

@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
 
 @NodeEntity
 @Data
@@ -25,8 +24,6 @@ public class User {
     private String dateofBirth;
     @JsonProperty("gender")
     private String gender;
-    @Relationship(type="Purchases",direction= Relationship.OUTGOING)
-    private Product product;
 
 
     @Override

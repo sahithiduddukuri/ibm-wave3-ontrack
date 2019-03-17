@@ -18,10 +18,9 @@ public class BrandServiceImpl implements BrandService{
         this.brandRepository = brandRepository;
     }
 
-    @Override
     public List<Brand> getAll()
     {
-        return (List<Brand>) brandRepository.getAllBrands();
+        return (List<Brand>) brandRepository.getAll();
     }
 
     public List<Brand> getAllBrand()
@@ -29,10 +28,11 @@ public class BrandServiceImpl implements BrandService{
         return (List<Brand>) brandRepository.findAll();
     }
 
-    @Override
+
     public Brand createBrandNode(Brand brands) {
         String brandId = brands.getBrandId();
         String brand = brands.getBrand();
+        System.out.println("system data"+ brand);
         Brand node = brandRepository.createBrand(brandId,brand);
         return node;
     }

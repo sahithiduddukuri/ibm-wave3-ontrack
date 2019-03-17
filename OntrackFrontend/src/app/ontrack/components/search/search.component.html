@@ -7,11 +7,19 @@
           <mat-card-title>
               <p>{{q.brand}}</p>
           </mat-card-title>
-          <mat-card-actions align="center">
+<!--           <mat-card-actions align="center">
               <button mat-raised-button (click)="buys()">Buy</button>
              <button mat-raised-button (click)="openDialog(q)">Details</button>
                 <button mat-raised-button (click)="AddToCart(q)">AddToCart</button>
-          </mat-card-actions>
+          </mat-card-actions> -->
+         <mat-card-actions>
+           <button mat-raised-button matTooltip="DETAILS"
+           aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog(q)"><mat-icon>toc</mat-icon></button>
+              <button mat-raised-button matTooltip="ADD TO CART"
+              aria-label="Button that displays a tooltip when focused or hovered over" (click)="AddToCart(q)"><mat-icon>add_shopping_cart</mat-icon></button>
+              <button mat-raised-button matTooltip="BUY"
+              aria-label="Button that displays a tooltip when focused or hovered over" (click)="buys()"><mat-icon>flash_on</mat-icon></button>
+        </mat-card-actions>
     </mat-card-header> 
   </mat-card>
   </div>

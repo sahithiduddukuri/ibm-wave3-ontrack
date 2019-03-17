@@ -22,17 +22,17 @@ export class OnTrackService {
     }
    Home() {
 
-    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/product-service/api/v1/product';
     console.log('this method call');
     return this.http.get(this.url);
 }
 
 openDailog() {
-    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/product-service/api/v1/product';
     return this.http.get(this.url);
 }
 AddToCart() {
-    this.url = 'https://shoefly-zuul.stackroute.io/recommendation-service/api/v1/products';
+    this.url = 'https://shoefly-zuul.stackroute.io/product-service/api/v1/product';
     return this.http.get(this.url);
 }
 openBottomSheet() {

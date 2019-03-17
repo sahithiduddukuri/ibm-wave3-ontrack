@@ -66,6 +66,7 @@ export class RegistrationcompComponent implements OnInit {
   private myaddress: Address;
   formBuilder: any;
 register(event: any) {
+  this.route.navigate([`/login`]);
     this.myaddress = new Address;
     this.myaddress.addressDetails = this.address;
     this.myaddress.city = this.city;
@@ -87,8 +88,6 @@ register(event: any) {
     this.value = event.target.value;
     this.regserv.addregister(this.regform).subscribe(data => {
       console.log('data', data);
-      this.route.navigate(['/' , 'login']);
-
     });
 
   }

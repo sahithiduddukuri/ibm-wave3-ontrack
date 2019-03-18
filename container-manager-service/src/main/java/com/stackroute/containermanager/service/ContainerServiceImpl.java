@@ -95,7 +95,7 @@ public class ContainerServiceImpl implements ContainerService {
                         Slot slot = new Slot();
                         if (j == 0) {
                             String slotType = "A";
-                            slot.setSlotStatus(true);
+                            slot.setSlotStatus(false);
                             slot.setCost(10);
                             slot.setSlotType("A");
                             List<Container> containers=new ArrayList<>();

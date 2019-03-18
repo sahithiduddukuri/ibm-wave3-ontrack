@@ -31,7 +31,7 @@
 <div class="row" fxLayout.xs="column" *ngFor='let o of products'>
   <mat-card class='product--blue'>
     <mat-card-header>  
-        <img mat-card-md-image src="{{o}}" alt="{{o.brand}}">
+        <img mat-card-md-image src="{{o.imageURL}}" alt="{{o.brand}}">
         </mat-card-header>         
       <div class="sing">
         <p>{{ o.productName }}</p>
@@ -40,7 +40,7 @@
         <p style="color:green">Discount: {{(((o.mrp-o.price)/o.mrp)*100) | number: '1.0-1'}}% Off</p>
       </div>
       <mat-card-footer>
-          <button mat-raised-button (click)="remove3(o.imageURL)">REMOVE</button>
+          <button mat-raised-button (click)="remove3(o)">REMOVE</button>
       </mat-card-footer>
 </mat-card>
 </div>

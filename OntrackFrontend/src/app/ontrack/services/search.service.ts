@@ -16,11 +16,11 @@ private microServiceUrl: string;
 
   }
   openDailog() {
-    this.microServiceUrl = 'https://shoefly-zuul.stackroute.io/products-search-service/api/v1/'';
+    this.microServiceUrl = 'https://shoefly-zuul.stackroute.io/products-search-service/api/v1/';
     return this.http.get(this.microServiceUrl);
 }
 AddToCart() {
-    this.microServiceUrl = 'https://shoefly-zuul.stackroute.io/products-search-service/api/v1/'';
+    this.microServiceUrl = 'https://shoefly-zuul.stackroute.io/products-search-service/api/v1/';
     return this.http.get(this.microServiceUrl);
 }
   searchByProductStartsWith(productBrand: string) {

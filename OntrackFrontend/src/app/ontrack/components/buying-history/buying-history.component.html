@@ -31,7 +31,7 @@
 <div class="row" fxLayout.xs="column" *ngFor='let o of products'>
   <mat-card class='product--blue'>
     <mat-card-header>  
-        <img mat-card-md-image src="{{o.imageURL}}" alt="{{o.brand}}">
+        <img mat-card-md-image src="{{o}}" alt="{{o.brand}}">
         </mat-card-header>         
       <div class="sing">
         <p>{{ o.productName }}</p>
